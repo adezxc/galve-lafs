@@ -8,11 +8,11 @@ package Ada_Tahoe_Config is
    Crate_Version : constant String := "0.1.0-dev";
    Crate_Name : constant String := "ada_tahoe";
 
-   Alire_Host_OS : constant String := "macos";
+   Alire_Host_OS : constant String := "linux";
 
    Alire_Host_Arch : constant String := "x86_64";
 
-   Alire_Host_Distro : constant String := "distro_unknown";
+   Alire_Host_Distro : constant String := "ubuntu";
 
    type Build_Profile_Kind is (release, validation, development);
    Build_Profile : constant Build_Profile_Kind := development;
