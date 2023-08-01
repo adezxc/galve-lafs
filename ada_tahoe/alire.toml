@@ -1,0 +1,13 @@
+name = "ada_tahoe"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Adam Jasinski"]
+maintainers = ["Adam Jasinski <zasewq242@gmail.com>"]
+maintainers-logins = ["adezxc"]
+
+executables = ["ada_tahoe"]
+[[depends-on]]
+utilada = "^2.6.0"
+[[pins]]
+utilada = { path='../../ada-util' }
