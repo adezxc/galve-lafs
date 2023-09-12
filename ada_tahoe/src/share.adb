@@ -1,5 +1,6 @@
 with Ada.Text_IO;
 with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
+with Ada.Streams;           use Ada.Streams;
 
 package body Share is
 
@@ -9,7 +10,6 @@ package body Share is
       Block_Size : constant Positive :=
         (Segment_Size + (Required_Shares - 1)) / Required_Shares;
       type Block is array (Integer range 0 .. Block_Size) of Byte;
-      type Block_Array is array (Integer range <>) of Block;
 
       S               : Stream_Access;
       Share_File      : File_Type;

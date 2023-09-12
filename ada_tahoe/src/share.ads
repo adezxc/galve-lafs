@@ -12,8 +12,8 @@ package Share is
       Version                    : Unsigned_32;
       Data_Length                : Unsigned_32;
       Lease_number               : Unsigned_32;
-      Version_Junk               : Unsigned_32;
       --  unused as it can be calculated from the URI
+      Version_Junk               : Unsigned_32;
       Block_Size                 : Unsigned_32;
       Data_Size                  : Unsigned_32;
       Data_Offset                : Unsigned_32;
@@ -23,25 +23,6 @@ package Share is
       Share_Hashes_Offset        : Unsigned_32;
       URI_Extension_Offset       : Unsigned_32;
    end record;
-
-   for Share_Header use record
-      Version at 0 range 0 .. 32;
-      --  Data_Length                : Unsigned_32;
-      --  Lease_number               : Unsigned_32;
-      --  Version_Junk               : Unsigned_32;
-      --  --  unused as it can be calculated from the URI
-      --  Block_Size                 : Unsigned_32;
-      --  Data_Size                  : Unsigned_32;
-      --  Data_Offset                : Unsigned_32;
-      --  Plaintext_Hash_Tree_Offset : Unsigned_32;
-      --  Crypttext_Hash_Tree_Offset : Unsigned_32;
-      --  Block_Hashes_Offset        : Unsigned_32;
-      --  Share_Hashes_Offset        : Unsigned_32;
-      --  URI_Extension_Offset       : Unsigned_32;
-   end record;
-
-   for Share_Header'Bit_Order use High_Order_First;
-   for Share_Header'Scalar_Storage_Order use High_Order_First;
 
    procedure Read_Share (Segment_Size : Positive; Required_Shares : Positive);
    procedure Display_Share_Content (My_Share_Header : Share_Header);
