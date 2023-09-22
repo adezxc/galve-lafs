@@ -13,7 +13,7 @@ project Ada_Tahoe is
    end Compiler;
 
    package Binder is
-      for Switches ("Ada") use ("-Es", "-xdr"); --  Symbolic traceback
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
    end Binder;
 
    package Install is
