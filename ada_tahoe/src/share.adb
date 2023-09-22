@@ -14,12 +14,14 @@ package body Share is
       S               : Stream_Access;
       Share_File      : File_Type;
       My_Share_Header : Share_Header;
+      My_Block        : Block;
    begin
       Open (Share_File, In_File, "../go-tahoe/3");
       S := Stream (Share_File);
       Share_Header'Read (S, My_Share_Header);
       My_Share_Header.Block_Size := Unsigned_32 (Block_Size);
       Display_Share_Content (My_Share_Header);
+      Block'Read (S, My_Block);
 
       Close (Share_File);
       --  Read_Blocks (My_Share_Header, Share_File);
@@ -67,6 +69,10 @@ package body Share is
       Ada.Text_IO.Put_Line
         ("URI Extension Length and URI Extension block offset: " &
          Interfaces.Unsigned_32'Image (My_Share_Header.URI_Extension_Offset));
+      Ada.Text_IO.Put_Line
+        ("Test" &
+         Interfaces.Unsigned_32'Image
+           ((My_Share_Header.Data_Size) / My_Share_Header.Block_Size));
    end Display_Share_Content;
 
    procedure Read_Blocks
