@@ -6,22 +6,18 @@ package body Share is
 
    procedure Read_Share (Segment_Size : Positive; Required_Shares : Positive)
    is
-      --  Ceiling function
       Block_Size : constant Positive :=
         (Segment_Size + (Required_Shares - 1)) / Required_Shares;
-      type Block is array (Integer range 0 .. Block_Size) of Word;
 
       S               : Stream_Access;
       Share_File      : File_Type;
       My_Share_Header : Share_Header;
-      My_Block        : Block;
    begin
       Open (Share_File, In_File, "../go-tahoe/3");
       S := Stream (Share_File);
       Share_Header'Read (S, My_Share_Header);
       My_Share_Header.Block_Size := Word (Block_Size);
       Display_Share_Header (My_Share_Header);
-      Block'Read (S, My_Block);
 
       Close (Share_File);
       --  Read_Blocks (My_Share_Header, Share_File);
@@ -78,12 +74,4 @@ package body Share is
          Word'Image (My_Share_Header.URI_Extension_Offset));
    end Display_Share_Header;
 
-   procedure Read_Blocks
-     (My_Share_Header : Share_Header; Share_File : File_Type)
-   is
-      Total_Blocks : Word := My_Share_Header.Data_Size;
-   begin
-      Ada.Text_IO.Put ("");
-
-   end Read_Blocks;
 end Share;
