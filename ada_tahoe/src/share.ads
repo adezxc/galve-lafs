@@ -16,7 +16,7 @@ package Share is
    type Block_Access_Array is array (Positive range <>) of Block_Access;
 
    type Array_Of_Blocks is
-     array (Positive range <>, Positive range <>) of Byte;
+     array (Positive range <>, Positive range <>) of Word;
 
    type Block_Array (Block_Size_Discr, Block_Array_Size_Discr : Positive) is
    record
@@ -40,6 +40,9 @@ package Share is
       URI_Extension_Offset       : Word;
    end record;
 
+   procedure Read_Block_Array
+     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
+      Item   : out Block_Array);
    procedure Read_Big_Endian_Word
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Word'Base);
@@ -47,4 +50,5 @@ package Share is
    procedure Display_Share_Header (My_Share_Header : Share_Header);
 
    for Word'Read use Read_Big_Endian_Word;
+   for Block_Array'Read use Read_Block_Array;
 end Share;
