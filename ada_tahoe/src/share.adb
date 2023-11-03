@@ -5,6 +5,17 @@ with Ada.Streams;           use Ada.Streams;
 
 package body Share is
 
+   -- A share file consists of the following components:
+   -- 1) A header that contains the share version number, share's size in bytes
+   --   and number of leases
+   -- 2) A share data header that contains the share version number, block
+   --   size (unused) and offsets of different parts of the file
+   -- 3) Share data in blocks of set size, last block can be shorter than the others
+   -- 4) Hashes of plaintext blocks (Unused)
+   -- 5) Hashes of crypttext blocks, needed for verifying the share
+   -- 6) Hashes of blocks
+   -- 7) Hash of the share
+   -- 8) URI Extension block that contains more metadata about the file.
    function Read_Share (Segment_Size, Required_Shares : Positive) return Share
    is
       Block_Size          : constant Positive :=
