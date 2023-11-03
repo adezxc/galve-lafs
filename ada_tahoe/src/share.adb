@@ -7,8 +7,9 @@ package body Share is
 
    function Read_Share (Segment_Size, Required_Shares : Positive) return Share
    is
-      Block_Size : constant Positive :=
+      Block_Size          : constant Positive :=
         (Segment_Size + (Required_Shares - 1)) / Required_Shares;
+      Block_Size_In_Words : constant Positive := (Block_Size + 3) / 4;
 
       S           : Stream_Access;
       Share_File  : File_Type;
@@ -24,15 +25,18 @@ package body Share is
       Ada.Text_IO.Put_Line (Header'Image);
       Ada.Text_IO.Put_Line (Data_Header'Image);
       declare
-         Block_Array_Size : constant Positive :=
-           (Integer (Data_Header.Data_Size) + (Block_Size - 1)) / Block_Size -
-           1;
-         Share_Blocks     : Block_Array (Block_Size, Block_Array_Size);
-         Last_Block_Size  : constant Positive :=
-           Integer (Data_Header.Data_Size) - (Block_Array_Size * Block_Size);
-         Last_Block       : Block (1 .. Last_Block_Size);
-         New_Share : Share (Block_Size, Block_Array_Size, Last_Block_Size);
+         Data_Size_In_Words : constant Positive :=
+           (Integer (Data_Header.Data_Size) + 3) / 4;
+         Block_Array_Size   : constant Positive :=
+           ((Data_Size_In_Words + Block_Size_In_Words - 1) / Block_Size) - 1;
+         Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
+         Last_Block_Size    : constant Positive :=
+           Data_Size_In_Words - (Block_Array_Size * Block_Size_In_Words);
+         Last_Block         : Block (1 .. Last_Block_Size);
+         New_Share          :
+           Share (Block_Size_In_Words, Block_Array_Size, Last_Block_Size);
       begin
+         Ada.Text_IO.Put_Line (Data_Size_In_Words'Image);
          Block_Array'Read (S, Share_Blocks);
          Block'Read (S, Last_Block);
          Close (Share_File);
@@ -98,7 +102,7 @@ package body Share is
       Item   : out Block_Array)
    is
    begin
-      for I in 1 .. Item.Values'Length / 4 loop
+      for I in 1 .. Item.Values'Length loop
          Block'Read (Stream, Item.Values (I).all);
       end loop;
    end Read_Block_Array;
