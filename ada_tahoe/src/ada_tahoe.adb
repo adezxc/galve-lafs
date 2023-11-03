@@ -1,7 +1,7 @@
 with Ada.Text_IO;      use Ada.Text_IO;
 with Ada.Command_Line; use Ada.Command_Line;
 with Tahoe;            use Tahoe;
-with Share;            use Share;
+with Share;
 
 procedure Ada_Tahoe is
    Discard : Share.Share :=

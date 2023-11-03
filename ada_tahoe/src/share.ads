@@ -1,12 +1,13 @@
 with Interfaces; use Interfaces;
-with System;     use System;
-with Ada.Streams.Stream_IO;
 with Ada.Streams;
 
 package Share is
 
-   -- An Unsigned_32 with big-endian encoding in input streams.
+   --  An Unsigned_32 with big-endian encoding in input streams.
    type Word is new Interfaces.Unsigned_32;
+   --  An Unsigned_64 with big-endian encoding in input streams.
+   type Word_64 is new Interfaces.Unsigned_64;
+
    type Byte is new Interfaces.Unsigned_8;
 
    type Block is array (Positive range <>) of Word;
@@ -22,39 +23,50 @@ package Share is
    end record;
 
    type Share_Header is record
+      Version      : Word;
+      Data_Length  : Word;
+      Lease_number : Word;
+   end record;
+
+   type Share_Data_Header is record
       Version                    : Word;
-      Data_Length                : Word;
-      Lease_number               : Word;
-      --  unused as it can be calculated from the URI
-      Version_Junk               : Word;
-      Block_Size                 : Word;
-      Data_Size                  : Word;
-      Data_Offset                : Word;
-      Plaintext_Hash_Tree_Offset : Word;
-      Crypttext_Hash_Tree_Offset : Word;
-      Block_Hashes_Offset        : Word;
-      Share_Hashes_Offset        : Word;
-      URI_Extension_Offset       : Word;
+      Block_Size                 : Word_64;
+      Data_Size                  : Word_64;
+      Data_Offset                : Word_64;
+      Plaintext_Hash_Tree_Offset : Word_64;
+      Crypttext_Hash_Tree_Offset : Word_64;
+      Block_Hashes_Offset        : Word_64;
+      Share_Hashes_Offset        : Word_64;
+      URI_Extension_Offset       : Word_64;
    end record;
 
    type Share
      (Block_Size_Discr, Block_Array_Size_Discr, Last_Block_Size : Positive) is
    record
-      Header     : Share_Header;
-      Blocks     : Block_Array (Block_Size_Discr, Block_Array_Size_Discr);
-      Last_Block : Block (1 .. Last_Block_Size);
+      Header      : Share_Header;
+      Data_Header : Share_Data_Header;
+      Blocks      : Block_Array (Block_Size_Discr, Block_Array_Size_Discr);
+      Last_Block  : Block (1 .. Last_Block_Size);
    end record;
 
    procedure Read_Block_Array
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Block_Array);
+   procedure Read_Share_Data_Header
+     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
+      Item   : out Share_Data_Header);
    procedure Read_Big_Endian_Word
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Word'Base);
+   procedure Read_Big_Endian_Word_64
+     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
+      Item   : out Word_64'Base);
    function Read_Share
      (Segment_Size : Positive; Required_Shares : Positive) return Share;
-   procedure Display_Share_Header (My_Share_Header : Share_Header);
+   --  procedure Display_Share_Header (My_Share_Header : Share_Header);
 
    for Word'Read use Read_Big_Endian_Word;
+   for Word_64'Read use Read_Big_Endian_Word_64;
    for Block_Array'Read use Read_Block_Array;
+   for Share_Data_Header'Read use Read_Share_Data_Header;
 end Share;
