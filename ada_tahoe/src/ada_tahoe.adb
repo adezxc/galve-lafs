@@ -1,28 +1,40 @@
+pragma Ada_2022;
 with Ada.Text_IO;      use Ada.Text_IO;
 with Ada.Command_Line; use Ada.Command_Line;
+with fec_h;            use fec_h;
+with stddef_h;         use stddef_h;
 --  with Tahoe;            use Tahoe;
 with Share;
+with System;
 
 procedure Ada_Tahoe is
 begin
    if Argument_Count = 3 then
       declare
-         Share1 : constant Share.Share :=
+         Share1              : constant Share.Share              :=
            Share.Read_Share
              (Segment_Size => 131_072, Required_Shares => 3,
               File         => Argument (1));
-         Share2 : constant Share.Share :=
+         Share2              : constant Share.Share              :=
            Share.Read_Share
              (Segment_Size => 131_072, Required_Shares => 3,
               File         => Argument (2));
-         Share3 : constant Share.Share :=
+         Share3              : constant Share.Share              :=
            Share.Read_Share
              (Segment_Size => 131_072, Required_Shares => 3,
               File         => Argument (3));
+         Decoder             : access fec_t := fec_new (3, 10);
+         Blocks_For_Decoding : Share.Block_Access_Array (1 .. 3) :=
+           (Share1.Blocks.Values (1), Share2.Blocks.Values (1),
+            Share3.Blocks.Values (1));
+         Indices             : TestArray                         := (3, 5, 6);
       begin
-         Share.Display_Share_Headers (Share1);
-         Share.Display_Share_Headers (Share2);
-         Share.Display_Share_Headers (Share3);
+         Ada.Text_IO.Put_Line (Indices (0)'Address'Image);
+         Ada.Text_IO.Put_Line (Indices (1)'Address'Image);
+         Ada.Text_IO.Put_Line (Indices (2)'Image);
+         fec_decode
+           (Decoder, Blocks_For_Decoding'Address, Blocks_For_Decoding'Address,
+            Indices (0)'Access, size_t (Share1.Data_Header.Block_Size));
       end;
    else
       Put_Line
