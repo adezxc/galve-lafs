@@ -62,8 +62,9 @@ package Share is
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Word_64'Base);
    function Read_Share
-     (Segment_Size : Positive; Required_Shares : Positive) return Share;
-   --  procedure Display_Share_Header (My_Share_Header : Share_Header);
+     (Segment_Size : Positive; Required_Shares : Positive; File : String)
+      return Share;
+   procedure Display_Share_Headers (My_Share : Share);
 
    for Word'Read use Read_Big_Endian_Word;
    for Word_64'Read use Read_Big_Endian_Word_64;

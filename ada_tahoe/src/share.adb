@@ -5,18 +5,20 @@ with Ada.Streams;           use Ada.Streams;
 
 package body Share is
 
-   -- A share file consists of the following components:
-   -- 1) A header that contains the share version number, share's size in bytes
-   --   and number of leases
-   -- 2) A share data header that contains the share version number, block
-   --   size (unused) and offsets of different parts of the file
-   -- 3) Share data in blocks of set size, last block can be shorter than the others
-   -- 4) Hashes of plaintext blocks (Unused)
-   -- 5) Hashes of crypttext blocks, needed for verifying the share
-   -- 6) Hashes of blocks
-   -- 7) Hash of the share
-   -- 8) URI Extension block that contains more metadata about the file.
-   function Read_Share (Segment_Size, Required_Shares : Positive) return Share
+   --  A share file consists of the following components:
+   --  1) A header that contains the share version number, share's size in byte
+   --    and number of leases
+   --  2) A share data header that contains the share version number, block
+   --    size (unused) and offsets of different parts of the file
+   --  3) Share data in blocks of set size, last block can be shorter than the
+   --  others
+   --  4) Hashes of plaintext blocks (Unused)
+   --  5) Hashes of crypttext blocks, needed for verifying the share
+   --  6) Hashes of blocks
+   --  7) Hash of the share
+   --  8) URI Extension block that contains more metadata about the file.
+   function Read_Share
+     (Segment_Size, Required_Shares : Positive; File : String) return Share
    is
       Block_Size          : constant Positive :=
         (Segment_Size + (Required_Shares - 1)) / Required_Shares;
@@ -26,15 +28,12 @@ package body Share is
       Share_File  : File_Type;
       Header      : Share_Header;
       Data_Header : Share_Data_Header;
-
    begin
-      Open (Share_File, In_File, "../go-tahoe/3");
+      Open (Share_File, In_File, File);
       S := Stream (Share_File);
       Share_Header'Read (S, Header);
       Share_Data_Header'Read (S, Data_Header);
       Data_Header.Block_Size := Word_64 (Block_Size);
-      Ada.Text_IO.Put_Line (Header'Image);
-      Ada.Text_IO.Put_Line (Data_Header'Image);
       declare
          Data_Size_In_Words : constant Positive :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
@@ -47,7 +46,6 @@ package body Share is
          New_Share          :
            Share (Block_Size_In_Words, Block_Array_Size, Last_Block_Size);
       begin
-         Ada.Text_IO.Put_Line (Data_Size_In_Words'Image);
          Block_Array'Read (S, Share_Blocks);
          Block'Read (S, Last_Block);
          Close (Share_File);
@@ -58,11 +56,18 @@ package body Share is
          --  Ada.Text_IO.Put_Line (Last_Block'Image);
          return New_Share;
       end;
-
-      --  Read_Blocks (My_Share_Header, Share_File);
-
       --  Now My_Share contains the values read from the binary file
    end Read_Share;
+
+   procedure Read_Block_Array
+     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
+      Item   : out Block_Array)
+   is
+   begin
+      for I in 1 .. Item.Values'Length loop
+         Block'Read (Stream, Item.Values (I).all);
+      end loop;
+   end Read_Block_Array;
 
    procedure Read_Share_Data_Header
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
@@ -108,15 +113,37 @@ package body Share is
       Item.URI_Extension_Offset       := Item.URI_Extension_Offset + 12;
    end Read_Share_Data_Header;
 
-   procedure Read_Block_Array
-     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
-      Item   : out Block_Array)
-   is
+   procedure Display_Share_Headers (My_Share : Share) is
    begin
-      for I in 1 .. Item.Values'Length loop
-         Block'Read (Stream, Item.Values (I).all);
-      end loop;
-   end Read_Block_Array;
+      Ada.Text_IO.Put_Line
+        ("Share version: " & Word'Image (My_Share.Header.Version));
+      Ada.Text_IO.Put_Line
+        ("Share Data Length: " & Word'Image (My_Share.Header.Data_Length));
+      Ada.Text_IO.Put_Line
+        ("Lease Number: " & Word'Image (My_Share.Header.Lease_number));
+      Ada.Text_IO.Put_Line
+        ("Block Size: " & Word_64'Image (My_Share.Data_Header.Block_Size));
+      Ada.Text_IO.Put_Line
+        ("Data Size: " & Word_64'Image (My_Share.Data_Header.Data_Size));
+      Ada.Text_IO.Put_Line
+        ("Data offset: " & Word_64'Image (My_Share.Data_Header.Data_Offset));
+      Ada.Text_IO.Put_Line
+        ("Plaintext hash tree offset: " &
+         Word_64'Image (My_Share.Data_Header.Plaintext_Hash_Tree_Offset));
+      Ada.Text_IO.Put_Line
+        ("Crypttext hash tree offset: " &
+         Word_64'Image (My_Share.Data_Header.Crypttext_Hash_Tree_Offset));
+      Ada.Text_IO.Put_Line
+        ("Block hashes offset: " &
+         Word_64'Image (My_Share.Data_Header.Block_Hashes_Offset));
+      Ada.Text_IO.Put_Line
+        ("Share hashes offset: " &
+         Word_64'Image (My_Share.Data_Header.Share_Hashes_Offset));
+      Ada.Text_IO.Put_Line
+        ("URI Extension Length and URI Extension block offset: " &
+         Word_64'Image (My_Share.Data_Header.URI_Extension_Offset));
+      Ada.Text_IO.Put_Line ("");
+   end Display_Share_Headers;
 
    procedure Read_Big_Endian_Word
      (Stream : access Ada.Streams.Root_Stream_Type'Class; Item : out Word'Base)
@@ -131,7 +158,6 @@ package body Share is
       Item :=
         Shift_Left (Word (B1), 24) or Shift_Left (Word (B2), 16) or
         Shift_Left (Word (B3), 8) or Word (B4);
-
    end Read_Big_Endian_Word;
 
    procedure Read_Big_Endian_Word_64
@@ -156,38 +182,5 @@ package body Share is
         Shift_Left (Word_64 (B7), 8) or Word_64 (B8);
 
    end Read_Big_Endian_Word_64;
-
-   --  procedure Display_Share_Header (My_Share_Header : Share_Header) is
-   --  begin
-   --    Ada.Text_IO.Put_Line
-   --      ("Share version: " & Word'Image (My_Share_Header.Version));
-   --    Ada.Text_IO.Put_Line
-   --      ("Share Data Length: " & Word'Image (My_Share_Header.Data_Length));
-   --    Ada.Text_IO.Put_Line
-   --      ("Lease Number: " & Word'Image (My_Share_Header.Lease_number));
-   --    Ada.Text_IO.Put_Line
-   --      ("Share version: " & Word'Image (My_Share_Header.Version));
-   --    Ada.Text_IO.Put_Line
-   --      ("Block Size: " & Word'Image (My_Share_Header.Block_Size));
-   --    Ada.Text_IO.Put_Line
-   --      ("Data Size: " & Word'Image (My_Share_Header.Data_Size));
-   --    Ada.Text_IO.Put_Line
-   --      ("Data offset: " & Word'Image (My_Share_Header.Data_Offset));
-   --    Ada.Text_IO.Put_Line
-   --      ("Plaintext hash tree offset: " &
-   --       Word'Image (My_Share_Header.Plaintext_Hash_Tree_Offset));
-   --    Ada.Text_IO.Put_Line
-   --      ("Crypttext hash tree offset: " &
-   --       Word'Image (My_Share_Header.Crypttext_Hash_Tree_Offset));
-   --    Ada.Text_IO.Put_Line
-   --      ("Block hashes offset: " &
-   --       Word'Image (My_Share_Header.Block_Hashes_Offset));
-   --    Ada.Text_IO.Put_Line
-   --      ("Share hashes offset: " &
-   --       Word'Image (My_Share_Header.Share_Hashes_Offset));
-   --    Ada.Text_IO.Put_Line
-   --      ("URI Extension Length and URI Extension block offset: " &
-   --       Word'Image (My_Share_Header.URI_Extension_Offset));
-   --  end Display_Share_Header;
 
 end Share;
