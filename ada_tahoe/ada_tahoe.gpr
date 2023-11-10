@@ -11,6 +11,7 @@ project Ada_Tahoe is
 
    package Compiler is
       for Default_Switches ("Ada") use Ada_Tahoe_Config.Ada_Compiler_Switches;
+      for Default_Switches ("C") use ("-g");
    end Compiler;
 
    package Binder is
