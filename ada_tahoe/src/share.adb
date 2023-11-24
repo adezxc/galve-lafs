@@ -5,6 +5,18 @@ with Ada.Streams;           use Ada.Streams;
 
 package body Share is
 
+   function Next_Block (My_Share : in out Share) return Block_Access is
+   begin
+      if My_Share.Blocks.Values'Length > My_Share.Current_Block then
+         Ada.Text_IO.Put_Line (My_Share.Current_Block'Image);
+         My_Share.Current_Block := My_Share.Current_Block + 1;
+         Ada.Text_IO.Put_Line (My_Share.Current_Block'Image);
+         return My_Share.Blocks.Values (My_Share.Current_Block - 1);
+      else
+         return My_Share.Last_Block;
+      end if;
+   end Next_Block;
+
    --  A share file consists of the following components:
    --  1) A header that contains the share version number, share's size in byte
    --    and number of leases
@@ -35,19 +47,18 @@ package body Share is
       Share_Data_Header'Read (S, Data_Header);
       Data_Header.Block_Size := Word_64 (Block_Size);
       declare
-         Data_Size_In_Words : constant Positive :=
+         Data_Size_In_Words : constant Natural :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
-         Block_Array_Size   : constant Positive :=
-           ((Data_Size_In_Words + Block_Size_In_Words - 1) / Block_Size) - 1;
+         Block_Array_Size   : constant Natural :=
+           ((Data_Size_In_Words + Block_Size_In_Words - 1) / Block_Size);
          Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
-         Last_Block_Size    : constant Positive :=
+         Last_Block_Size    : constant Natural :=
            Data_Size_In_Words - (Block_Array_Size * Block_Size_In_Words);
-         Last_Block         : Block (1 .. Last_Block_Size);
-         New_Share          :
-           Share (Block_Size_In_Words, Block_Array_Size, Last_Block_Size);
+         Last_Block         : Block_Access := new Block (1 .. Last_Block_Size);
+         New_Share          : Share (Block_Size_In_Words, Block_Array_Size);
       begin
          Block_Array'Read (S, Share_Blocks);
-         Block'Read (S, Last_Block);
+         Block_Access'Read (S, Last_Block);
          Close (Share_File);
          New_Share.Header      := Header;
          New_Share.Data_Header := Data_Header;
@@ -68,6 +79,14 @@ package body Share is
          Block'Read (Stream, Item.Values (I).all);
       end loop;
    end Read_Block_Array;
+
+   procedure Read_Block_Access
+     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
+      Item   : out Block_Access)
+   is
+   begin
+      Block'Read (Stream, Item.all);
+   end Read_Block_Access;
 
    procedure Read_Share_Data_Header
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
