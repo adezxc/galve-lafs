@@ -1,0 +1,314 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV NO_OBSOLESCENT_FEATURES
+
+U util.encoders.sha1%b	util-encoders-sha1.adb	9224a78a NE OO PK
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+W util%s		util.ads		util.ali
+W util.encoders%s	util-encoders.adb	util-encoders.ali
+W util.encoders.base16%s  util-encoders-base16.adb  util-encoders-base16.ali
+W util.encoders.base64%s  util-encoders-base64.adb  util-encoders-base64.ali
+
+U util.encoders.sha1%s	util-encoders-sha1.ads	312c0b8b EE OO PF PR PK
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.streams%s		a-stream.adb		a-stream.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.return_stack%s	s-retsta.ads		s-retsta.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+W util.encoders%s	util-encoders.adb	util-encoders.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-assert.ads		19700101000001 ba465f5c ada.assertions%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-assert.ads		19700101000001 9c4520c7 system.assertions%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-memory.ads		19700101000001 5b8432d0 system.memory%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stalib.adb		19700101000001 eb464a47 system.standard_library%b
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-encoders.ads	20231110223241 2efdfb8e util.encoders%s
+D util-encoders-base16.ads  20231110223241 e5074fc3 util.encoders.base16%s
+D util-encoders-base64.ads  20231110223241 bc71fa90 util.encoders.base64%s
+D util-encoders-sha1.ads  20231110223241 b569e9ac util.encoders.sha1%s
+D util-encoders-sha1.adb  20231110223241 7e3bfb75 util.encoders.sha1%b
+G a e
+G c Z s b [update util__encoders__sha1 43 14 none]
+G c Z s b [update util__encoders__sha1 47 14 none]
+G c Z s b [finish util__encoders__sha1 51 14 none]
+G c Z s b [finish util__encoders__sha1 55 14 none]
+G c Z s b [finish_base64 util__encoders__sha1 59 14 none]
+G c Z s b [transform util__encoders__sha1 82 14 none]
+G c Z s b [compute util__encoders__sha1 98 14 none]
+G c Z s b [initialize util__encoders__sha1 111 14 none]
+G c Z s s [Tw_arrayBIP util__encoders__sha1 95 4 none]
+G c Z s s [Th_arrayBIP util__encoders__sha1 94 4 none]
+G c Z s s [contextDF util__encoders__sha1 100 9 none]
+G c Z s s [contextIP util__encoders__sha1 100 9 none]
+G c Z s s [encoderDA util__encoders__sha1 90 9 none]
+G c Z s s [encoderDF util__encoders__sha1 90 9 none]
+G c Z s s [encoderIP util__encoders__sha1 90 9 none]
+G c Z b b [to_unsigned_32 util__encoders__sha1 137 13 none]
+G c Z b b [f1 util__encoders__sha1 250 13 none]
+G c Z b b [f2 util__encoders__sha1 253 13 none]
+G c Z b b [f3 util__encoders__sha1 256 13 none]
+G c Z b b [f4 util__encoders__sha1 259 13 none]
+G r s encoder [finish util__encoders__sha1 55 14 none] [encoderIP util__encoders__base16 97 9 none]
+G r c none [finish util__encoders__sha1 55 14 none] [convert util__encoders 239 14 none]
+G r s encoder [finish_base64 util__encoders__sha1 59 14 none] [encoderIP util__encoders__base64 156 9 none]
+G r c none [finish_base64 util__encoders__sha1 59 14 none] [convert util__encoders 239 14 none]
+G r s encoder [transform util__encoders__sha1 82 14 none] [encoderIP util__encoders__base16 97 9 none]
+G r c none [transform util__encoders__sha1 82 14 none] [transform util__encoders__base16 64 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 37|18r6 30r26 48r29 83r38 84r39 85r39 86r39 100r24 38|42r38
+. 43r39 44r39 45r39 50r21 152r29
+X 4 a-finali.ads
+40K13*Finalization 68e21 37|18w10 100r28
+50H9*Limited_Controlled<16|40R9> 66e55 37|100r41
+X 5 a-stream.ads
+36K13*Streams 87e16 37|30r30 48r33 83r42 84r43 85r43 86r43 38|42r42 43r43
+. 44r43 45r43 50r25 152r33
+42M9*Stream_Element 38|84r28 85r32 86r32 87r32 89r32 90r32 91r32 92r32 94r32
+. 95r32 96r33 97r33 99r33 100r33 101r33 102r33 104r33 105r33 106r33 107r33
+44I9*Stream_Element_Offset<long_long_integer> 37|85r51 86r51 38|44r51 45r51
+54A9*Stream_Element_Array(42M9)<44I9> 37|30r38 48r41 83r50 84r51 38|42r50
+. 43r51 50r33 152r41
+X 11 interfac.ads
+38K9*Interfaces 232e15 37|19w6 92r8
+80M9*Unsigned_32 37|94r38 95r39 38|80r19 81r19 137r67 140r67 143r21 144r21
+. 145r21 250r30 250r50 253r30 253r50 256r30 256r50 259r30 259r50 262r30 262r50
+. 267r30 267r50 272r30 272r50 277r30 277r50 289r26
+83M9*Unsigned_64 37|104r21 38|69r20
+140V13*Shift_Left{80M9} 38|143s9 144s9 145s9
+145V13*Shift_Right{80M9} 38|84s44 85s48 86s48 89s48 90s48 91s48 94s48 95s48
+. 96s49 99s49 100s49 101s49 104s49 105s49 106s49
+155V13*Rotate_Left{80M9} 38|294s19 308s15 311s15 317s15 320s15 326s15 329s15
+. 335s15 338s15
+170V13*Shift_Right{83M9} 38|80s32
+X 12 system.ads
+67M9*Address
+X 17 s-memory.ads
+51V13*Alloc{12|67M9} 101i<c,__gnat_malloc>22
+66U14*Free 102i<c,__gnat_free>22
+74V13*Realloc{12|67M9} 103i<c,__gnat_realloc>22
+X 26 s-stalib.adb
+87U14 Break_Start 88i<c,__gnat_break_start>22
+X 33 util.ads
+18K9*Util 28e9 37|23r9 67r24 90r24 113r5 38|19r6 20r6 24r14 48r21 119r17
+. 131r17 367r5
+X 34 util-encoders.ads
+44K14*Encoders 33|18k9 34|259e18 37|23r14 67r29 90r29 113r10 38|19r11 20r11
+. 24r19 48r26 119r22 131r22 367r10
+149h9*Transformer 37|67r38 90r38
+239U14 Convert 38|122s9 134s9
+X 35 util-encoders-base16.ads
+22K23*Base16 119e25 38|19w20 48r35 119r31
+49R9*Encoder<34|149R9> 97e66 38|48r42 119r38
+64U14*Transform<34|166p14> 38|54s19
+65a25 Data{5|54A9} 38|54r30
+66a25 Into{5|54A9} 38|55r30
+67i25 Last{5|44I9} 38|56r30
+68i25 Encoded{5|44I9} 38|57r30
+X 36 util-encoders-base64.ads
+23K23*Base64 245e25 38|20w20 131r31
+39R9*Encoder<34|149R9> 161e14 38|131r38
+X 37 util-encoders-sha1.ads
+23K23*SHA1 34|44k14 37|90E9 113l19 113e23 38|24b28 367l19 367t23
+27N4*HASH_SIZE 30r65 33r39
+30A12*Hash_Array{5|54A9}<5|44I9> 52r33 38|67r33 118r17 130r17
+33A12*Digest{string}<integer> 56r33 38|117r33
+35A12*Base64_Digest{string}<integer> 60r40 38|129r40
+40R9*Context<4|50R9> 43r33 47r33 51r36 55r36 59r43 98r36 100c9 107e14 111r37
+. 38|49r21 66r36 116r36 128r43 151r33 164r33 285r36 355r37
+43U14*Update 43=22 44>22 38|73s10 75s10 158s9 164b14 248l8 248t14
+43r22 E{40R9} 38|164b22 167r22 172m7 172r18 177r12 180m16 180r76 181m16 184m28
+. 189m16 191m19 192m19 194m19 201m16 201r65 201r80 202m16 205m28 210m16 211m16
+. 216m13 216r51 216r66 216r81 217m13 220m25 232m10 236m22 240m7 245m10 246m10
+44a22 S{string} 38|165b22 166r22 169r10 172r28 179r16 180r43 180r54 180r65
+. 187r21 189r33 190r28 191r36 200r16 201r43 201r54 208r21 210r33 216r40 223r18
+. 226r18 231r22 232r37 232r48 232r59 232r70 243r12 245r32 245r40
+47U14*Update 47=22 48>22 38|52s7 151b14 159l8 159t14
+47r22 E{40R9} 38|151b22 158m7 158r7
+48a22 S{5|54A9} 38|152b22 153r26 154r27
+51U14*Finish 51=22 52<22 38|53s7 66b14 111l8 111t14 121s7 133s7
+51r22 E{40R9} 38|66b22 68r35 68r47 69r35 73m18 75m18 77r22 78r22 80m7 81m7
+. 82m16 84r57 85r61 86r61 87r48 89r61 90r61 91r61 92r48 94r61 95r61 96r62
+. 97r49 99r62 100r62 101r62 102r49 104r62 105r62 106r62 107r49 110m7 110r7
+52a22 Hash{30A12} 38|67b22 84m7 84r13 85m7 85r13 86m7 86r13 87m7 87r13 89m7
+. 89r13 90m7 90r13 91m7 91r13 92m7 92r13 94m7 94r13 95m7 95r13 96m7 96r13
+. 97m7 97r13 99m7 99r13 100m7 100r13 101m7 101r13 102m7 102r13 104m7 104r13
+. 105m7 105r13 106m7 106r13 107m7 107r13
+55U14*Finish 55=22 56<22 38|116b14 123l8 123t14
+55r22 E{40R9} 38|116b22 121m15
+56a22 Hash{33A12} 38|117b22 122m21
+59U14*Finish_Base64 59=29 60<29 38|128b14 135l8 135t21
+59r29 E{40R9} 38|128b29 133m15
+60a29 Hash{35A12} 38|129b29 134m21
+67R9*Encoder<34|149R9> 82P14 82r42 90c9 90e66 38|41r42
+82U14*Transform<34|166p14> 82=25 83>25 84<25 85<25 86<25 38|41b14 59l8 59t17
+82r25 E{67R9} 38|41b25 46r28
+83a25 Data{5|54A9} 38|42b25 52r28 58r18
+84a25 Into{5|54A9} 38|43b25 55m38
+85i25 Last{5|44I9} 38|44b25 56m38
+86i25 Encoded{5|44I9} 38|45b25 57m41 58m7
+94A9 H_Array(11|80M9)<integer> 102r21 38|287r11
+95A9 W_Array(11|80M9)<integer> 101r21 38|286r11
+98U14 Compute 98=23 38|82s7 184s19 205s19 220s16 236s13 285b14 349l8 349t15
+98r23 Ctx{40R9} 38|285b23 286m27 286r27 287m27 287r27
+101a7*W{95A9} 38|80m9 81m9 180m18 201m18 216m15 232m12 286m31
+102a7*H{94A9} 38|84r59 85r63 86r63 87r50 89r63 90r63 91r63 92r50 94r63 95r63
+. 96r64 97r51 99r64 100r64 101r64 102r51 104r64 105r64 106r64 107r51 287m31
+. 360m9 361m9 362m9 363m9 364m9
+103i7*Pos{natural} 38|68r37 78r24 167r24 240m9 359m9
+104m7*Count{11|83M9} 38|69r37 172m9 172r20 357m9
+105a7*Pending{string} 38|180r78 189m18 191m21 201r67 201r82 210m18 216r53
+. 216r68 216r83 245m12
+106i7*Pending_Pos{natural} 38|68r49 77r24 177r14 181m18 192m21 194m21 202m18
+. 211m18 217m15 246m12 358m9
+111U14 Initialize<4|53p14> 111=26 38|110s9 355b14 365l8 365t18
+111r26 E{40R9} 38|355b26 357m7 358m7 359m7 360m7 361m7 362m7 363m7 364m7
+X 38 util-encoders-sha1.adb
+48r7 Hex_Encoder{35|49R9} 54m7 54r7
+49r7 Sha_Encoder{37|40R9} 52m15 52r15 53m15 53r15
+50a7 Hash{5|54A9} 53m28 54r38
+61a4 Padding{string} 73r21 75r21
+68i7 N{natural} 72r10 73r40 75r41
+69m7 C{11|83M9} 80r45 81r32
+118a7 H{37|30A12} 121m18 122r18
+119r7 B{35|49R9} 122m7 122r7
+130a7 H{37|30A12} 133m18 134r18
+131r7 B{36|39R9} 134m7 134r7
+137V13 To_Unsigned_32{11|80M9} 137>29 137>33 137>37 137>41 138r26 140b13
+. 146l8 146t22 180s27 201s27 216s24 232s21
+137e29 C3{character} 140b29 142r29
+137e33 C2{character} 140b33 143r49
+137e37 C1{character} 140b37 144r49
+137e41 C0{character} 140b41 145r49
+153a7 Buf{string} 154m11 154r11 155m27 155r27 158r17
+166i7 I{natural} 180r46 180r57 180r68 187m16 189r36 190r19 191r39 201r46
+. 201r57 208m16 210r36 216r43 223m13 226m13 231r13 232r40 232r51 232r62 232r73
+. 233m10 233r15 243r25 245r35
+167i7 N{natural} 180r21 182m16 182r21 183r19 185m19 201r21 203m16 203r21
+. 204r19 206m19 216r18 218m13 218r18 219r16 221m16 232r15 234m10 234r15 235r13
+. 237m13 240r16 243m7 244r10 245r26 246r27
+250V13 F1{11|80M9} 250>17 250>20 250>23 251r26 262b13 265l8 265t10 308s36
+250m17 B{11|80M9} 262b17 264r15 264r33
+250m20 C{11|80M9} 262b20 264r21
+250m23 D{11|80M9} 262b23 264r40
+253V13 F2{11|80M9} 253>17 253>20 253>23 254r26 267b13 270l8 270t10 317s36
+253m17 B{11|80M9} 267b17 269r14
+253m20 C{11|80M9} 267b20 269r20
+253m23 D{11|80M9} 267b23 269r26
+256V13 F3{11|80M9} 256>17 256>20 256>23 257r26 272b13 275l8 275t10 326s36
+256m17 B{11|80M9} 272b17 274r15 274r28
+256m20 C{11|80M9} 272b20 274r21 274r41
+256m23 D{11|80M9} 272b23 274r34 274r47
+259V13 F4{11|80M9} 259>17 259>20 259>23 260r26 277b13 280l8 280t10 335s36
+259m17 B{11|80M9} 277b17 279r14
+259m20 C{11|80M9} 277b20 279r20
+259m23 D{11|80M9} 277b23 279r26
+286a7 W{37|95A9} 294r10 294r32 294r46 294r60 294r75 308r55 317r55 326r55
+. 335r55
+287a7 H{37|94A9} 298r12 299r12 300r12 301r12 302r12 344r7 344r16 345r7 345r16
+. 346r7 346r16 347r7 347r16 348r7 348r16
+289m7 V{11|80M9} 308m10 313r15 317m10 322r15 326m10 331r15 335m10 340r15
+289m10 A{11|80M9} 298m7 308r28 312r15 313m10 317r28 321r15 322m10 326r28
+. 330r15 331m10 335r28 339r15 340m10 344r24
+289m13 B{11|80M9} 299m7 308r40 311r28 312m10 317r40 320r28 321m10 326r40
+. 329r28 330m10 335r40 338r28 339m10 345r24
+289m16 C{11|80M9} 300m7 308r43 310r15 311m10 317r43 319r15 320m10 326r43
+. 328r15 329m10 335r43 337r15 338m10 346r24
+289m19 D{11|80M9} 301m7 308r46 309r15 310m10 317r46 318r15 319m10 326r46
+. 327r15 328m10 335r46 336r15 337m10 347r24
+289m22 E{11|80M9} 302m7 308r51 309m10 317r51 318m10 326r51 327m10 335r51
+. 336m10 348r24
+293i11 I{integer} 294r13 294r35 294r49 294r63 294r78
+307i11 I{integer} 308r58
+316i11 I{integer} 317r58
+325i11 I{integer} 326r58
+334i11 I{integer} 335r58
+

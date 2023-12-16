@@ -1,0 +1,151 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV SIMPLE_BARRIERS
+RV NO_ALLOCATORS
+RV NO_DELAY
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_FIXED_POINT
+RV NO_LOCAL_ALLOCATORS
+RV NO_PROTECTED_TYPES
+RV NO_SELECT_STATEMENTS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV MAX_PROTECTED_ENTRIES=1
+RV MAX_ENTRY_QUEUE_LENGTH=1+
+
+U util.concurrent.pools%b  util-concurrent-pools.adb  bee765b6 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.unchecked_deallocation%s
+W util.concurrent%s	util-concurrent.ads	util-concurrent.ali
+
+U util.concurrent.pools%s  util-concurrent-pools.ads  a42bdb78 BN NE OO PR PK GE
+W ada%s			ada.ads			ada.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util.concurrent%s	util-concurrent.ads	util-concurrent.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-pools.ads  20231110223241 32626bc2 util.concurrent.pools%s
+D util-concurrent-pools.adb  20231110223241 4f2da211 util.concurrent.pools%b
+G a e
+G c Z s b [pools util__concurrent 31 25 none]
+X 1 ada.ads
+16K9*Ada 20e8 27|19r6 41r29 96r29 28|19r6 104r32
+X 3 a-finali.ads
+40K13*Finalization 68e21 27|19w10 41r33 96r33
+50H9*Limited_Controlled<14|40R9> 66e55 27|41r46 96r46
+53U14*Initialize<14|44p14>
+X 10 a-uncdea.ads
+20u15*Unchecked_Deallocation 28|19w10 104r36
+X 14 s-finroo.ads
+42U14*Adjust
+X 25 util.ads
+18K9*Util 28e9 27|31r9 100r5 28|20r14 136r5
+X 26 util-concurrent.ads
+18K14*Concurrent 25|18k9 26|22e20 27|31r14 100r10 28|20r19 136r10
+X 27 util-concurrent-pools.ads
+30+9 Element_Type 46r39 51r33 70r55 80r38 83r36 28|27r39 46r33 85r38 94r36
+31k25*Pools 26|18k14 27|30z9 70E9 100l21 100e26 28|20b30 136l21 136t26
+35o4*FOREVER{duration} 47r50 28|28r50
+38X4*Timeout 28|37r19
+41R9*Pool<3|50R9> 3|53P14 14|42p14 27|45p14 45r42 50p14 50r37 54p14 54r42
+. 58p14 58r48 63P14 63r40 96c9 98e14 28|26r42 45r37 54r38 63r48 73r40
+45U14*Get_Instance 45=28 46<28 47>28 28|26b14 40l8 40t20
+45r28 From{41R9} 28|26b28 31r10 34r13
+46*28 Item{30+9} 28|27b28 31m34 34m37
+47o28 Wait{duration} 28|28b28 30r10 36r19
+50U14*Release 50=23 51>23 28|45b14 49l8 49t15
+50r23 Into{41R9} 28|45b23 48r7
+51*23 Item{30+9} 28|46b23 48r26
+54U14*Set_Size 54=24 55>24 28|54b14 58l8 58t16
+54r24 Into{41R9} 28|54b24 57r7
+55i24 Capacity{positive} 28|55b24 57r27
+58U14*Get_Available 58=29 59<29 28|63b14 67l8 67t21
+58r29 From{41R9} 28|63b29 66r20
+59i29 Available{natural} 28|64b29 66m7
+63U14*Finalize<3|54p14> 63=24 28|73b14 76l8 76t16
+63r24 Object{41R9} 28|73b24 75r7
+70A9 Element_Array(30+9)<integer> 71r44 28|104r60 109r29 112r65
+71P9 Element_Array_Access(70A9) 73r34 93r23 28|104r75 112r37
+73p4 Null_Element_Array{71P9} 93r47
+76W19 Protected_Pool 92E7 94l8 94e22 97r14 28|79b19 134l8 134t22
+80Y13 Get_Instance 80<27 28|31s20 34s23 85b13 89l11 89t23
+80*27 Item{30+9} 28|87m10
+83U17 Release 83>26 28|48s17 94b17 98l11 98t18
+83*26 Item{30+9} 28|94b26 97r34
+86U17 Set_Size 86>27 28|57s17 75s19 103b17 124l11 124t19
+86i27 Capacity{natural} 28|103b27 106r13 109r49 112r85 114r19 117r35 117r63
+89V16 Get_Available{natural} 28|66s30 129b16 132l11 132t24
+92i7 Available{natural} 28|85r57 87r28 88m10 88r23 96m10 96r23 97r20 131r17
+93p7 Elements{71P9} 28|87r18 97r10 107m19 107r19 108r16 109m13 114r30 115r35
+. 115r53 115r68 117r48 120m22 120r22 121m16
+97w7 List{76W19} 28|31r15 34r18 48r12 57r12 66r25 75r14
+X 28 util-concurrent-pools.adb
+85*27 Item{27|30+9}
+104U20 Free[10|20] 107s13 120s16
+112p16 New_Array{27|71P9} 115r19 117r19 121r28
+

@@ -1,0 +1,183 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.strings.builders.transforms%b  util-strings-builders-transforms.ads  1f0e7629 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z interfaces%s		interfac.ads		interfac.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W util%s		util.ads		util.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+W util.strings.builders%s  util-strings-builders.ads  util-strings-builders.ali
+W util.texts%s		util-texts.ads		util-texts.ali
+W util.texts.transforms%s  util-texts-transforms.adb  util-texts-transforms.ali
+
+U util.strings.builders.transforms%s  util-strings-builders-transforms.ads  56ba4e7e EB NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util%s		util.ads		util.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+W util.strings.builders%s  util-strings-builders.ads  util-strings-builders.ali
+W util.texts%s		util-texts.ads		util-texts.ali
+W util.texts.transforms%s  util-texts-transforms.adb  util-texts-transforms.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chahan.ads		19700101000001 278246c0 ada.characters.handling%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
+D util-strings-builders-transforms.ads  20231110223241 1f0e7629 util.strings.builders.transforms%s
+D util-strings-builders-transforms.ads  20231110223241 1f0e7629 util.strings.builders.transforms%b
+D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
+D util-texts-transforms.ads  20231110223241 53ebc629 util.texts.transforms%s
+D util-texts-transforms.adb  20231110223241 dd2938bc util.texts.transforms%b
+G a e
+G c s s s [s util__strings__builders__transforms 23 1 none]
+G c Z s s [capitalize util__strings__builders__transforms 30 14 23_1]
+G c Z s s [capitalize util__strings__builders__transforms 34 13 23_1]
+G c Z s s [to_upper_case util__strings__builders__transforms 37 14 23_1]
+G c Z s s [to_upper_case util__strings__builders__transforms 41 13 23_1]
+G c Z s s [to_lower_case util__strings__builders__transforms 44 14 23_1]
+G c Z s s [to_lower_case util__strings__builders__transforms 46 13 23_1]
+G c Z s s [to_hex util__strings__builders__transforms 49 14 23_1]
+G c Z s s [escape_java_script util__strings__builders__transforms 55 14 23_1]
+G c Z s s [escape_java util__strings__builders__transforms 60 14 23_1]
+G c Z s s [escape_xml util__strings__builders__transforms 70 14 23_1]
+G c Z s s [translate_xml_entity util__strings__builders__transforms 75 14 23_1]
+G c Z s s [unescape_xml util__strings__builders__transforms 84 14 23_1]
+G c Z s s [put util__strings__builders__transforms 91 14 23_1]
+G c Z s s [escape_java util__strings__builders__transforms 94 14 23_1]
+G c Z s s [put_dec util__strings__builders__transforms 25 14 23_1]
+G c Z s s [to_hex util__strings__builders__transforms 28 14 23_1]
+G r i none [s util__strings__builders__transforms 23 1 none] [transforms util__texts 25 20 none]
+G r c none [capitalize util__strings__builders__transforms 30 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [to_upper_case util__strings__builders__transforms 37 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [to_lower_case util__strings__builders__transforms 44 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [to_hex util__strings__builders__transforms 49 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [escape_java_script util__strings__builders__transforms 55 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [escape_java util__strings__builders__transforms 60 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [escape_xml util__strings__builders__transforms 70 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [translate_xml_entity util__strings__builders__transforms 75 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [unescape_xml util__strings__builders__transforms 84 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [put util__strings__builders__transforms 91 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [escape_java util__strings__builders__transforms 94 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [put_dec util__strings__builders__transforms 25 14 23_1] [append util__strings__builders 83 14 22_1]
+G r c none [to_hex util__strings__builders__transforms 28 14 23_1] [append util__strings__builders 83 14 22_1]
+X 1 ada.ads
+16K9*Ada 20e8 46|18r6 28r42 29r42
+X 2 a-charac.ads
+16K13*Characters 18e19 46|18r10 28r46 29r46
+X 3 a-chahan.ads
+43K24*Handling 455e28 46|18w21 28r57 29r57
+210V13*To_Lower{character} 46|29r66
+225V13*To_Upper{character} 46|28r66
+X 9 a-conhel.ads
+84R12 Reference_Control_Type<11|43R9>
+X 12 a-iteint.ads
+24h9 Forward_Iterator
+X 40 util.ads
+18K9*Util 28e9 46|19r6 23r9 24r7
+X 43 util-strings.ads
+24K14*Strings 40|18k9 43|147e17 46|23r14
+X 44 util-strings-builders.ads
+22K22*Builders[48|59] 43|24k14 46|23r22
+X 46 util-strings-builders-transforms.ads
+23K31*Transforms[49|25] 44|22k22
+X 47 util-texts.ads
+19K14*Texts 46|19r11 24r12 47|23e15
+X 48 util-texts-builders.ads
+63R9*Builder<11|50R9> 46|24r40[44|22]
+83U14*Append 46|27r40[44|22]
+X 49 util-texts-transforms.ads
+19+9 Stream 46|24r30
+20E9 Char 46|25r30
+21A9 Input(20E9)<integer> 46|26r30
+22U19 Put 46|27r30
+23V18 To_Upper{20E9} 46|28r30
+24V18 To_Lower{20E9} 46|29r30
+25k20*Transforms 46|19w17 24r18 49|97e26
+

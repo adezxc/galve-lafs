@@ -1,0 +1,183 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_DISPATCH
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.streams.texts.wtr%b  util-streams-texts-wtr.ads  03d3efb2 NE OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.wide_wide_characters%s  a-zchara.ads	a-zchara.ali
+W ada.wide_wide_characters.handling%s  a-zchhan.adb  a-zchhan.ali
+Z interfaces%s		interfac.ads		interfac.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W util%s		util.ads		util.ali
+W util.streams.texts%s	util-streams-texts.adb	util-streams-texts.ali
+W util.texts%s		util-texts.ads		util-texts.ali
+W util.texts.transforms%s  util-texts-transforms.adb  util-texts-transforms.ali
+
+U util.streams.texts.wtr%s  util-streams-texts-wtr.ads  3387133e EB NE OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.wide_wide_characters%s  a-zchara.ads	a-zchara.ali
+W ada.wide_wide_characters.handling%s  a-zchhan.adb  a-zchhan.ali
+W util%s		util.ads		util.ali
+W util.streams.texts%s	util-streams-texts.adb	util-streams-texts.ali
+W util.texts%s		util-texts.ads		util-texts.ali
+W util.texts.transforms%s  util-texts-transforms.adb  util-texts-transforms.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-calfor.ads		19700101000001 0f4707d1 ada.calendar.formatting%s
+D a-catizo.ads		19700101000001 eaa56756 ada.calendar.time_zones%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-stzmap.ads		19700101000001 f60a1f4d ada.strings.wide_wide_maps%s
+D a-stzunb.ads		19700101000001 404b19b5 ada.strings.wide_wide_unbounded%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-zchara.ads		19700101000001 21c8f2b2 ada.wide_wide_characters%s
+D a-zchhan.ads		19700101000001 82361843 ada.wide_wide_characters.handling%s
+D gnat.ads		19700101000001 b5988c27 gnat%s
+D g-calend.ads		19700101000001 cad86fa7 gnat.calendar%s
+D g-catiio.ads		19700101000001 6f0f657f gnat.calendar.time_io%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-streams.ads	20231110223241 e241dcc4 util.streams%s
+D util-streams-buffered.ads  20231110223241 a2e3ffd8 util.streams.buffered%s
+D util-streams-texts.ads  20231110223241 e18922e6 util.streams.texts%s
+D util-streams-texts-wtr.ads  20231110223241 03d3efb2 util.streams.texts.wtr%s
+D util-streams-texts-wtr.ads  20231110223241 03d3efb2 util.streams.texts.wtr%b
+D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util-texts-transforms.ads  20231110223241 53ebc629 util.texts.transforms%s
+D util-texts-transforms.adb  20231110223241 dd2938bc util.texts.transforms%b
+G a e
+G c s s s [s util__streams__texts__wtr 20 1 none]
+G c Z s s [capitalize util__streams__texts__wtr 30 14 20_1]
+G c Z s s [capitalize util__streams__texts__wtr 34 13 20_1]
+G c Z s s [to_upper_case util__streams__texts__wtr 37 14 20_1]
+G c Z s s [to_upper_case util__streams__texts__wtr 41 13 20_1]
+G c Z s s [to_lower_case util__streams__texts__wtr 44 14 20_1]
+G c Z s s [to_lower_case util__streams__texts__wtr 46 13 20_1]
+G c Z s s [to_hex util__streams__texts__wtr 49 14 20_1]
+G c Z s s [escape_java_script util__streams__texts__wtr 55 14 20_1]
+G c Z s s [escape_java util__streams__texts__wtr 60 14 20_1]
+G c Z s s [escape_xml util__streams__texts__wtr 70 14 20_1]
+G c Z s s [translate_xml_entity util__streams__texts__wtr 75 14 20_1]
+G c Z s s [unescape_xml util__streams__texts__wtr 84 14 20_1]
+G c Z s s [put util__streams__texts__wtr 91 14 20_1]
+G c Z s s [escape_java util__streams__texts__wtr 94 14 20_1]
+G c Z s s [put_dec util__streams__texts__wtr 25 14 20_1]
+G c Z s s [to_hex util__streams__texts__wtr 28 14 20_1]
+G r i none [s util__streams__texts__wtr 20 1 none] [transforms util__texts 25 20 none]
+G r c none [capitalize util__streams__texts__wtr 30 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [to_upper_case util__streams__texts__wtr 37 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [to_lower_case util__streams__texts__wtr 44 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [to_hex util__streams__texts__wtr 49 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [escape_java_script util__streams__texts__wtr 55 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [escape_java util__streams__texts__wtr 60 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [escape_xml util__streams__texts__wtr 70 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [translate_xml_entity util__streams__texts__wtr 75 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [unescape_xml util__streams__texts__wtr 84 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [put util__streams__texts__wtr 91 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [escape_java util__streams__texts__wtr 94 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [put_dec util__streams__texts__wtr 25 14 20_1] [write_char util__streams__texts 70 14 none]
+G r c none [to_hex util__streams__texts__wtr 28 14 20_1] [write_char util__streams__texts 70 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 50|19r6 25r42 26r42
+X 19 a-zchara.ads
+16K13*Wide_Wide_Characters 18e29 50|19r10 25r46 26r46
+X 20 a-zchhan.ads
+16K34*Handling 159e38 50|19w31 25r67 26r67
+120V13*To_Lower{wide_wide_character} 50|26r76
+133V13*To_Upper{wide_wide_character} 50|25r76
+X 45 util.ads
+18K9*Util 28e9 50|18r6 20r9 21r7
+X 46 util-streams.ads
+48K14*Streams 45|18k9 46|120e17 50|20r14
+57h9*Output_Stream
+75h9*Input_Stream
+X 48 util-streams-texts.ads
+31K22*Texts 46|48k14 48|101e23 50|20r22
+38R9*Print_Stream<47|105R9> 97e75 50|21r40
+70U14*Write_Char 50|24r40
+X 50 util-streams-texts-wtr.ads
+20K28*WTR[52|25] 48|31k22
+X 51 util-texts.ads
+19K14*Texts 50|18r11 21r12 51|23e15
+X 52 util-texts-transforms.ads
+19+9 Stream 50|21r30
+20E9 Char 50|22r30
+21A9 Input(20E9)<integer> 50|23r30
+22U19 Put 50|24r30
+23V18 To_Upper{20E9} 50|25r30
+24V18 To_Lower{20E9} 50|26r30
+25k20*Transforms 50|18w17 21r18 52|97e26
+

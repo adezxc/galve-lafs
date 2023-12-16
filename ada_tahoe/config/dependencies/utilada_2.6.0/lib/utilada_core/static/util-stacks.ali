@@ -1,0 +1,138 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_ALLOCATORS
+RV NO_FINALIZATION
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.stacks%b		util-stacks.adb		2d11e7a1 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+W util%s		util.ads		util.ali
+
+U util.stacks%s		util-stacks.ads		52a42ab6 BN NE OO PR PK GE
+W ada%s			ada.ads			ada.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util%s		util.ads		util.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-stacks.ads	20231110223241 dbdbbea4 util.stacks%s
+D util-stacks.adb	20231110223241 3562f560 util.stacks%b
+G a e
+G c Z s b [stacks util 22 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 26|18r6 56r22 27|18r6 23r10
+X 3 a-finali.ads
+40K13*Finalization 68e21 26|18w10 56r26
+50H9*Limited_Controlled<14|40R9> 66e55 26|56r39
+X 10 a-uncdea.ads
+20u15*Unchecked_Deallocation 27|18w10 23r14
+X 25 util.ads
+18K9*Util 28e9 26|22r9 66r5 27|20r14 122r5
+X 26 util-stacks.ads
+20+9 Element_Type 21r43 47r67
+21P9 Element_Type_Access(20+9) 29r51 45r50 57r17 27|29r51 94r50
+22k14*Stacks 25|18k9 26|20z9 21z9 54E9 66l10 66e16 27|20b19 122l10 122t16
+26R9*Stack<3|50R9> 29r37 32r39 35r38 38r40 41r42 44r33 49r35 56c9 60e14 64r37
+. 27|29r37 37r39 61r38 74r40 85r42 93r33 103r35 117r37
+29V13*Current{21P9} 29>22 27|29b13 32l8 32t15
+29r22 Container{26R9} 27|29b22 31r14
+32U14*Push 32=20 27|37b14 56l8 56t12
+32r20 Container{26R9} 27|37b20 39r10 40m10 41m10 41r27 42r13 42r29 44r48
+. 46m13 47m13 47r13 51r10 51r27 52m10 52r10 52r27 52r49 52r66 54m7 54r24
+. 55m7 55r28 55r45
+35U14*Pop 35=19 27|61b14 69l8 69t11
+35r19 Container{26R9} 27|61b19 63r10 63r26 64m10 64r27 65m10 65r33 65r50
+. 67m10
+38U14*Clear 38=21 27|74b14 80l8 80t13
+38r21 Container{26R9} 27|74b21 76r10 77m10 77r27 79m7
+41V13*Is_Empty{boolean} 41=23 27|85b13 88l8 88t16
+41r23 Container{26R9} 27|85b23 87r14 87r45 87r61
+44V13*Get{21P9} 44>18 45>18 27|93b13 101l8 101t11
+44r18 Container{26R9} 27|93b18 96r10 96r41 99r17
+45i18 Position{positive} 27|94b18 96r57 99r34
+47A9*Element_Type_Array(20+9)<integer> 51r53 54r49 27|23r38 40r33 46r36 105r53
+49U14*Read 49>20 50^20 27|103b14 111l8 111t12
+49r20 Container{26R9} 27|103b20 106r53 109r45
+50p20 Process 27|104b20 109r10
+51a40 Content{47A9}
+54P9 Element_Type_Array_Access(47A9) 58r17 27|24r38 44r19 106r24
+57*7 Current{21P9} 27|31r24 55m17 65m20 67m20 79m17
+58p7 Stack{54P9} 27|39r20 40m20 41r37 42r39 44r58 46m23 47r23 51r37 52r20
+. 52r59 55r38 63r36 65r43 76r20 77r37 87r24 87r71 96r20 99r27 106r63 119m17
+59i7 Pos{natural} 27|41m20 42r23 51r20 52r37 52r76 54m17 54r34 55r55 63r20
+. 64m20 64r37 65r60 77m20 87r55 96r51 109r55
+64U14 Finalize<3|54p14> 64=24 27|117b14 120l8 120t16
+64r24 Obj{26R9} 27|117b24 119m13 119r13
+X 27 util-stacks.adb
+22U14 Free[10|20] 48s13 119s7
+44p13 Old{26|54P9} 46r61 47r35 47r48 47r58 48m19 48r19
+105a40 Content{26|47A9}
+106p7 Stack{26|54P9} 108r10 109r19 109r26
+

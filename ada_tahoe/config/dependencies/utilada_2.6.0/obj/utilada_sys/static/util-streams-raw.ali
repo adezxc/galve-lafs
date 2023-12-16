@@ -1,0 +1,222 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U util.streams.raw%b	util-streams-raw.adb	93c5b121 OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+Z system%s		system.ads		system.ali
+W util.streams%s	util-streams.adb	util-streams.ali
+
+U util.streams.raw%s	util-streams-raw.ads	b1cfaab4 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W util%s		util.ads		util.ali
+W util.streams%s	util-streams.adb	util-streams.ali
+W util.systems%s	util-systems.ads	util-systems.ali
+W util.systems.os%s	util-systems-os.ads	util-systems-os.ali
+W util.systems.types%s	util-systems-types.ads	util-systems-types.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-ioexce.ads		19700101000001 40018c65 ada.io_exceptions%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D i-cstrin.ads		19700101000001 f40c8db4 interfaces.c.strings%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-memory.ads		19700101000001 5b8432d0 system.memory%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stalib.adb		19700101000001 eb464a47 system.standard_library%b
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-streams.ads	20231110223241 e241dcc4 util.streams%s
+D util-streams-raw.ads	20231110223241 58f841ec util.streams.raw%s
+D util-streams-raw.adb	20231110223241 d76610bf util.streams.raw%b
+D util-systems.ads	20231110223241 be223f03 util.systems%s
+D util-systems-constants.ads  20231110223241 28c2a3fe util.systems.constants%s
+D util-systems-os.ads	20231110223241 5ac3f8b3 util.systems.os%s
+D util-systems-types.ads  20231110223241 eefa4f44 util.systems.types%s
+G a e
+G c Z s b [initialize util__streams__raw 38 14 none]
+G c Z s b [get_file util__streams__raw 42 13 none]
+G c Z s b [set_file util__streams__raw 45 14 none]
+G c Z s b [close util__streams__raw 50 14 none]
+G c Z s b [write util__streams__raw 54 14 none]
+G c Z s b [read util__streams__raw 60 14 none]
+G c Z s b [seek util__streams__raw 65 14 none]
+G c Z s b [finalize util__streams__raw 75 14 none]
+G c Z s s [raw_streamDF util__streams__raw 77 9 none]
+G c Z s s [raw_streamIP util__streams__raw 77 9 none]
+G r c none [close util__streams__raw 50 14 none] [close util__systems__os 75 13 none]
+G r c none [write util__streams__raw 54 14 none] [write util__systems__os 83 13 none]
+G r c none [read util__streams__raw 60 14 none] [read util__systems__os 78 13 none]
+G r c none [seek util__streams__raw 65 14 none] [sys_lseek util__systems__os 162 13 none]
+G r c none [finalize util__streams__raw 75 14 none] [close util__systems__os 75 13 none]
+G r c none [raw_streamDF util__streams__raw 77 9 none] [close util__systems__os 75 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 34|18r6 33r27 55r33 61r33 62r33 71r8 77r27 35|19r6 39r16 69r19
+. 80r33 83r16 93r33 94r33 99r16 101r28 116r16
+X 3 a-finali.ads
+40K13*Finalization 68e21 34|18w10 33r31 77r31
+50H9*Limited_Controlled<17|40R9> 66e55 34|33r44 77r44
+53U14*Initialize<17|44p14>
+X 4 a-ioexce.ads
+16K13*IO_Exceptions 28e22 35|19w10 39r20 69r23 83r20 99r20 116r20
+19X4*Status_Error 35|39r34
+23X4*Device_Error 35|69r37 83r34 99r34 116r34
+X 5 a-stream.ads
+36K13*Streams 87e16 34|55r37 61r37 62r37 71r12 35|80r37 93r37 94r37 101r32
+42M9*Stream_Element
+44I9*Stream_Element_Offset<long_long_integer> 34|62r45 35|94r45 101r40
+54A9*Stream_Element_Array(42M9)<44I9> 34|55r45 61r45 35|80r45 93r45
+X 11 interfac.ads
+38K9*Interfaces 232e15 35|20r6 29r13
+X 12 i-c.ads
+29K20*C 597e17 35|20w17 29r24
+57I9*int<integer> 35|29r26
+X 14 system.ads
+67M9*Address
+X 17 s-finroo.ads
+42U14*Adjust
+X 18 s-memory.ads
+51V13*Alloc{14|67M9} 101i<c,__gnat_malloc>22
+66U14*Free 102i<c,__gnat_free>22
+74V13*Realloc{14|67M9} 103i<c,__gnat_realloc>22
+X 26 s-stalib.adb
+87U14 Break_Start 88i<c,__gnat_break_start>22
+X 32 util.ads
+18K9*Util 28e9 34|20r6 21r6 26r9 39r39 42r54 46r36 66r32 67r32 79r14 79r43
+. 82r5 35|21r14 23r8 24r13 47r54 56r36 108r32 109r32 112r13 129r5
+X 33 util-streams.ads
+48K14*Streams 32|18k9 33|120e17 34|26r14 82r10 35|21r19 129r10
+57h9*Output_Stream 34|33r67 78r10
+75h9*Input_Stream 34|34r10 78r28
+X 34 util-streams-raw.ads
+26K22*Raw 33|48k14 34|75E14 82l18 82e21 35|21b27 129l18 129t21
+33R9*Raw_Stream<3|50R9><33|57R9><33|75R9> 3|53P14 17|42p14 34|35r41 38p14
+. 38r43 42p13 42r35 45p14 45r40 50P14 50r37 54P14 54r37 60P14 60r36 65p14
+. 65r36 75P14 75r40 77c9 80e14 35|35r43 47r35 55r40 65r37 79r37 92r36 107r36
+. 124r40
+35P9*Raw_Stream_Access(33R9)
+38U14*Initialize 38=26 39>26 35|35b14 42l8 42t18
+38r26 Stream{33R9} 35|35b26 38r10 41m7
+39i26 File{38|46I12} 35|36b26 41r22
+42V13*Get_File{38|46I12} 42>23 35|47b13 50l8 50t16
+42r23 Stream{33R9} 35|47b23 49r14
+45U14*Set_File 45=24 46>24 35|55b14 59l8 59t16
+45r24 Stream{33R9} 35|55b24 58m7
+46i24 File{38|46I12} 35|56b24 58r22
+50U14*Close<33|68p14> 50=21 35|65b14 73l8 73t13 126s7
+50r21 Stream{33R9} 35|65b21 67r10 68r20 71m10
+54U14*Write<33|61p14> 54=21 55>21 35|79b14 85l8 85t13
+54r21 Stream{33R9} 35|79b21 82r17
+55a21 Buffer{5|54A9} 35|80b21 82r30 82r46
+60U14*Read<33|80p14> 60=20 61<20 62<20 35|92b14 102l8 102t12
+60r20 Stream{33R9} 35|92b20 97r20
+61a20 Into{5|54A9} 35|93b20 97m33 97r33 97r47 101r15
+62i20 Last{5|44I9} 35|94b20 101m7
+65U14*Seek 65=20 66>20 67>20 35|107b14 118l8 118t12
+65r20 Stream{33R9} 35|107b20 114r25
+66i20 Pos{39|7I12} 35|108b20 114r38
+67e20 Mode{39|38E9} 35|109b20 114r43
+75U14 Finalize<3|54p14> 75=24 35|124b14 127l8 127t16
+75r24 Object{33R9} 35|124b24 126m14
+79i7 File{38|46I12} 35|38r17 41m14 49r21 58m14 67r17 68r27 71m17 82r24 97r27
+. 114r32
+X 35 util-streams-raw.adb
+95i7 Res{38|72I9} 97m7 98r10 101r63
+112i7 Res{39|7I12} 114m7 115r10
+X 36 util-systems.ads
+19K14*Systems 34|20r11 21r11 39r44 42r59 46r41 66r37 67r37 79r19 79r48 35|23r13
+. 24r18 47r59 56r41 108r37 109r37 112r18 36|23e17
+X 38 util-systems-os.ads
+27K22*Os 34|20w19 39r52 42r67 46r49 79r27 79r56 35|23r21 47r67 56r49 38|227e20
+46I12*File_Type{39|29I9} 34|39r55 42r70 46r52 79r30 35|36r39 47r70 56r52
+55i4*NO_FILE{46I12} 34|79r59 35|38r25 67r25 71r25
+72I9*Ssize_T<long_integer> 35|95r13
+75V13*Close{integer} 35|68s13
+78V13*Read{72I9} 35|97s14
+83V13*Write{72I9} 35|82s10
+162V13*Sys_Lseek{39|7I12} 35|114s14
+X 39 util-systems-types.ads
+3K22*Types 34|21w19 66r45 67r45 35|24r26 108r45 109r45 112r26 39|65e23
+7I12*off_t{long_long_integer} 34|66r51 35|108r51 112r32
+29I9*File_Type<12|57I9> 35|24r32
+38E9*Seek_Mode 34|67r51 35|109r51 39|38e52
+

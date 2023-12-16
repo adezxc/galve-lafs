@@ -1,0 +1,521 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_LOCAL_PROTECTED_OBJECTS
+RV NO_NESTED_FINALIZATION
+RV NO_PROTECTED_TYPE_ALLOCATORS
+RV NO_PROTECTED_TYPES
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV MAX_ENTRY_QUEUE_LENGTH=1+
+
+U util.log.appenders.rolling_files%b  util-log-appenders-rolling_files.adb  e168f5b6 OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+Z system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
+Z system.val_lli%s	s-vallli.ads		s-vallli.ali
+W util%s		util.ads		util.ali
+W util.log%s		util-log.adb		util-log.ali
+W util.log.appenders%s	util-log-appenders.adb	util-log-appenders.ali
+W util.log.appenders.formatter%s  util-log-appenders-formatter.adb  util-log-appenders-formatter.ali
+W util.properties%s	util-properties.adb	util-properties.ali
+W util.properties.basic%s  util-properties-basic.adb  util-properties-basic.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+Z util.strings.builders%s  util-strings-builders.ads  util-strings-builders.ali
+
+U util.log.appenders.rolling_files%s  util-log-appenders-rolling_files.ads  417eb716 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.streams%s		a-stream.adb		a-stream.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.return_stack%s	s-retsta.ads		s-retsta.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
+W util%s		util.ads		util.ali
+W util.files%s		util-files.adb		util-files.ali
+W util.files.rolling%s	util-files-rolling.adb	util-files-rolling.ali
+W util.log.appenders%s	util-log-appenders.adb	util-log-appenders.ali
+W util.properties%s	util-properties.adb	util-properties.ali
+W util.refs%s		util-refs.adb		util-refs.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-cihama.ads		19700101000001 42861819 ada.containers.indefinite_hashed_maps%s
+D a-coinve.ads		19700101000001 728ad523 ada.containers.indefinite_vectors%s
+D a-direct.ads		19700101000001 467e87a1 ada.directories%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-ioexce.ads		19700101000001 40018c65 ada.io_exceptions%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strhas.ads		19700101000001 e06866e7 ada.strings.hash%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-stzmap.ads		19700101000001 f60a1f4d ada.strings.wide_wide_maps%s
+D a-stzunb.ads		19700101000001 404b19b5 ada.strings.wide_wide_unbounded%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-textio.ads		19700101000001 5c2c6153 ada.text_io%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D i-cstrea.ads		19700101000001 e53d8b8e interfaces.c_streams%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atacco.ads		19700101000001 903317eb system.address_to_access_conversions%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-casuti.ads		19700101000001 cf13d755 system.case_util%s
+D s-crtl.ads		19700101000001 8a0692f8 system.crtl%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-ficobl.ads		19700101000001 dc5161d4 system.file_control_block%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-linux.ads		19700101000001 34850a8c system.linux%s
+D s-memory.ads		19700101000001 5b8432d0 system.memory%s
+D s-multip.ads		19700101000001 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		19700101000001 e8e910bf system.os_constants%s
+D s-osinte.ads		19700101000001 e4f53740 system.os_interface%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stausa.ads		19700101000001 5be75682 system.stack_usage%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stalib.adb		19700101000001 eb464a47 system.standard_library%b
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		19700101000001 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-tasinf.ads		19700101000001 528dde74 system.task_info%s
+D s-taspri.ads		19700101000001 4ec891e7 system.task_primitives%s
+D s-taskin.ads		19700101000001 0ec7ab0b system.tasking%s
+D s-taprob.ads		19700101000001 acd6094d system.tasking.protected_objects%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D s-vallli.ads		19700101000001 b4c16804 system.val_lli%s
+D s-valllu.ads		19700101000001 ca6e26ce system.val_llu%s
+D s-valuti.ads		19700101000001 fcd603d8 system.val_util%s
+D s-valuei.ads		19700101000001 11081e09 system.value_i%s
+D s-vaispe.ads		19700101000001 44130d39 system.value_i_spec%s
+D s-valueu.ads		19700101000001 18770347 system.value_u%s
+D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
+D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
+D util.ads		20231110223241 36301479 util%s
+D util-beans.ads	20231110223241 362abe70 util.beans%s
+D util-beans-basic.ads	20231110223241 95c2d591 util.beans.basic%s
+D util-beans-objects.ads  20231110223241 8deb9c60 util.beans.objects%s
+D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-concurrent-counters.adb  20231110223241 8cd422ae util.concurrent.counters%b
+D util-files.ads	20231110223241 f1049828 util.files%s
+D util-files-rolling.ads  20231110223241 75952dbb util.files.rolling%s
+D util-log.ads		20231110223241 0fb1ac89 util.log%s
+D util-log-appenders.ads  20231110223241 a19555cf util.log.appenders%s
+D util-log-appenders-formatter.ads  20231110223241 29144592 util.log.appenders.formatter%s
+D util-log-appenders-formatter.adb  20231110223241 b8e3358d util.log.appenders.formatter%b
+D util-log-appenders-rolling_files.ads  20231110223241 e748e9f7 util.log.appenders.rolling_files%s
+D util-log-appenders-rolling_files.adb  20231110223241 46f7239a util.log.appenders.rolling_files%b
+D util-properties.ads	20231110223241 3ed4fee8 util.properties%s
+D util-properties-basic.ads  20231110223241 90f27d83 util.properties.basic%s
+D util-properties-discrete.ads  20231110223241 c6645ff2 util.properties.discrete%s
+D util-refs.ads		20231110223241 e592e98d util.refs%s
+D util-refs.adb		20231110223241 7db9902c util.refs%b
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
+D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
+D util-strings-maps.ads	20231110223241 a16bc59e util.strings.maps%s
+D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
+D util-texts-builders.adb  20231110223241 cba78850 util.texts.builders%b
+G a e
+G c s s s [s util__log__appenders__rolling_files 79 1 none]
+G c Z s b [append util__log__appenders__rolling_files 88 14 none]
+G c Z s b [flush util__log__appenders__rolling_files 96 14 none]
+G c Z s b [finalize util__log__appenders__rolling_files 100 14 none]
+G c Z s b [create util__log__appenders__rolling_files 103 13 none]
+G c Z s b [finalize util__log__appenders__rolling_files 117 14 none]
+G c Z s s [file_entityDF util__log__appenders__rolling_files 110 9 none]
+G c Z s s [file_entityIP util__log__appenders__rolling_files 110 9 none]
+G c Z s s [create util__log__appenders__rolling_files__file_refs__ir 70 16 125_7_119_4]
+G c Z s s [value util__log__appenders__rolling_files__file_refs__ir 72 16 125_7_119_4]
+G c Z s s [is_null util__log__appenders__rolling_files__file_refs__ir 75 16 125_7_119_4]
+G c Z s s [Oeq util__log__appenders__rolling_files__file_refs__ir 77 16 125_7_119_4]
+G c Z s s [finalize util__log__appenders__rolling_files__file_refs__ir 113 17 125_7_119_4]
+G c Z s s [adjust util__log__appenders__rolling_files__file_refs__ir 117 17 125_7_119_4]
+G c Z s s [element_accessorIP util__log__appenders__rolling_files__file_refs__ir 104 12 125_7_119_4]
+G c Z s s [refDA util__log__appenders__rolling_files__file_refs__ir 106 12 125_7_119_4]
+G c Z s s [refDF util__log__appenders__rolling_files__file_refs__ir 106 12 125_7_119_4]
+G c Z s s [refIP util__log__appenders__rolling_files__file_refs__ir 106 12 125_7_119_4]
+G c Z s s [free util__log__appenders__rolling_files__file_refs__ir 77 17 125_7_119_4]
+G c Z s s [create util__log__appenders__rolling_files__file_refs 131 16 119_4]
+G c Z s b [initialize util__log__appenders__rolling_files__rolling_file 123 17 none]
+G c Z s b [openlog util__log__appenders__rolling_files__rolling_file 127 17 none]
+G c Z s b [flush util__log__appenders__rolling_files__rolling_file 129 17 none]
+G c Z s b [closelog util__log__appenders__rolling_files__rolling_file 131 17 none]
+G c Z s b [rolling_file__initializeN util__log__appenders__rolling_files 123 7 none]
+G c Z s b [rolling_file__initializeP util__log__appenders__rolling_files 123 7 none]
+G c Z s b [rolling_file__openlogN util__log__appenders__rolling_files 127 7 none]
+G c Z s b [rolling_file__openlogP util__log__appenders__rolling_files 127 7 none]
+G c Z s b [rolling_file__flushN util__log__appenders__rolling_files 129 7 none]
+G c Z s b [rolling_file__flushP util__log__appenders__rolling_files 129 7 none]
+G c Z s b [rolling_file__closelogN util__log__appenders__rolling_files 131 7 none]
+G c Z s b [rolling_file__closelogP util__log__appenders__rolling_files 131 7 none]
+G c Z s s [rolling_fileVDI util__log__appenders__rolling_files 121 4 none]
+G c Z s s [rolling_fileVDF util__log__appenders__rolling_files 121 4 none]
+G c Z s s [rolling_fileVIP util__log__appenders__rolling_files 121 4 none]
+G c Z s s [file_appenderDF util__log__appenders__rolling_files 139 9 none]
+G c Z s s [file_appenderDI util__log__appenders__rolling_files 139 9 none]
+G c Z s s [file_appenderIP util__log__appenders__rolling_files 139 9 none]
+G r i none [s util__log__appenders__rolling_files 79 1 none] [references util__refs 124 12 none]
+G r i none [s util__log__appenders__rolling_files 79 1 none] [indefinite_references util__refs 62 12 none]
+G r i none [append util__log__appenders__rolling_files 88 14 none] [formatter util__log__appenders 23 30 none]
+G r c none [append util__log__appenders__rolling_files 88 14 none] [is_rollover_necessary util__files__rolling 116 13 none]
+G r c none [append util__log__appenders__rolling_files 88 14 none] [rollover util__files__rolling 119 14 none]
+G r s ref_entity [append util__log__appenders__rolling_files 88 14 none] [ref_entityIP util__refs 216 9 none]
+G r c none [append util__log__appenders__rolling_files 88 14 none] [increment util__concurrent__counters 52 14 none]
+G r c none [append util__log__appenders__rolling_files 88 14 none] [decrement util__concurrent__counters 65 14 none]
+G r c none [append util__log__appenders__rolling_files 88 14 none] [get_current_path util__files__rolling 113 13 none]
+G r i none [append util__log__appenders__rolling_files 88 14 none] [get util__strings__builders 137 14 22_1]
+G r c none [append util__log__appenders__rolling_files 88 14 none] [format util__log__appenders 79 13 none]
+G r c none [append util__log__appenders__rolling_files 88 14 none] [to_array util__strings__builders 114 13 22_1]
+G r s appender_internal [create util__log__appenders__rolling_files 103 13 none] [appender_internalIP util__log__appenders 165 9 none]
+G r s file_manager [create util__log__appenders__rolling_files 103 13 none] [file_managerIP util__files__rolling 143 9 none]
+G r l file_manager [create util__log__appenders__rolling_files 103 13 none] [file_managerDI util__files__rolling 143 9 none]
+G r c none [create util__log__appenders__rolling_files 103 13 none] [decrement util__concurrent__counters 65 14 none]
+G r k file_manager [create util__log__appenders__rolling_files 103 13 none] [file_managerDF util__files__rolling 143 9 none]
+G r c none [create util__log__appenders__rolling_files 103 13 none] [set_level util__log__appenders 63 14 none]
+G r c none [create util__log__appenders__rolling_files 103 13 none] [set_layout util__log__appenders 71 14 none]
+G r c none [create util__log__appenders__rolling_files 103 13 none] [get util__properties__basic__boolean_property 31 13 24_4]
+G r c none [create util__log__appenders__rolling_files 103 13 none] [get util__properties 158 13 none]
+G r c none [create util__log__appenders__rolling_files 103 13 none] [get util__properties__basic__integer_property 31 13 27_4]
+G r c none [create util__log__appenders__rolling_files 103 13 none] [initialize util__files__rolling 106 14 none]
+G r s ref_entity [file_entityIP util__log__appenders__rolling_files 110 9 none] [ref_entityIP util__refs 216 9 none]
+G r c none [create util__log__appenders__rolling_files__file_refs__ir 70 16 125_7_119_4] [increment util__concurrent__counters 52 14 none]
+G r c none [finalize util__log__appenders__rolling_files__file_refs__ir 113 17 125_7_119_4] [decrement util__concurrent__counters 65 14 none]
+G r c none [adjust util__log__appenders__rolling_files__file_refs__ir 117 17 125_7_119_4] [increment util__concurrent__counters 52 14 none]
+G r c none [refDA util__log__appenders__rolling_files__file_refs__ir 106 12 125_7_119_4] [increment util__concurrent__counters 52 14 none]
+G r c none [refDF util__log__appenders__rolling_files__file_refs__ir 106 12 125_7_119_4] [decrement util__concurrent__counters 65 14 none]
+G r s ref_entity [create util__log__appenders__rolling_files__file_refs 131 16 119_4] [ref_entityIP util__refs 216 9 none]
+G r c none [create util__log__appenders__rolling_files__file_refs 131 16 119_4] [increment util__concurrent__counters 52 14 none]
+G r c none [initialize util__log__appenders__rolling_files__rolling_file 123 17 none] [get util__properties 158 13 none]
+G r c none [initialize util__log__appenders__rolling_files__rolling_file 123 17 none] [get util__properties__basic__boolean_property 31 13 24_4]
+G r c none [initialize util__log__appenders__rolling_files__rolling_file 123 17 none] [get util__properties__basic__integer_property 31 13 27_4]
+G r c none [initialize util__log__appenders__rolling_files__rolling_file 123 17 none] [initialize util__files__rolling 106 14 none]
+G r c none [openlog util__log__appenders__rolling_files__rolling_file 127 17 none] [is_rollover_necessary util__files__rolling 116 13 none]
+G r c none [openlog util__log__appenders__rolling_files__rolling_file 127 17 none] [rollover util__files__rolling 119 14 none]
+G r s ref_entity [openlog util__log__appenders__rolling_files__rolling_file 127 17 none] [ref_entityIP util__refs 216 9 none]
+G r c none [openlog util__log__appenders__rolling_files__rolling_file 127 17 none] [increment util__concurrent__counters 52 14 none]
+G r c none [openlog util__log__appenders__rolling_files__rolling_file 127 17 none] [decrement util__concurrent__counters 65 14 none]
+G r c none [openlog util__log__appenders__rolling_files__rolling_file 127 17 none] [get_current_path util__files__rolling 113 13 none]
+G r c none [rolling_fileVDF util__log__appenders__rolling_files 121 4 none] [decrement util__concurrent__counters 65 14 none]
+G r k file_manager [rolling_fileVDF util__log__appenders__rolling_files 121 4 none] [file_managerDF util__files__rolling 143 9 none]
+G r s file_manager [rolling_fileVIP util__log__appenders__rolling_files 121 4 none] [file_managerIP util__files__rolling 143 9 none]
+G r l file_manager [rolling_fileVIP util__log__appenders__rolling_files 121 4 none] [file_managerDI util__files__rolling 143 9 none]
+G r c none [rolling_fileVIP util__log__appenders__rolling_files 121 4 none] [decrement util__concurrent__counters 65 14 none]
+G r k file_manager [rolling_fileVIP util__log__appenders__rolling_files 121 4 none] [file_managerDF util__files__rolling 143 9 none]
+G r c none [file_appenderDF util__log__appenders__rolling_files 139 9 none] [decrement util__concurrent__counters 65 14 none]
+G r k file_manager [file_appenderDF util__log__appenders__rolling_files 139 9 none] [file_managerDF util__files__rolling 143 9 none]
+G r s appender [file_appenderIP util__log__appenders__rolling_files 139 9 none] [appenderIP util__log__appenders 49 9 none]
+G r s file_manager [file_appenderIP util__log__appenders__rolling_files 139 9 none] [file_managerIP util__files__rolling 143 9 none]
+G r l file_manager [file_appenderIP util__log__appenders__rolling_files 139 9 none] [file_managerDI util__files__rolling 143 9 none]
+G r c none [file_appenderIP util__log__appenders__rolling_files 139 9 none] [decrement util__concurrent__counters 65 14 none]
+G r k file_manager [file_appenderIP util__log__appenders__rolling_files 139 9 none] [file_managerDF util__files__rolling 143 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 90|18r6 19r6 90r35 111r25 91|18r6 19r6 24r8 25r8 63r32 67r32
+. 120r39 122r20 123r16 126r20 158r35
+X 2 a-calend.ads
+36K13*Calendar 413e17 90|19w10 90r39 91|158r39
+42I9*Time<226I9> 90|90r48 91|158r48
+226I9 Time_Rep<long_long_integer>
+X 9 a-conhel.ads
+84R12 Reference_Control_Type<14|43R9>
+X 12 a-direct.ads
+76K13*Directories 524e20 91|19w10 63r36 67r36 120r43 122r24 123r20 126r24
+118U14*Create_Path 91|123s32
+251V13*Containing_Directory{string} 91|120s55
+307I9*File_Size<long_integer> 91|63r48 67r48
+310V13*Exists{boolean} 91|122s36 126s36
+X 14 a-finali.ads
+40K13*Finalization 68e21 91|18w10 25r12
+50H9*Limited_Controlled<41|40R9> 66e55 91|219r32
+53U14*Initialize<41|44p14>
+X 27 a-textio.ads
+58K13*Text_IO 787e16 90|18w10 111r29 91|36r7 127r16 130r16 132r54 133r44
+. 171r16 179r16 181r19 197r10
+66P9*File_Type 90|111r37
+68n32*Out_File{68E9} 91|133r52
+68n42*Append_File{68E9} 91|132r62
+98U14*Create 91|127s24
+99p7 File{66P9} 91|127r32
+101a7 Name{string} 91|128r32
+114U14*Open 91|130s24
+115p7 File{66P9} 91|130r30
+116e7 Mode{68E9} 91|132r30
+117a7 Name{string} 91|131r30
+130U14*Close 91|36s15
+130p22 File{66P9} 91|36r22
+211U14*Flush 91|181s27 197s18
+275U14*New_Line 91|179s24
+512U14*Put 91|171s24
+X 33 system.ads
+67M9*Address
+X 41 s-finroo.ads
+42U14*Adjust
+X 43 s-memory.ads
+51V13*Alloc{33|67M9} 101i<c,__gnat_malloc>22
+66U14*Free 102i<c,__gnat_free>22
+74V13*Realloc{33|67M9} 103i<c,__gnat_realloc>22
+X 54 s-stausa.ads
+207U14*Initialize 208i<c,__gnat_stack_usage_initialize>22
+272U14*Output_Results 276i<c,__gnat_stack_usage_output_results>22
+X 56 s-stalib.adb
+87U14 Break_Start 88i<c,__gnat_break_start>22
+X 76 util.ads
+18K9*Util 28e9 90|20r6 21r14 22r14 79r9 89r35 104r37 110r28 119r29 125r45
+. 134r20 144r5 91|20r6 21r6 22r14 27r30 28r29 43r45 44r37 45r39 50r37 56r32
+. 58r32 62r32 66r32 73r32 76r39 82r32 86r37 91r37 157r35 214r37 230r5
+X 78 util-beans-basic.ads
+42h9*Readonly_Bean
+54h9*Bean<42R9>
+X 79 util-beans-objects.ads
+150h9*Object_Type
+X 84 util-files.ads
+70K14*Files 182e15 90|22r19 134r25 91|44r42 45r44 50r42 56r37 58r37 62r37
+. 66r37 73r37 76r44 82r37 86r42 91r42
+X 85 util-files-rolling.ads
+65K20*Rolling 158e23 90|22w25 134r31 91|44r48 45r50 50r48 56r43 58r43 62r43
+. 66r43 73r43 76r50 82r43 86r48 91r48
+67n25*No_Policy{67E9} 91|56r51 73r51
+67n36*Size_Policy{67E9} 91|66r51
+67n49*Time_Policy{67E9} 91|58r51
+67n62*Size_Time_Policy{67E9} 91|62r51
+69R9*Policy_Type 79e14 91|44r56 50r56
+69e22*Kind{67E9} 91|56m24 58m24 62m24 66m24 73m24
+75i13*Size{12|307I9} 91|59m24 63m24 67m24
+76i13*Interval{natural} 91|60m24 64m24 68m24
+81n27*Ascending_Strategy{81E9} 91|91r56
+82n27*Descending_Strategy{81E9} 91|86r56
+83n27*Direct_Strategy{81E9} 91|82r51
+85R9*Strategy_Type 95e14 91|45r58 76r58
+85e24*Kind{81E9} 91|82m24 86m24 91m24
+88i13*Min_Index{natural} 91|87m24 92m24
+89i13*Max_Index{natural} 91|88m24 93m24
+92i13*Max_Files{natural} 91|83m24
+102R9*File_Manager 156e14 90|134r39
+106U14*Initialize 91|99s18
+107a26 Path{string} 91|99r30
+108a26 Pattern{string} 91|100r30
+109r26 Policy{69R9} 91|101r30
+110r26 Strategy{85R9} 91|102r30
+113V13*Get_Current_Path{string} 91|119s47
+116V13*Is_Rollover_Necessary{boolean} 91|108s28
+119U14*Rollover 91|114s21
+X 86 util-log.ads
+148K14*Log 76|18k9 86|174e13 90|79r14 144r10 91|21r11 22r19 230r10
+152I12*Level_Type{natural} 90|91r35 105r37 91|159r35 215r37
+X 87 util-log-appenders.ads
+25K18*Appenders 86|148k14 87|180e23 90|79r18 144r14 91|21r15 22r23 230r14
+45n10*FULL{29E9} 91|224r44
+49H9*Appender<14|50R9> 55e14 90|84r50 139r50
+52i7*Level{86|152I12} 91|163r15
+54a7*Name{string} 91|220m32
+57P9*Appender_Access(49R9) 90|106r13 91|216r27
+60V13*Get_Level{86|152I12}
+63U14*Set_Level 91|223R14
+67U14*Set_Level
+71U14*Set_Layout 91|224R14
+75U14*Set_Layout
+X 88 util-log-appenders-formatter.ads
+23u30*Formatter 87|25k18 91|21w25 174r36
+X 90 util-log-appenders-rolling_files.ads
+79K28*Rolling_Files 87|25k18 90|110E9 144l24 144e37 91|22b33 230l24 230t37
+84R9*File_Appender<87|49R9> 14|53P14 41|42p14 87|60p13 63p14 67p14 71p14
+. 75p14 90|84d24 85r44 88P14 88r39 96P14 96r37 100P14 100r38 139c9 142e14
+. 91|156r39 192r37 205r38 219r16
+84i24*Length{positive} 139r24 139r60 91|219m56
+85P9*File_Appender_Access(84R9) 91|218r26
+88U14*Append<87|87p14> 88=22 89>22 90>22 91>22 92>22 91|156b14 186l8 186t14
+88r22 Self{84R9} 91|156b22 163r10 176r13 178r23 180r19
+89r22 Message{103|63R9[99|22]} 91|157b22 178r29
+90i22 Date{2|42I9} 91|158b22 178r38
+91i22 Level{86|152I12} 91|159b22 163r24 178r44
+92a22 Logger{string} 91|160b22 178r51
+96U14*Flush<87|94p14> 96=21 91|192b14 199l8 199t13
+96r21 Self{84R9} 91|192b21 195r7
+100U14*Finalize<14|54p14> 100=24 91|205b14 208l8 208t16
+100r24 Self{84R9} 91|205b24 207r7
+103V13*Create{87|57P9} 103>21 104>21 105>21 91|213b13 228l8 228t14
+103a21 Name{string} 91|213b21 217r50 219r66 220r40 223r25 224r26 226r31
+104r21 Properties{92|113R9} 91|214b21 223r31 224r32 225r48 226r43
+105i21 Default{86|152I12} 91|215b21 223r43
+110R9 File_Entity<95|54R9> 112e14 113r35 117P14 117r40 119r51 91|34r40
+111p7*Output{27|66P9} 91|36m37 127m54 130m52 171r40 179r45 181r45 197r36
+113P9 File_Access(110R9) 119r64
+117U14 Finalize<95|57p14> 117=24 91|34b14 37l8 37t16
+117r24 Object{110R9} 91|34b24 36m30 36r30
+119K12 File_Refs[95|124] 127r37 129r35 135r20 91|105r37 117r21 139r35 147r18
+. 165r20 193r14
+121W19 Rolling_File 134E7 137l8 137e20 141r25 91|39b19 153l8 153t20
+123U17 Initialize 123>29 124>29 125>29 91|41b17 103l11 103t21 226s19
+123a29 Name{string} 91|41b29 47r73
+124a29 Base{string} 91|42b29 47r53 48r53 48r76 51r56 52r67 53r56 77r56 78r67
+. 79r67 98r47
+125r29 Properties{92|113R9} 91|43b29 47r37 48r37 51r40 52r55 53r40 77r40
+. 78r55 79r55 98r35
+127U17 Openlog 127<26 91|105b17 137l11 137t18 176s23
+127r26 File{95|127R15[119]} 91|105b26 109m16 135m13
+129U17 Flush 129<24 91|139b17 144l11 144t16 195s17
+129r24 File{95|127R15[119]} 91|139b24 142m13
+131U17 Closelog 91|113s13 146b17 151l11 151t19 207s17
+134r7 Manager{85|102R9} 91|99r10 108r20 114r13 119r39
+135r7 Current{95|127R15[119]} 91|107r17 109r24 117r10 127r40 130r38 135r21
+. 141r17 142r21 150r10
+136b7 Append{boolean} 91|98r10 132r42
+140b7 Immediate_Flush{boolean} 91|180r24 225m14
+141w7 File{121W19} 91|176r18 195r12 207r12 226r14
+X 91 util-log-appenders-rolling_files.adb
+27K12 Bool_Prop=27:52 98r20 225r33
+28K12 Int_Prop=28:51 52r41 78r41 79r41
+44V19 Get_Policy{85|69R9} 50b19 74l14 74t24 101s42
+45V19 Get_Strategy{85|85R9} 76b19 96l14 96t26 102s42
+47a10 File{string} 99r42
+48a10 Pat{string} 100r42
+51a13 Str{string} 55r16 57r19 61r19 61r45
+52i13 Inter{integer} 60r36 64r36
+53a13 Size{string} 63r65 67r65
+77a13 Str{string} 81r16 85r19
+78i13 Min{integer} 87r37 92r37
+79i13 Max{integer} 83r37 88r37 93r37
+119a13 Path{string} 120r77 126r44 128r40 131r38
+120a13 Dir{string} 122r44 123r45
+147r10 Empty{95|127R15[90|119]} 150r21
+165r13 File{95|127R15[90|119]} 171r29 176m32 177r20 179r34 181r34
+167U23 Write_File 167>35 169b23 172l17 172t27 174r47
+167a35 Data{string} 169b35 171r48
+174U23 Write[88|23] 89|19b30 91|178s16
+193r7 File{95|127R15[90|119]} 195m24 196r14 197r25
+217a7 Base=217:48{string} 225r60 226r37
+218p7 Result{90|85P9} 223r7 224r7 225r7 226r7 227r14
+X 92 util-properties.ads
+96K14*Properties 90|20w11 104r42 125r50 91|20r11 27r35 28r34 43r50 214r42
+. 92|343e20
+113R9*Manager<14|43R9><78|54R9> 90|104r53 125r61 91|43r61 214r53 92|335e14
+158V13*Get{string} 91|47s48 48s48 51s51 53s51 77s51
+256h12*Manager<78|54R9>
+279h12*Shared_Manager<256R12>
+301R15 Manager_Type<256R12>
+X 93 util-properties-basic.ads
+19K25*Basic 91|20w22 27r46 28r45 93|29e26
+24K12*Boolean_Property[94|23] 91|27r52
+27K12*Integer_Property[94|23] 91|28r51
+X 94 util-properties-discrete.ads
+31V13*Get{integer} 91|52s50[93|27] 78s50[93|27] 79s50[93|27] 98s30[93|24]
+. 225s43[93|24]
+X 95 util-refs.ads
+49K14*Refs 90|21w19 110r33 119r34 95|220e14
+54H9*Ref_Entity 90|110r38 95|218e14
+64R12*Element_Accessor
+67R12*Ref<14|43R9>
+72V16*Value{64R12[125[90|119]]} 91|127s48[95|125[90|119]] 130s46[95|125[90|119]]
+. 171s34[95|125[90|119]] 179s39[95|125[90|119]] 181s39[95|125[90|119]] 197s30[95|125[90|119]]
+75V16*Is_Null{boolean} 91|107s25[95|125[90|119]] 141s25[95|125[90|119]] 177s25[95|125[90|119]]
+. 196s19[95|125[90|119]]
+124k12*References 90|119r39 95|144e18
+127R15*Ref{67R12[125[90|119]]} 90|127r47[119] 129r45[119] 135r30[119] 91|105r47[90|119]
+. 139r45[90|119] 147r28[90|119] 165r30[90|119] 193r24[90|119]
+131V16*Create{127R15[90|119]} 91|117s31[90|119]
+X 97 util-strings.ads
+24K14*Strings 90|89r40 91|157r40 97|147e17
+X 99 util-strings-builders.ads
+22K22*Builders[103|59] 90|89r48 91|157r48
+X 103 util-texts-builders.ads
+63R9*Builder<14|50R9> 90|89r57[99|22] 91|157r57[99|22]
+

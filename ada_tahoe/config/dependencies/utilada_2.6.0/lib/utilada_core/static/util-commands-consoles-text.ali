@@ -1,0 +1,194 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.commands.consoles.text%b  util-commands-consoles-text.adb  bf7bb873 NE OO PK GE
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util.commands.consoles%s  util-commands-consoles.adb  util-commands-consoles.ali
+
+U util.commands.consoles.text%s  util-commands-consoles-text.ads  797dd978 BN EE NE OO PK GE
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util.commands%s	util-commands.adb	util-commands.ali
+W util.commands.consoles%s  util-commands-consoles.adb  util-commands-consoles.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-coinve.ads		19700101000001 728ad523 ada.containers.indefinite_vectors%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-string.ads		19700101000001 582aac7d system.strings%s
+D s-ststop.ads		19700101000001 c569db7c system.strings.stream_ops%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-commands.ads	20231110223241 6bbb2dbb util.commands%s
+D util-commands-consoles.ads  20231110223241 1a9b5e64 util.commands.consoles%s
+D util-commands-consoles-text.ads  20231110223241 63e6871c util.commands.consoles.text%s
+D util-commands-consoles-text.adb  20231110223241 dc9d3f6f util.commands.consoles.text%b
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+G a e
+G c Z s b [text util__commands__consoles 21 32 none]
+X 8 a-conhel.ads
+84R12 Reference_Control_Type<11|43R9>
+X 12 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[9|84]>
+X 43 util.ads
+18K9*Util 28e9 46|19r27 21r9 23r29 68r29 78r5 47|18r14 167r5
+X 44 util-commands.ads
+105K14*Commands 43|18k9 44|207e18 46|19r32 21r14 23r34 68r34 78r10 47|18r19
+. 167r10
+111h9*Argument_List
+177E12 Count_Type 47|143r23[46|19] 163r23[46|19]
+178U22 Put 47|29s16[46|19] 38s10[46|19]
+179U22 Put_Line 47|49s10[46|19] 62s10[46|19]
+180U22 New_Line 47|143s10[46|19] 163s10[46|19]
+181k12*IO 182e10 46|19r41
+X 45 util-commands-consoles.ads
+19E9 Field_Type 46|39r40 46r40 47|71r40 119r40
+20E9 Notice_Type 46|33r35 47|58r35
+21E9 Element_Type
+22A9 Input_Type(21E9)<integer> 46|20r40 28r34 34r35 40r40 47r40 76r32 47|36r32
+. 47r34 59r35 72r40 120r40
+24k23*Consoles 44|105k14 45|105e27 46|21r23 23r43 68r43 78r19 47|18r28 167r19
+26E9*Justify_Type 30e26 46|41r40 48r40 47|73r40 121r40
+26n26*J_LEFT{26E9} 46|41r56 48r56 47|73r56 81r15 121r56
+27n26*J_RIGHT{26E9} 47|86r15
+28n26*J_CENTER{26E9} 47|93r15
+29n26*J_RIGHT_NO_FILL{26E9} 47|100r15
+32H9*Console_Type 103e14 46|23r52 68r52
+69U14*Print_Title
+76U14*Set_Field_Length
+81U14*Print_Field
+87V13*Get_Field_Count{natural}
+90U14*Clear_Fields
+94A9 Field_Size_Array(natural)<19E9>
+99a7 Sizes{94A9} 47|75r43 133m15
+100a7 Cols{94A9} 47|74r44 134m15
+102i7 Field_Count{natural} 47|132m15
+X 46 util-commands-consoles-text.ads
+19K17 IO[44|181] 47|29r13 38r7 49r7 62r7 143r7 143r20 163r7 163r20
+20V18 To_String{string} 20>29 47|38s15 49s20 62s20
+20*29 Input{45|22A9}
+21k32 Text 45|24k23 46|19z17 20z18 68E9 78l28 78e32 47|18b37 167l28 167t32
+23R9*Console_Type<45|32R9> 45|69p14 76p14 81p14 87p13 90p14 46|27P14 27r38
+. 32P14 32r39 38P14 38r44 45P14 45r44 52P14 52r44 56P14 56r42 60P14 60r42
+. 64P14 64r40 68c9 70e14 72p14 72r40 75p14 75r36 47|20r40 35r36 46r38 57r39
+. 70r44 118r44 130r44 141r42 151r42 161r40
+27U14*Error<45|36p14> 27=21 28>21 47|46b14 51l8 51t13
+27r21 Console{23R9} 47|46b21 50m7
+28*21 Message{45|22A9} 47|47b21 49r31
+32U14*Notice<45|40p14> 32=22 33>22 34>22 47|57b14 64l8 64t14
+32r22 Console{23R9} 47|57b22 63m7
+33*22 Kind{45|20E9} 47|58b22 60r28
+34*22 Message{45|22A9} 47|59b22 62r31
+38U14*Print_Field<45|45p14> 38=27 39>27 40>27 41>27 47|70b14 112l8 112t19
+. 123s15
+38r27 Console{23R9} 47|70b27 74r36 75r35 107m10 107r10 109m10 109r10 111m7
+. 111r7
+39*27 Field{45|19E9} 47|71b27 74r50 75r50
+40*27 Value{45|22A9} 47|72b27 76r26 77r35 82r16 87r16 88r30 94r16 95r32 101r16
+. 111r20
+41e27 Justify{45|26E9} 47|73b27 80r12
+45U14*Print_Title<45|51p14> 45=27 46>27 47>27 48>27 47|118b14 124l8 124t19
+45r27 Console{23R9} 47|118b27 123m7 123r7
+46*27 Field{45|19E9} 47|119b27 123r28
+47*27 Title{45|22A9} 47|120b27 123r35
+48e27 Justify{45|26E9} 47|121b27 123r42
+52U14*Start_Title<45|57p14> 52=27 47|130b14 135l8 135t19
+52r27 Console{23R9} 47|130b27 132m7 133m7 134m7
+56U14*End_Title<45|60p14> 56=25 47|141b14 145l8 145t17
+56r25 Console{23R9} 47|141b25 144m7
+60U14*Start_Row<45|63p14> 60=25 47|151b14 155l8 155t17
+60r25 Console{23R9} 47|151b25 152r28
+64U14*End_Row<45|66p14> 64=23 47|161b14 165l8 165t15
+64r23 Console{23R9} 47|161b23 164m7
+69i7 Cur_Col{positive} 47|23r18 25r57 30m21 39m15 39r34 50m15 63m15 144m15
+. 164m15
+72U14 Set_Col 72=23 73>23 47|20b14 33l8 33t15 107s18 109s18
+72r23 Console{23R9} 47|20b23 23r10 25r49 30m13
+73i23 Col{positive} 47|21b23 23r28 25r43 30r32
+75U14 Put 75=19 76>19 47|35b14 40l8 40t11 111s15
+75r19 Console{23R9} 47|35b19 39m7 39r26
+76*19 Content{45|22A9} 47|36b19 38r26 39r44
+X 47 util-commands-consoles-text.adb
+25i13 Count{positive} 26r44
+26a13 Spaces{string} 29r21
+74i7 Pos{positive} 107r27 108r13 109r27
+75i7 Size{natural} 82r32 82r46 83r32 87r31 88r23 90r32 94r31 95r25 97r32
+. 101r32 102r32
+76i7 Start{natural} 83m16 90m16 97m16 102m16 111r27
+77i7 Last{natural} 83r25 90r25 97r25 102r25 111r36
+78i7 Pad{natural} 88m16 95m16 106r10 107r33
+

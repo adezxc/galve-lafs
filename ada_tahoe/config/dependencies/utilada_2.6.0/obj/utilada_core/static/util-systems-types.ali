@@ -1,0 +1,125 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_LONG_LONG_INTEGERS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.systems.types%s	util-systems-types.ads	0c821c50 NE OO PK
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W util.systems%s	util-systems.ads	util-systems.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D util.ads		20231110223241 36301479 util%s
+D util-systems.ads	20231110223241 be223f03 util.systems%s
+D util-systems-types.ads  20231110223241 eefa4f44 util.systems.types%s
+G a e
+G c Z s s [timespecIP util__systems__types 32 9 none]
+G c Z s s [stat_typeIP util__systems__types 44 9 none]
+X 3 interfac.ads
+38K9*Interfaces 232e15 11|2r6 10r21 11r21 13r22 29r26 51r20 59r17 60r17 61r17
+X 4 i-c.ads
+29K20*C 597e17 11|2w17 10r32 11r32 13r33 29r37 51r31 59r28 60r28 61r28
+57I9*int<integer> 11|29r39
+66M9*unsigned 11|10r34 11r34 13r35 51r33
+68M9*unsigned_long 11|59r30 60r30 61r30
+X 9 util.ads
+18K9*Util 28e9 11|3r9 65r5
+X 10 util-systems.ads
+19K14*Systems 9|18k9 10|23e17 11|3r14 65r10
+X 11 util-systems-types.ads
+3K22*Types 10|19k14 11|65l18 65e23
+5I12*dev_t{long_long_integer} 45r20 52r20
+6I12*ino_t{long_long_integer} 46r20
+7I12*off_t{long_long_integer} 53r20
+8I12*blksize_t{long_long_integer} 54r20
+9I12*blkcnt_t{long_long_integer} 55r20
+10M12*uid_t{4|66M9} 49r20
+11M12*gid_t{4|66M9} 50r20
+12I12*nlink_t{long_long_integer} 47r20
+13M12*mode_t{4|66M9} 15r24 16r24 17r24 18r24 19r24 20r24 21r24 22r24 23r24
+. 24r24 25r24 26r24 27r24 48r20
+15m4*S_IFMT{13M12}
+16m4*S_IFDIR{13M12}
+17m4*S_IFCHR{13M12}
+18m4*S_IFBLK{13M12}
+19m4*S_IFREG{13M12}
+20m4*S_IFIFO{13M12}
+21m4*S_IFLNK{13M12}
+22m4*S_IFSOCK{13M12}
+23m4*S_ISUID{13M12}
+24m4*S_ISGID{13M12}
+25m4*S_IREAD{13M12}
+26m4*S_IWRITE{13M12}
+27m4*S_IEXEC{13M12}
+29I9*File_Type<4|57I9>
+30I12*Time_Type{long_long_integer} 33r17
+32R9*Timespec 35e14 36r39 56r20 57r20 58r20
+33i7*tv_sec{30I12}
+34i7*tv_nsec{long_long_integer}
+38E9*Seek_Mode 38e52 39r8
+38n23*SEEK_SET{38E9} 39r23
+38n33*SEEK_CUR{38E9} 39r38
+38n43*SEEK_END{38E9} 39r53
+41a4*STAT_NAME{string}
+42a4*FSTAT_NAME{string}
+43a4*LSTAT_NAME{string}
+44R9*Stat_Type 62e14 63r39
+45i7*st_dev{5I12}
+46i7*st_ino{6I12}
+47i7*st_nlink{12I12}
+48m7*st_mode{13M12}
+49m7*st_uid{10M12}
+50m7*st_gid{11M12}
+51m7*pad1_0{4|66M9}
+52i7*st_rdev{5I12}
+53i7*st_size{7I12}
+54i7*st_blksize{8I12}
+55i7*st_blocks{9I12}
+56r7*st_atim{32R9}
+57r7*st_mtim{32R9}
+58r7*st_ctim{32R9}
+59m7*pad5{4|68M9}
+60m7*pad6{4|68M9}
+61m7*pad7{4|68M9}
+

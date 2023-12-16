@@ -1,0 +1,371 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_ALLOCATORS
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_IMPLICIT_LOOPS
+RV NO_ELABORATION_CODE
+
+U util.events.channels%b  util-events-channels.adb  d9a37349 OO PK
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z system%s		system.ads		system.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+W util%s		util.ads		util.ali
+W util.events%s		util-events.adb		util-events.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+
+U util.events.channels%s  util-events-channels.ads  060901c5 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.doubly_linked_lists%s
+Z ada.containers.helpers%s  a-conhel.adb	a-conhel.ali
+Z ada.containers.stable_sorting%s  a-costso.adb	a-costso.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.iterator_interfaces%s
+Z ada.streams%s		a-stream.adb		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z ada.unchecked_deallocation%s
+Z system%s		system.ads		system.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.return_stack%s	s-retsta.ads		s-retsta.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W util.events%s		util-events.adb		util-events.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-assert.ads		19700101000001 ba465f5c ada.assertions%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cdlili.ads		19700101000001 2434d8f6 ada.containers.doubly_linked_lists%s
+D a-cdlili.adb		19700101000001 777aaced ada.containers.doubly_linked_lists%b
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-conhel.adb		19700101000001 854d323e ada.containers.helpers%b
+D a-costso.ads		19700101000001 937a171b ada.containers.stable_sorting%s
+D a-costso.adb		19700101000001 682d4dd0 ada.containers.stable_sorting%b
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-assert.ads		19700101000001 9c4520c7 system.assertions%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-atocou.adb		19700101000001 6fe685de system.atomic_counters%b
+D s-atopri.ads		19700101000001 1b132436 system.atomic_primitives%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-memory.ads		19700101000001 5b8432d0 system.memory%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stalib.adb		19700101000001 eb464a47 system.standard_library%b
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		19700101000001 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-events.ads	20231110223241 278843ff util.events%s
+D util-events-channels.ads  20231110223241 7e4eeadc util.events.channels%s
+D util-events-channels.adb  20231110223241 ca9e2628 util.events.channels%b
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+G a e
+G c Z s b [get_name util__events__channels 41 13 none]
+G c Z s b [post util__events__channels 44 14 none]
+G c Z s b [subscribe util__events__channels 48 14 none]
+G c Z s b [unsubscribe util__events__channels 52 14 none]
+G c Z s b [create util__events__channels 60 13 none]
+G c Z s b [create_direct_channel util__events__channels 65 13 none]
+G c Z s s [empty util__events__channels__containers 70 13 68_4]
+G c Z s s [has_element util__events__channels__containers 75 13 68_4]
+G c Z s s [Oeq util__events__channels__containers 80 13 68_4]
+G c Z s s [length util__events__channels__containers 82 13 68_4]
+G c Z s s [is_empty util__events__channels__containers 84 13 68_4]
+G c Z s s [clear util__events__channels__containers 86 14 68_4]
+G c Z s s [element util__events__channels__containers 88 13 68_4]
+G c Z s s [replace_element util__events__channels__containers 90 14 68_4]
+G c Z s s [query_element util__events__channels__containers 95 14 68_4]
+G c Z s s [update_element util__events__channels__containers 99 14 68_4]
+G c Z s s [constant_reference util__events__channels__containers 114 13 68_4]
+G c Z s s [reference util__events__channels__containers 119 13 68_4]
+G c Z s s [assign util__events__channels__containers 124 14 68_4]
+G c Z s s [copy util__events__channels__containers 126 13 68_4]
+G c Z s s [move util__events__channels__containers 128 14 68_4]
+G c Z s s [insert util__events__channels__containers 132 14 68_4]
+G c Z s s [insert util__events__channels__containers 138 14 68_4]
+G c Z s s [insert util__events__channels__containers 145 14 68_4]
+G c Z s s [prepend util__events__channels__containers 151 14 68_4]
+G c Z s s [append util__events__channels__containers 156 14 68_4]
+G c Z s s [append util__events__channels__containers 161 14 68_4]
+G c Z s s [delete util__events__channels__containers 165 14 68_4]
+G c Z s s [delete_first util__events__channels__containers 170 14 68_4]
+G c Z s s [delete_last util__events__channels__containers 174 14 68_4]
+G c Z s s [reverse_elements util__events__channels__containers 178 14 68_4]
+G c Z s s [iterate util__events__channels__containers 180 13 68_4]
+G c Z s s [iterate util__events__channels__containers 183 13 68_4]
+G c Z s s [swap util__events__channels__containers 186 14 68_4]
+G c Z s s [swap_links util__events__channels__containers 190 14 68_4]
+G c Z s s [splice util__events__channels__containers 194 14 68_4]
+G c Z s s [splice util__events__channels__containers 199 14 68_4]
+G c Z s s [splice util__events__channels__containers 205 14 68_4]
+G c Z s s [first util__events__channels__containers 210 13 68_4]
+G c Z s s [first_element util__events__channels__containers 212 13 68_4]
+G c Z s s [last util__events__channels__containers 214 13 68_4]
+G c Z s s [last_element util__events__channels__containers 216 13 68_4]
+G c Z s s [next util__events__channels__containers 218 13 68_4]
+G c Z s s [next util__events__channels__containers 220 14 68_4]
+G c Z s s [previous util__events__channels__containers 222 13 68_4]
+G c Z s s [previous util__events__channels__containers 224 14 68_4]
+G c Z s s [find util__events__channels__containers 226 13 68_4]
+G c Z s s [reverse_find util__events__channels__containers 231 13 68_4]
+G c Z s s [contains util__events__channels__containers 236 13 68_4]
+G c Z s s [iterate util__events__channels__containers 240 14 68_4]
+G c Z s s [reverse_iterate util__events__channels__containers 244 14 68_4]
+G c Z s s [adjust util__events__channels__containers__implementation 90 28 266_4_68_4]
+G c Z s s [finalize util__events__channels__containers__implementation 93 28 266_4_68_4]
+G c Z s s [zero_counts util__events__channels__containers__implementation 96 17 266_4_68_4]
+G c Z s s [busy util__events__channels__containers__implementation 100 17 266_4_68_4]
+G c Z s s [unbusy util__events__channels__containers__implementation 104 17 266_4_68_4]
+G c Z s s [lock util__events__channels__containers__implementation 108 17 266_4_68_4]
+G c Z s s [unlock util__events__channels__containers__implementation 112 17 266_4_68_4]
+G c Z s s [tc_check util__events__channels__containers__implementation 116 17 266_4_68_4]
+G c Z s s [te_check util__events__channels__containers__implementation 120 17 266_4_68_4]
+G c Z s s [is_busy util__events__channels__containers__implementation 136 16 266_4_68_4]
+G c Z s s [is_locked util__events__channels__containers__implementation 140 16 266_4_68_4]
+G c Z s s [initialize util__events__channels__containers__implementation 161 28 266_4_68_4]
+G c Z s s [finalize util__events__channels__containers__implementation 162 28 266_4_68_4]
+G c Z s s [initialize util__events__channels__containers__implementation 167 28 266_4_68_4]
+G c Z s s [finalize util__events__channels__containers__implementation 168 28 266_4_68_4]
+G c Z s s [reference_control_typeDA util__events__channels__containers__implementation 84 12 266_4_68_4]
+G c Z s s [reference_control_typeDF util__events__channels__containers__implementation 84 12 266_4_68_4]
+G c Z s s [reference_control_typeIP util__events__channels__containers__implementation 84 12 266_4_68_4]
+G c Z s s [with_busyDF util__events__channels__containers__implementation 158 12 266_4_68_4]
+G c Z s s [with_busyIP util__events__channels__containers__implementation 158 12 266_4_68_4]
+G c Z s s [with_lockDF util__events__channels__containers__implementation 164 12 266_4_68_4]
+G c Z s s [with_lockIP util__events__channels__containers__implementation 164 12 266_4_68_4]
+G c Z s s [put_image util__events__channels__containers 290 14 68_4]
+G c Z s s [adjust util__events__channels__containers 293 25 68_4]
+G c Z s s [read util__events__channels__containers 297 14 68_4]
+G c Z s s [write util__events__channels__containers 303 14 68_4]
+G c Z s s [read util__events__channels__containers 318 14 68_4]
+G c Z s s [write util__events__channels__containers 324 14 68_4]
+G c Z s s [write util__events__channels__containers 343 14 68_4]
+G c Z s s [read util__events__channels__containers 349 14 68_4]
+G c Z s s [write util__events__channels__containers 365 14 68_4]
+G c Z s s [read util__events__channels__containers 371 14 68_4]
+G c Z s s [pseudo_reference util__events__channels__containers 382 13 68_4]
+G c Z s s [get_element_access util__events__channels__containers 392 13 68_4]
+G c Z s s [listDA util__events__channels__containers 282 9 68_4]
+G c Z s s [listDF util__events__channels__containers 282 9 68_4]
+G c Z s s [listIP util__events__channels__containers 282 9 68_4]
+G c Z s s [cursorIP util__events__channels__containers 312 9 68_4]
+G c Z s s [finalize util__events__channels__containers 409 25 68_4]
+G c Z s s [first util__events__channels__containers 411 24 68_4]
+G c Z s s [last util__events__channels__containers 412 24 68_4]
+G c Z s s [next util__events__channels__containers 414 24 68_4]
+G c Z s s [previous util__events__channels__containers 418 24 68_4]
+G c Z s s [constant_reference_typeDI util__events__channels__containers 333 9 68_4]
+G c Z s s [constant_reference_typeDA util__events__channels__containers 333 9 68_4]
+G c Z s s [constant_reference_typeDF util__events__channels__containers 333 9 68_4]
+G c Z s s [constant_reference_typeIP util__events__channels__containers 333 9 68_4]
+G c Z s s [reference_typeDI util__events__channels__containers 355 9 68_4]
+G c Z s s [reference_typeDA util__events__channels__containers 355 9 68_4]
+G c Z s s [reference_typeDF util__events__channels__containers 355 9 68_4]
+G c Z s s [reference_typeIP util__events__channels__containers 355 9 68_4]
+G c Z s s [node_typeIP util__events__channels__containers 272 9 68_4]
+G c Z s s [iteratorDF util__events__channels__containers 401 9 68_4]
+G c Z s s [iteratorIP util__events__channels__containers 401 9 68_4]
+G c Z s s [free util__events__channels__containers 49 14 68_4]
+G c Z s s [insert_internal util__events__channels__containers 51 14 68_4]
+G c Z s s [splice_internal util__events__channels__containers 56 14 68_4]
+G c Z s s [splice_internal util__events__channels__containers 61 14 68_4]
+G c Z s s [vet util__events__channels__containers 67 13 68_4]
+G c Z s s [channelDF util__events__channels 72 9 none]
+G c Z s s [channelDI util__events__channels 72 9 none]
+G c Z s s [channelIP util__events__channels 72 9 none]
+G c Z b b [factory_lineIP util__events__channels 27 9 none]
+G c Z b b [factory_tableIP util__events__channels 32 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 59|19r6 20r6 68r30 73r18 60|23r8
+X 6 a-contai.ads
+16K13*Containers 28e19 59|20r10 68r34
+X 7 a-cdlili.ads
+42+9 Element_Type 59|69r7
+47k24*Doubly_Linked_Lists 422e39 59|20w21 68r45
+54R9*List<17|43R9> 59|70r31[68]
+65R9*Cursor 60|53r14[59|68] 84r14[59|68]
+75V13*Has_Element{boolean} 60|58s13[59|68] 86s13[59|68]
+88V13*Element{59|27P9} 60|60s52[59|68] 87s13[59|68]
+161U14*Append 60|76s7[59|68]
+165U14*Delete 60|88s13[59|68]
+210V13*First{65R9[59|68]} 60|53s24[59|68] 84s24[59|68]
+218V13*Next{65R9[59|68]} 60|64s18[59|68] 91s18[59|68]
+269R9 Node_Type
+270P9 Node_Access(269R9)
+X 8 a-cdlili.adb
+699V22 Next{7|270P9[59|68]} 14|61i24[59|68]
+700U23 Set_Next 14|62i25[59|68]
+702U23 Set_Prev 14|63i25[59|68]
+704V23 "<"{boolean} 14|64i25[59|68]
+706U23 Update_Container 14|66i25[59|68]
+X 12 a-conhel.ads
+84R12 Reference_Control_Type<17|43R9>
+X 18 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[7|77]>
+X 20 a-string.ads
+16K13*Strings 35e16 59|19r10 73r22 60|23r12
+X 23 a-strunb.ads
+85K21*Unbounded 766e26 59|19w18 73r30 60|23r20
+91R9*Unbounded_String<17|43R9> 745e15 59|73r40
+108V13*To_Unbounded_String{91R9} 60|118s22
+121V13*To_String{string} 60|45s14
+X 30 system.ads
+67M9*Address
+X 38 s-memory.ads
+51V13*Alloc{30|67M9} 101i<c,__gnat_malloc>22
+66U14*Free 102i<c,__gnat_free>22
+74V13*Realloc{30|67M9} 103i<c,__gnat_realloc>22
+X 47 s-stalib.adb
+87U14 Break_Start 88i<c,__gnat_break_start>22
+X 55 util.ads
+18K9*Util 28e9 59|24r9 77r5 60|18r6 20r14 25r8 122r5
+X 58 util-events.ads
+19K14*Events 55|18k9 58|34e16 59|24r14 77r10 60|20r19 122r10
+21R9*Event 32e14 59|30r39 45r30 60|52r30
+X 59 util-events-channels.ads
+24K21*Channels 58|19k14 59|27E9 77l17 77e25 60|20b26 122l17 122t25
+26h9*Subscriber 27r41 29p14 29r43
+27P9*Subscriber_Access(26R9) 49r37 53r39 69r23 60|60r31 72r37 83r39
+29x14*Receive_Event 29=29 30>29 60|62R20
+29r29 Sub{26R9}
+30c29 Item<58|21R9>
+36R9*Channel 38r38 41p13 41r27 44p14 44r34 48p14 48r41 52p14 52r43 72c9 75e14
+. 60|43r27 51r34 71r41 82r43 116r47
+38P9*Channel_Access(36R9) 56r38 61r43 65r58 60|101r28 115r58 116r25
+41V13*Get_Name{string} 41>23 60|43b13 46l8 46t16
+41r23 C{36R9} 60|43b23 45r25
+44U14*Post 44=20 45>20 60|51b14 66l8 66t12
+44r20 To{36R9} 60|51b20 53r31
+45c20 Item<58|21R9> 60|52b20 62r35
+48U14*Subscribe 48=25 49>25 60|71b14 77l8 77t17
+48r25 To{36R9} 60|71b25 76m15 76r15
+49p25 Client{27P9} 60|72b25 74r22 76r27
+52U14*Unsubscribe 52=27 53>27 60|82b14 93l8 93t19
+52r27 To{36R9} 60|82b27 84r31 88m21 88r21
+53p27 Client{27P9} 60|83b27 87r30
+55P9*Channel_Creator(38P9) 56>16 60|29r17
+56a16 Name{string}
+60V13*Create{38P9} 60>21 61>21 60|99b13 110l8 110t14
+60a21 Name{string} 60|99b21 105r41 109r37
+61a21 Kind{string} 60|100b21 104r36
+65V13*Create_Direct_Channel{38P9} 65>36 60|38r24 109s14 115b13 120l8 120t29
+65a36 Name{string} 60|115b36 118r43
+68K12 Containers[7|47] 70r20 60|22r8
+70R12*List{7|54R9[68]} 74r18
+73r7*Name{23|91R9} 60|45r27 118m14
+74r7*Clients{70R12} 60|53r34 76m18 84r34 88m24
+X 60 util-events-channels.adb
+27R9 Factory_Line 30e14 32r54
+28p7*Name{61|29P9} 37m13 104r25
+29p7*Creator{59|55P9} 38m13 105r32
+32A9 Factory_Table(27R9)<integer> 36r23
+34a4 DIRECT_NAME{string} 37r24
+36a4 Factory{32A9} 103r16 104r13 105r20
+53r7 Iter{7|65R9[59|68]} 58r26 60r61 64m10 64r24
+60p13 Client{59|27P9} 62r13
+84r7 Iter{7|65R9[59|68]} 86r26 87r22 88m33 88r33 91m10 91r24
+103i11 I{integer} 104r22 105r29
+116p7 Result{59|38P9} 118r7 119r14
+X 61 util-strings.ads
+24K14*Strings 60|18w11 25r13 61|147e17
+29P9*Name_Access(string) 60|28r17
+

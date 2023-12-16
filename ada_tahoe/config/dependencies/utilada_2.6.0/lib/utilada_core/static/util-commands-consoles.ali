@@ -1,0 +1,189 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.commands.consoles%b  util-commands-consoles.adb  ae8ec1df NE OO PK GE
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util.commands%s	util-commands.adb	util-commands.ali
+
+U util.commands.consoles%s  util-commands-consoles.ads  712073df BN EE NE OO PK GE
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util.commands%s	util-commands.adb	util-commands.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-coinve.ads		19700101000001 728ad523 ada.containers.indefinite_vectors%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-string.ads		19700101000001 582aac7d system.strings%s
+D s-ststop.ads		19700101000001 c569db7c system.strings.stream_ops%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-commands.ads	20231110223241 6bbb2dbb util.commands%s
+D util-commands-consoles.ads  20231110223241 1a9b5e64 util.commands.consoles%s
+D util-commands-consoles.adb  20231110223241 b4159fbb util.commands.consoles%b
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+G a e
+G c Z s b [consoles util__commands 24 23 none]
+X 8 a-conhel.ads
+84R12 Reference_Control_Type<11|43R9>
+X 12 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[9|84]>
+X 43 util.ads
+18K9*Util 28e9 45|24r9 105r5 46|19r14 88r5
+X 44 util-commands.ads
+105K14*Commands 43|18k9 44|207e18 45|24r14 105r10 46|19r19 88r10
+111h9*Argument_List
+X 45 util-commands-consoles.ads
+19E9 Field_Type 46r40 52r40 70r40 77r45 82r40 94r36 96r69 46|25r40 46r45
+. 64r40
+20E9 Notice_Type 41r35
+21E9 Element_Type 22r52
+22A9 Input_Type(21E9)<integer> 23r55 37r34 42r35 47r40 53r40 71r40 46|26r40
+. 67r22
+23V18 To_Input{22A9} 23>28 46|67s36
+23i28 Value{integer}
+24k23*Consoles 44|105k14 45|19z9 20z9 21z9 22z9 23z18 94E9 105l19 105e27
+. 46|19b28 88l19 88t27
+26E9*Justify_Type 30e26 48r40 54r40 73r40 84r40 46|28r40 66r40
+26n26*J_LEFT{26E9} 48r56 54r56 73r56 84r56 46|28r56 66r56
+27n26*J_RIGHT{26E9}
+28n26*J_CENTER{26E9}
+29n26*J_RIGHT_NO_FILL{26E9}
+32H9*Console_Type 33r38 36p14 36r38 40p14 40r39 45p14 45r44 51p14 51r44 57p14
+. 57r44 60p14 60r42 63p14 63r42 66p14 66r40 69p14 69r44 76p14 76r49 81p14
+. 81r44 87p13 87r43 90p14 90r45 98c9 103e14 46|24r44 39r7 45r49 63r44 69r7
+. 75r43 83r45
+33P9*Console_Access(32R9)
+36x14*Error 36=21 37>21
+36r21 Console{32R9}
+37*21 Message{22A9}
+40x14*Notice 40=22 41>22 42>22
+40r22 Console{32R9}
+41*22 Kind{20E9}
+42*22 Message{22A9}
+45x14*Print_Field 45=27 46>27 47>27 48>27 46|69R36
+45r27 Console{32R9}
+46*27 Field{19E9}
+47*27 Value{22A9}
+48e27 Justify{26E9}
+51x14*Print_Title 51=27 52>27 53>27 54>27 46|39R36
+51r27 Console{32R9}
+52*27 Field{19E9}
+53*27 Title{22A9}
+54e27 Justify{26E9}
+57x14*Start_Title 57=27
+57r27 Console{32R9}
+60x14*End_Title 60=25
+60r25 Console{32R9}
+63x14*Start_Row 63=25
+63r25 Console{32R9}
+66x14*End_Row 66=23
+66r23 Console{32R9}
+69U14*Print_Title 69=27 70>27 71>27 72>27 73>27 46|24b14 40l8 40t19
+69r27 Console{32R9} 46|24b27 30m7 31r10 32m10 32r34 32r48 32r64 33r14 33r29
+. 33r45 35m10 37m7 37r30 38m7 38r23 39m27 39r27
+70*27 Field{19E9} 46|25b27 30r22 32r24 35r24 38r47 39r49
+71*27 Title{22A9} 46|26b27 39r56
+72i27 Length{positive} 46|27b27 30r32
+73e27 Justify{26E9} 46|28b27 39r63
+76U14*Set_Field_Length 76=32 77>32 78>32 46|45b14 58l8 58t24
+76r32 Console{32R9} 46|45b32 49m7 50r10 51m10 51r34 51r48 51r64 52r14 52r29
+. 52r45 54m10 56m7 56r30 57m7 57r23
+77*32 Field{19E9} 46|46b32 49r22 51r24 54r24 57r47
+78i32 Length{positive} 46|47b32 49r32
+81U14*Print_Field 81=27 82>27 83>27 84>27 46|63b14 70l8 70t19
+81r27 Console{32R9} 46|63b27 69m27 69r27
+82*27 Field{19E9} 46|64b27 69r49
+83i27 Value{integer} 46|65b27 67r46
+84e27 Justify{26E9} 46|66b27 69r61
+87V13*Get_Field_Count{natural} 87>30 46|75b13 78l8 78t23
+87r30 Console{32R9} 46|75b30 77r14
+90U14*Clear_Fields 90=28 46|83b14 86l8 86t20
+90r28 Console{32R9} 46|83b28 85m7
+94A9 Field_Size_Array(natural)<19E9> 96r41 99r21 100r21
+96A9 Field_List_Array(19E9)<integer> 101r21
+99a7 Sizes{94A9} 46|30m15 33r22 49m15 52r22
+100a7 Cols{94A9} 46|32m18 32r42 35m18 51m18 51r42 54m18
+101a7 Fields{96A9} 46|32r56 33r37 38m15 51r56 52r37 57m15
+102i7 Field_Count{natural} 46|31r18 32r72 33r53 37m15 37r38 38r31 50r18 51r72
+. 52r53 56m15 56r38 57r31 77r22 85m15
+X 46 util-commands-consoles.adb
+67*7 Val{45|22A9} 69r56
+

@@ -1,0 +1,186 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U util.streams.sockets%b  util-streams-sockets.adb  4c36246b OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util.streams%s	util-streams.adb	util-streams.ali
+
+U util.streams.sockets%s  util-streams-sockets.ads  13241d73 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.sockets%s	g-socket.adb		g-socket.ali
+Z system%s		system.ads		system.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W util.streams%s	util-streams.adb	util-streams.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-ioexce.ads		19700101000001 40018c65 ada.io_exceptions%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D gnat.ads		19700101000001 b5988c27 gnat%s
+D g-socket.ads		19700101000001 e27e154b gnat.sockets%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-oscons.ads		19700101000001 e8e910bf system.os_constants%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-streams.ads	20231110223241 e241dcc4 util.streams%s
+D util-streams-sockets.ads  20231110223241 ac545497 util.streams.sockets%s
+D util-streams-sockets.adb  20231110223241 a063fc99 util.streams.sockets%b
+G a e
+G c Z s b [open util__streams__sockets 33 14 none]
+G c Z s b [connect util__streams__sockets 37 14 none]
+G c Z s b [close util__streams__sockets 42 14 none]
+G c Z s b [write util__streams__sockets 46 14 none]
+G c Z s b [read util__streams__sockets 52 14 none]
+G c Z s b [finalize util__streams__sockets 65 14 none]
+G c Z s s [socket_streamDF util__streams__sockets 58 9 none]
+G c Z s s [socket_streamIP util__streams__sockets 58 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 42|18r6 47r33 53r33 54r33 58r38 43|19r6 30r16 43r16 66r33 67r21
+. 78r33 79r33
+X 5 a-finali.ads
+40K13*Finalization 68e21 42|18w10 58r42
+50H9*Limited_Controlled<24|40R9> 66e55 42|58r55
+53U14*Initialize<24|44p14>
+X 6 a-ioexce.ads
+16K13*IO_Exceptions 28e22 43|19w10 30r20 43r20
+22X4*Use_Error 43|30r34 43r34
+X 7 a-stream.ads
+36K13*Streams 87e16 42|47r37 53r37 54r37 43|66r37 67r25 78r37 79r37
+42M9*Stream_Element
+44I9*Stream_Element_Offset<long_long_integer> 42|54r45 43|67r33 79r45
+54A9*Stream_Element_Array(42M9)<44I9> 42|47r45 53r45 43|66r45 78r45
+X 16 gnat.ads
+37K9*GNAT 60e9 42|19r6 34r33 38r35 60r14 60r42 43|26r33 27r16 29r25 39r35
+. 40r16 42r25 45r7 47r7 57r7 58r22 69r7 81r7 89r16 91r25
+X 17 g-socket.ads
+56K14*Sockets 1600e17 42|19w11 34r38 38r40 60r19 60r47 43|26r38 27r21 29r30
+. 39r40 40r21 42r30 45r12 47r12 57r12 58r27 69r12 81r12 89r21 91r30
+413I9*Socket_Type<integer> 42|34r46 60r27 43|26r46 27r29 40r29 89r29
+418i4*No_Socket{413I9} 42|60r55 43|29r38 42r38 58r35 91r38
+594R9*Sock_Addr_Type 604e14 42|38r48 43|39r48
+594e25*Family{473E9} 43|46r52
+1120U14*Create_Socket 43|45s20
+1121i7 Socket{413I9} 43|45r35
+1122e7 Family{473E9} 43|46r35
+1168U14*Close_Socket 43|57s20
+1171U14*Connect_Socket 43|47s20
+1172i7 Socket{413I9} 43|47r36
+1173r7 Server{594R9} 43|48r36
+1225U14*Receive_Socket 43|81s20
+1283U14*Send_Socket 43|69s20
+X 24 s-finroo.ads
+42U14*Adjust
+X 40 util.ads
+18K9*Util 28e9 42|23r9 67r5 43|20r14 96r5
+X 41 util-streams.ads
+48K14*Streams 40|18k9 41|120e17 42|23r14 67r10 43|20r19 96r10
+57h9*Output_Stream 42|30r38 59r10
+75h9*Input_Stream 42|30r56 59r28
+X 42 util-streams-sockets.ads
+23K22*Sockets 41|48k14 42|58E9 67l18 67e25 43|20b27 96l18 96t25
+30R9*Socket_Stream<41|57R9><41|75R9> 5|53P14 24|42p14 42|33p14 33r37 37p14
+. 37r39 42P14 42r37 46P14 46r37 52P14 52r36 58c9 61e14 65P14 65r40 43|25r37
+. 38r39 55r37 65r37 77r36 88r40
+33U14*Open 33=20 34>20 43|25b14 33l8 33t12
+33r20 Stream{30R9} 43|25b20 29r10 32m7
+34i20 Socket{17|413I9} 43|26b20 32r22
+37U14*Connect 37=23 38>23 43|38b14 49l8 49t15
+37r23 Stream{30R9} 43|38b23 42r10 45m45 45r45 47r46
+38r23 Server{17|594R9} 43|39b23 46r45 48r46
+42U14*Close<41|68p14> 42=21 43|55b14 59l8 59t13 92s17
+42r21 Stream{30R9} 43|55b21 57r34 58m7
+46U14*Write<41|61p14> 46=21 47>21 43|65b14 70l8 70t13
+46r21 Stream{30R9} 43|65b21 69r33
+47a21 Buffer{7|54A9} 43|66b21 69r46
+52U14*Read<41|80p14> 52=20 53<20 54<20 43|77b14 82l8 82t12
+52r20 Stream{30R9} 43|77b20 81r36
+53a20 Into{7|54A9} 43|78b20 81m49
+54i20 Last{7|44I9} 43|79b20 81m55
+60i7 Sock{17|413I9} 43|29r17 32m14 42r17 45m52 47r53 57r41 58m14 69r40 81r43
+. 91r17
+65U14 Finalize<5|54p14> 65=24 43|88b14 94l8 94t16
+65r24 Object{30R9} 43|88b24 91r10 92m10 92r10
+X 43 util-streams-sockets.adb
+67i7 Unused_Last{7|44I9} 69m54
+

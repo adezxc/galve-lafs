@@ -1,0 +1,163 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_IMPLICIT_LOOPS
+
+U util.http.mimes%b	util-http-mimes.adb	7a507aa4 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.equal_case_insensitive%s  a-secain.adb  a-secain.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util.http%s		util-http.adb		util-http.ali
+
+U util.http.mimes%s	util-http-mimes.ads	38e20e13 EE NE OO PK
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util%s		util.ads		util.ali
+W util.http%s		util-http.adb		util-http.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chahan.ads		19700101000001 278246c0 ada.characters.handling%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-secain.ads		19700101000001 37402117 ada.strings.equal_case_insensitive%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-http.ads		20231110223241 43192da1 util.http%s
+D util-http-mimes.ads	20231110223241 16889c0f util.http.mimes%s
+D util-http-mimes.adb	20231110223241 7c1a817c util.http.mimes%b
+D util-refs.ads		20231110223241 e592e98d util.refs%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+G a e
+G c Z s s [mime_listIP util__http__mimes 23 9 none]
+G c Z s b [is_mime util__http__mimes 52 13 none]
+G r c none [is_mime util__http__mimes 52 13 none] [index util__strings 41 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 49|18r6 19r6 22r8 23r8
+X 3 a-charac.ads
+16K13*Characters 18e19 49|18r10 22r12
+X 4 a-chahan.ads
+43K24*Handling 455e28 49|18w21 22r23
+178V13*Is_Space{boolean} 49|34s44
+X 10 a-conhel.ads
+84R12 Reference_Control_Type<12|43R9>
+X 13 a-iteint.ads
+24h9 Forward_Iterator
+X 15 a-string.ads
+16K13*Strings 35e16 49|19r10 23r12
+X 16 a-secain.ads
+30V22*Equal_Case_Insensitive{boolean} 49|19w18 38s14
+X 43 util.ads
+18K9*Util 28e9 48|18r6 19r9 21r27 55r5 49|20r14 29r14 41r5
+X 47 util-http.ads
+27K14*Http 43|18k9 47|162e14 48|19r14 55r10 49|20r19 41r10
+X 48 util-http-mimes.ads
+19K19*Mimes 47|27k14 48|55l15 55e20 49|20b24 41l15 41t20
+21P12*Mime_Access{51|29P9} 23r51
+23A9*Mime_List(21P12)<integer> 24r45 42r30 46r30
+24P9*Mime_List_Access(23A9)
+26a4*Json{string} 46r44
+27a4*Xml{string} 46r57
+28a4*Pdf{string}
+29a4*Form{string}
+30a4*Text{string}
+31a4*Html{string}
+32a4*Css{string}
+33a4*Js{string}
+34a4*Png{string} 43r22
+35a4*Jpg{string} 43r10
+36a4*Gif{string} 43r34
+37a4*Ico{string} 43r46
+38a4*Svg{string} 43r58
+39a4*Octet{string}
+42a4*Images{23A9}
+46a4*Api{23A9}
+52V13*Is_Mime{boolean} 52>22 53>22 49|25b13 39l8 39t15
+52a22 Header{string} 49|25b22 29r34 31r17 34r22 34r54 38r38 38r46
+53a22 Mime{string} 49|26b22 38r68
+X 49 util-http-mimes.adb
+27i7 Sep{natural} 29m7 30r10 31m10 33m10 33r17 34r16 34r62 35m13 35r20 38r62
+X 51 util-strings.ads
+24K14*Strings 48|18w11 21r32 49|29r19 51|147e17
+29P9*Name_Access(string) 48|21r40
+41V13*Index{natural} 49|29s27
+

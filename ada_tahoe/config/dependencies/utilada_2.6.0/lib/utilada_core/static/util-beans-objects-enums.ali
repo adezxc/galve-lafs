@@ -1,0 +1,177 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ENUMERATION_MAPS
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_LONG_LONG_INTEGERS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.beans.objects.enums%b  util-beans-objects-enums.adb  f7623752 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.conversions%s  a-chacon.adb	a-chacon.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+W util.beans.objects%s	util-beans-objects.adb	util-beans-objects.ali
+
+U util.beans.objects.enums%s  util-beans-objects-enums.ads  51f4bfab BN EE NE OO PK GE
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util.beans.objects%s	util-beans-objects.adb	util-beans-objects.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chacon.ads		19700101000001 5b23f5eb ada.characters.conversions%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-stzmap.ads		19700101000001 f60a1f4d ada.strings.wide_wide_maps%s
+D a-stzunb.ads		19700101000001 404b19b5 ada.strings.wide_wide_unbounded%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-beans.ads	20231110223241 362abe70 util.beans%s
+D util-beans-basic.ads	20231110223241 95c2d591 util.beans.basic%s
+D util-beans-objects.ads  20231110223241 8deb9c60 util.beans.objects%s
+D util-beans-objects-enums.ads  20231110223241 dc1f23cb util.beans.objects.enums%s
+D util-beans-objects-enums.adb  20231110223241 705ee172 util.beans.objects.enums%b
+D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-refs.ads		20231110223241 e592e98d util.refs%s
+G a e
+G c Z s b [enums util__beans__objects 25 28 none]
+X 1 ada.ads
+16K9*Ada 20e8 43|18r6 21r8
+X 2 a-charac.ads
+16K13*Characters 18e19 43|18r10 21r12
+X 3 a-chacon.ads
+36K24*Conversions 86e31 43|18w21 21r23
+74V13*To_String{string} 43|106s29
+X 6 a-finali.ads
+43H9*Controlled<23|40R9> 59e72 43|66r23
+X 38 util.ads
+18K9*Util 28e9 42|25r9 32r34 34r5 43|19r14 76r34 129r5
+X 39 util-beans.ads
+53K14*Beans 38|18k9 39|57e15 42|25r14 32r39 34r10 43|19r19 76r39 129r10
+X 41 util-beans-objects.ads
+92K20*Objects 39|53k14 41|843e23 42|25r20 32r45 34r16 43|19r25 76r45 129r16
+102n23*TYPE_NULL{102E9} 43|108r15
+104n23*TYPE_BOOLEAN{102E9} 43|86r15
+106n23*TYPE_INTEGER{102E9} 43|67r42 79r15
+108n23*TYPE_FLOAT{102E9} 43|89r15
+110n23*TYPE_TIME{102E9} 43|111r15
+112n23*TYPE_RECORD{102E9} 43|114r15
+114n23*TYPE_STRING{102E9} 43|96r15
+116n23*TYPE_WIDE_STRING{102E9} 43|102r15
+118n23*TYPE_ARRAY{102E9} 43|120r15
+120n23*TYPE_BLOB{102E9} 43|123r15
+122n23*TYPE_BEAN{102E9} 43|117r15
+136R9*Object<6|43R9> 806e14 42|28r45 32r53 43|64r45 66r14 76r53
+137R9*Object_Value 797e14 43|36r38 53r38 67r14
+150h9*Object_Type
+151P9*Object_Type_Access(150R9)
+242V13*To_Long_Long_Integer{long_long_integer} 43|91s30 93s30
+314V13 To_Wide_Wide_String{wide_wide_string}<164p13>
+339V13 Is_Empty{boolean}<184p13>
+368R9 Int_Type<310R9> 368e52 43|28r26
+376V13 Get_Data_Type{102E9}<157p13>
+384V13 To_Long_Long{long_long_integer}<319p13>
+389V13 To_Long_Float{long_long_float}<324p13>
+394V13 To_Boolean{boolean}<329p13>
+399V13 To_Duration{duration}<334p13>
+730a7*Value{string} 43|100r50
+732P9 String_Proxy_Access(729R9)
+735a7*Value{wide_wide_string} 43|106r59
+737P9 Wide_String_Proxy_Access(734R9)
+760e23*Of_Type{102E9} 43|67m29 78r20
+767i13*Int_Value{long_long_integer} 43|56r36 68m29 81r38 83r38
+770b13*Bool_Value{boolean} 43|87r48
+779p13*String_Proxy{732P9} 43|97r24 100r37
+782p13*Wide_Proxy{737P9} 43|103r24 106r48
+804p7*Type_Def{151P9} 43|69m9
+805r7*V{137R9} 43|67m9 78r18 81r36 83r36 87r46 97r22 100r35 103r22 106r46
+X 42 util-beans-objects-enums.ads
+20E9 T 28r35 32r68 43|23r48 23r55 23r65 23r72 56r14 56r23 64r35 68r61 76r68
+. 81r23 83r23 87r20 91r23 93r23 100r20 106r20
+24b4 ROUND_VALUE{boolean} 43|80r16 90r16
+25k28*Enums 41|92k20 42|20z9 24z4 34l24 34e29 43|19b33 129l24 129t29
+28V13*To_Object{41|136R9} 28>24 43|64b13 70l8 70t17
+28*24 Value{20E9} 43|64b24 68r68
+32V13*To_Value{20E9} 32>23 43|76b13 127l8 127t16
+32r23 Value{41|136R9} 43|76b23 78r12 81r30 83r30 87r40 91r52 93r52 97r16
+. 100r29 103r16 106r40
+X 43 util-beans-objects-enums.adb
+23i4 Value_Range{long_long_integer} 81r52 91r63
+28R9 Enum_Type<41|368R9> 41|314P13 339P13 376P13 384P13 389P13 394P13 399P13
+. 43|28e51 32P13 32r37 35P13 35r38 42r34 52r38 59r35 59r48
+32V13 Get_Name{string}<41|372p13> 32>23 42b13 46l8 46t16
+32r23 Type_Def{28R9} 42b23 43r28
+35V13 To_String{string}<41|379p13> 35>24 36>24 52b13 57l8 57t17
+35r24 Type_Def{28R9} 52b24 54r28
+36r24 Value{41|137R9} 53b24 56r30
+59r4 Value_Type{28R9} 69r22
+

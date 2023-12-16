@@ -1,0 +1,192 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_ALLOCATORS
+RV NO_DISPATCH
+RV NO_FINALIZATION
+RV NO_LOCAL_ALLOCATORS
+RV NO_PROTECTED_TYPES
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV MAX_ENTRY_QUEUE_LENGTH=1+
+
+U util.concurrent.arrays%b  util-concurrent-arrays.adb  d11e0eda NE OO PK GE
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+W util.concurrent%s	util-concurrent.ads	util-concurrent.ali
+
+U util.concurrent.arrays%s  util-concurrent-arrays.ads  fc586dc9 BN EE NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util%s		util.ads		util.ali
+W util.concurrent%s	util-concurrent.ads	util-concurrent.ali
+W util.concurrent.counters%s  util-concurrent-counters.adb  util-concurrent-counters.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-arrays.ads  20231110223241 3b83d7f3 util.concurrent.arrays%s
+D util-concurrent-arrays.adb  20231110223241 2935754c util.concurrent.arrays%b
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+G a e
+G c Z s b [arrays util__concurrent 70 25 none]
+X 1 ada.ads
+16K9*Ada 20e8 27|19r6 89r23 124r20 153r23 28|19r6 24r11
+X 3 a-finali.ads
+40K13*Finalization 68e21 27|19w10 89r27 124r24 153r27
+43H9*Controlled<14|40R9> 59e72 27|124r37
+50H9*Limited_Controlled<14|40R9> 66e55 27|89r40 153r40
+53U14*Initialize<14|44p14>
+X 10 a-uncdea.ads
+17+9 Object 28|24r39
+18P9 Name(17+9) 28|25r39
+20u15*Unchecked_Deallocation 28|19w10 24r15
+X 14 s-finroo.ads
+42U14*Adjust
+X 25 util.ads
+18K9*Util 28e9 27|20r6 70r9 119r21 157r5 28|21r14 74r10 90r10 160r10 189r19
+. 199r5
+X 26 util-concurrent.ads
+18K14*Concurrent 25|18k9 26|22e20 27|20r11 70r14 119r26 157r10 28|21r19 74r15
+. 90r15 160r15 189r24 199r10
+X 27 util-concurrent-arrays.ads
+67+9 Element_Type 69r40 81r72 86r80 98r37 103r37 113r55 144r35 147r35 28|40r72
+. 55r80 108r37 118r37 144r35 167r35
+69V19 "="{boolean} 69>23 69>29 28|175s31
+69*23 Left{67+9}
+69*29 Right{67+9}
+70k25*Arrays 26|18k14 27|67z9 69z19 113E9 157l21 157e27 28|21b30 199l21 199t27
+73R9*Ref<3|43R9> 3|46P14 27|76p13 76r38 80p14 80r38 85p14 85r46 93p13 93r54
+. 124c9 126e14 131P14 131r37 135P14 135r35 141r27 150r18 28|30r38 39r38 54r46
+. 70r37 87r35 98r54 136r27
+76V13*Is_Empty{boolean} 76>23 28|30b13 33l8 33t16
+76r23 Container{73R9} 28|30b23 32r14
+80U14*Iterate 80>23 81^23 28|39b14 48l8 48t15
+80r23 Container{73R9} 28|39b23 41r49
+81p23 Process 28|40b23 45r13
+81*62 Item{67+9}
+85U14*Reverse_Iterate 85>31 86^31 28|54b14 63l8 63t23
+85r31 Container{73R9} 28|54b31 56r49
+86p31 Process 28|55b31 60r13
+86*70 Item{67+9}
+89R9*Vector<3|50R9> 3|53P14 14|42p14 27|93r33 97p14 97r41 102p14 102r41 107P14
+. 107r40 153c9 155e14 28|98r33 107r41 117r41 125r40
+93V13*Get{73R9} 93>18 28|98b13 101l8 101t11
+93c18 Container<89R9> 28|98b18 100r14
+97U14*Append 97=22 98>22 28|107b14 111l8 111t14
+97r22 Container{89R9} 28|107b22 110r7
+98*22 Item{67+9} 28|108b22 110r30
+102U14*Remove 102=22 103>22 28|117b14 121l8 121t14
+102r22 Container{89R9} 28|117b22 120r7
+103*22 Item{67+9} 28|118b22 120r30
+107U14*Finalize<3|54p14> 107=24 28|125b14 128l8 128t16
+107r24 Object{89R9} 28|125b24
+113A9 Element_Array(67+9)<integer> 114r44 120r21
+114P9 Element_Array_Access(113A9) 116r34
+116p4 Null_Element_Array{114P9}
+118R9 Vector_Record 118d24 121e14 122r44 28|24r49 149r30 154r30 180r36
+118i24 Len{positive} 120r41 28|153r36 176r25 180r64
+119r7 Ref_Counter{29|48R9} 28|74m57 90m57 160m56 189m65
+120a7 List{113A9} 28|44r26 45r29 59r34 60r29 155m23 155r62 159m20 174r25
+. 175r22 182m32 182r59 184r37 185m32 185r53 186r33 186r54
+122P9 Vector_Record_Access(118R9) 125r16 28|25r49 41r25 56r25 145r22 168r22
+. 169r31
+125p7 Target{122P9} 28|32r24 41r59 56r59 73r14 74r50 76m23 78m17 89r14 90r50
+. 148r22 153r29 155r55 161m19 169r64 178m28 190m28
+131U14 Finalize<3|48p14> 131=24 28|70b14 81l8 81t16 156s13 177s19 188s19
+131r24 Obj{73R9} 28|70b24 73r10 74r46 76m19 76r19 78m13
+135U14 Adjust<3|47p14> 135=22 28|87b14 92l8 92t14
+135r22 Obj{73R9} 28|87b22 89r10 90r46
+138W19 Protected_Vector 150E7 151l8 151e24 154r14 28|131b19 197l8 197t24
+141V16 Get{73R9} 28|100s29 136b16 139l11 139t14
+144U17 Append 144>25 28|110s22 144b17 162l11 162t17
+144*25 Item{67+9} 28|144b25 159r34
+147U17 Remove 147>25 28|120s22 167b17 195l11 195t17
+147*25 Item{67+9} 28|167b25 175r33
+150r7 Elements{73R9} 28|138r17 148r13 153r20 155r46 156m23 156r23 161m10
+. 169r55 177m29 177r29 178m19 188m29 188r29 190m19
+154w7 List{138W19} 28|100r24 110r17 120r17
+X 28 util-concurrent-arrays.adb
+23U14 Free[10|20] 76s13
+40*62 Item{27|67+9}
+41p7 Target{27|122P9} 43r10 44r19 45r22
+44i14 I{integer} 45r35
+55*70 Item{27|67+9}
+56p7 Target{27|122P9} 58r10 59r27 60r22
+59i14 I{integer} 60r35
+71b7 Release{boolean} 74m70 75r13
+145p10 New_Items{27|122P9} 149m13 154m13 155r13 159r10 160r46 161r29
+146i10 Len{natural} 151m13 153m13 154r52 155r34 159r26
+168p10 New_Items{27|122P9} 180m19 182r22 184r27 185r22 185r43 189r55 190r38
+169p10 Items{27|122P9} 171r13 174r19 175r16 176r19 180r58 182r53 186r27 186r48
+174i14 I{integer} 175r28 181r22 182r43 182r70 184r22 185r38 186r39
+X 29 util-concurrent-counters.ads
+39K25*Counters 27|20w22 119r37 28|74r26 90r26 160r26 189r35 29|91e29
+48R9*Counter 27|119r46 29|87e14
+52U14*Increment 28|90s35 160s35 189s44
+65U14*Decrement 28|74s35
+

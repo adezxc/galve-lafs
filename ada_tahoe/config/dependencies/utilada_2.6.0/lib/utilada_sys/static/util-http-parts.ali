@@ -1,0 +1,216 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U util.http.parts%b	util-http-parts.adb	cb5cfd66 OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+W ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+W util%s		util.ads		util.ali
+W util.http%s		util-http.adb		util-http.ali
+W util.log%s		util-log.adb		util-log.ali
+W util.log.loggers%s	util-log-loggers.adb	util-log-loggers.ali  AD
+
+U util.http.parts%s	util-http-parts.ads	004a8ab9 EE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+W util.http%s		util-http.adb		util-http.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-coinve.ads		19700101000001 728ad523 ada.containers.indefinite_vectors%s
+D a-direct.ads		19700101000001 467e87a1 ada.directories%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-ioexce.ads		19700101000001 40018c65 ada.io_exceptions%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-stzmap.ads		19700101000001 f60a1f4d ada.strings.wide_wide_maps%s
+D a-stzunb.ads		19700101000001 404b19b5 ada.strings.wide_wide_unbounded%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-textio.ads		19700101000001 5c2c6153 ada.text_io%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-cstrea.ads		19700101000001 e53d8b8e interfaces.c_streams%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-crtl.ads		19700101000001 8a0692f8 system.crtl%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-ficobl.ads		19700101000001 dc5161d4 system.file_control_block%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
+D util.ads		20231110223241 36301479 util%s
+D util-beans.ads	20231110223241 362abe70 util.beans%s
+D util-beans-basic.ads	20231110223241 95c2d591 util.beans.basic%s
+D util-beans-objects.ads  20231110223241 8deb9c60 util.beans.objects%s
+D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-http.ads		20231110223241 43192da1 util.http%s
+D util-http-parts.ads	20231110223241 fc1c2773 util.http.parts%s
+D util-http-parts.adb	20231110223241 67662ed9 util.http.parts%b
+D util-log.ads		20231110223241 0fb1ac89 util.log%s
+D util-log-appenders.ads  20231110223241 a19555cf util.log.appenders%s
+D util-log-loggers.ads	20231110223241 5659ff08 util.log.loggers%s
+D util-properties.ads	20231110223241 3ed4fee8 util.properties%s
+D util-refs.ads		20231110223241 e592e98d util.refs%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
+D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
+G a e
+G c b b b [b util__http__parts 23 1 none]
+G c Z s b [save util__http__parts 49 14 none]
+G c Z s b [delete util__http__parts 54 14 none]
+G c Z s s [partDF util__http__parts 58 9 none]
+G c Z s s [partIP util__http__parts 58 9 none]
+G r c none [b util__http__parts 23 1 none] [create util__log__loggers 38 13 none]
+G r c none [save util__http__parts 49 14 none] [info util__log__loggers 87 14 none]
+G r c none [save util__http__parts 49 14 none] [error util__log__loggers 112 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 60|19r6 31r30 58r30 61|18r6 19r6 39r7 43r12 54r7
+X 9 a-conhel.ads
+84R12 Reference_Control_Type<13|43R9>
+X 11 a-direct.ads
+76K13*Directories 524e20 61|18w10 39r11 54r11
+147U14*Delete_File 61|54s23
+154U14*Rename 61|39s23
+154a22 Old_Name{string} 61|39r31
+154a32 New_Name{string} 61|40r31
+X 13 a-finali.ads
+40K13*Finalization 68e21 60|19w10 31r34 58r34
+50H9*Limited_Controlled<36|40R9> 66e55 60|31r47 58r47
+53U14*Initialize<36|44p14>
+54U14*Finalize<36|43p14>
+X 14 a-ioexce.ads
+16K13*IO_Exceptions 28e22 61|19w10 43r16
+22X4*Use_Error 61|43r30
+X 36 s-finroo.ads
+42U14*Adjust
+X 52 util.ads
+18K9*Util 28e9 60|23r9 60r5 61|21r6 23r14 25r19 25r46 57r5
+X 54 util-beans-basic.ads
+42h9*Readonly_Bean
+54h9*Bean<42R9>
+X 55 util-beans-objects.ads
+150h9*Object_Type
+X 59 util-http.ads
+27K14*Http 52|18k9 59|162e14 60|23r14 60r10 61|23r19 57r10
+X 60 util-http-parts.ads
+23K19*Parts 59|27k14 60|58E9 60l15 60e20 61|23b24 57l15 57t20
+31H9*Part<13|50R9> 13|53P14 54P14 36|42p14 60|34p13 34r33 37p13 37r33 40p13
+. 40r43 43p13 43r41 49p14 49r30 54p14 54r36 58c9 58e82 61|33r30 35r37 51r36
+. 52r33
+34y13*Get_Size{natural} 34>23
+34r23 Data{31R9}
+37y13*Get_Name{string} 37>23
+37r23 Data{31R9}
+40y13*Get_Local_Filename{string} 40>33 61|35R55 52R51
+40r33 Data{31R9}
+43y13*Get_Content_Type{string} 43>31
+43r31 Data{31R9}
+49U14*Save 49>20 50>20 61|33b14 45l8 45t12
+49r20 Data{31R9} 61|33b20 35r49
+50a20 Path{string} 61|34b20 37r62 40r43
+54U14*Delete 54=22 61|51b14 55l8 55t14
+54r22 Data{31R9} 61|51b22 52r45
+X 61 util-http-parts.adb
+25r4 Log{64|34R9} 37r7 44r10
+35a7 Old_Path{string} 37r52 39r43
+52a7 Path{string} 54r36
+X 62 util-log.ads
+148K14*Log 61|21r11 25r24 25r51 62|174e13
+X 64 util-log-loggers.ads
+24K18*Loggers 61|21w15 25r28 25r55 64|153e21
+34R9*Logger<13|50R9> 61|25r36 64|147e14
+38V13*Create{34R9} 61|25s63
+87U14*Info 61|37s11
+112U14*Error 61|44s14
+X 65 util-properties.ads
+256h12*Manager<54|54R9>
+279h12*Shared_Manager<256R12>
+301R15 Manager_Type<256R12>
+

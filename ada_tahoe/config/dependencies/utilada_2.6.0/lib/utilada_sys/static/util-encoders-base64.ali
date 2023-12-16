@@ -1,0 +1,279 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U util.encoders.base64%b  util-encoders-base64.adb  95cfb9e3 NE OO PK
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W util%s		util.ads		util.ali
+W util.encoders%s	util-encoders.adb	util-encoders.ali
+W util.streams%s	util-streams.adb	util-streams.ali
+
+U util.encoders.base64%s  util-encoders-base64.ads  96e0176f EE OO PF PR PK
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.adb		a-stream.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.return_stack%s	s-retsta.ads		s-retsta.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+W util.encoders%s	util-encoders.adb	util-encoders.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-encoders.ads	20231110223241 2efdfb8e util.encoders%s
+D util-encoders-base64.ads  20231110223241 bc71fa90 util.encoders.base64%s
+D util-encoders-base64.adb  20231110223241 cbff9fb7 util.encoders.base64%b
+D util-streams.ads	20231110223241 e241dcc4 util.streams%s
+G a e
+G c Z s b [encode util__encoders__base64 28 13 none]
+G c Z s b [decode util__encoders__base64 32 13 none]
+G c Z s b [transform util__encoders__base64 54 14 none]
+G c Z s b [finish util__encoders__base64 62 14 none]
+G c Z s b [set_url_mode util__encoders__base64 68 14 none]
+G c Z s b [create_url_encoder util__encoders__base64 73 13 none]
+G c Z s b [transform util__encoders__base64 94 14 none]
+G c Z s b [set_url_mode util__encoders__base64 102 14 none]
+G c Z s b [set_ignore_line_break util__encoders__base64 106 14 none]
+G c Z s b [create_url_decoder util__encoders__base64 111 13 none]
+G c Z s s [TalphabetBIP util__encoders__base64 115 4 none]
+G c Z s s [Talphabet_valuesBIP util__encoders__base64 163 4 none]
+G c Z s s [encoderDA util__encoders__base64 156 9 none]
+G c Z s s [encoderDF util__encoders__base64 156 9 none]
+G c Z s s [encoderIP util__encoders__base64 156 9 none]
+G c Z s s [decoderDA util__encoders__base64 238 9 none]
+G c Z s s [decoderDF util__encoders__base64 238 9 none]
+G c Z s s [decoderIP util__encoders__base64 238 9 none]
+G r c none [encode util__encoders__base64 28 13 none] [encode_leb128 util__encoders 215 14 none]
+G r c none [decode util__encoders__base64 32 13 none] [copy util__streams 98 14 none]
+G r c none [decode util__encoders__base64 32 13 none] [decode_leb128 util__encoders 223 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 31|18r6 55r38 56r39 57r39 58r39 63r36 64r36 95r38 96r39 97r39
+. 98r39 116r53 163r35 32|28r17 29r17 30r17 32r17 67r17 68r17 69r17 70r17
+. 72r26 123r38 124r39 125r39 126r39 128r18 129r18 201r36 202r36 203r22 260r38
+. 261r39 262r39 263r39 265r16 266r16 267r16
+X 4 a-stream.ads
+36K13*Streams 87e16 31|18w10 55r42 56r43 57r43 58r43 63r40 64r40 95r42 96r43
+. 97r43 98r43 116r57 163r39 32|28r21 29r21 30r21 32r21 67r21 68r21 69r21
+. 70r21 72r30 123r42 124r43 125r43 126r43 128r22 129r22 201r40 202r40 203r26
+. 260r42 261r43 262r43 263r43 265r20 266r20 267r20
+42M9*Stream_Element 31|116r65 163r47 32|267r28 302r33 309r33 316r33
+44I9*Stream_Element_Offset<long_long_integer> 31|57r51 58r51 64r48 97r51
+. 98r51 32|29r29 30r29 69r29 70r29 72r38 125r51 126r51 128r30 129r30 202r48
+. 203r34 262r51 263r51 265r28 266r28
+54A9*Stream_Element_Array(42M9)<44I9> 31|55r50 56r51 63r48 95r50 96r51 32|28r29
+. 32r29 67r29 68r29 123r50 124r51 201r48 260r50 261r51
+X 10 interfac.ads
+38K9*Interfaces 232e15 31|19w6 28r32 32r47 116r13 160r18 163r66 241r18 32|21r8
+. 26r32 65r47 71r17
+69M9*Unsigned_8 31|116r24 160r29 163r77 241r29 32|130r18 138r19 146r19 163r16
+. 174r16 185r16 268r16 272r16
+83M9*Unsigned_64 31|28r43 32r58 32|26r43 65r58 71r28
+90V13*Shift_Left{69M9} 32|139s37 147s37 175s38 186s38 206s36 212s36 299s29
+. 303s29 310s29
+95V13*Shift_Right{69M9} 32|139s70 147s70 164s34 175s71 186s71 302s59 309s59
+X 29 util.ads
+18K9*Util 28e9 31|23r9 39r24 79r24 156r24 238r24 245r5 32|18r6 19r14 78r7
+. 365r5
+X 30 util-encoders.ads
+44K14*Encoders 29|18k9 30|259e18 31|23r14 39r29 79r29 156r29 238r29 245r10
+. 32|19r19 365r10
+51X4*Encoding_Error 32|76r16 91r16 102r16 290r28 293r22
+149h9*Transformer 31|39r38 79r38 156r38 238r38
+150P9*Transformer_Access(149R9) 31|73r39 111r39 32|239r39 357r39
+215U14*Encode_LEB128 32|37s7
+215a29 Into{4|54A9} 32|37r22
+216i29 Pos{4|44I9} 32|38r22
+217m29 Val{10|83M9} 32|39r22
+218i29 Last{4|44I9} 32|40r22
+223U14*Decode_LEB128 32|95s7
+223a29 From{4|54A9} 32|95r22
+224i29 Pos{4|44I9} 32|96r22
+225m29 Val{10|83M9} 32|97r22
+226i29 Last{4|44I9} 32|98r22
+X 31 util-encoders-base64.ads
+23K23*Base64 30|44k14 31|115E9 245l19 245e25 32|19b28 365l19 365t25
+28V13*Encode{string} 28>21 32|26b13 59l8 59t14
+28m21 Value{10|83M9} 32|26b21 39r30
+32V13*Decode{10|83M9} 32>21 32|65b13 105l8 105t14
+32a21 Value{string} 32|65b21 67r56 68r56 73r12 73r34 78r44 78r67 81r12 82r12
+39R9*Encoder<30|149R9> 54P14 54r42 62P14 62r36 68p14 68r42 156c9 161e14 32|27r17
+. 122r42 200r36 225r42 241r18
+54U14*Transform<30|166p14> 54=25 55>25 56<25 57<25 58<25 32|44s9 122b14 194l8
+. 194t17
+54r25 E{39R9} 32|122b25 132r46 135r13 136r13 137r19 142m13 143m13 145r19
+. 151m13 158m13 166m13 167m13 177m13 178m13 191m7
+55a25 Data{4|54A9} 32|44r20 123b25 129r55 135r40 138r31 146r31 154r18 163r28
+. 165r17 169r24 174r28 176r17 180r24 185r28 193r18
+56a25 Into{4|54A9} 32|45r20 124b25 128r55 139m13 147m13 148m13 155r23 164m10
+. 175m10 186m10 187m10
+57i25 Last{4|44I9} 32|46r20 125b25 156m13 168m13 179m13 192m7
+58i25 Encoded{4|44I9} 32|47r20 126b25 157m13 169m13 180m13 193m7
+62U14*Finish<30|173p14> 62=22 63=22 64=22 32|48s9 200b14 219l8 219t14
+62r22 E{39R9} 32|200b22 205r10 206r24 206r48 210m10 211r13 212r24 212r48
+. 215m10
+63a22 Into{4|54A9} 32|48r17 201b22 203r59 206m10 207m10 208m10 212m10 213m10
+64i22 Last{4|44I9} 32|49r17 202b22 209m10 214m10 217m10
+68U14*Set_URL_Mode 68=28 69>28 32|43s9 225b14 233l8 233t20
+68r28 E{39R9} 32|225b28 229m10 231m10
+69b28 Mode{boolean} 32|226b28 228r10
+73V13*Create_URL_Encoder{30|150P9} 32|239b13 242l8 242t26
+79R9*Decoder<30|149R9> 94P14 94r42 102p14 102r42 106p14 106r48 238c9 243e14
+. 32|66r17 259r42 334r42 347r48 359r18
+94U14*Transform<30|166p14> 94=25 95>25 96<25 97<25 98<25 32|86s9 259b14 328l8
+. 328t17
+94r25 E{79R9} 32|259b25 270r51 271r37 272r30 292r23 324m7 325m7
+95a25 Data{4|54A9} 32|86r20 260b25 266r53 274r18 275r15 327r19
+96a25 Into{4|54A9} 32|87r20 261b25 265r53 302m19 306r35 309m19 313r35 316m19
+. 319r35
+97i25 Last{4|44I9} 32|88r20 262b25 326m7
+98i25 Encoded{4|44I9} 32|89r20 263b25 327m7
+102U14*Set_URL_Mode 102=28 103>28 32|85s9 334b14 342l8 342t20
+102r28 E{79R9} 32|334b28 338m10 340m10
+103b28 Mode{boolean} 32|335b28 337r10
+106U14*Set_Ignore_Line_Break 106=37 107>37 32|347b14 351l8 351t29
+106r37 E{79R9} 32|347b37 350m7
+107b37 Ignore{boolean} 32|348b37 350r30
+111V13*Create_URL_Decoder{30|150P9} 32|357b13 363l8 363t26
+115A9 Alphabet(4|42M9)<10|69M9> 118r53 120r39 138r43
+118P9 Alphabet_Access(115A9) 157r18 32|132r27
+120a4 BASE64_ALPHABET{115A9} 157r37 32|231r24
+138a4 BASE64_URL_ALPHABET{115A9} 32|229r24 241r40
+157p7 Alphabet{118P9} 32|132r48 206r26 212r26 229m12 231m12 241m28
+158i7 Column{natural}
+159i7 Count{natural} 32|135r15 136r15 142m15 151m15 158m15 167m15 178m15
+. 191m9 205r12 210m12 211r15 215m12
+160m7 Value{10|69M9} 32|137r21 143m15 145r21 166m15 177m15 206r50 212r50
+163A9 Alphabet_Values(10|69M9)<4|42M9> 164r60 166r37 201r41
+164P9 Alphabet_Values_Access(163A9) 239r18 32|270r25
+166a4 BASE64_VALUES{163A9} 239r44 32|340r22
+201a4 BASE64_URL_VALUES{163A9} 32|338r22 359r38
+236I9 Decode_State_Type<integer> 240r18 32|271r16
+239p7 Values{164P9} 32|270r53 338m12 340m12 359m28
+240i7 State{236I9} 32|271r39 324m9 360m28
+241m7 Remain{10|69M9} 32|272r32 325m9 361m28
+242b7 Ignore_Line_Break{boolean} 32|292r25 350m9 362m28
+X 32 util-encoders-base64.adb
+27r7 E{31|39R9} 43m7 43r7 44m7 44r7 48m7 48r7
+28a7 Data{4|54A9} 37m30 37r30 38r30 44r31 44r37
+29i7 Last{4|44I9} 40m30 44r51 46m31 48r30 49m25 49r25 52r28 53r51 54r31 55r51
+. 57r51
+30i7 Encoded{4|44I9} 47m31
+31a7 Result{string} 32r56 33m27 33r27 52r10 53r17 53r25 54r13 55r17 55r25
+. 57r17 57r25
+32a7 Buf{4|54A9} 33m11 33r11 34m27 34r27 45m31 48m25 48r25 48r42
+66r7 D{31|79R9} 85m7 85r7 86m7 86r7
+67a7 Buf{4|54A9} 75r10 78m34 78r34 81m7 82m7 86r31 86r36
+68a7 R{4|54A9} 87m31 95r30 95r33 96r30
+69i7 Last{4|44I9} 88m31 95r44 101r10
+70i7 Encoded{4|44I9} 89m31 90r10 98m30 101r22
+71m7 Result{10|83M9} 97m30 104r14
+72i7 End_Pos{4|44I9} 75r23 86r49 90r21
+128i7 Pos{4|44I9} 139r19 140m13 140r20 147r19 148r19 149m13 149r20 155r13
+. 156r24 164r16 168r21 175r16 179r21 186r16 187r16 188m10 188r17 192r18
+129i7 I{4|44I9} 135r35 138r37 141m13 141r18 146r37 150m13 150r18 154r13 157r24
+. 163r34 165r13 174r34 176r13 185r34 189m10 189r17
+130m7 C1{10|69M9} 137m13 139r49 146m13 147r83 148r41 163m10 164r47 166r24
+. 175r50 185m10 186r84 187r38
+130m11 C2{10|69M9} 138m13 139r83 143r24 145m13 147r49 174m10 175r84 177r24
+. 186r50
+132p7 Alphabet{31|118P9} 139r27 147r27 148r31 164r24 175r28 186r28 187r28
+203i7 Pos{4|44I9} 206r16 207r16 208r16 209r18 212r16 213r16 214r18 217r18
+265i7 Pos{4|44I9} 302r25 304m19 304r26 306r29 309r25 311m19 311r26 313r29
+. 316r25 317m19 317r26 319r29 326r19
+266i7 I{4|44I9} 274r13 275r21 276m10 276r15
+267m7 C{4|42M9} 275m10 277r25 279r16 290r87 292r56 293r81
+268m7 Val{10|69M9} 277m10 278r14 299r41 302r72 303r41 309r72 310r41 316r59
+270p7 Values{31|164P9} 277r17
+271i7 State{31|236I9} 280r21 283m22 287m22 296r18 298m19 305m19 312m19 318m19
+. 324r19
+272m7 Remain{10|69M9} 282m22 286m22 299m19 302r49 303m19 309r49 310m19 316r49
+. 325r19
+X 33 util-streams.ads
+48K14*Streams 32|18w11 78r12 33|120e17
+98U14*Copy 32|78s20
+98a20 From{string} 32|78r59
+99a20 Into{4|54A9} 32|78r26
+

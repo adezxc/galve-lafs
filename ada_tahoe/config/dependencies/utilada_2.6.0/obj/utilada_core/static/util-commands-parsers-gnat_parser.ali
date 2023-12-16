@@ -1,0 +1,245 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_ALLOCATORS
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.commands.parsers.gnat_parser%b  util-commands-parsers-gnat_parser.adb  6b39165f NE OO PK
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.os_lib%s		g-os_lib.ads		g-os_lib.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+W util.commands.parsers%s  util-commands-parsers.adb  util-commands-parsers.ali
+
+U util.commands.parsers.gnat_parser%s  util-commands-parsers-gnat_parser.ads  e2e1668a EE NE OO PK
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.command_line%s	g-comlin.adb		g-comlin.ali
+W util.commands.parsers%s  util-commands-parsers.adb  util-commands-parsers.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-comlin.ads		19700101000001 4aa66568 ada.command_line%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-coinve.ads		19700101000001 728ad523 ada.containers.indefinite_vectors%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D gnat.ads		19700101000001 b5988c27 gnat%s
+D g-comlin.ads		19700101000001 9c5f9169 gnat.command_line%s
+D g-dirope.ads		19700101000001 940c4438 gnat.directory_operations%s
+D g-os_lib.ads		19700101000001 0db74523 gnat.os_lib%s
+D g-regexp.ads		19700101000001 691be386 gnat.regexp%s
+D g-string.ads		19700101000001 c6abc540 gnat.strings%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-memory.ads		19700101000001 5b8432d0 system.memory%s
+D s-os_lib.ads		19700101000001 a2467c22 system.os_lib%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-regexp.ads		19700101000001 9c7d27a7 system.regexp%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stalib.adb		19700101000001 eb464a47 system.standard_library%b
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-string.ads		19700101000001 582aac7d system.strings%s
+D s-ststop.ads		19700101000001 c569db7c system.strings.stream_ops%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-commands.ads	20231110223241 6bbb2dbb util.commands%s
+D util-commands-parsers.ads  20231110223241 933efd08 util.commands.parsers%s
+D util-commands-parsers.adb  20231110223241 49acf090 util.commands.parsers%b
+D util-commands-parsers-gnat_parser.ads  20231110223241 ed800aeb util.commands.parsers.gnat_parser%s
+D util-commands-parsers-gnat_parser.adb  20231110223241 8b0e5997 util.commands.parsers.gnat_parser%b
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+G a e
+G c s s s [s util__commands__parsers__gnat_parser 20 1 none]
+G c Z s b [execute util__commands__parsers__gnat_parser 26 14 none]
+G c Z s b [usage util__commands__parsers__gnat_parser 31 14 none]
+G c Z s b [get_arguments util__commands__parsers__gnat_parser 35 14 none]
+G c Z b b [to_os_lib_argument_list util__commands__parsers__gnat_parser 22 13 none]
+G r i none [s util__commands__parsers__gnat_parser 20 1 none] [config_parser util__commands__parsers 41 12 none]
+G r s dynamic_argument_list [execute util__commands__parsers__gnat_parser 26 14 none] [dynamic_argument_listIP util__commands 202 9 none]
+G r l dynamic_argument_list [execute util__commands__parsers__gnat_parser 26 14 none] [dynamic_argument_listDI util__commands 202 9 none]
+G r k dynamic_argument_list [execute util__commands__parsers__gnat_parser 26 14 none] [dynamic_argument_listDF util__commands 202 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 60|43r20
+X 9 a-conhel.ads
+84R12 Reference_Control_Type<12|43R9>
+X 10 a-coinve.ads
+60R9*Vector<12|43R9>
+280U14*Append 60|49s23[64|22]
+X 13 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[10|84]>
+X 15 a-string.ads
+16K13*Strings 35e16 60|43r24
+X 18 a-strunb.ads
+85K21*Unbounded 766e26 60|43r32
+108V13*To_Unbounded_String{91R9} 60|43s42
+X 23 gnat.ads
+37K9*GNAT 60e9 59|18r6 22r23 60|18r6 23r45 26r45 28r17 33r18 66r24 74r13
+. 78r16
+X 24 g-comlin.ads
+287K14*Command_Line 1232e22 59|18w11 22r28
+293P9*Opt_Parser 59|37r45 60|41r45 64r27
+294p4*Command_Line_Parser{293P9} 59|37r62 60|41r62
+308U14*Initialize_Option_Scan 60|69s16
+462V13*Get_Argument{string} 60|46s39
+464p7 Parser{293P9} 60|46r53
+565P9*Command_Line_Configuration 59|24r30 60|58r19
+706U14*Set_Usage 60|92s13
+708a7 Usage{string} 60|92r32
+716U14*Display_Help 60|93s13
+720V13*Get_Switches{string} 60|89s36
+732U14*Free 60|73s16 79s19
+748U14*Getopt 60|70s16
+749p7 Config{565P9} 60|70r24
+751p7 Parser{293P9} 60|70r42
+X 26 g-os_lib.ads
+51K14*OS_Lib=51:36 60|18w11 23r50 26r50 28r22 33r23 66r29 74r18 78r21
+X 30 system.ads
+67M9*Address
+X 35 s-memory.ads
+51V13*Alloc{30|67M9} 101i<c,__gnat_malloc>22
+66U14*Free 102i<c,__gnat_free>22
+74V13*Realloc{30|67M9} 103i<c,__gnat_realloc>22
+X 36 s-os_lib.ads
+71A12*String_List{51|52A9}<integer>
+85P12*String_List_Access{51|53P9}
+91U14*Free=91:69 60|74s25 78s28
+742A12*Argument_List{71A12}<integer> 60|28r29 33r30
+747P12*Argument_List_Access{85P12} 60|23r57 26r57 66r36
+X 46 s-stalib.adb
+87U14 Break_Start 88i<c,__gnat_break_start>22
+X 51 s-string.ads
+43P9*String_Access(string)
+52A9*String_List(43P9)<integer>
+53P9*String_List_Access(52A9)
+X 55 util.ads
+18K9*Util 28e9 59|20r9 27r36 40r10 43r5 60|20r14 55r35 97r5
+X 56 util-commands.ads
+105K14*Commands 55|18k9 56|207e18 59|20r14 27r41 29r50 40r15 43r10 60|20r19
+. 55r40 57r50 97r10
+111h9*Argument_List 59|27r50 29r59 60|22r48 25r48 55r49 57r59
+114y13*Get_Count{natural} 60|27R42
+117y13*Get_Argument{string} 60|31R43
+121y13*Get_Command_Name{string} 60|71R43
+159R9*Dynamic_Argument_List<111R9> 205e14 59|35r46 60|39r46 65r24
+203r7 List{10|60R9[64|22]} 60|49m18
+204r7 Name{18|91R9} 60|43m12
+X 57 util-commands-parsers.ads
+29K23*Parsers 56|105k14 57|62e26 59|20r23 40r24 43r19 60|20r28 97r19
+34+12 Config_Type 59|40r47
+35U22 Execute 59|41r47
+41k12*Config_Parser 42e21 59|40r32
+X 59 util-commands-parsers-gnat_parser.ads
+20K31*GNAT_Parser 57|29k23 59|43l27 43e38 60|20b36 97l27 97t38
+22K12*GC=22:28 24r27 37r42 37r59 60|41r42 41r59 46r36 58r16 64r24 69r13 70r13
+. 73r13 79r16 89r33 92r10 93r10
+24P12*Config_Type{24|565P9} 26r40 32r37 40r62 60|54r39 60r18 88r37
+26U14*Execute 26=23 27>23 28^23 41r62 60|54b14 85l8 85t15
+26p23 Config{24P12} 60|54b23 62r10 70r34 73m22 79m25
+27c23 Args<56|111R9> 60|55b23 67r43 71r38 83r19
+28p23 Process 60|56b23 72r13 83r10
+29c36 Cmd_Args<56|111R9>
+31U14*Usage 57|39i22 59|31>21 32=21 60|87b14 95l8 95t13
+31a21 Name{string} 60|87b21 92r41
+32p21 Config{24P12} 60|88b21 89r50 92m24 93r27
+35U14*Get_Arguments 35=29 36>29 37>29 60|39b14 52l8 52t21 71s13
+35r29 List{56|159R9} 60|39b29 43m7 49m13 49r13
+36a29 Command{string} 60|40b29 43r63
+37p29 Parser{24|293P9} 60|41b29 46r63
+39K12*Config_Parser[57|41]
+X 60 util-commands-parsers-gnat_parser.adb
+22V13 To_OS_Lib_Argument_List{36|747P12} 22>38 25b13 34l8 34t31 67s18
+22c38 Args<56|111R9> 25b38 27r37 31r38
+27i7 Count{natural} 28r49 30r21
+28a7 New_Arg{36|742A12} 31m10 33r46
+30i11 I{integer} 31r19 31r57
+46a13 S{string} 48r23 49r31
+57c36 Cmd_Args<56|111R9>
+60p7 Empty{59|24P12} 62r20
+64p13 Parser{24|293P9} 69m40 69r40 70r52 71r61
+65r13 Cmd_Args{56|159R9} 71m28 71r28 72r22
+66p13 Params{36|747P12} 69r48 74m31 74r31 78m34 78r34
+89a7 Opts{string} 91r10
+

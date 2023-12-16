@@ -1,0 +1,162 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_EXCEPTIONS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.systems.io%b	util-systems-io.adb	045cce7c NE OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.utf_encoding%s  a-stuten.adb	a-stuten.ali
+W ada.strings.utf_encoding.strings%s  a-suenst.adb  a-suenst.ali
+W ada.strings.utf_encoding.wide_wide_strings%s  a-suezst.adb  a-suezst.ali
+Z system%s		system.ads		system.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W util.systems%s	util-systems.ads	util-systems.ali
+
+U util.systems.io%s	util-systems-io.ads	118b43d0 EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.utf_encoding%s  a-stuten.adb	a-stuten.ali
+W util%s		util.ads		util.ali
+W util.systems%s	util-systems.ads	util-systems.ali
+W util.systems.os%s	util-systems-os.ads	util-systems-os.ali
+W util.systems.types%s	util-systems-types.ads	util-systems-types.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-ioexce.ads		19700101000001 40018c65 ada.io_exceptions%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-suenst.ads		19700101000001 7e912418 ada.strings.utf_encoding.strings%s
+D a-suezst.ads		19700101000001 1161e3f6 ada.strings.utf_encoding.wide_wide_strings%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D i-cstrin.ads		19700101000001 f40c8db4 interfaces.c.strings%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D util.ads		20231110223241 36301479 util%s
+D util-systems.ads	20231110223241 be223f03 util.systems%s
+D util-systems-constants.ads  20231110223241 28c2a3fe util.systems.constants%s
+D util-systems-io.ads	20231110223241 dd5e1b8a util.systems.io%s
+D util-systems-io.adb	20231110223241 f6f39e7d util.systems.io%b
+D util-systems-os.ads	20231110223241 5ac3f8b3 util.systems.os%s
+D util-systems-types.ads  20231110223241 eefa4f44 util.systems.types%s
+G a e
+G c Z s b [put util__systems__io 31 14 none]
+G c Z s b [put util__systems__io 33 14 none]
+G c Z s b [put_utf_8 util__systems__io 37 14 none]
+G c Z s b [put_utf_8 util__systems__io 39 14 none]
+G c Z s b [put_raw util__systems__io 43 14 none]
+G r c none [put util__systems__io 31 14 none] [write util__systems__os 83 13 none]
+G r c none [put util__systems__io 33 14 none] [write util__systems__os 83 13 none]
+G r c none [put_utf_8 util__systems__io 37 14 none] [write util__systems__os 83 13 none]
+G r c none [put_utf_8 util__systems__io 39 14 none] [write util__systems__os 83 13 none]
+G r c none [put_raw util__systems__io 43 14 none] [write util__systems__os 83 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 22|19r6 44r36 23|19r6 20r6 21r6 25r8 65r36 69r16
+X 3 a-ioexce.ads
+16K13*IO_Exceptions 28e22 23|19w10 69r20
+23X4*Device_Error 23|69r34
+X 4 a-string.ads
+16K13*Strings 35e16 22|19r10 44r40 23|20r10 21r10 25r12 65r40
+X 5 a-stuten.ads
+42K21*UTF_Encoding 144e29 22|19w18 44r48 23|20r18 21r18 25r20 65r48
+59A12*UTF_8_String{string}<integer> 22|44r61 23|32r20 49r20 65r61
+X 6 a-suenst.ads
+20K34*Strings 65e37 23|20w31 32r36
+35V13*Encode{5|59A12} 23|32s44
+X 7 a-suezst.ads
+21K34*Wide_Wide_Strings 64e47 23|21w31 49r36
+35V13*Encode{5|59A12} 23|49s54
+X 10 i-c.ads
+57I9*int<integer>
+X 19 util.ads
+18K9*Util 28e9 22|20r6 21r6 22r9 24r25 26r42 27r42 28r42 46r5 23|23r14 66r11
+. 73r5
+X 20 util-systems.ads
+19K14*Systems 19|18k9 20|23e17 22|20r11 21r11 22r14 24r30 26r47 27r47 28r47
+. 46r10 23|23r19 66r16 73r10
+X 22 util-systems-io.ads
+22K22*IO 20|19k14 22|46l18 46e20 23|23b27 73l18 73t20
+24I12*File_Type{25|29I9} 26r29 27r29 28r29 31r32 33r32 37r38 39r35 43r36
+. 23|30r32 37r32 47r38 54r35 64r36
+26i4*STDIN_FILENO{24I12}
+27i4*STDOUT_FILENO{24I12}
+28i4*STDERR_FILENO{24I12}
+31U14*Put 31>19 32>19 23|30b14 35l8 35t11 41s7
+31i19 File{24I12} 23|30b19 34r16
+32a19 Content{string} 23|31b19 32r52
+33U14*Put 33>19 34>19 23|37b14 42l8 42t11
+33i19 File{24I12} 23|37b19 41r12
+34e19 C{character} 23|38b19 39r50
+37U14*Put_UTF_8 37>25 38>25 23|47b14 52l8 52t17 58s7
+37i25 File{24I12} 23|47b25 51r16
+38a25 Content{wide_wide_string} 23|48b24 49r62
+39U14*Put_UTF_8 39>25 40>25 23|54b14 59l8 59t17
+39i25 File{24I12} 23|54b25 58r18
+40e25 C{wide_wide_character} 23|55b25 56r60
+43U14*Put_Raw 43>23 44>23 23|34s7 51s7 64b14 71l8 71t15
+43i23 File{24I12} 23|64b23 68r17
+44a23 Content{5|59A12} 23|65b23 68r23 68r40
+X 23 util-systems-io.adb
+32a7 S{5|59A12} 34r22
+39a7 S{string} 41r18
+49a7 S{5|59A12} 51r22
+56a7 S{wide_wide_string} 58r24
+X 24 util-systems-os.ads
+27K22*Os 22|21w19 26r55 27r55 28r55 23|66r24 24|227e20
+46I12*File_Type{25|29I9}
+49i4*STDIN_FILENO{46I12} 22|26r58
+50i4*STDOUT_FILENO{46I12} 22|27r58
+51i4*STDERR_FILENO{46I12} 22|28r58
+72I9*Ssize_T<long_integer>
+83V13*Write{72I9} 23|68s10
+X 25 util-systems-types.ads
+3K22*Types 22|20w19 24r38 25|65e23
+29I9*File_Type<10|57I9> 22|24r44
+

@@ -1,0 +1,281 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U util.http.rest%b	util-http-rest.adb	ea3947a4 OO PK
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+W util%s		util.ads		util.ali
+W util.http%s		util-http.adb		util-http.ali
+W util.serialize%s	util-serialize.ads	util-serialize.ali
+W util.serialize.io%s	util-serialize-io.adb	util-serialize-io.ali
+W util.serialize.io.json%s  util-serialize-io-json.adb  util-serialize-io-json.ali
+W util.serialize.mappers%s  util-serialize-mappers.adb  util-serialize-mappers.ali
+
+U util.http.rest%s	util-http-rest.ads	5bfc08cd BN EE OO PF PK
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W util%s		util.ads		util.ali
+W util.http%s		util-http.adb		util-http.ali
+W util.http.clients%s	util-http-clients.adb	util-http-clients.ali
+W util.serialize%s	util-serialize.ads	util-serialize.ali
+W util.serialize.io%s	util-serialize-io.adb	util-serialize-io.ali
+W util.serialize.mappers%s  util-serialize-mappers.adb  util-serialize-mappers.ali
+W util.serialize.mappers.record_mapper%s  util-serialize-mappers-record_mapper.adb  util-serialize-mappers-record_mapper.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-calfor.ads		19700101000001 0f4707d1 ada.calendar.formatting%s
+D a-catizo.ads		19700101000001 eaa56756 ada.calendar.time_zones%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-coinve.ads		19700101000001 728ad523 ada.containers.indefinite_vectors%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-ioexce.ads		19700101000001 40018c65 ada.io_exceptions%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-stzmap.ads		19700101000001 f60a1f4d ada.strings.wide_wide_maps%s
+D a-stzunb.ads		19700101000001 404b19b5 ada.strings.wide_wide_unbounded%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-textio.ads		19700101000001 5c2c6153 ada.text_io%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D gnat.ads		19700101000001 b5988c27 gnat%s
+D g-calend.ads		19700101000001 cad86fa7 gnat.calendar%s
+D g-catiio.ads		19700101000001 6f0f657f gnat.calendar.time_io%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D i-cstrea.ads		19700101000001 e53d8b8e interfaces.c_streams%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-crtl.ads		19700101000001 8a0692f8 system.crtl%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-ficobl.ads		19700101000001 dc5161d4 system.file_control_block%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-string.ads		19700101000001 582aac7d system.strings%s
+D s-ststop.ads		19700101000001 c569db7c system.strings.stream_ops%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
+D util.ads		20231110223241 36301479 util%s
+D util-beans.ads	20231110223241 362abe70 util.beans%s
+D util-beans-basic.ads	20231110223241 95c2d591 util.beans.basic%s
+D util-beans-objects.ads  20231110223241 8deb9c60 util.beans.objects%s
+D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-http.ads		20231110223241 43192da1 util.http%s
+D util-http-clients.ads	20231110223241 0bb1aac7 util.http.clients%s
+D util-http-cookies.ads	20231110223241 6ad4737d util.http.cookies%s
+D util-http-rest.ads	20231110223241 cedf941b util.http.rest%s
+D util-http-rest.adb	20231110223241 a3da1d45 util.http.rest%b
+D util-log.ads		20231110223241 0fb1ac89 util.log%s
+D util-log-appenders.ads  20231110223241 a19555cf util.log.appenders%s
+D util-log-loggers.ads	20231110223241 5659ff08 util.log.loggers%s
+D util-nullables.ads	20231110223241 180a1d78 util.nullables%s
+D util-properties.ads	20231110223241 3ed4fee8 util.properties%s
+D util-refs.ads		20231110223241 e592e98d util.refs%s
+D util-serialize.ads	20231110223241 bb5084e8 util.serialize%s
+D util-serialize-contexts.ads  20231110223241 db3bf6df util.serialize.contexts%s
+D util-serialize-io.ads	20231110223241 7612f6c3 util.serialize.io%s
+D util-serialize-io-form.ads  20231110223241 4ef736a0 util.serialize.io.form%s
+D util-serialize-io-json.ads  20231110223241 cdf0a449 util.serialize.io.json%s
+D util-serialize-mappers.ads  20231110223241 4acc6ab3 util.serialize.mappers%s
+D util-serialize-mappers-record_mapper.ads  20231110223241 ab99ed73 util.serialize.mappers.record_mapper%s
+D util-stacks.ads	20231110223241 dbdbbea4 util.stacks%s
+D util-streams.ads	20231110223241 e241dcc4 util.streams%s
+D util-streams-buffered.ads  20231110223241 a2e3ffd8 util.streams.buffered%s
+D util-streams-texts.ads  20231110223241 e18922e6 util.streams.texts%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
+D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
+G a e
+G c Z s b [get util__http__rest 36 14 none]
+G c Z s s [clientDF util__http__rest 55 9 none]
+G c Z s s [clientIP util__http__rest 55 9 none]
+G r s response [get util__http__rest 36 14 none] [responseIP util__http__clients 276 9 none]
+G r c none [get util__http__rest 36 14 none] [get util__http__clients 171 14 none]
+G r c none [get util__http__rest 36 14 none] [get_status util__http__clients 110 13 none]
+G r c none [get util__http__rest 36 14 none] [get_body util__http__clients 104 13 none]
+G r c none [get util__http__rest 36 14 none] [parse_string util__serialize__io 207 14 none]
+G r e client [clientDF util__http__rest 55 9 none] [finalize util__http__clients 296 14 none]
+G r s client [clientIP util__http__rest 55 9 none] [clientIP util__http__clients 285 9 none]
+X 11 a-conhel.ads
+84R12 Reference_Control_Type<14|43R9>
+X 16 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[12|84]>
+X 41 s-finroo.ads
+42U14*Adjust
+X 59 util.ads
+18K9*Util 28e9 69|19r6 20r6 21r6 26r9 31r23 38r35 39r35 47r13 49r37 55r23
+. 59r5 70|19r6 20r6 21r14 30r35 31r35 32r18 49r37 52r18 53r18 54r18 61r5
+X 61 util-beans-basic.ads
+42h9*Readonly_Bean
+54h9*Bean<42R9>
+X 62 util-beans-objects.ads
+150h9*Object_Type
+X 66 util-http.ads
+27K14*Http 59|18k9 66|162e14 69|20r11 26r14 31r28 55r28 59r10 70|21r19 32r23
+. 52r23 61r10
+77h9*Abstract_Message
+144h9*Abstract_Request<77R9>
+150h9*Abstract_Response<77R9>
+X 67 util-http-clients.ads
+50K19*Clients 302e22 69|20w16 31r33 55r33 70|32r28
+63R9*Response<66|150R9> 279e14 70|32r36
+104V13*Get_Body{string}<66|157p13> 70|37s53
+110V13*Get_Status{natural}<66|154p13> 70|35s31
+116R9*Client<66|144R9> 289e14 69|31r41 55r41
+122V13*Contains_Header{boolean}<66|81p13>
+131V13*Get_Header{string}<66|89p13>
+138U14*Set_Header<66|95p14>
+145U14*Add_Header<66|101p14>
+151U14*Iterate_Headers<66|106p14>
+157U14*Remove_Header
+162U14*Add_Cookie
+166U14*Set_Timeout
+171U14*Get 70|34s12
+177U14*Post
+181U14*Post
+188U14*Put
+195U14*Patch
+201U14*Delete
+207U14*Head
+213U14*Options
+293U14 Initialize<14|53p14>
+296U14 Finalize<14|54p14>
+X 69 util-http-rest.ads
+26K19*Rest 66|27k14 69|55E9 59l15 59e19 70|21b24 52r28 61l15 61t19
+31R9*Client<67|116R9> 41|42p14 67|122P13 131P13 138P14 145P14 151P14 157p14
+. 162p14 166p14 171p14 177p14 181p14 188p14 195p14 201p14 207p14 213p14 293P14
+. 296P14 69|36p14 36r35 55c9 57e14 70|28r35 52r33
+36U14*Get 36=19 37>19 38=19 39=19 70|28b14 41l8 41t11 58s12
+36r19 Http{31R9} 70|28b19 34m7 34r7 35m7
+37a19 URI{string} 70|29b19 34r17
+38c19 Parser<79|190R9> 70|30b19 39m10 39r10
+39c19 Sink<79|151R9> 70|31b19 39m40
+46K20 Element_Mapper[83|41] 51r37 70|51r37 57r7
+48u14*Rest_Get 48>24 49>24 50>24 51>24 70|48b14 59l8 59t16
+48a24 URI{string} 70|48b24 58r17
+49p24 Mapping{82|55P9} 70|49b24 56r33
+50a24 Path{string} 70|50b24 56r27
+51*24 Into{83|22P9[46]} 70|51b24 57r43
+56i7 Status{natural} 70|35m12
+X 70 util-http-rest.adb
+32r7 Response{67|63R9} 34m22 35r22 37r44
+37a10 Content{string} 39r31
+52r7 Http{69|31R9} 58m7 58r7
+53r7 Reader{81|184R9} 58m22 58r22
+54r7 Mapper{82|121R9} 56m7 56r7 57m35 57r35 58m30 58r30
+X 71 util-log.ads
+169h9*Logging
+X 75 util-properties.ads
+256h12*Manager<61|54R9>
+279h12*Shared_Manager<256R12>
+301R15 Manager_Type<256R12>
+X 77 util-serialize.ads
+18K14*Serialize 69|19r11 21r11 38r40 39r40 47r18 49r42 70|19r11 20r11 30r40
+. 31r40 49r42 53r23 54r23 77|22e19
+X 79 util-serialize-io.ads
+27K24*IO 69|19w21 38r50 39r50 70|19r21 30r50 31r50 53r33 79|240e22
+37h9*Output_Stream<85|57R9>
+151h9*Reader 69|39r53 70|31r53
+190H9*Parser<71|169R9> 69|38r53 70|30r53 79|238e14
+207U14*Parse_String 70|39R17
+X 81 util-serialize-io-json.ads
+24K27*JSON 70|19w24 53r36 81|233e27
+184R9*Parser<79|190R9> 70|53r41 81|231e14
+X 82 util-serialize-mappers.ads
+26K24*Mappers 69|21r21 47r28 49r52 70|20w21 49r52 54r33 82|243e27
+55P9*Mapper_Access(54R9) 69|49r60 70|49r60
+121R9*Processing<78|45R9><79|151R9> 70|54r41 82|241e14
+164U14*Add_Mapping 70|56s14
+X 83 util-serialize-mappers-record_mapper.ads
+21+9 Element_Type
+22P9 Element_Type_Access(21+9[69|46]) 69|51r52[46] 70|51r52[69|46]
+41k32*Record_Mapper 69|21w29 47r36 83|186e41
+134U14 Set_Context 70|57s22[69|46]
+X 85 util-streams.ads
+57h9*Output_Stream
+75h9*Input_Stream
+

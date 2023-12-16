@@ -1,0 +1,517 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_ALLOCATORS
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_FIXED_POINT
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_IMPLICIT_LOOPS
+RV NO_ELABORATION_CODE
+
+U util.processes%b	util-processes.adb	cf45c164 OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.environment_variables%s  a-envvar.adb	a-envvar.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+Z system%s		system.ads		system.ali
+Z system.img_int%s	s-imgint.ads		s-imgint.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+W util%s		util.ads		util.ali
+W util.log%s		util-log.adb		util-log.ali
+W util.log.loggers%s	util-log-loggers.adb	util-log-loggers.ali  AD
+W util.processes%s	util-processes.adb	util-processes.ali
+W util.processes.os%s	util-processes-os.adb	util-processes-os.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+
+U util.processes%s	util-processes.ads	23f48af8 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.streams%s		a-stream.adb		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.exception_table%s  s-exctab.adb	s-exctab.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+W util%s		util.ads		util.ali
+W util.streams%s	util-streams.adb	util-streams.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+W util.strings.vectors%s  util-strings-vectors.ads  util-strings-vectors.ali
+W util.systems%s	util-systems.ads	util-systems.ali
+W util.systems.os%s	util-systems-os.ads	util-systems-os.ali
+W util.systems.types%s	util-systems-types.ads	util-systems-types.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-assert.ads		19700101000001 ba465f5c ada.assertions%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-coinve.ads		19700101000001 728ad523 ada.containers.indefinite_vectors%s
+D a-envvar.ads		19700101000001 00080416 ada.environment_variables%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-ioexce.ads		19700101000001 40018c65 ada.io_exceptions%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-numeri.ads		19700101000001 84bea7a3 ada.numerics%s
+D a-nubinu.ads		19700101000001 93f1f3d1 ada.numerics.big_numbers%s
+D a-nbnbig.ads		19700101000001 711e0174 ada.numerics.big_numbers.big_integers_ghost%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-stzmap.ads		19700101000001 f60a1f4d ada.strings.wide_wide_maps%s
+D a-stzunb.ads		19700101000001 404b19b5 ada.strings.wide_wide_unbounded%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-textio.ads		19700101000001 5c2c6153 ada.text_io%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D i-cstrin.ads		19700101000001 f40c8db4 interfaces.c.strings%s
+D i-cstrea.ads		19700101000001 e53d8b8e interfaces.c_streams%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-assert.ads		19700101000001 9c4520c7 system.assertions%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-casuti.ads		19700101000001 cf13d755 system.case_util%s
+D s-crtl.ads		19700101000001 8a0692f8 system.crtl%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-ficobl.ads		19700101000001 dc5161d4 system.file_control_block%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-imagei.ads		19700101000001 c707dfd0 system.image_i%s
+D s-imgint.ads		19700101000001 d4a52a9b system.img_int%s
+D s-memory.ads		19700101000001 5b8432d0 system.memory%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stalib.adb		19700101000001 eb464a47 system.standard_library%b
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		19700101000001 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D s-valint.ads		19700101000001 1f610d7a system.val_int%s
+D s-valuns.ads		19700101000001 e8a1f424 system.val_uns%s
+D s-valuti.ads		19700101000001 fcd603d8 system.val_util%s
+D s-valuei.ads		19700101000001 11081e09 system.value_i%s
+D s-vaispe.ads		19700101000001 44130d39 system.value_i_spec%s
+D s-valueu.ads		19700101000001 18770347 system.value_u%s
+D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
+D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
+D s-widuns.ads		19700101000001 866a5800 system.wid_uns%s
+D s-widthu.ads		19700101000001 b32f15e2 system.width_u%s
+D util.ads		20231110223241 36301479 util%s
+D util-beans.ads	20231110223241 362abe70 util.beans%s
+D util-beans-basic.ads	20231110223241 95c2d591 util.beans.basic%s
+D util-beans-objects.ads  20231110223241 8deb9c60 util.beans.objects%s
+D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-log.ads		20231110223241 0fb1ac89 util.log%s
+D util-log-appenders.ads  20231110223241 a19555cf util.log.appenders%s
+D util-log-loggers.ads	20231110223241 5659ff08 util.log.loggers%s
+D util-processes.ads	20231110223241 3a9b9dbe util.processes%s
+D util-processes.adb	20231110223241 833f6eb1 util.processes%b
+D util-processes-os.ads	20231110223241 8e6bdaad util.processes.os%s
+D util-properties.ads	20231110223241 3ed4fee8 util.properties%s
+D util-refs.ads		20231110223241 e592e98d util.refs%s
+D util-streams.ads	20231110223241 e241dcc4 util.streams%s
+D util-streams-raw.ads	20231110223241 58f841ec util.streams.raw%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
+D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util-systems.ads	20231110223241 be223f03 util.systems%s
+D util-systems-constants.ads  20231110223241 28c2a3fe util.systems.constants%s
+D util-systems-os.ads	20231110223241 5ac3f8b3 util.systems.os%s
+D util-systems-types.ads  20231110223241 eefa4f44 util.systems.types%s
+D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
+G a e
+G c b b b [b util__processes 24 1 none]
+G c Z s b [set_input_stream util__processes 71 14 none]
+G c Z s b [set_output_stream util__processes 76 14 none]
+G c Z s b [set_error_stream util__processes 82 14 none]
+G c Z s b [set_working_directory util__processes 88 14 none]
+G c Z s b [set_shell util__processes 95 14 none]
+G c Z s b [add_close util__processes 99 14 none]
+G c Z s b [append_argument util__processes 104 14 none]
+G c Z s b [set_environment util__processes 108 14 none]
+G c Z s b [set_environment util__processes 112 14 none]
+G c Z s b [set_default_environment util__processes 120 14 none]
+G c Z s b [spawn util__processes 124 14 none]
+G c Z s b [spawn util__processes 128 14 none]
+G c Z s b [spawn util__processes 131 14 none]
+G c Z s b [spawn util__processes 134 14 none]
+G c Z s b [wait util__processes 138 14 none]
+G c Z s b [stop util__processes 143 14 none]
+G c Z s b [get_exit_status util__processes 147 13 none]
+G c Z s b [get_pid util__processes 150 13 none]
+G c Z s b [is_running util__processes 153 13 none]
+G c Z s b [get_input_stream util__processes 156 13 none]
+G c Z s b [get_output_stream util__processes 159 13 none]
+G c Z s b [get_error_stream util__processes 162 13 none]
+G c Z s b [initialize util__processes 195 14 none]
+G c Z s b [finalize util__processes 199 14 none]
+G c Z s s [argument_listIP util__processes 58 9 none]
+G c Z s s [processDF util__processes 176 9 none]
+G c Z s s [processDI util__processes 176 9 none]
+G c Z s s [processIP util__processes 176 9 none]
+G c Z s s [file_type_arrayIP util__processes 166 9 none]
+G c Z b b [free util__processes 32 14 none]
+G c Z b b [free util__processes 36 14 none]
+G r c none [b util__processes 24 1 none] [create util__log__loggers 38 13 none]
+G r c none [set_input_stream util__processes 71 14 none] [error util__log__loggers 112 14 none]
+G r c none [set_output_stream util__processes 76 14 none] [error util__log__loggers 112 14 none]
+G r c none [set_error_stream util__processes 82 14 none] [error util__log__loggers 112 14 none]
+G r c none [set_working_directory util__processes 88 14 none] [error util__log__loggers 112 14 none]
+G r c none [set_shell util__processes 95 14 none] [error util__log__loggers 112 14 none]
+G r c none [append_argument util__processes 104 14 none] [error util__log__loggers 112 14 none]
+G r c none [set_environment util__processes 108 14 none] [error util__log__loggers 112 14 none]
+G r c none [set_environment util__processes 112 14 none] [error util__log__loggers 112 14 none]
+G r c none [set_default_environment util__processes 120 14 none] [error util__log__loggers 112 14 none]
+G r c none [spawn util__processes 124 14 none] [info util__log__loggers 87 14 none]
+G r c none [spawn util__processes 128 14 none] [info util__log__loggers 87 14 none]
+G r c none [spawn util__processes 131 14 none] [info util__log__loggers 87 14 none]
+G r c none [spawn util__processes 131 14 none] [index util__strings 41 13 none]
+G r c none [wait util__processes 138 14 none] [info util__log__loggers 87 14 none]
+G r s system_process [initialize util__processes 195 14 none] [system_processIP util__processes__os 28 9 none]
+G r s system_process [processDI util__processes 176 9 none] [system_processIP util__processes__os 28 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 84|23r6 24r6 54r29 176r24 180r20 181r20 182r20 183r20 184r20
+. 85|18r6 19r6 27r8 33r10 37r10 187r30 392r14 395r14
+X 10 a-conhel.ads
+84R12 Reference_Control_Type<14|43R9>
+X 11 a-coinve.ads
+60R9*Vector<14|43R9> 84|129r57[93|22] 85|217r57[93|22]
+322V13*First_Element{string} 85|219s46[93|22]
+X 12 a-envvar.ads
+19K13*Environment_Variables 69e30 85|19w10 187r34
+62U14*Iterate 85|187r56
+X 14 a-finali.ads
+40K13*Finalization 68e21 84|23w10 176r28
+50H9*Limited_Controlled<44|40R9> 66e55 84|176r41
+X 21 a-string.ads
+16K13*Strings 35e16 84|24r10 54r33 180r24 181r24 182r24 183r24 184r24 85|27r12
+X 24 a-strunb.ads
+85K21*Unbounded 766e26 84|24w18 54r41 180r32 181r32 182r32 183r32 184r32
+. 85|27r20
+91R9*Unbounded_String<14|43R9> 745e15 84|180r42 181r42 182r42 183r42 184r42
+97V13*Length{natural} 85|253s10
+100P9*String_Access(string) 84|54r51
+108V13*To_Unbounded_String{91R9} 85|51s23 65s26 80s26 95s19 111s21 383s21
+121V13*To_String{string} 85|254s36 290s46 291s46 292s46
+X 31 a-uncdea.ads
+17+9 Object 85|33r38 37r38 392r42 395r42
+18P9 Name(17+9) 85|34r38 38r38 393r42 396r42
+20u15*Unchecked_Deallocation 85|18w10 33r14 37r14 392r18 395r18
+X 33 i-c.ads
+57I9*int<integer>
+X 36 system.ads
+67M9*Address
+X 47 s-memory.ads
+51V13*Alloc{36|67M9} 101i<c,__gnat_malloc>22
+66U14*Free 102i<c,__gnat_free>22
+74V13*Realloc{36|67M9} 103i<c,__gnat_realloc>22
+X 56 s-stalib.adb
+87U14 Break_Start 88i<c,__gnat_break_start>22
+X 74 util.ads
+18K9*Util 28e9 84|18r6 19r6 20r6 21r6 25r9 56r25 60r34 61r13 129r36 156r57
+. 159r58 162r57 187r20 188r20 189r20 242r5 85|21r6 22r6 23r6 24r14 26r8 33r48
+. 34r48 217r36 264r21 355r57 363r58 371r57 382r23 383r42 392r52 393r52 395r52
+. 396r52 408r5
+X 76 util-beans-basic.ads
+42h9*Readonly_Bean
+54h9*Bean<42R9>
+X 77 util-beans-objects.ads
+150h9*Object_Type
+X 81 util-log.ads
+148K14*Log 174e13 85|21r11 26r13
+X 83 util-log-loggers.ads
+24K18*Loggers 153e21 85|21w15 30r19 30r37
+34R9*Logger<14|50R9> 147e14 85|30r27
+38V13*Create{34R9} 85|30s45
+87U14*Info 85|203s11 225s11 249s11 311s11
+112U14*Error 85|48s14 62s14 77s14 92s14 108s14 141s14 155s14 176s14
+X 84 util-processes.ads
+25K14*Processes 74|18k9 84|166E9 242l10 242e19 85|23r11 24b19 33r53 34r53
+. 382r28 383r47 408l10 408t19
+27X4*Invalid_State 85|49r16 63r16 78r16 93r16 109r16 142r16 156r16 177r16
+. 200r16 222r16 246r16 285r16
+29X4*Process_Error
+51E9*Pipe_Mode 52e75 127r36 130r36 133r36 135r36 216r31 85|197r36 218r36
+. 243r36 282r36
+51n23*NONE{51E9} 127r49 130r49 133r49 135r49 216r44 85|197r49 218r49 243r49
+. 282r49
+51n29*READ{51E9}
+51n35*READ_ERROR{51E9}
+51n47*READ_ALL{51E9}
+51n57*WRITE{51E9}
+52n23*READ_WRITE{51E9}
+52n35*READ_WRITE_ALL{51E9}
+52n51*READ_WRITE_ALL_SEPARATE{51E9}
+54P12*String_Access{24|100P9} 58r55
+56I12*File_Type{97|29I9} 100r36 166r57 85|118r36
+58A9*Argument_List(54P12)<integer> 126r36 85|196r36
+60I12*Process_Identifier{96|44I9} 150r48 177r20 85|311r44 339r48
+66R9*Process<14|50R9> 71r46 76r49 82r48 88r51 95r40 99r40 104r45 108r46 112r48
+. 120r53 124r40 128r40 131r40 134r40 138r34 143r36 147r40 150r32 153r35 156r41
+. 159r42 162r41 176c9 191e14 195r40 199r38 203r37 210r36 215r35 85|44r46
+. 57r49 72r48 88r51 104r40 117r40 137r45 150r46 161r48 185r53 194r40 216r40
+. 241r40 281r40 305r34 320r36 331r40 339r32 347r35 355r41 363r42 371r41 380r40
+. 390r38
+71U14*Set_Input_Stream 71=32 72>32 85|44b14 52l8 52t24
+71r32 Proc{66R9} 85|44b32 47r10 51m7
+72a32 File{string} 85|45b32 48r80 51r44
+76U14*Set_Output_Stream 76=33 77>33 78>33 85|57b14 67l8 67t25
+76r33 Proc{66R9} 85|57b33 61r10 65m7 66m7
+77a33 File{string} 85|58b33 62r81 65r47
+78b33 Append{boolean} 85|59b33 66r26
+82U14*Set_Error_Stream 82=32 83>32 84>32 85|72b14 82l8 82t24
+82r32 Proc{66R9} 85|72b32 76r10 80m7 81m7
+83a32 File{string} 85|73b32 77r80 80r47
+84b32 Append{boolean} 85|74b32 81r26
+88U14*Set_Working_Directory 88=37 89>37 85|88b14 96l8 96t29
+88r37 Proc{66R9} 85|88b37 91r10 95m7
+89a37 Path{string} 85|89b37 92r85 95r40
+95U14*Set_Shell 95=25 96>25 85|104b14 112l8 112t17
+95r25 Proc{66R9} 85|104b25 107r10 111m7
+96a25 Shell{string} 85|105b25 108r73 111r42
+99U14*Add_Close 99=25 100>25 85|117b14 131l8 131t17
+99r25 Proc{66R9} 85|117b25 121r10 122r44 123r21 123r44 125m16 125r16 130m7
+100i25 Fd{56I12} 85|118b25 124r30 128r22
+104U14*Append_Argument 104=31 105>31 85|137b14 145l8 145t23
+104r31 Proc{66R9} 85|137b31 140r10 144r7
+105a31 Arg{string} 85|138b31 141r75 144r33
+108U14*Set_Environment 108=31 109>31 110>31 85|150b14 159l8 159t23
+108r31 Proc{66R9} 85|150b31 154r10 158r7
+109a31 Name{string} 85|151b31 155r78 158r33
+110a31 Value{string} 85|152b31 158r39
+112U14*Set_Environment 112=31 113^31 85|161b14 180l8 180t23 187s7
+112r31 Proc{66R9} 85|161b31 171r10 175r10
+113p31 Iterate 85|162b31 179r7
+115p36 Process
+116a39 Name{string}
+117a39 Value{string}
+120U14*Set_Default_Environment 120=39 85|185b14 188l8 188t31
+120r39 Proc{66R9} 85|185b39 187m24
+124U14*Spawn 124=21 125>21 126>21 127>21 85|194b14 214l8 214t13
+124r21 Proc{66R9} 85|194b21 199r22 205r7 208r7 210r10 213m14
+125a21 Command{string} 85|195b21 203r41 208r33
+126a21 Arguments{58A9} 85|196b21 209r16 210r36
+127e21 Mode{51E9} 85|197b21 213r20
+128U14*Spawn 128=21 129>21 130>21 85|216b14 235l8 235t13
+128r21 Proc{66R9} 85|216b21 221r22 227r7 231r10 234m14
+129r21 Arguments{11|60R9[93|22]} 85|217b21 219r36 230r23
+130e21 Mode{51E9} 85|218b21 234r20
+131U14*Spawn 131=21 132>21 133>21 85|241b14 275l8 275t13
+131r21 Proc{66R9} 85|241b21 245r22 251r7 253r18 254r10 254r47 255r10 256r10
+. 268r16 274m14
+132a21 Command{string} 85|242b21 249r41 256r36 259r31 263r26 264r41 266r24
+. 268r42
+133e21 Mode{51E9} 85|243b21 274r20
+134U14*Spawn 134=21 135>21 85|213s7 234s7 274s7 281b14 300l8 300t13
+134r21 Proc{66R9} 85|281b21 284r22 290r7 290r57 291r57 292r57 293r46 294r46
+. 295r46 298m7 299r7 299m23
+135e21 Mode{51E9} 85|282b21 299r29
+138U14*Wait 138=20 85|305b14 313l8 313t12
+138r20 Proc{66R9} 85|305b20 307r26 311r70 312r7 312m22
+143U14*Stop 143=20 144>20 85|320b14 326l8 326t12
+143r20 Proc{66R9} 85|320b20 323r22 324r10 324m25
+144i20 Signal{positive} 85|321b20 324r31
+147V13*Get_Exit_Status{integer} 147>30 85|331b13 334l8 334t23
+147r30 Proc{66R9} 85|331b30 333r14
+150V13*Get_Pid{60I12} 150>22 85|339b13 342l8 342t15
+150r22 Proc{66R9} 85|339b22 341r14
+153V13*Is_Running{boolean} 153>25 85|47s15 61s15 76s15 91s15 107s15 140s15
+. 154s15 175s15 199s10 221s10 245s10 284s10 307s14 323s10 347b13 350l8 350t18
+153r25 Proc{66R9} 85|347b25 349r14 349r36
+156V13*Get_Input_Stream{89|58P9} 156>31 85|355b13 358l8 358t24
+156r31 Proc{66R9} 85|355b31 357r14
+159V13*Get_Output_Stream{89|76P9} 159>32 85|363b13 366l8 366t25
+159r32 Proc{66R9} 85|363b32 365r14
+162V13*Get_Error_Stream{89|76P9} 162>31 85|371b13 374l8 374t24
+162r31 Proc{66R9} 85|371b31 373r14
+166A9 File_Type_Array(56I12)<integer> 167r46 85|37r48 122r22 127r22
+167P9 File_Type_Array_Access(166A9) 190r20 237r46 85|38r48 119r14
+173h9 System_Process 174r45 202p14 202r37 209p14 209r36 214p14 214r35 219p14
+. 219r44 222p14 222r44 226p14 226r46 231p14 231r50 240p14 240r37 85|33r63
+174P9 System_Process_Access(173R9) 178r20 85|34r63
+177i7*Pid{60I12} 85|311r75 341r19 349r19
+178p7*Sys{174P9} 85|144r12 158r12 171r15 205r12 208r12 210r15 227r12 231r15
+. 251r12 254r15 255r15 256r15 268r21 290r12 299r12 312r12 324r15 382m12 398r15
+. 399r15 400m21
+179i7*Exit_Value{integer} 85|298m12 333r19 349r41
+180r7*Dir{24|91R9} 85|95m12
+181r7*In_File{24|91R9} 85|51m12 290r62
+182r7*Out_File{24|91R9} 85|65m12 291r62
+183r7*Err_File{24|91R9} 85|80m12 292r62
+184r7*Shell{24|91R9} 85|111m12 253r23 254r52 383m12
+185b7*Out_Append{boolean} 85|66m12 293r51
+186b7*Err_Append{boolean} 85|81m12 294r51
+187p7*Output{89|76P9} 85|365r19 403m18
+188p7*Input{89|58P9} 85|357r19 402m18
+189p7*Error{89|76P9} 85|373r19 404m18
+190p7*To_Close{167P9} 85|121r15 122r49 123r26 123r49 125m21 130m12 295r51
+. 405m18
+195U14 Initialize<14|53p14> 195=26 85|380b14 384l8 384t18
+195r26 Proc{66R9} 85|380b26 382m7 383m7
+199U14 Finalize<14|54p14> 199=24 85|390b14 406l8 406t16
+199r24 Proc{66R9} 85|390b24 398r10 399r10 400m16 400r16 402m13 402r13 403m13
+. 403r13 404m13 404r13 405m13 405r13
+202x14 Wait 202=20 203=20 204>20 85|312R16
+202r20 Sys{173R9}
+203c20 Proc<66R9>
+204o20 Timeout{duration}
+209x14 Stop 209=20 210=20 211>20 85|324R19
+209r20 Sys{173R9}
+210c20 Proc<66R9>
+211i20 Signal{positive}
+214x14 Spawn 214=21 215=21 216>21 85|299R16
+214r21 Sys{173R9}
+215c21 Proc<66R9>
+216e21 Mode{51E9}
+219x14 Clear_Arguments 219=31 85|205R16 227R16 251R16
+219r31 Sys{173R9}
+222x14 Append_Argument 222=31 223>31 85|144R16 208R16 210R19 231R19 254R19
+. 255R19 256R19 268R25
+222r31 Sys{173R9}
+223a31 Arg{string}
+226x14 Set_Environment 226=31 227>31 228>31 85|158R16 171R19
+226r31 Sys{173R9}
+227a31 Name{string}
+228a31 Value{string}
+231x14 Set_Streams 231=27 232>27 233>27 234>27 235>27 236>27 237>27 85|290R16
+231r27 Sys{173R9}
+232a27 Input{string} 85|290r29
+233a27 Output{string} 85|291r29
+234a27 Error{string} 85|292r29
+235b27 Append_Output{boolean} 85|293r29
+236b27 Append_Error{boolean} 85|294r29
+237p27 To_Close{167P9} 85|295r29
+240x14 Finalize 240=24 85|399R19
+240r24 Sys{173R9}
+X 85 util-processes.adb
+30r4 Log{83|34R9} 48r10 62r10 77r10 92r10 108r10 141r10 155r10 176r10 203r7
+. 225r7 249r7 311r7
+32U14 Free[31|20] 400s10
+36U14 Free[31|20] 125s10 405s7
+119p7 List{84|167P9} 122m10 123r10 124r10 124r16 127m10 128r10 130r24
+164p36 Process
+165a39 Name{string}
+166a39 Value{string}
+167U17 Process 167>26 167>32 169b17 172l11 172t18 179r16
+167a26 Name{string} 169b26 171r36
+167a32 Value{string} 169b32 171r42
+209i11 I{integer} 210r47
+219a7 Command{string} 225r41
+230a11 Argument{string} 231r36
+259i13 Pos{natural} 263r19 264r55 268r51 269m16
+260i13 N{natural} 264m16 265r19 266m19 268r58 269r23
+391U17 Free[31|20] 403s7 404s7
+394U17 Free[31|20] 402s7
+X 86 util-processes-os.ads
+24K32*Os 85|23w21 382r38 383r57 86|101e22
+26a4*SHELL{string} 85|383r60
+28R9*System_Process<84|173R9> 85|382r41 86|40e14
+X 87 util-properties.ads
+256h12*Manager<76|54R9>
+279h12*Shared_Manager<256R12>
+301R15 Manager_Type<256R12>
+X 89 util-streams.ads
+48K14*Streams 84|18w11 156r62 159r63 162r62 187r25 188r25 189r25 85|355r62
+. 363r63 371r62 392r57 393r57 395r57 396r57 89|120e17
+57h9*Output_Stream 85|395r65
+58P9*Output_Stream_Access(57R9) 84|156r70 188r33 85|355r70 396r65
+75h9*Input_Stream 85|392r65
+76P9*Input_Stream_Access(75R9) 84|159r71 162r70 187r33 189r33 85|363r71 371r70
+. 393r65
+X 91 util-strings.ads
+24K14*Strings 84|21r11 129r41 85|22w11 217r41 264r26 91|147e17
+41V13*Index{natural} 85|264s34
+X 93 util-strings-vectors.ads
+22K22*Vectors[11|47] 84|21w19 129r49 85|217r49
+X 94 util-systems.ads
+19K14*Systems 84|19r11 20r11 56r30 60r39 61r18 94|23e17
+X 96 util-systems-os.ads
+27K22*Os 84|20w19 60r47 61r26 96|227e20
+44I9*Process_Identifier<integer> 84|60r50 61r29
+X 97 util-systems-types.ads
+3K22*Types 84|19w19 56r38 97|65e23
+29I9*File_Type<33|57I9> 84|56r44
+

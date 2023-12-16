@@ -1,0 +1,186 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_NESTED_FINALIZATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.dates.simple_format%b  util-dates-simple_format.adb  4aef1936 NE OO SU
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z system.img_int%s	s-imgint.ads		s-imgint.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+W util.dates%s		util-dates.adb		util-dates.ali
+
+U util.dates.simple_format%s  util-dates-simple_format.ads  701bd02b EE NE OO SU
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util.dates%s		util-dates.adb		util-dates.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-assert.ads		19700101000001 ba465f5c ada.assertions%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-calari.ads		19700101000001 7017f4b1 ada.calendar.arithmetic%s
+D a-calfor.ads		19700101000001 0f4707d1 ada.calendar.formatting%s
+D a-catizo.ads		19700101000001 eaa56756 ada.calendar.time_zones%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-numeri.ads		19700101000001 84bea7a3 ada.numerics%s
+D a-nubinu.ads		19700101000001 93f1f3d1 ada.numerics.big_numbers%s
+D a-nbnbig.ads		19700101000001 711e0174 ada.numerics.big_numbers.big_integers_ghost%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-assert.ads		19700101000001 9c4520c7 system.assertions%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-casuti.ads		19700101000001 cf13d755 system.case_util%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-imagei.ads		19700101000001 c707dfd0 system.image_i%s
+D s-imgint.ads		19700101000001 d4a52a9b system.img_int%s
+D s-memory.ads		19700101000001 5b8432d0 system.memory%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stalib.adb		19700101000001 eb464a47 system.standard_library%b
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D s-valint.ads		19700101000001 1f610d7a system.val_int%s
+D s-valuns.ads		19700101000001 e8a1f424 system.val_uns%s
+D s-valuti.ads		19700101000001 fcd603d8 system.val_util%s
+D s-valuei.ads		19700101000001 11081e09 system.value_i%s
+D s-vaispe.ads		19700101000001 44130d39 system.value_i_spec%s
+D s-valueu.ads		19700101000001 18770347 system.value_u%s
+D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
+D s-widuns.ads		19700101000001 866a5800 system.wid_uns%s
+D s-widthu.ads		19700101000001 b32f15e2 system.width_u%s
+D util.ads		20231110223241 36301479 util%s
+D util-dates.ads	20231110223241 0dc7f82c util.dates%s
+D util-dates-simple_format.ads  20231110223241 7ddc2807 util.dates.simple_format%s
+D util-dates-simple_format.adb  20231110223241 4cc84121 util.dates.simple_format%b
+G a e
+G c Z s b [simple_format util__dates 23 21 none]
+G r s date_record [simple_format util__dates 23 21 none] [date_recordIP util__dates 55 9 none]
+G r c none [simple_format util__dates 23 21 none] [split util__dates 70 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 56|24r49 57|1r6 9r49 10r8
+X 3 a-calend.ads
+36K13*Calendar 413e17 56|24r53 57|9r53
+42I9*Time<226I9> 56|24r62 57|9r62
+48I12*Year_Number{integer}
+49I12*Month_Number{integer}
+50I12*Day_Number{integer}
+226I9 Time_Rep<long_long_integer>
+X 5 a-calfor.ads
+35I12*Hour_Number{natural}
+36I12*Minute_Number{natural}
+37I12*Second_Number{natural}
+X 15 a-string.ads
+16K13*Strings 35e16 57|1r10 10r12
+X 18 a-strunb.ads
+85K21*Unbounded 766e26 57|1w18 10r20
+91R9*Unbounded_String<10|43R9> 745e15 57|12r46 19r13 24r46
+121V13*To_String{string} 57|66s11
+140U14*Append 57|31s10 34s10 36s10
+148U14*Append 57|33s10 62s10
+X 23 system.ads
+67M9*Address
+X 31 s-memory.ads
+51V13*Alloc{23|67M9} 101i<c,__gnat_malloc>22
+66U14*Free 102i<c,__gnat_free>22
+74V13*Realloc{23|67M9} 103i<c,__gnat_realloc>22
+X 39 s-stalib.adb
+87U14 Break_Start 88i<c,__gnat_break_start>22
+X 54 util.ads
+18K9*Util 28e9 56|23r10 57|8r10 67r5
+X 55 util-dates.ads
+52K14*Dates 117e15 56|23r15 57|8r15 67r10
+55R9*Date_Record 67e14 57|18r13
+57i7*Year{3|48I12} 57|45r45
+58i7*Month{3|49I12} 57|48r45
+59i7*Month_Day{3|50I12} 57|51r45
+61i7*Hour{5|35I12} 57|54r45
+62i7*Minute{5|36I12} 57|57r45
+63i7*Second{5|37I12} 57|60r45
+70U14*Split 57|41s4
+X 56 util-dates-simple_format.ads
+23V21*Simple_Format{string} 55|52k14 56|23>36 24>36 57|8b21 67l16 67t29
+23a36 Pattern{string} 57|8b36 17r24 42r17 43r21 43r43 46r24 46r46 49r24 49r46
+. 52r24 52r46 55r24 55r46 58r24 58r46 62r26
+24i36 Date{3|42I9} 57|9b36 41r15
+X 57 util-dates-simple_format.adb
+12U14 Append_Number 12=29 13>29 14>29 15>29 24b14 38l8 38t21 45s10 48s10
+. 51s10 54s10 57s10 60s10
+12r29 Into{18|91R9} 24b29 31m18 33m18 34m18 36m18
+13i29 Value{natural} 25b29 28r45
+14e29 Padding{character} 26b29 30r30 30r54 33r24 45r52 48r53 51r57 54r52
+. 57r54 60r54
+15i29 Length{natural} 27b29 30r10 32r25 36r36 45r68 48r69 51r73 54r68 57r70
+. 60r70
+17i4 Pos{natural} 42r10 43r10 43r52 43r59 44m10 44r17 46r13 46r55 46r62 47m10
+. 47r17 49r13 49r55 49r62 50m10 50r17 52r13 52r55 52r62 53m10 53r17 55r13
+. 55r55 55r62 56m10 56r17 58r13 58r55 58r62 59m10 59r17 62r35 63m10 63r17
+18r4 TM{55|55R9} 41m11 45r42 48r42 51r42 54r42 57r42 60r42
+19r4 Result{18|91R9} 45m25 45r25 48m25 48r25 51m25 51r25 54m25 54r25 57m25
+. 57r25 60m25 60r25 62m18 62r18 66r22
+28a7 N{string} 31r24 31r27 31r42 32r13 34r24 34r27 34r42 36r24 36r27 36r50
+42l30 loop 65e12
+

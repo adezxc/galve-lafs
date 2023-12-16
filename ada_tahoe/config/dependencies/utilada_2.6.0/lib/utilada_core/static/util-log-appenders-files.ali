@@ -1,0 +1,307 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FINALIZATION
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U util.log.appenders.files%b  util-log-appenders-files.adb  54e6c913 OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+W util%s		util.ads		util.ali
+W util.log%s		util-log.adb		util-log.ali
+W util.log.appenders%s	util-log-appenders.adb	util-log-appenders.ali
+W util.log.appenders.formatter%s  util-log-appenders-formatter.adb  util-log-appenders-formatter.ali
+W util.properties%s	util-properties.adb	util-properties.ali
+W util.properties.basic%s  util-properties-basic.adb  util-properties-basic.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+Z util.strings.builders%s  util-strings-builders.ads  util-strings-builders.ali
+
+U util.log.appenders.files%s  util-log-appenders-files.ads  202812b3 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+W util%s		util.ads		util.ali
+W util.log.appenders%s	util-log-appenders.adb	util-log-appenders.ali
+W util.properties%s	util-properties.adb	util-properties.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-coinve.ads		19700101000001 728ad523 ada.containers.indefinite_vectors%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-ioexce.ads		19700101000001 40018c65 ada.io_exceptions%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-stzmap.ads		19700101000001 f60a1f4d ada.strings.wide_wide_maps%s
+D a-stzunb.ads		19700101000001 404b19b5 ada.strings.wide_wide_unbounded%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-textio.ads		19700101000001 5c2c6153 ada.text_io%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-cstrea.ads		19700101000001 e53d8b8e interfaces.c_streams%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-crtl.ads		19700101000001 8a0692f8 system.crtl%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-ficobl.ads		19700101000001 dc5161d4 system.file_control_block%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-memory.ads		19700101000001 5b8432d0 system.memory%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stalib.adb		19700101000001 eb464a47 system.standard_library%b
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		19700101000001 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
+D util.ads		20231110223241 36301479 util%s
+D util-beans.ads	20231110223241 362abe70 util.beans%s
+D util-beans-basic.ads	20231110223241 95c2d591 util.beans.basic%s
+D util-beans-objects.ads  20231110223241 8deb9c60 util.beans.objects%s
+D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-log.ads		20231110223241 0fb1ac89 util.log%s
+D util-log-appenders.ads  20231110223241 a19555cf util.log.appenders%s
+D util-log-appenders-files.ads  20231110223241 e345d8c7 util.log.appenders.files%s
+D util-log-appenders-files.adb  20231110223241 b10aa9ae util.log.appenders.files%b
+D util-log-appenders-formatter.ads  20231110223241 29144592 util.log.appenders.formatter%s
+D util-log-appenders-formatter.adb  20231110223241 b8e3358d util.log.appenders.formatter%b
+D util-properties.ads	20231110223241 3ed4fee8 util.properties%s
+D util-properties-basic.ads  20231110223241 90f27d83 util.properties.basic%s
+D util-properties-discrete.ads  20231110223241 c6645ff2 util.properties.discrete%s
+D util-refs.ads		20231110223241 e592e98d util.refs%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
+D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
+D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
+D util-texts-builders.adb  20231110223241 cba78850 util.texts.builders%b
+G a e
+G c Z s b [append util__log__appenders__files 45 14 none]
+G c Z s b [set_file util__log__appenders__files 54 14 none]
+G c Z s b [flush util__log__appenders__files 60 14 none]
+G c Z s b [finalize util__log__appenders__files 64 14 none]
+G c Z s b [create util__log__appenders__files 67 13 none]
+G c Z s s [file_appenderDF util__log__appenders__files 74 9 none]
+G c Z s s [file_appenderIP util__log__appenders__files 74 9 none]
+G r i none [append util__log__appenders__files 45 14 none] [formatter util__log__appenders 23 30 none]
+G r i none [append util__log__appenders__files 45 14 none] [get util__strings__builders 137 14 22_1]
+G r c none [append util__log__appenders__files 45 14 none] [format util__log__appenders 79 13 none]
+G r c none [append util__log__appenders__files 45 14 none] [to_array util__strings__builders 114 13 22_1]
+G r c none [create util__log__appenders__files 67 13 none] [get util__properties 158 13 none]
+G r c none [create util__log__appenders__files 67 13 none] [get util__properties__basic__boolean_property 31 13 24_4]
+G r s appender_internal [create util__log__appenders__files 67 13 none] [appender_internalIP util__log__appenders 165 9 none]
+G r c none [create util__log__appenders__files 67 13 none] [set_level util__log__appenders 63 14 none]
+G r c none [create util__log__appenders__files 67 13 none] [set_layout util__log__appenders 71 14 none]
+G r s appender [file_appenderIP util__log__appenders__files 74 9 none] [appenderIP util__log__appenders 49 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 63|18r6 47r35 75r25 64|18r6 23r8 24r8 29r35
+X 2 a-calend.ads
+36K13*Calendar 413e17 63|47r39 64|29r39
+42I9*Time<226I9> 63|47r48 64|29r48
+226I9 Time_Rep<long_long_integer>
+X 9 a-conhel.ads
+84R12 Reference_Control_Type<12|43R9>
+X 12 a-finali.ads
+40K13*Finalization 68e21 64|18w10 24r12
+50H9*Limited_Controlled<35|40R9> 66e55 64|82r32
+53U14*Initialize<35|44p14>
+X 24 a-textio.ads
+58K13*Text_IO 787e16 63|18w10 75r29 64|36r10 43r10 56r7 66r7 101r16 104r18
+. 106r18 108r7 112r12 113r10
+66P9*File_Type 63|75r37
+68E9*File_Mode 68e54 64|101r24
+68n32*Out_File{68E9} 64|106r26
+68n42*Append_File{68E9} 64|104r26
+98U14*Create 64|113s18
+99p7 File{66P9} 64|113r26
+101a7 Name{string} 64|113r47
+114U14*Open 64|108s15
+115p7 File{66P9} 64|108r21
+116e7 Mode{68E9} 64|110r21
+117a7 Name{string} 64|109r21
+130U14*Close 64|66s15
+130p22 File{66P9} 64|66r22
+211U14*Flush 64|56s15
+275U14*New_Line 64|43s18
+512U14*Put 64|36s18
+603X4*Name_Error 64|112r20
+X 29 system.ads
+67M9*Address
+X 35 s-finroo.ads
+42U14*Adjust
+X 36 s-memory.ads
+51V13*Alloc{29|67M9} 101i<c,__gnat_malloc>22
+66U14*Free 102i<c,__gnat_free>22
+74V13*Realloc{29|67M9} 103i<c,__gnat_realloc>22
+X 45 s-stalib.adb
+87U14 Break_Start 88i<c,__gnat_break_start>22
+X 54 util.ads
+18K9*Util 28e9 63|19r6 36r9 46r35 68r37 79r5 64|19r6 20r6 21r14 28r35 73r37
+. 76r11 116r5
+X 56 util-beans-basic.ads
+42h9*Readonly_Bean
+54h9*Bean<42R9>
+X 57 util-beans-objects.ads
+150h9*Object_Type
+X 61 util-log.ads
+148K14*Log 54|18k9 61|174e13 63|36r14 79r10 64|20r11 21r19 116r10
+152I12*Level_Type{natural} 63|48r35 69r37 64|30r35 74r37
+X 62 util-log-appenders.ads
+25K18*Appenders 61|148k14 62|180e23 63|36r18 79r14 64|20r15 21r23 116r14
+45n10*FULL{29E9} 64|87r44
+49H9*Appender<12|50R9> 55e14 63|41r50 74r50
+52i7*Level{61|152I12} 64|41r15
+54a7*Name{string} 64|83m32
+57P9*Appender_Access(49R9) 63|70r13 64|75r27
+60V13*Get_Level{61|152I12}
+63U14*Set_Level 64|86R14
+67U14*Set_Level
+71U14*Set_Layout 64|87R14
+75U14*Set_Layout
+X 63 util-log-appenders-files.ads
+36K28*Files 62|25k18 63|74E9 79l24 79e29 64|21b33 116l24 116t29
+41R9*File_Appender<62|49R9> 12|53P14 35|42p14 62|60p13 63p14 67p14 71p14
+. 75p14 63|41d24 42r44 45P14 45r39 54p14 54r40 60P14 60r37 64P14 64r38 74c9
+. 77e14 64|27r39 54r37 63r38 82r16 98r40
+41i24*Length{positive} 74r24 74r60 64|82m56
+42P9*File_Appender_Access(41R9) 64|81r25
+45U14*Append<62|87p14> 45=22 46>22 47>22 48>22 49>22 64|27b14 48l8 48t14
+45r22 Self{41R9} 64|27b22 36r23 41r10 42r17 43r28 44r13 45m13 45r13
+46r22 Message{76|63R9[72|22]} 64|28b22 42r23
+47i22 Date{2|42I9} 64|29b22 42r32
+48i22 Level{61|152I12} 64|30b22 41r24 42r38
+49a22 Logger{string} 64|31b22 42r45
+54U14*Set_File 54=24 55>24 56>24 64|88R14 98b14 114l8 114t16
+54r24 Self{41R9} 64|98b24 108m29 108r29 113m34 113r34
+55a24 Path{string} 64|99b24 109r29 113r55
+56b24 Append{boolean} 64|100b24 103r10
+60U14*Flush<62|94p14> 60=21 64|45s18 54b14 57l8 57t13 65s12
+60r21 Self{41R9} 64|54b21 56r22
+64U14*Finalize<12|54p14> 64=24 64|63b14 67l8 67t16
+64r24 Self{41R9} 64|63b24 65m7 65r7 66m30 66r30
+67V13*Create{62|57P9} 67>21 68>21 69>21 64|72b13 91l8 91t14
+67a21 Name{string} 64|72b21 78r49 79r67 82r66 83r40 86r25 87r26
+68r21 Properties{67|113R9} 64|73b21 79r35 80r58 86r31 87r32 89r55
+69i21 Default{61|152I12} 64|74b21 86r43
+75p7 Output{24|66P9} 64|36r28 43r33 56r27 66m35 108m34 113m39
+76b7 Immediate_Flush{boolean} 64|44r18 89m14
+X 64 util-log-appenders-files.adb
+32U17 Write_File 32>29 34b17 37l11 37t21 39r41
+32a29 Data{string} 34b29 36r36
+39U17 Write[65|23] 42s10 66|19b30
+78a7 Base=78:47{string} 79r51 80r70 89r67
+79a7 Path{string} 88r24
+80b7 Append{boolean} 88r30
+81p7 Result{63|42P9} 86r7 87r7 88r7 89r7 90r14
+101e7 Mode{24|68E9} 104m10 106m10 110r29
+X 65 util-log-appenders-formatter.ads
+23u30*Formatter 62|25k18 64|20w25 39r30
+X 67 util-properties.ads
+96K14*Properties 63|19w11 68r42 64|19r11 73r42 76r16 67|343e20
+113R9*Manager<12|43R9><56|54R9> 63|68r53 64|73r53 67|335e14
+158V13*Get{string} 64|79s46
+256h12*Manager<56|54R9>
+279h12*Shared_Manager<256R12>
+301R15 Manager_Type<256R12>
+X 68 util-properties-basic.ads
+19K25*Basic 64|19w22 76r27 68|29e26
+24K12*Boolean_Property[69|23] 64|80r36 89r33
+X 69 util-properties-discrete.ads
+31V13*Get{boolean} 64|80s53[68|24] 89s50[68|24]
+X 71 util-strings.ads
+24K14*Strings 63|46r40 64|28r40 71|147e17
+X 72 util-strings-builders.ads
+22K22*Builders[76|59] 63|46r48 64|28r48
+X 76 util-texts-builders.ads
+63R9*Builder<12|50R9> 63|46r57[72|22] 64|28r57[72|22]
+

@@ -1,0 +1,129 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U util.strings.tokenizers%b  util-strings-tokenizers.ads  5883874f NE OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util%s		util.ads		util.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+W util.texts%s		util-texts.ads		util-texts.ali
+W util.texts.tokenizers%s  util-texts-tokenizers.adb  util-texts-tokenizers.ali
+
+U util.strings.tokenizers%s  util-strings-tokenizers.ads  f0f7d3ce EB NE OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W util%s		util.ads		util.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+W util.texts%s		util-texts.ads		util-texts.ali
+W util.texts.tokenizers%s  util-texts-tokenizers.adb  util-texts-tokenizers.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-tokenizers.ads  20231110223241 5883874f util.strings.tokenizers%s
+D util-strings-tokenizers.ads  20231110223241 5883874f util.strings.tokenizers%b
+D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util-texts-tokenizers.ads  20231110223241 c507eb3c util.texts.tokenizers%s
+D util-texts-tokenizers.adb  20231110223241 558e1fc9 util.texts.tokenizers%b
+G a e
+G c s s s [s util__strings__tokenizers 23 1 none]
+G c Z s s [iterate_tokens util__strings__tokenizers 36 14 23_1]
+G r i none [s util__strings__tokenizers 23 1 none] [tokenizers util__texts 27 20 none]
+G r c none [iterate_tokens util__strings__tokenizers 36 14 23_1] [index util__strings 54 13 none]
+X 8 a-conhel.ads
+84R12 Reference_Control_Type<10|43R9>
+X 11 a-iteint.ads
+24h9 Forward_Iterator
+X 39 util.ads
+18K9*Util 28e9 44|19r6 23r9 23r40 26r16
+X 42 util-strings.ads
+24K14*Strings 39|18k9 42|147e17 44|23r14 26r21
+54V13*Index{natural} 44|26r29
+X 44 util-strings-tokenizers.ads
+23K22*Tokenizers[46|27] 42|24k14
+X 45 util-texts.ads
+19K14*Texts 44|19r11 23r45 45|23e15
+X 46 util-texts-tokenizers.ads
+20E9 Char 44|24r4
+21A9 Input(20E9)<integer> 44|25r4
+22V18 Index{natural} 44|26r4
+27k20*Tokenizers 44|19w17 23r51 46|42e26
+

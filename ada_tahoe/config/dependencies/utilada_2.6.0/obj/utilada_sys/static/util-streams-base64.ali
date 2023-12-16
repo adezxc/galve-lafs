@@ -1,0 +1,220 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U util.streams.base64%s	util-streams-base64.ads	da1a9962 EE OO PF PK
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W util%s		util.ads		util.ali
+W util.encoders%s	util-encoders.adb	util-encoders.ali
+W util.encoders.base64%s  util-encoders-base64.adb  util-encoders-base64.ali
+W util.streams%s	util-streams.adb	util-streams.ali
+W util.streams.buffered%s  util-streams-buffered.adb  util-streams-buffered.ali
+W util.streams.buffered.encoders%s  util-streams-buffered-encoders.adb  util-streams-buffered-encoders.ali  ED
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-stzmap.ads		19700101000001 f60a1f4d ada.strings.wide_wide_maps%s
+D a-stzunb.ads		19700101000001 404b19b5 ada.strings.wide_wide_unbounded%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-encoders.ads	20231110223241 2efdfb8e util.encoders%s
+D util-encoders-base64.ads  20231110223241 bc71fa90 util.encoders.base64%s
+D util-streams.ads	20231110223241 e241dcc4 util.streams%s
+D util-streams-base64.ads  20231110223241 c6c161f2 util.streams.base64%s
+D util-streams-buffered.ads  20231110223241 a2e3ffd8 util.streams.buffered%s
+D util-streams-buffered-encoders.ads  20231110223241 42ebdec4 util.streams.buffered.encoders%s
+D util-streams-buffered-encoders.adb  20231110223241 017579f7 util.streams.buffered.encoders%b
+G a e
+G c s s s [s util__streams__base64 25 1 none]
+G c Z s s [initialize util__streams__base64__encoding 70 14 27_4]
+G c Z s s [produces util__streams__base64__encoding 75 14 27_4]
+G c Z s s [consumes util__streams__base64__encoding 80 14 27_4]
+G c Z s s [close util__streams__base64__encoding 86 14 27_4]
+G c Z s s [write util__streams__base64__encoding 90 14 27_4]
+G c Z s s [read util__streams__base64__encoding 96 14 27_4]
+G c Z s s [flush util__streams__base64__encoding 103 14 27_4]
+G c Z s s [finalize util__streams__base64__encoding 106 14 27_4]
+G c Z s s [fill util__streams__base64__encoding 110 14 27_4]
+G c Z s s [encoder_streamDF util__streams__base64__encoding 62 9 27_4]
+G c Z s s [encoder_streamIP util__streams__base64__encoding 62 9 27_4]
+G c Z s s [initialize util__streams__base64__decoding 70 14 30_4]
+G c Z s s [produces util__streams__base64__decoding 75 14 30_4]
+G c Z s s [consumes util__streams__base64__decoding 80 14 30_4]
+G c Z s s [close util__streams__base64__decoding 86 14 30_4]
+G c Z s s [write util__streams__base64__decoding 90 14 30_4]
+G c Z s s [read util__streams__base64__decoding 96 14 30_4]
+G c Z s s [flush util__streams__base64__decoding 103 14 30_4]
+G c Z s s [finalize util__streams__base64__decoding 106 14 30_4]
+G c Z s s [fill util__streams__base64__decoding 110 14 30_4]
+G c Z s s [encoder_streamDF util__streams__base64__decoding 62 9 30_4]
+G c Z s s [encoder_streamIP util__streams__base64__decoding 62 9 30_4]
+G c Z s s [encoding_streamDF util__streams__base64 33 9 none]
+G c Z s s [encoding_streamIP util__streams__base64 33 9 none]
+G c Z s s [decoding_streamDF util__streams__base64 35 9 none]
+G c Z s s [decoding_streamIP util__streams__base64 35 9 none]
+G r i none [s util__streams__base64 25 1 none] [encoders util__streams__buffered 54 31 none]
+G r c none [initialize util__streams__base64__encoding 70 14 27_4] [initialize util__streams__buffered 79 14 none]
+G r c none [produces util__streams__base64__encoding 75 14 27_4] [initialize util__streams__buffered 79 14 none]
+G r c none [consumes util__streams__base64__encoding 80 14 27_4] [initialize util__streams__buffered 79 14 none]
+G r c none [close util__streams__base64__encoding 86 14 27_4] [finish util__encoders__base64 62 14 none]
+G r c none [close util__streams__base64__encoding 86 14 27_4] [flush util__streams 65 14 none]
+G r c none [close util__streams__base64__encoding 86 14 27_4] [close util__streams 68 14 none]
+G r c none [write util__streams__base64__encoding 90 14 27_4] [transform util__encoders__base64 54 14 none]
+G r c none [read util__streams__base64__encoding 96 14 27_4] [finish util__encoders__base64 62 14 none]
+G r c none [read util__streams__base64__encoding 96 14 27_4] [transform util__encoders__base64 54 14 none]
+G r c none [flush util__streams__base64__encoding 103 14 27_4] [finish util__encoders__base64 62 14 none]
+G r c none [flush util__streams__base64__encoding 103 14 27_4] [flush util__streams 65 14 none]
+G r c none [finalize util__streams__base64__encoding 106 14 27_4] [finish util__encoders__base64 62 14 none]
+G r c none [finalize util__streams__base64__encoding 106 14 27_4] [flush util__streams 65 14 none]
+G r e buffer_stream [finalize util__streams__base64__encoding 106 14 27_4] [finalize util__streams__buffered 94 14 none]
+G r c none [encoder_streamDF util__streams__base64__encoding 62 9 27_4] [finish util__encoders__base64 62 14 none]
+G r c none [encoder_streamDF util__streams__base64__encoding 62 9 27_4] [flush util__streams 65 14 none]
+G r e buffer_stream [encoder_streamDF util__streams__base64__encoding 62 9 27_4] [finalize util__streams__buffered 94 14 none]
+G r s input_output_buffer_stream [encoder_streamIP util__streams__base64__encoding 62 9 27_4] [input_output_buffer_streamIP util__streams__buffered 231 9 none]
+G r s encoder [encoder_streamIP util__streams__base64__encoding 62 9 27_4] [encoderIP util__encoders__base64 156 9 none]
+G r c none [initialize util__streams__base64__decoding 70 14 30_4] [initialize util__streams__buffered 79 14 none]
+G r c none [produces util__streams__base64__decoding 75 14 30_4] [initialize util__streams__buffered 79 14 none]
+G r c none [consumes util__streams__base64__decoding 80 14 30_4] [initialize util__streams__buffered 79 14 none]
+G r c none [close util__streams__base64__decoding 86 14 30_4] [flush util__streams 65 14 none]
+G r c none [close util__streams__base64__decoding 86 14 30_4] [close util__streams 68 14 none]
+G r c none [write util__streams__base64__decoding 90 14 30_4] [transform util__encoders__base64 94 14 none]
+G r c none [read util__streams__base64__decoding 96 14 30_4] [transform util__encoders__base64 94 14 none]
+G r c none [flush util__streams__base64__decoding 103 14 30_4] [flush util__streams 65 14 none]
+G r c none [finalize util__streams__base64__decoding 106 14 30_4] [flush util__streams 65 14 none]
+G r e buffer_stream [finalize util__streams__base64__decoding 106 14 30_4] [finalize util__streams__buffered 94 14 none]
+G r c none [encoder_streamDF util__streams__base64__decoding 62 9 30_4] [flush util__streams 65 14 none]
+G r e buffer_stream [encoder_streamDF util__streams__base64__decoding 62 9 30_4] [finalize util__streams__buffered 94 14 none]
+G r s input_output_buffer_stream [encoder_streamIP util__streams__base64__decoding 62 9 30_4] [input_output_buffer_streamIP util__streams__buffered 231 9 none]
+G r s decoder [encoder_streamIP util__streams__base64__decoding 62 9 30_4] [decoderIP util__encoders__base64 238 9 none]
+G r c none [encoding_streamDF util__streams__base64 33 9 none] [finish util__encoders__base64 62 14 none]
+G r c none [encoding_streamDF util__streams__base64 33 9 none] [flush util__streams 65 14 none]
+G r e buffer_stream [encoding_streamDF util__streams__base64 33 9 none] [finalize util__streams__buffered 94 14 none]
+G r s input_output_buffer_stream [encoding_streamIP util__streams__base64 33 9 none] [input_output_buffer_streamIP util__streams__buffered 231 9 none]
+G r s encoder [encoding_streamIP util__streams__base64 33 9 none] [encoderIP util__encoders__base64 156 9 none]
+G r c none [decoding_streamDF util__streams__base64 35 9 none] [flush util__streams 65 14 none]
+G r e buffer_stream [decoding_streamDF util__streams__base64 35 9 none] [finalize util__streams__buffered 94 14 none]
+G r s input_output_buffer_stream [decoding_streamIP util__streams__base64 35 9 none] [input_output_buffer_streamIP util__streams__buffered 231 9 none]
+G r s decoder [decoding_streamIP util__streams__base64 35 9 none] [decoderIP util__encoders__base64 238 9 none]
+X 5 a-finali.ads
+53U14*Initialize<21|44p14>
+X 6 a-stream.ads
+42M9*Stream_Element
+54A9*Stream_Element_Array(42M9)<44I9>
+X 21 s-finroo.ads
+42U14*Adjust
+X 36 util.ads
+18K9*Util 28e9 40|19r6 20r6 25r9 28r11 28r54 31r11 31r54 37r5
+X 37 util-encoders.ads
+44K14*Encoders 259e18 40|19r11 28r59 31r59
+149h9*Transformer
+X 38 util-encoders-base64.ads
+23K23*Base64 245e25 40|19w20 28r68 31r68
+39R9*Encoder<37|149R9> 161e14 40|28r75
+79R9*Decoder<37|149R9> 243e14 40|31r75
+X 39 util-streams.ads
+48K14*Streams 36|18k9 39|120e17 40|20r11 25r14 28r16 31r16 37r10
+57h9*Output_Stream
+75h9*Input_Stream
+X 40 util-streams-base64.ads
+25K22*Base64 39|48k14 40|37l18 37e24
+27K12*Encoding[42|54] 33r32
+30K12*Decoding[42|54] 35r32
+33R9*Encoding_Stream<42|62R9[27]> 5|53P14 21|42p14 40|33e72 41|83p14 87p13
+. 90p13
+35R9*Decoding_Stream<42|62R9[30]> 5|53P14 21|42p14 40|35e72 41|83p14 87p13
+. 90p13
+X 41 util-streams-buffered.ads
+64K22*Buffered 40|20r19 28r24 31r24 41|245e26
+68P9*Buffer_Access(6|54A9)
+83U14*Initialize
+87V13*Get_Buffer{68P9}
+90V13*Get_Size{natural}
+X 42 util-streams-buffered-encoders.ads
+53R9 Encoder<37|149R9> 40|28r43 31r43
+54k31*Encoders 40|20w28 28r33 31r33 42|112e35
+62R9*Encoder_Stream<41|192R9> 40|33r41[27] 35r41[30]
+70U14*Initialize<41|79p14>
+75U14*Produces
+80U14*Consumes
+86U14*Close<39|68p14>
+90U14*Write<39|61p14>
+96U14*Read<39|80p14>
+103U14*Flush<39|65p14>
+106U14*Finalize<41|94p14>
+110U14*Fill
+

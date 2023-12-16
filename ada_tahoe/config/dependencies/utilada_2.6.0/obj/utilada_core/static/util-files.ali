@@ -1,0 +1,496 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_NESTED_FINALIZATION
+RV NO_RECURSION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+
+U util.files%b		util-files.adb		b04254c2 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.directories%s	a-direct.adb		a-direct.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.io_exceptions%s	a-ioexce.ads		a-ioexce.ali
+W ada.streams%s		a-stream.adb		a-stream.ali
+W ada.streams.stream_io%s  a-ststio.adb		a-ststio.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+W system%s		system.ads		system.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+W util%s		util.ads		util.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+W util.strings.builders%s  util-strings-builders.ads  util-strings-builders.ali
+W util.strings.tokenizers%s  util-strings-tokenizers.ads  util-strings-tokenizers.ali
+W util.systems%s	util-systems.ads	util-systems.ali
+W util.systems.os%s	util-systems-os.ads	util-systems-os.ali
+W util.systems.types%s	util-systems-types.ads	util-systems-types.ali
+
+U util.files%s		util-files.ads		a037a1a8 EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W util%s		util.ads		util.ali
+W util.strings%s	util-strings.adb	util-strings.ali
+W util.strings.maps%s	util-strings-maps.ads	util-strings-maps.ali
+W util.strings.vectors%s  util-strings-vectors.ads  util-strings-vectors.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-calend.ads		19700101000001 f55c50a3 ada.calendar%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-contai.ads		19700101000001 61e5e089 ada.containers%s
+D a-cohata.ads		19700101000001 c4f77997 ada.containers.hash_tables%s
+D a-cohama.ads		19700101000001 de9aa0f2 ada.containers.hashed_maps%s
+D a-cohase.ads		19700101000001 4c12bfe7 ada.containers.hashed_sets%s
+D a-conhel.ads		19700101000001 46fe1ce3 ada.containers.helpers%s
+D a-cihama.ads		19700101000001 42861819 ada.containers.indefinite_hashed_maps%s
+D a-coinve.ads		19700101000001 728ad523 ada.containers.indefinite_vectors%s
+D a-direct.ads		19700101000001 467e87a1 ada.directories%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-ioexce.ads		19700101000001 40018c65 ada.io_exceptions%s
+D a-iteint.ads		19700101000001 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-ststio.ads		19700101000001 d6d358e8 ada.streams.stream_io%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strhas.ads		19700101000001 e06866e7 ada.strings.hash%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-textio.ads		19700101000001 5c2c6153 ada.text_io%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D i-c.ads		19700101000001 5c5a6c17 interfaces.c%s
+D i-cstrin.ads		19700101000001 f40c8db4 interfaces.c.strings%s
+D i-cstrea.ads		19700101000001 e53d8b8e interfaces.c_streams%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-crtl.ads		19700101000001 8a0692f8 system.crtl%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-ficobl.ads		19700101000001 dc5161d4 system.file_control_block%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-memory.ads		19700101000001 5b8432d0 system.memory%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stalib.adb		19700101000001 eb464a47 system.standard_library%b
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
+D util.ads		20231110223241 36301479 util%s
+D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
+D util-files.ads	20231110223241 f1049828 util.files%s
+D util-files.adb	20231110223241 e701b73b util.files%b
+D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
+D util-strings-maps.ads	20231110223241 a16bc59e util.strings.maps%s
+D util-strings-tokenizers.ads  20231110223241 5883874f util.strings.tokenizers%s
+D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util-systems.ads	20231110223241 be223f03 util.systems%s
+D util-systems-constants.ads  20231110223241 28c2a3fe util.systems.constants%s
+D util-systems-os.ads	20231110223241 5ac3f8b3 util.systems.os%s
+D util-systems-types.ads  20231110223241 eefa4f44 util.systems.types%s
+D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
+D util-texts-tokenizers.ads  20231110223241 c507eb3c util.texts.tokenizers%s
+G a e
+G c Z s b [read_file util__files 78 14 none]
+G c Z s b [read_file util__files 84 14 none]
+G c Z s b [read_file util__files 89 14 none]
+G c Z s b [write_file util__files 93 14 none]
+G c Z s b [write_file util__files 97 14 none]
+G c Z s b [iterate_path util__files 105 14 none]
+G c Z s b [iterate_files_path util__files 116 14 none]
+G c Z s b [find_file_path util__files 127 13 none]
+G c Z s b [find_files_path util__files 134 14 none]
+G c Z s b [compose util__files 141 13 none]
+G c Z s b [compose_path util__files 152 13 none]
+G c Z s b [get_relative_path util__files 160 13 none]
+G c Z s b [rename util__files 164 14 none]
+G c Z s b [delete_file util__files 171 13 none]
+G c Z s b [delete_file util__files 172 14 none]
+G c Z s b [delete_tree util__files 177 14 none]
+G c Z s b [realpath util__files 180 13 none]
+G r c none [iterate_path util__files 105 14 none] [iterate_tokens util__strings__tokenizers 36 14 23_1]
+G r c none [iterate_files_path util__files 116 14 none] [iterate_tokens util__strings__tokenizers 36 14 23_1]
+G r c none [find_file_path util__files 127 13 none] [index util__strings 41 13 none]
+G r c none [find_files_path util__files 134 14 none] [iterate_tokens util__strings__tokenizers 36 14 23_1]
+G r s builder [compose_path util__files 152 13 none] [builderIP util__strings__builders 164 9 22_1]
+G r f builder [compose_path util__files 152 13 none] [initialize util__strings__builders 174 14 22_1]
+G r c none [compose_path util__files 152 13 none] [iterate_tokens util__strings__tokenizers 36 14 23_1]
+G r c none [compose_path util__files 152 13 none] [to_array util__strings__builders 114 13 22_1]
+G r c none [rename util__files 164 14 none] [sys_rename util__systems__os 191 13 none]
+G r c none [delete_file util__files 171 13 none] [sys_unlink util__systems__os 195 13 none]
+G r c none [delete_file util__files 171 13 none] [errno util__systems__os 203 13 none]
+G r c none [delete_file util__files 172 14 none] [sys_unlink util__systems__os 195 13 none]
+G r c none [delete_file util__files 172 14 none] [errno util__systems__os 203 13 none]
+G r c none [delete_tree util__files 177 14 none] [opendir util__systems__os 216 13 none]
+G r c none [delete_tree util__files 177 14 none] [readdir util__systems__os 219 13 none]
+G r c none [delete_tree util__files 177 14 none] [sys_lstat util__systems__os 154 13 none]
+G r c none [delete_tree util__files 177 14 none] [sys_unlink util__systems__os 195 13 none]
+G r c none [delete_tree util__files 177 14 none] [closedir util__systems__os 224 13 none]
+G r c none [realpath util__files 180 13 none] [sys_realpath util__systems__os 198 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 58|18r6 72r8 74r25 108r55 121r61 59|21r6 22r6 23r6 24r6 25r6
+. 39r11 40r11 81r14 83r7 84r33 86r17 87r19 89r7 112r11 113r11 114r11 147r25
+. 160r55 189r17 218r61 228r14 308r14 419r16 442r16 467r16 504r7 519r16
+X 9 a-conhel.ads
+84R12 Reference_Control_Type<14|43R9>
+X 10 a-cihama.ads
+56R9*Map<14|43R9> 58|136r66[62|23] 59|260r66[62|23]
+201U14*Insert 59|274s18[62|23]
+278V13*Contains{boolean} 59|273s22[62|23]
+X 11 a-coinve.ads
+60R9*Vector<14|43R9> 58|90r61[64|22] 59|97r61[64|22]
+280U14*Append 59|101s15[64|22]
+X 12 a-direct.ads
+76K13*Directories 524e20 59|21w10 114r15 189r21 228r18 308r18 467r20 504r11
+. 519r20
+110U14*Delete_Directory 59|504s23
+118U14*Create_Path 59|123s10
+251V13*Containing_Directory{string} 59|120s32
+303n23*Directory{303E9} 59|313r50
+303n34*Ordinary_File{303E9} 59|193r53 230r45
+310V13*Exists{boolean} 59|122s14 193s16 313s13
+316V13*Kind{303E9} 59|193s39 313s36
+345R9*Directory_Entry_Type 517e14 59|231r20
+352A9*Filter_Type(boolean)<303E9> 59|230r29
+360R9*Search_Type<14|43R9> 488e14 59|232r20
+365U14*Start_Search 59|235s10
+367a7 Directory{string} 59|235r32
+368a7 Pattern{string} 59|236r24
+369a7 Filter{352A9} 59|236r44
+394V13*More_Entries{boolean} 59|237s16
+398U14*Get_Next_Entry 59|238s13
+432V13*Simple_Name{string} 59|240s47
+438V13*Full_Name{string} 59|241s47
+473X4*Name_Error 59|197r18 320r15
+474X4*Use_Error 59|467r32 519r32
+X 15 a-ioexce.ads
+16K13*IO_Exceptions 28e22 59|22w10 419r20 442r20
+22X4*Use_Error 59|419r34 442r34
+X 16 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[11|84]>
+X 17 a-stream.ads
+36K13*Streams 87e16 59|23w10 24r10 39r15 40r15 112r15 113r15
+42M9*Stream_Element 59|128r15
+44I9*Stream_Element_Offset<long_long_integer> 59|45r16 57r21 117r38 118r41
+. 127r18
+54A9*Stream_Element_Array(42M9)<44I9> 59|43r16 117r16
+X 18 a-ststio.ads
+39K21*Stream_IO 224e26 59|24w18 40r23 113r23
+44P9*File_Type 59|42r16 116r11
+47n23*In_File{47E9} 59|53r46
+58I9*Count<17|44I9>
+61I12*Positive_Count{58I9} 59|44r16 63r23
+68U14*Create 59|125s7
+69p7 File{44P9} 59|125r15
+71a7 Name{string} 59|125r26
+74U14*Open 59|53s7
+75p7 File{44P9} 59|53r27
+76e7 Mode{47E9} 59|53r38
+77a7 Name{string} 59|53r13
+80U14*Close 59|65s7 70s13 131s7 136s13
+89V13*Is_Open{boolean} 59|69s13 135s13
+98U14*Read 59|55s10
+99p7 File{44P9} 59|55r16
+100a7 Item{17|54A9} 59|55r27
+101i7 Last{17|44I9} 59|55r56
+102i7 From{61I12} 59|55r43
+114U14*Write 59|130s7
+X 19 a-string.ads
+16K13*Strings 35e16 58|18r10 72r12 74r29 108r59 121r65 59|147r29 160r59 218r65
+32E9*Direction 32e42 58|74r37
+32n24*Forward{32E9} 58|108r67 121r73 59|160r67 218r73
+X 23 a-strunb.ads
+85K21*Unbounded 766e26 58|18w18 72r20 59|147r37
+91R9*Unbounded_String<14|43R9> 745e15 58|79r40 98r39 59|37r40 145r39 364r16
+121V13*To_String{string} 59|147s47 383s20
+140U14*Append 59|376s19 380s16 381s16
+148U14*Append 59|60s13
+X 26 a-textio.ads
+58K13*Text_IO 787e16 59|25w10 81r18 83r11 84r37 86r21 87r23 89r11
+66P9*File_Type 59|81r26
+68n23*In_File{68E9} 59|84r45
+114U14*Open 59|83s19
+115p7 File{66P9} 59|83r25
+116e7 Mode{68E9} 59|84r25
+117a7 Name{string} 59|85r25
+130U14*Close 59|89s19
+341V13*End_Of_File{boolean} 59|86s29
+549V13*Get_Line{string} 59|87s31
+X 28 interfac.ads
+38K9*Interfaces 232e15 59|19r6 20r6 455r11 511r11
+X 29 i-c.ads
+29K20*C 597e17 59|19w17 20r17 455r22 511r22
+66M9*unsigned
+X 30 i-cstrin.ads
+44K22*Strings 156e25 59|20w19 511r24
+59P9*chars_ptr 59|513r11 514r11
+64p4*Null_Ptr{59P9} 59|516r45 518r14
+77V13*New_String{59P9} 59|513s24
+82U14*Free 59|517s7 524s10
+100V13*Value{string} 59|522s38
+X 32 system.ads
+37K9*System 153e11 59|18w6 452r16 461r24 473r40
+67M9*Address 59|452r23 461r31
+69m4*Null_Address{67M9} 59|473r47
+81V14*"="{boolean} 59|466r15 473r38
+X 39 s-memory.ads
+51V13*Alloc{32|67M9} 101i<c,__gnat_malloc>22
+66U14*Free 102i<c,__gnat_free>22
+74V13*Realloc{32|67M9} 103i<c,__gnat_realloc>22
+X 47 s-stalib.adb
+87U14 Break_Start 88i<c,__gnat_break_start>22
+X 55 util.ads
+18K9*Util 28e9 58|19r6 20r6 70r9 90r40 136r48 182r5 59|26r6 27r6 28r6 29r6
+. 30r14 97r40 162r7 182r21 191r39 260r48 300r17 310r36 314r16 315r16 317r13
+. 326r14 417r17 431r10 434r17 453r11 454r11 458r24 463r32 465r15 466r17 472r31
+. 486r32 490r35 496r20 500r23 516r12 529r5
+X 58 util-files.ads
+70K14*Files 55|18k9 58|182l10 182e15 59|30b19 191r44 310r41 529l10 529t15
+74E12*Direction{19|32E9} 108r42 121r48 59|160r42 218r48
+78U14*Read_File 78>25 79<25 80>25 59|36b14 73l8 73t17
+78a25 Path{string} 59|36b25 53r21
+79r25 Into{23|91R9} 59|37b25 60m21
+80i25 Max_Size{natural} 59|38b25 48r10 51r19
+84U14*Read_File 84>25 85^25 59|79b14 90l8 90t17 104s7
+84a25 Path{string} 59|79b25 85r33
+85p25 Process 59|80b25 87r10
+85a63 Line{string}
+89U14*Read_File 89>25 90=25 59|96b14 105l8 105t17
+89a25 Path{string} 59|96b25 104r18
+90r25 Into{11|60R9[64|22]} 59|97b25 101m10 101r10
+93U14*Write_File 93>26 94>26 59|110b14 139l8 139t18 147s7
+93a26 Path{string} 59|110b26 120r54 125r34
+94a26 Content{string} 59|111b26 117r61 118r64 126r16 128r46
+97U14*Write_File 97>26 98>26 59|144b14 148l8 148t18
+97a26 Path{string} 59|144b26 147r19
+98r26 Content{23|91R9} 59|145b26 147r58
+105U14*Iterate_Path 105>28 106^28 108>28 59|157b14 166l8 166t20 250s7 325s7
+105a28 Path{string} 59|157b28 162r58 250r21 325r21
+106p28 Process 59|158b28 164r58 250r35 325r36
+106a66 Dir{string}
+107b66 Done{boolean}
+108e28 Going{74E12} 59|160b28 165r58 250r65
+116U14*Iterate_Files_Path 116>34 117>34 118^34 121>34 59|213b14 251l8 251t26
+. 280s7
+116a34 Pattern{string} 59|213b34 236r35 280r27
+117a34 Path{string} 59|214b34 250r29 280r47
+118p34 Process 59|215b34 243r16 280r61
+118a72 Name{string}
+119a72 File{string}
+120b72 Done{boolean}
+121e34 Going{74E12} 59|218b34 250r74
+127V13*Find_File_Path{string} 127>29 128>29 129>29 59|174b13 203l8 203t22
+127a29 Name{string} 59|174b29 191r83 202r14
+128a29 Paths{string} 59|175b29 178r29 179r37 182r41 191r59
+129e29 Separator{character} 59|176b29 182r48
+134U14*Find_Files_Path 134>31 135>31 136=31 59|258b14 281l8 281t23
+134a31 Pattern{string} 59|258b31 280r38
+135a31 Path{string} 59|259b31 280r55
+136r31 Into{10|56R9[62|23]} 59|260b31 273r17 274m13 274r13
+141V13*Compose{string} 141>22 142>22 59|191s50 310s47 334b13 343s20 354l8
+. 354t15
+141a22 Directory{string} 59|334b22 338r17 339r13 341r13 341r37 343r29 347r13
+. 347r24 348r17 349r13 349r24 350r17 352r17
+142a22 Name{string} 59|335b22 337r10 340r17 342r13 342r19 343r40 343r46 343r64
+. 345r20 347r55 347r61 348r29 348r35 348r53 349r54 349r60 350r29 352r35
+152V13*Compose_Path{string} 152>27 153>27 154>27 59|293b13 327l8 327t20
+152a27 Paths{string} 59|293b27 325r29
+153a27 Name{string} 59|294b27 310r61
+154e27 Separator{character} 59|295b27 315r54
+160V13*Get_Relative_Path{string} 160>32 161>32 59|362b13 402l8 402t25
+160a32 From{string} 59|362b32 367r16 368r33 370r24 374r30 375r19 375r42 379r41
+. 379r66 385r20 385r40 385r63 390r20 391r28 397r17 397r50 398r21
+161a32 To{string} 59|363b32 368r17 368r45 371r23 379r24 381r32 381r44 390r10
+. 391r18 392r30 392r34 392r57 392r61 396r17 397r13 397r46 398r17 398r38 400r17
+. 400r29
+164U14*Rename 164>22 164>32 59|407b14 421l8 421t14
+164a22 Old_Name{string} 59|407b22 411r39
+164a32 New_Name{string} 59|407b32 412r39
+171V13*Delete_File{integer} 171>26 59|428b13 436l8 436t19 439s36
+171a26 Path{string} 59|428b26 429r35
+172U14*Delete_File 172>27 59|438b14 444l8 444t19
+172a27 Path{string} 59|438b27 439r49 442r61
+177U14*Delete_Tree 177>27 59|451b14 488s25 505l8 505t19
+177a27 Path{string} 59|451b27 457r43 467r75 484r27 504r41
+180V13*Realpath{string} 180>23 59|510b13 527l8 527t16
+180a23 Path{string} 59|510b23 513r36 519r67
+X 59 util-files.adb
+42p7 F{18|44P9} 53m35 53r35 55r24 65m14 65r14 69r22 70m20 70r20
+43a7 Buffer{17|54A9} 55m35 60r42 62r27
+44i7 Pos{18|61I12} 55r51 63m10 63r17
+45i7 Last{17|44I9} 55m64 56r22 57m13 59r24 62r20 63r39
+46i7 Space{natural} 49m10 51m10 56r30 57r44
+59i14 I<long_long_integer> 60r50
+80a63 Line{string}
+81p7 File{26|66P9} 83m33 83r33 86r42 87r41 89m26 89r26
+98U17 Append 98>25 99b17 102l11 102t17 104r24
+98a25 Line{string} 99b25 101r23
+116p7 F{18|44P9} 125m23 125r23 130r14 131m14 131r14 135r22 136m20 136r20
+117a7 Buffer{17|54A9} 127m10 130r17
+120a7 Dir{string} 122r22 123r23
+126i11 I{integer} 127r41 128r55
+158a66 Dir{string}
+159b66 Done{boolean}
+177i7 Sep_Pos{natural} 182m10 183r13 184m13 186m13 186r24 191r73 200r17
+178i7 Pos{positive} 181r13 182r59 191r66 200m10
+179i7 Last{natural} 181r20 184r24
+191a13 Path{string} 193r24 193r45 194r23
+215a72 Name{string}
+216a72 File{string}
+217b72 Done{boolean}
+220U17 Find_Files 220>29 221<29 226b17 247l11 247t21 250r46
+220a29 Dir{string} 226b29 235r45
+221b29 Done{boolean} 227b29 234m10 243m42 244r26
+230a10 Filter{12|352A9} 236r54
+231r10 Ent{12|345R9} 238m37 240r60 241r58
+232r10 Search{12|360R9} 235m24 235r24 237r30 238m29 238r29
+240a16 Name{string} 243r25
+241a16 File_Path{string} 243r31
+262U17 Add_File 262>27 263>27 264<27 269b17 277l11 277t19 280r72
+262a27 Name{string} 269b27 273r32 274r26
+263a27 File_Path{string} 270b27 274r32
+264b27 Done{boolean} 271b27 276m10
+297U17 Compose 297>26 298<26 306b17 322l11 322t18 325r47
+297a26 Dir{string} 306b26 310r56
+298b26 Done{boolean} 307b26 312m10
+300r7 Result{70|63R9[61|22]} 314r46 315m46 315r46 317m43 317r43 326r46
+310a10 Path{string} 313r21 313r42 317r51
+364r7 Result{23|91R9} 376m27 376r27 380m24 380r24 381m24 381r24 383r31
+365i7 Last{natural} 370r16 374r22 379r16 381r36 386m13 395r13 400r21
+367i11 I{integer} 368r13 368r39 368r49 379r47 379r72 385r16 385r46 385r69
+. 386r21
+374i17 J{integer} 375r25 375r48
+411a7 C_Old_Path=411:48{string} 417r45
+412a7 C_New_Path=412:48{string} 417r57
+413i7 Result{integer} 417m7 418r10
+429a7 C_Path=429:40{string} 431r38
+439i7 Result{integer} 441r10
+457a7 C_Path=457:48{string} 465r40
+458m7 Dirp{67|209M9} 465m7 466r10 472r56 496r46 500r49
+459a7 Buffer{string} 472m62 472r62
+460i7 Length{integer} 472m78 472r78 475r57
+461m7 File_Name_Addr{32|67M9} 472m13 473r23 478r42
+462i7 Result{integer} 486m22 487r25 490m25 496m10 500m13
+463r7 St{68|44R9} 486m70 486r70 487r46
+475A24 File_Name_String{string}<integer> 477r37
+477a16 File_Name{475A24} 481r19 481r45 484r56
+483a22 File_Path=484:66{string} 486r59 488r38 488r49 488r68 490r63
+513p7 P{30|59P9} 516r42 517m13 517r13
+514p7 R{30|59P9} 516m7 518r10 522r45 524m16 524r16
+522a10 Result{string} 525r17
+X 60 util-strings.ads
+24K14*Strings 58|19r11 20r11 90r45 136r53 59|26r11 27r11 97r45 162r12 182r26
+. 260r53 300r22 314r21 315r21 317r18 326r19 60|147e17
+41V13*Index{natural} 59|182s34
+X 61 util-strings-builders.ads
+22K22*Builders[70|59] 59|26w19 300r30 314r29 315r29 317r26 326r27
+X 62 util-strings-maps.ads
+23K22*Maps[10|49] 58|19w19 136r61 59|260r61
+X 63 util-strings-tokenizers.ads
+23K22*Tokenizers[71|27] 59|27w19 162r20
+X 64 util-strings-vectors.ads
+22K22*Vectors[11|47] 58|20w19 90r53 59|97r53
+X 65 util-systems.ads
+19K14*Systems 59|28r11 29r11 417r22 431r15 434r22 453r16 454r16 458r29 463r37
+. 465r20 466r22 472r36 486r37 490r40 496r25 500r28 516r17 65|23e17
+X 67 util-systems-os.ads
+27K22*Os 59|28w19 417r30 431r23 434r30 454r24 458r37 465r28 466r30 472r44
+. 486r45 490r48 496r33 500r36 516r25 67|227e20
+30e4*Directory_Separator{character} 59|484r34
+40P12*Ptr{30|59P9}
+154V13*Sys_Lstat{integer} 59|486s48
+191V13*Sys_Rename{integer} 59|417s33
+195V13*Sys_Unlink{integer} 59|431s26 490s51
+198V13*Sys_Realpath{40P12} 59|516s28
+203V13*Errno{integer} 59|434s33
+209M9*DIR<32|67M9> 59|458r40
+211m4*Null_Dir{209M9} 59|466r33
+216V13*Opendir{209M9} 59|465s31
+219V13*Readdir{32|67M9} 59|472s47
+224V13*Closedir{integer} 59|496s36 500s39
+X 68 util-systems-types.ads
+3K22*Types 59|29w19 453r24 463r45 68|65e23
+13M12*mode_t{29|66M9}
+15m4*S_IFMT{13M12} 59|487r61
+16m4*S_IFDIR{13M12} 59|487r71
+44R9*Stat_Type 59|463r51 68|62e14
+48m7*st_mode{13M12} 59|487r49
+X 70 util-texts-builders.ads
+63R9*Builder<14|50R9> 59|300r39[61|22]
+66V13*Length{natural} 59|314s38[61|22]
+79U14*Append 59|317s35[61|22]
+83U14*Append 59|315s38[61|22]
+114V13*To_Array{string} 59|326s36[61|22]
+X 71 util-texts-tokenizers.ads
+36U14*Iterate_Tokens 59|162s31[63|23]
+36a30 Content{string} 59|162r47[63|23]
+37a30 Pattern{string} 59|163r47[63|23]
+38p30 Process 59|164r47[63|23]
+40e30 Going{19|32E9} 59|165r47[63|23]
+

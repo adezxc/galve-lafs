@@ -1,0 +1,243 @@
+V "GNAT Lib v13"
+A -O2
+A -fPIC
+A -gnatA
+A -gnat2012
+A -gnatwu
+A -gnatwa
+A -g
+A -gnata
+A -gnatVa
+A -gnatVM
+A -gnatVI
+A -gnaty3
+A -gnatya
+A -gnatyb
+A -gnatyc
+A -gnatye
+A -gnatyf
+A -gnatyh
+A -gnatyi
+A -gnatyk
+A -gnatyl
+A -gnatym
+A -gnatyn
+A -gnatyp
+A -gnatyr
+A -gnatys
+A -gnatyt
+A -gnatyx
+A -gnatyM99
+A -frandom-seed=3my0i3h6jh
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_FINALIZATION
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U util.streams.buffered.parts%b  util-streams-buffered-parts.adb  25b77b4b OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+Z system%s		system.ads		system.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+W util.streams.buffered%s  util-streams-buffered.adb  util-streams-buffered.ali
+
+U util.streams.buffered.parts%s  util-streams-buffered-parts.ads  e3be21fc EE OO PF PK
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W util.streams.buffered%s  util-streams-buffered.adb  util-streams-buffered.ali
+
+D ada.ads		19700101000001 76789da1 ada%s
+D a-assert.ads		19700101000001 ba465f5c ada.assertions%s
+D a-charac.ads		19700101000001 2d3ec45b ada.characters%s
+D a-chlat1.ads		19700101000001 e0d72e76 ada.characters.latin_1%s
+D a-except.ads		19700101000001 2a7d8d70 ada.exceptions%s
+D a-finali.ads		19700101000001 bf4f806b ada.finalization%s
+D a-stream.ads		19700101000001 119b8fb3 ada.streams%s
+D a-string.ads		19700101000001 90ac6797 ada.strings%s
+D a-strmap.ads		19700101000001 ed8acfdb ada.strings.maps%s
+D a-sttebu.ads		19700101000001 f1ad67a2 ada.strings.text_buffers%s
+D a-strunb.ads		19700101000001 7bfb7010 ada.strings.unbounded%s
+D a-stuten.ads		19700101000001 c6ced0ae ada.strings.utf_encoding%s
+D a-stzmap.ads		19700101000001 f60a1f4d ada.strings.wide_wide_maps%s
+D a-stzunb.ads		19700101000001 404b19b5 ada.strings.wide_wide_unbounded%s
+D a-tags.ads		19700101000001 9eaa38c6 ada.tags%s
+D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		19700101000001 c3a8ac65 ada.unchecked_deallocation%s
+D interfac.ads		19700101000001 15f799c2 interfaces%s
+D system.ads		19700101000001 426dafb8 system%s
+D s-assert.ads		19700101000001 9c4520c7 system.assertions%s
+D s-atocou.ads		19700101000001 dc18efc3 system.atomic_counters%s
+D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
+D s-finmas.ads		19700101000001 bd688734 system.finalization_masters%s
+D s-finroo.ads		19700101000001 4ff27390 system.finalization_root%s
+D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
+D s-pooglo.ads		19700101000001 91708d21 system.pool_global%s
+D s-putima.ads		19700101000001 17291fe4 system.put_images%s
+D s-retsta.ads		19700101000001 0f6b06cb system.return_stack%s
+D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
+D s-soflin.ads		19700101000001 df77073e system.soft_links%s
+D s-stache.ads		19700101000001 0b81c1fe system.stack_checking%s
+D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
+D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
+D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
+D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
+D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
+D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
+D util.ads		20231110223241 36301479 util%s
+D util-streams.ads	20231110223241 e241dcc4 util.streams%s
+D util-streams-buffered.ads  20231110223241 a2e3ffd8 util.streams.buffered%s
+D util-streams-buffered-parts.ads  20231110223241 415dde24 util.streams.buffered.parts%s
+D util-streams-buffered-parts.adb  20231110223241 a742090a util.streams.buffered.parts%b
+G a e
+G c Z s b [initialize util__streams__buffered__parts 70 14 none]
+G c Z s b [initialize util__streams__buffered__parts 75 14 none]
+G c Z s b [initialize util__streams__buffered__parts 81 14 none]
+G c Z s b [set_boundary util__streams__buffered__parts 85 14 none]
+G c Z s b [set_boundary util__streams__buffered__parts 88 14 none]
+G c Z s b [next_part util__streams__buffered__parts 92 14 none]
+G c Z s b [fill util__streams__buffered__parts 97 14 none]
+G c Z s b [is_eob util__streams__buffered__parts 100 13 none]
+G c Z s b [finalize util__streams__buffered__parts 104 14 none]
+G c Z s b [check_boundary util__streams__buffered__parts 120 14 none]
+G c Z s s [input_part_streamDF util__streams__buffered__parts 108 9 none]
+G c Z s s [input_part_streamIP util__streams__buffered__parts 108 9 none]
+G c Z b b [free_buffer util__streams__buffered__parts 22 14 none]
+G r c none [initialize util__streams__buffered__parts 70 14 none] [initialize util__streams__buffered 150 14 none]
+G r c none [initialize util__streams__buffered__parts 75 14 none] [initialize util__streams__buffered 154 14 none]
+G r c none [initialize util__streams__buffered__parts 81 14 none] [initialize util__streams__buffered 159 14 none]
+G r c none [set_boundary util__streams__buffered__parts 85 14 none] [get_buffer util__streams__buffered 87 13 none]
+G r c none [set_boundary util__streams__buffered__parts 88 14 none] [get_buffer util__streams__buffered 87 13 none]
+G r e buffer_stream [finalize util__streams__buffered__parts 104 14 none] [finalize util__streams__buffered 94 14 none]
+G r e buffer_stream [input_part_streamDF util__streams__buffered__parts 108 9 none] [finalize util__streams__buffered 94 14 none]
+G r s input_buffer_stream [input_part_streamIP util__streams__buffered__parts 108 9 none] [input_buffer_streamIP util__streams__buffered 220 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 42|86r42 43|18r6 23r10 64r42 69r30
+X 6 a-finali.ads
+53U14*Initialize<24|44p14>
+X 7 a-stream.ads
+36K13*Streams 87e16 42|86r46 43|64r46 69r34
+42M9*Stream_Element 43|147r27
+44I9*Stream_Element_Offset<long_long_integer> 42|110r24 43|76r10 76r52 98r18
+. 148r18 149r18 191r21
+54A9*Stream_Element_Array(42M9)<44I9> 42|86r54 43|23r48 64r54 69r42 75r17
+X 17 a-uncdea.ads
+17+9 Object 43|23r38
+18P9 Name(17+9) 43|24r38
+20u15*Unchecked_Deallocation 43|18w10 23r14
+X 24 s-finroo.ads
+42U14*Adjust
+X 39 util.ads
+18K9*Util 28e9 42|64r9 122r5 43|20r14 225r5
+X 40 util-streams.ads
+48K14*Streams 39|18k9 40|120e17 42|64r14 122r10 43|20r19 225r10
+75h9*Input_Stream 42|76r43 43|42r43
+80x14*Read 43|123R23 127R23
+X 41 util-streams-buffered.ads
+64K22*Buffered 40|48k14 41|245e26 42|64r22 122r18 43|20r27 225r18
+68P9*Buffer_Access(7|54A9) 42|113r21 43|24r48 99r27 100r27 145r27 146r27
+. 192r30 193r30
+75R9*Buffer_Stream<6|50R9> 211e14 42|82r43 43|54r43
+79U14*Initialize
+87V13*Get_Buffer{68P9} 42|87s39
+90V13*Get_Size{natural}
+94U14*Finalize<6|54p14> 43|222s36
+146R9*Input_Buffer_Stream<75R9><40|75R9> 229e14 42|66r42 108r42 43|33r7 45r7
+. 56r7 222r7
+150U14*Initialize<83p14> 43|33s36
+154U14*Initialize 43|45s36
+159U14*Initialize 43|56s36
+167U14*Read
+170U14*Read
+173U14*Read
+179U14*Read<40|80p14>
+183U14*Read
+186U14*Read
+190V13*Is_Eof{boolean}
+201p7*Buffer{68P9} 43|100r51 123r36 127r36 146r51 193r54
+204i7*Write_Pos{7|44I9} 43|88r41 89m17 91r35 112r41 113r48 114r46 117m20
+. 123m76 124r31 127m70 128r31 132m17 132r37 151r26 153r48 156r32 159r50 160r51
+. 167m23 185r35 185r84 200m23
+207i7*Read_Pos{7|44I9} 43|91r17 118m20 133m17 148r50 162r32 164m26 185r17
+. 191r53 198m23
+210i7*Last{7|44I9} 43|123r62 127r56
+222p7*Input(40|75R9) 43|105r17 123r17 127r17
+225b7*Eof{boolean} 43|102r17 106m17 124m17 128m17 131r21 180r36
+228b7*Eob{boolean} 43|87m14 102r36 116m20 165m26 180r17 199m23 208r27
+X 42 util-streams-buffered-parts.ads
+64K31*Parts 41|64k22 42|108E9 122l27 122e32 43|20b36 225l27 225t32
+66R9*Input_Part_Stream<41|146R9> 6|53P14 24|42p14 41|79p14 87p13 90p13 167p14
+. 170p14 173p14 179P14 183p14 186p14 190p13 42|70P14 70r43 75P14 75r43 81P14
+. 81r43 85p14 85r46 88p14 88r46 92p14 92r41 97P14 97r36 100p13 100r37 104P14
+. 104r40 108c9 114e14 120p14 120r46 43|30r43 41r43 53r43 63r46 73r46 85r41
+. 97r36 144r46 178r37 217r40
+70U14*Initialize<41|150p14> 70=26 71>26 43|30b14 35l8 35t18
+70r26 Stream{66R9} 43|30b26 33m28 33r28 34m7
+71a26 Content{string} 43|31b26 33r48
+75U14*Initialize<41|154p14> 75=26 76^26 77>26 43|41b14 47l8 47t18
+75r26 Stream{66R9} 43|41b26 45m28 45r28 46m7
+76p26 Input(40|75R9) 43|42b26 45r48
+77i26 Size{positive} 43|43b26 45r55
+81U14*Initialize<41|159p14> 81=26 82=26 43|53b14 58l8 58t18
+81r26 Stream{66R9} 43|53b26 56m28 56r28 57m7
+82c26 From<41|75R9> 43|54b26 56m48
+85U14*Set_Boundary 85=28 86>28 43|63b14 71l8 71t20 79s14
+85r28 Stream{66R9} 87r32 43|63b28 66r10 67m23 67r23 69m7 70m7 70r7
+86a28 Boundary{7|54A9} 87r14 43|64b28 69r65
+88U14*Set_Boundary 88=28 89>28 43|73b14 80l8 80t20
+88r28 Stream{66R9} 43|73b28 79m7 79r7
+89a28 Boundary{string} 43|74b28 76r33 76r75 77r31
+92U14*Next_Part 92=25 43|70s14 85b14 94l8 94t17
+92r25 Stream{66R9} 43|85b25 87m7 88r10 88r34 89m10 89r30 91r10 91r28 92m10
+. 92r10
+97U14*Fill<41|164p14> 97=20 43|97b14 136l8 136t12 207s20
+97r20 Stream{66R9} 43|97b20 99r44 100r44 102r10 102r29 105r10 106m10 112r10
+. 112r34 113r17 113r41 114r39 114r59 116m13 117m13 118m13 119m13 123r10 123r29
+. 123r55 123m69 123r69 124m10 124r24 126m10 127r10 127r29 127r49 127m63 127r63
+. 128m10 128r24 131r14 132m10 132r30 133m10 135m7 135r7
+100V13*Is_Eob{boolean} 100=21 43|178b13 211l8 211t14
+100r21 Stream{66R9} 43|178b21 180r10 180r29 185r10 185r28 185r53 185r77 191r46
+. 192r47 193r47 195r38 198m16 199m16 200m16 207m13 207r13 208r20
+104U14*Finalize<41|94p14> 104=24 43|217b14 223l8 223t16
+104r24 Stream{66R9} 43|217b24 219r10 220m23 220r23 222m28 222r28
+110i7 Real_Write_Pos{7|44I9} 43|34m14 46m14 57m14 88r17 89r37 112r17 113r24
+. 114r66 119m20 126m17 159r26 160m26 185r60 195r45
+113p7 Boundary{41|68P9} 43|66r17 67m30 69m14 99r51 145r51 192r54 219r17 220m30
+120U14 Check_Boundary 120=30 43|92s17 135s14 144b14 173l8 173t22
+120r30 Stream{66R9} 43|144b30 145r44 146r44 148r43 151r19 153r41 156r25 159r19
+. 159r43 160m19 160r44 162r25 164m19 165m19 167m16
+X 43 util-streams-buffered-parts.adb
+22U14 Free_Buffer[17|20] 67s10 220s10
+75a7 Content{7|54A9} 77m11 77r11 79r28
+98i7 Pos{7|44I9} 113m10 114r23 115r13 119r38 123r44 124r43
+99p7 Boundary{41|68P9} 115r20 115r58 115r77 117r33 118r32
+100p7 Buffer{41|68P9} 114r10 114r31 115r45
+145p7 Boundary{41|68P9} 147r45 153r22 154r25 158r50 162r58
+146p7 Buffer{41|68P9} 152r13 158r16
+147m7 C{7|42M9} 152r28
+148i7 Pos{7|44I9} 151r13 152r21 153r16 156r44 158r24 158r31 162r19 163m19
+. 163r26 164r38 167r36 171m10 171r17
+149i7 Count{7|44I9} 154m16 156m16 158r37 158r65 162r50 163r32
+191i10 Pos{7|44I9} 195r13 196r24 196r31 197m16 197r23 198r35 200r36
+192p10 Boundary{41|68P9} 195r19 196r37 196r60 197r29
+193p10 Buffer{41|68P9} 196r16
+
