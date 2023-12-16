@@ -4,13 +4,7 @@ with "utilada_conf.gpr";
 with "utilada_core.gpr";
 with "utilada_sys.gpr";
 abstract project Ada_Tahoe_Config is
-   Crate_Version := "0.1.0-dev";
-   Crate_Name := "ada_tahoe";
-
-   Alire_Host_OS := "macos";
-
-   Alire_Host_Arch := "aarch64";
-
+   Alire_Host_Distro := "distro_unknown";
    Alire_Host_Distro := "homebrew";
    Ada_Compiler_Switches := External_As_List ("ADAFLAGS", " ");
    Ada_Compiler_Switches := Ada_Compiler_Switches &

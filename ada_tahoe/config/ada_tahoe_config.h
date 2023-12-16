@@ -5,7 +5,7 @@
 #define CRATE_VERSION "0.1.0-dev"
 #define CRATE_NAME "ada_tahoe"
 
-#define ALIRE_HOST_OS "macos"
+#define ALIRE_HOST_OS "linux"
 
 #define ALIRE_HOST_ARCH "aarch64"
 

@@ -6,9 +6,9 @@ package Ada_Tahoe_Config is
    pragma Pure;
 
    Crate_Version : constant String := "0.1.0-dev";
-   Crate_Name : constant String := "ada_tahoe";
+   Crate_Name    : constant String := "ada_tahoe";
 
-   Alire_Host_OS : constant String := "macos";
+   Alire_Host_OS : constant String := "linux";
 
    Alire_Host_Arch : constant String := "aarch64";
 

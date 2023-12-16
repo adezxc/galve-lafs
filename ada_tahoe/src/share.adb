@@ -32,7 +32,7 @@ package body Share is
    function Read_Share
      (Segment_Size, Required_Shares : Positive; File : String) return Share
    is
-      Block_Size          : constant Positive :=
+      Block_Size : constant Positive :=
         (Segment_Size + (Required_Shares - 1)) / Required_Shares;
       Block_Size_In_Words : constant Positive := (Block_Size + 3) / 4;
 
