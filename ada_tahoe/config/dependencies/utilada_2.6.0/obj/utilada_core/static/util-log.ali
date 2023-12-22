@@ -107,9 +107,9 @@ D s-valueu.ads		19700101000001 18770347 system.value_u%s
 D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
 D s-widuns.ads		19700101000001 866a5800 system.wid_uns%s
 D s-widthu.ads		19700101000001 b32f15e2 system.width_u%s
-D util.ads		20231110223241 36301479 util%s
-D util-log.ads		20231110223241 0fb1ac89 util.log%s
-D util-log.adb		20231110223241 a31e139f util.log%b
+D util.ads		20231222112838 36301479 util%s
+D util-log.ads		20231222112838 0fb1ac89 util.log%s
+D util-log.adb		20231222112838 a31e139f util.log%b
 G a e
 G c Z s b [get_level_name util__log 161 13 none]
 G c Z s b [get_level util__log 164 13 none]

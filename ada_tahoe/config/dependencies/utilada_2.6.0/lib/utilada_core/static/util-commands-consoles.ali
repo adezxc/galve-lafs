@@ -90,14 +90,14 @@ D s-string.ads		19700101000001 582aac7d system.strings%s
 D s-ststop.ads		19700101000001 c569db7c system.strings.stream_ops%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-commands.ads	20231110223241 6bbb2dbb util.commands%s
-D util-commands-consoles.ads  20231110223241 1a9b5e64 util.commands.consoles%s
-D util-commands-consoles.adb  20231110223241 b4159fbb util.commands.consoles%b
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
-D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util.ads		20231222112838 36301479 util%s
+D util-commands.ads	20231222112838 6bbb2dbb util.commands%s
+D util-commands-consoles.ads  20231222112838 1a9b5e64 util.commands.consoles%s
+D util-commands-consoles.adb  20231222112838 b4159fbb util.commands.consoles%b
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
+D util-strings-vectors.ads  20231222112838 bd939877 util.strings.vectors%s
 G a e
 G c Z s b [consoles util__commands 24 23 none]
 X 8 a-conhel.ads

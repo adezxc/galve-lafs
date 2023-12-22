@@ -48,10 +48,10 @@ W util.texts%s		util-texts.ads		util-texts.ali
 
 D interfac.ads		19700101000001 15f799c2 interfaces%s
 D system.ads		19700101000001 426dafb8 system%s
-D util.ads		20231110223241 36301479 util%s
-D util-texts.ads	20231110223241 096d4581 util.texts%s
-D util-texts-transforms.ads  20231110223241 53ebc629 util.texts.transforms%s
-D util-texts-transforms.adb  20231110223241 dd2938bc util.texts.transforms%b
+D util.ads		20231222112838 36301479 util%s
+D util-texts.ads	20231222112838 096d4581 util.texts%s
+D util-texts-transforms.ads  20231222112838 53ebc629 util.texts.transforms%s
+D util-texts-transforms.adb  20231222112838 dd2938bc util.texts.transforms%b
 G a e
 G c Z s b [transforms util__texts 25 20 none]
 X 1 interfac.ads

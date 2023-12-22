@@ -102,19 +102,19 @@ D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
 D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
-D util.ads		20231110223241 36301479 util%s
-D util-beans.ads	20231110223241 362abe70 util.beans%s
-D util-beans-basic.ads	20231110223241 95c2d591 util.beans.basic%s
-D util-beans-objects.ads  20231110223241 8deb9c60 util.beans.objects%s
-D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-properties.ads	20231110223241 3ed4fee8 util.properties%s
-D util-properties-discrete.ads  20231110223241 c6645ff2 util.properties.discrete%s
-D util-properties-discrete.adb  20231110223241 8bbac323 util.properties.discrete%b
-D util-refs.ads		20231110223241 e592e98d util.refs%s
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
-D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util.ads		20231222112838 36301479 util%s
+D util-beans.ads	20231222112838 362abe70 util.beans%s
+D util-beans-basic.ads	20231222112838 95c2d591 util.beans.basic%s
+D util-beans-objects.ads  20231222112838 8deb9c60 util.beans.objects%s
+D util-blobs.ads	20231222112838 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-properties.ads	20231222112838 3ed4fee8 util.properties%s
+D util-properties-discrete.ads  20231222112838 c6645ff2 util.properties.discrete%s
+D util-properties-discrete.adb  20231222112838 8bbac323 util.properties.discrete%b
+D util-refs.ads		20231222112838 e592e98d util.refs%s
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
+D util-strings-vectors.ads  20231222112838 bd939877 util.strings.vectors%s
 G a e
 G c Z s b [discrete util__properties 23 25 none]
 X 8 a-conhel.ads

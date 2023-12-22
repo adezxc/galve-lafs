@@ -77,10 +77,10 @@ D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
 D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-encoders.ads	20231110223241 2efdfb8e util.encoders%s
-D util-encoders-ecc.ads	20231110223241 6b95d4d0 util.encoders.ecc%s
-D util-encoders-ecc.adb	20231110223241 fa72dba8 util.encoders.ecc%b
+D util.ads		20231222112838 36301479 util%s
+D util-encoders.ads	20231222112838 2efdfb8e util.encoders%s
+D util-encoders-ecc.ads	20231222112838 6b95d4d0 util.encoders.ecc%s
+D util-encoders-ecc.adb	20231222112838 fa72dba8 util.encoders.ecc%b
 G a e
 G c Z s b [make util__encoders__ecc 56 14 none]
 G c Z s b [correct util__encoders__ecc 62 13 none]

@@ -104,14 +104,14 @@ D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
 D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-streams.ads	20231110223241 e241dcc4 util.streams%s
-D util-streams-raw.ads	20231110223241 58f841ec util.streams.raw%s
-D util-streams-raw.adb	20231110223241 d76610bf util.streams.raw%b
-D util-systems.ads	20231110223241 be223f03 util.systems%s
-D util-systems-constants.ads  20231110223241 28c2a3fe util.systems.constants%s
-D util-systems-os.ads	20231110223241 5ac3f8b3 util.systems.os%s
-D util-systems-types.ads  20231110223241 eefa4f44 util.systems.types%s
+D util.ads		20231222112838 36301479 util%s
+D util-streams.ads	20231222112838 e241dcc4 util.streams%s
+D util-streams-raw.ads	20231222112838 58f841ec util.streams.raw%s
+D util-streams-raw.adb	20231222112838 d76610bf util.streams.raw%b
+D util-systems.ads	20231222112838 be223f03 util.systems%s
+D util-systems-constants.ads  20231222112838 28c2a3fe util.systems.constants%s
+D util-systems-os.ads	20231222112838 5ac3f8b3 util.systems.os%s
+D util-systems-types.ads  20231222112838 eefa4f44 util.systems.types%s
 G a e
 G c Z s b [initialize util__streams__raw 38 14 none]
 G c Z s b [get_file util__streams__raw 42 13 none]

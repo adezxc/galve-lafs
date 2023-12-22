@@ -112,10 +112,10 @@ D s-valueu.ads		19700101000001 18770347 system.value_u%s
 D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
 D s-widuns.ads		19700101000001 866a5800 system.wid_uns%s
 D s-widthu.ads		19700101000001 b32f15e2 system.width_u%s
-D util.ads		20231110223241 36301479 util%s
-D util-dates.ads	20231110223241 0dc7f82c util.dates%s
-D util-dates-simple_format.ads  20231110223241 7ddc2807 util.dates.simple_format%s
-D util-dates-simple_format.adb  20231110223241 4cc84121 util.dates.simple_format%b
+D util.ads		20231222112838 36301479 util%s
+D util-dates.ads	20231222112838 0dc7f82c util.dates%s
+D util-dates-simple_format.ads  20231222112838 7ddc2807 util.dates.simple_format%s
+D util-dates-simple_format.adb  20231222112838 4cc84121 util.dates.simple_format%b
 G a e
 G c Z s b [simple_format util__dates 23 21 none]
 G r s date_record [simple_format util__dates 23 21 none] [date_recordIP util__dates 55 9 none]

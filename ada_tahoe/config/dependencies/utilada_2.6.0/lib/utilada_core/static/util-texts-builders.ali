@@ -83,10 +83,10 @@ D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
 D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-texts.ads	20231110223241 096d4581 util.texts%s
-D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
-D util-texts-builders.adb  20231110223241 cba78850 util.texts.builders%b
+D util.ads		20231222112838 36301479 util%s
+D util-texts.ads	20231222112838 096d4581 util.texts%s
+D util-texts-builders.ads  20231222112838 8cbd149a util.texts.builders%s
+D util-texts-builders.adb  20231222112838 cba78850 util.texts.builders%b
 G a e
 G c Z s b [builders util__texts 59 20 none]
 X 1 ada.ads

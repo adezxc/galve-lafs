@@ -122,21 +122,21 @@ D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
 D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
 D s-widuns.ads		19700101000001 866a5800 system.wid_uns%s
 D s-widthu.ads		19700101000001 b32f15e2 system.width_u%s
-D util.ads		20231110223241 36301479 util%s
-D util-beans.ads	20231110223241 362abe70 util.beans%s
-D util-beans-basic.ads	20231110223241 95c2d591 util.beans.basic%s
-D util-beans-objects.ads  20231110223241 8deb9c60 util.beans.objects%s
-D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-properties.ads	20231110223241 3ed4fee8 util.properties%s
-D util-properties-basic.ads  20231110223241 90f27d83 util.properties.basic%s
-D util-properties-basic.adb  20231110223241 e590250b util.properties.basic%b
-D util-properties-discrete.ads  20231110223241 c6645ff2 util.properties.discrete%s
-D util-properties-discrete.adb  20231110223241 8bbac323 util.properties.discrete%b
-D util-refs.ads		20231110223241 e592e98d util.refs%s
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
-D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util.ads		20231222112838 36301479 util%s
+D util-beans.ads	20231222112838 362abe70 util.beans%s
+D util-beans-basic.ads	20231222112838 95c2d591 util.beans.basic%s
+D util-beans-objects.ads  20231222112838 8deb9c60 util.beans.objects%s
+D util-blobs.ads	20231222112838 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-properties.ads	20231222112838 3ed4fee8 util.properties%s
+D util-properties-basic.ads  20231222112838 90f27d83 util.properties.basic%s
+D util-properties-basic.adb  20231222112838 e590250b util.properties.basic%b
+D util-properties-discrete.ads  20231222112838 c6645ff2 util.properties.discrete%s
+D util-properties-discrete.adb  20231222112838 8bbac323 util.properties.discrete%b
+D util-refs.ads		20231222112838 e592e98d util.refs%s
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
+D util-strings-vectors.ads  20231222112838 bd939877 util.strings.vectors%s
 G a e
 G c s s s [s util__properties__basic 19 1 none]
 G c Z s s [get util__properties__basic__boolean_property 26 13 24_4]

@@ -40,8 +40,8 @@ U util.beans%s		util-beans.ads		001aaa09 NE OO PR PK
 W util%s		util.ads		util.ali
 
 D system.ads		19700101000001 426dafb8 system%s
-D util.ads		20231110223241 36301479 util%s
-D util-beans.ads	20231110223241 362abe70 util.beans%s
+D util.ads		20231222112838 36301479 util%s
+D util-beans.ads	20231222112838 362abe70 util.beans%s
 G a e
 X 2 util.ads
 18K9*Util 28e9 3|53r9 57r5

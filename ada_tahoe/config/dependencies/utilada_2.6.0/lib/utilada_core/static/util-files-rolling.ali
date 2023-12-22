@@ -160,18 +160,18 @@ D s-valuei.ads		19700101000001 11081e09 system.value_i%s
 D s-vaispe.ads		19700101000001 44130d39 system.value_i_spec%s
 D s-valueu.ads		19700101000001 18770347 system.value_u%s
 D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
-D util.ads		20231110223241 36301479 util%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-dates.ads	20231110223241 0dc7f82c util.dates%s
-D util-dates-simple_format.ads  20231110223241 7ddc2807 util.dates.simple_format%s
-D util-files.ads	20231110223241 f1049828 util.files%s
-D util-files-rolling.ads  20231110223241 75952dbb util.files.rolling%s
-D util-files-rolling.adb  20231110223241 4ab006e6 util.files.rolling%b
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
-D util-strings-maps.ads	20231110223241 a16bc59e util.strings.maps%s
-D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
-D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
+D util.ads		20231222112838 36301479 util%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-dates.ads	20231222112838 0dc7f82c util.dates%s
+D util-dates-simple_format.ads  20231222112838 7ddc2807 util.dates.simple_format%s
+D util-files.ads	20231222112838 f1049828 util.files%s
+D util-files-rolling.ads  20231222112838 75952dbb util.files.rolling%s
+D util-files-rolling.adb  20231222112838 4ab006e6 util.files.rolling%b
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
+D util-strings-maps.ads	20231222112838 a16bc59e util.strings.maps%s
+D util-strings-vectors.ads  20231222112838 bd939877 util.strings.vectors%s
+D util-strings-vectors.ads  20231222112838 bd939877 util.strings.vectors%s
 G a e
 G c Z s b [format util__files__rolling 98 13 none]
 G c Z s b [initialize util__files__rolling 106 14 none]

@@ -108,15 +108,15 @@ D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
 D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-streams.ads	20231110223241 e241dcc4 util.streams%s
-D util-streams-buffered.ads  20231110223241 a2e3ffd8 util.streams.buffered%s
-D util-streams-texts.ads  20231110223241 e18922e6 util.streams.texts%s
-D util-streams-texts-tr.ads  20231110223241 d921709e util.streams.texts.tr%s
-D util-streams-texts-tr.ads  20231110223241 d921709e util.streams.texts.tr%b
-D util-texts.ads	20231110223241 096d4581 util.texts%s
-D util-texts-transforms.ads  20231110223241 53ebc629 util.texts.transforms%s
-D util-texts-transforms.adb  20231110223241 dd2938bc util.texts.transforms%b
+D util.ads		20231222112838 36301479 util%s
+D util-streams.ads	20231222112838 e241dcc4 util.streams%s
+D util-streams-buffered.ads  20231222112838 a2e3ffd8 util.streams.buffered%s
+D util-streams-texts.ads  20231222112838 e18922e6 util.streams.texts%s
+D util-streams-texts-tr.ads  20231222112838 d921709e util.streams.texts.tr%s
+D util-streams-texts-tr.ads  20231222112838 d921709e util.streams.texts.tr%b
+D util-texts.ads	20231222112838 096d4581 util.texts%s
+D util-texts-transforms.ads  20231222112838 53ebc629 util.texts.transforms%s
+D util-texts-transforms.adb  20231222112838 dd2938bc util.texts.transforms%b
 G a e
 G c s s s [s util__streams__texts__tr 20 1 none]
 G c Z s s [capitalize util__streams__texts__tr 30 14 20_1]

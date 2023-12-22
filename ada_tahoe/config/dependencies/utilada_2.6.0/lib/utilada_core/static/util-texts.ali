@@ -40,8 +40,8 @@ U util.texts%s		util-texts.ads		3f5d51f8 NE OO PU PK
 W util%s		util.ads		util.ali
 
 D system.ads		19700101000001 426dafb8 system%s
-D util.ads		20231110223241 36301479 util%s
-D util-texts.ads	20231110223241 096d4581 util.texts%s
+D util.ads		20231222112838 36301479 util%s
+D util-texts.ads	20231222112838 096d4581 util.texts%s
 G a e
 X 2 util.ads
 18K9*Util 28e9 3|19r9 23r5

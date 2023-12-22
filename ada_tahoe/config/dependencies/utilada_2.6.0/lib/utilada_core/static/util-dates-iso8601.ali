@@ -79,10 +79,10 @@ D s-valuei.ads		19700101000001 11081e09 system.value_i%s
 D s-vaispe.ads		19700101000001 44130d39 system.value_i_spec%s
 D s-valueu.ads		19700101000001 18770347 system.value_u%s
 D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
-D util.ads		20231110223241 36301479 util%s
-D util-dates.ads	20231110223241 0dc7f82c util.dates%s
-D util-dates-iso8601.ads  20231110223241 8791e2fe util.dates.iso8601%s
-D util-dates-iso8601.adb  20231110223241 948574e0 util.dates.iso8601%b
+D util.ads		20231222112838 36301479 util%s
+D util-dates.ads	20231222112838 0dc7f82c util.dates%s
+D util-dates-iso8601.ads  20231222112838 8791e2fe util.dates.iso8601%s
+D util-dates-iso8601.adb  20231222112838 948574e0 util.dates.iso8601%b
 G a e
 G c Z s b [value util__dates__iso8601 37 13 none]
 G c Z s b [image util__dates__iso8601 40 13 none]

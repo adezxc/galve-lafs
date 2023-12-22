@@ -68,9 +68,9 @@ D s-parame.ads		19700101000001 d494a4a6 system.parameters%s
 D s-secsta.ads		19700101000001 578279f5 system.secondary_stack%s
 D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
 D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
-D util.ads		20231110223241 36301479 util%s
-D util-locales.ads	20231110223241 39504e8a util.locales%s
-D util-locales.adb	20231110223241 fe80970a util.locales%b
+D util.ads		20231222112838 36301479 util%s
+D util-locales.ads	20231222112838 39504e8a util.locales%s
+D util-locales.adb	20231222112838 fe80970a util.locales%b
 G a e
 G c Z s b [get_language util__locales 47 13 none]
 G c Z s b [get_iso3_language util__locales 50 13 none]

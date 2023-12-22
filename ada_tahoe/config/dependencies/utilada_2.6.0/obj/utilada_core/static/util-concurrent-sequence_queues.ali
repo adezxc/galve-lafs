@@ -88,10 +88,10 @@ D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
 D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-sequence_queues.ads  20231110223241 dde61b4e util.concurrent.sequence_queues%s
-D util-concurrent-sequence_queues.adb  20231110223241 36d07725 util.concurrent.sequence_queues%b
+D util.ads		20231222112838 36301479 util%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-sequence_queues.ads  20231222112838 dde61b4e util.concurrent.sequence_queues%s
+D util-concurrent-sequence_queues.adb  20231222112838 36d07725 util.concurrent.sequence_queues%b
 G a e
 G c Z s b [sequence_queues util__concurrent 35 25 none]
 X 1 ada.ads

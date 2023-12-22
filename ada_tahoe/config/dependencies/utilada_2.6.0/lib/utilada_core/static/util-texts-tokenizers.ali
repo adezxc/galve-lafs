@@ -52,10 +52,10 @@ D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
 D system.ads		19700101000001 426dafb8 system%s
 D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
 D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
-D util.ads		20231110223241 36301479 util%s
-D util-texts.ads	20231110223241 096d4581 util.texts%s
-D util-texts-tokenizers.ads  20231110223241 c507eb3c util.texts.tokenizers%s
-D util-texts-tokenizers.adb  20231110223241 558e1fc9 util.texts.tokenizers%b
+D util.ads		20231222112838 36301479 util%s
+D util-texts.ads	20231222112838 096d4581 util.texts%s
+D util-texts-tokenizers.ads  20231222112838 c507eb3c util.texts.tokenizers%s
+D util-texts-tokenizers.adb  20231222112838 558e1fc9 util.texts.tokenizers%b
 G a e
 G c Z s b [tokenizers util__texts 27 20 none]
 X 1 ada.ads

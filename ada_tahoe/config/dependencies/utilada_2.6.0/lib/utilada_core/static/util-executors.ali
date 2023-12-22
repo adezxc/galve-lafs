@@ -90,12 +90,12 @@ D s-stoele.ads		19700101000001 ab5468e4 system.storage_elements%s
 D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-fifos.ads  20231110223241 8d93dbcf util.concurrent.fifos%s
-D util-concurrent-fifos.adb  20231110223241 444147d3 util.concurrent.fifos%b
-D util-executors.ads	20231110223241 27fd11f0 util.executors%s
-D util-executors.adb	20231110223241 e4df5599 util.executors%b
+D util.ads		20231222112838 36301479 util%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-fifos.ads  20231222112838 8d93dbcf util.concurrent.fifos%s
+D util-concurrent-fifos.adb  20231222112838 444147d3 util.concurrent.fifos%b
+D util-executors.ads	20231222112838 27fd11f0 util.executors%s
+D util-executors.adb	20231222112838 e4df5599 util.executors%b
 G a e
 G c Z s b [executors util 39 14 none]
 X 1 ada.ads

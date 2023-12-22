@@ -180,12 +180,12 @@ D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
 D s-widllu.ads		19700101000001 a6620b19 system.wid_llu%s
 D s-widuns.ads		19700101000001 866a5800 system.wid_uns%s
 D s-widthu.ads		19700101000001 b32f15e2 system.width_u%s
-D util.ads		20231110223241 36301479 util%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-concurrent-counters.adb  20231110223241 8cd422ae util.concurrent.counters%b
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
-D util-strings.adb	20231110223241 803f47d0 util.strings%b
+D util.ads		20231222112838 36301479 util%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-concurrent-counters.adb  20231222112838 8cd422ae util.concurrent.counters%b
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
+D util-strings.adb	20231222112838 803f47d0 util.strings%b
 G a e
 G c Z s b [hash util__strings 32 13 none]
 G c Z s b [equivalent_keys util__strings 35 13 none]

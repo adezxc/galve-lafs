@@ -159,23 +159,23 @@ D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
 D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
 D s-widuns.ads		19700101000001 866a5800 system.wid_uns%s
 D s-widthu.ads		19700101000001 b32f15e2 system.width_u%s
-D util.ads		20231110223241 36301479 util%s
-D util-beans.ads	20231110223241 362abe70 util.beans%s
-D util-beans-basic.ads	20231110223241 95c2d591 util.beans.basic%s
-D util-beans-objects.ads  20231110223241 8deb9c60 util.beans.objects%s
-D util-blobs.ads	20231110223241 6f5ba2a9 util.blobs%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-dates.ads	20231110223241 0dc7f82c util.dates%s
-D util-dates-formats.ads  20231110223241 9ec534a4 util.dates.formats%s
-D util-dates-formats.adb  20231110223241 24a3f919 util.dates.formats%b
-D util-properties.ads	20231110223241 3ed4fee8 util.properties%s
-D util-refs.ads		20231110223241 e592e98d util.refs%s
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
-D util-strings-transforms.ads  20231110223241 0e5b9ac3 util.strings.transforms%s
-D util-strings-vectors.ads  20231110223241 bd939877 util.strings.vectors%s
-D util-texts.ads	20231110223241 096d4581 util.texts%s
-D util-texts-transforms.ads  20231110223241 53ebc629 util.texts.transforms%s
+D util.ads		20231222112838 36301479 util%s
+D util-beans.ads	20231222112838 362abe70 util.beans%s
+D util-beans-basic.ads	20231222112838 95c2d591 util.beans.basic%s
+D util-beans-objects.ads  20231222112838 8deb9c60 util.beans.objects%s
+D util-blobs.ads	20231222112838 6f5ba2a9 util.blobs%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-dates.ads	20231222112838 0dc7f82c util.dates%s
+D util-dates-formats.ads  20231222112838 9ec534a4 util.dates.formats%s
+D util-dates-formats.adb  20231222112838 24a3f919 util.dates.formats%b
+D util-properties.ads	20231222112838 3ed4fee8 util.properties%s
+D util-refs.ads		20231222112838 e592e98d util.refs%s
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
+D util-strings-transforms.ads  20231222112838 0e5b9ac3 util.strings.transforms%s
+D util-strings-vectors.ads  20231222112838 bd939877 util.strings.vectors%s
+D util-texts.ads	20231222112838 096d4581 util.texts%s
+D util-texts-transforms.ads  20231222112838 53ebc629 util.texts.transforms%s
 G a e
 G c Z s b [format util__dates__formats 164 14 none]
 G c Z s b [format util__dates__formats 172 14 none]

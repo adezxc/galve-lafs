@@ -91,10 +91,10 @@ D s-stoele.adb		19700101000001 8f5a9db6 system.storage_elements%b
 D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-streams.ads	20231110223241 e241dcc4 util.streams%s
-D util-streams-files.ads  20231110223241 06b5dc71 util.streams.files%s
-D util-streams-files.adb  20231110223241 28809575 util.streams.files%b
+D util.ads		20231222112838 36301479 util%s
+D util-streams.ads	20231222112838 e241dcc4 util.streams%s
+D util-streams-files.ads  20231222112838 06b5dc71 util.streams.files%s
+D util-streams-files.adb  20231222112838 28809575 util.streams.files%b
 G a e
 G c Z s b [open util__streams__files 42 14 none]
 G c Z s b [create util__streams__files 48 14 none]

@@ -44,10 +44,10 @@ U util.texts.formats%s	util-texts-formats.ads	4d224273 BN NE OO PR PK GE
 W util.texts%s		util-texts.ads		util-texts.ali
 
 D system.ads		19700101000001 426dafb8 system%s
-D util.ads		20231110223241 36301479 util%s
-D util-texts.ads	20231110223241 096d4581 util.texts%s
-D util-texts-formats.ads  20231110223241 444f07f2 util.texts.formats%s
-D util-texts-formats.adb  20231110223241 35eb9294 util.texts.formats%b
+D util.ads		20231222112838 36301479 util%s
+D util-texts.ads	20231222112838 096d4581 util.texts%s
+D util-texts-formats.ads  20231222112838 444f07f2 util.texts.formats%s
+D util-texts-formats.adb  20231222112838 35eb9294 util.texts.formats%b
 G a e
 G c Z s b [formats util__texts 26 20 none]
 X 2 util.ads

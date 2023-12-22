@@ -60,9 +60,9 @@ D a-unccon.ads		19700101000001 0e9b276f ada.unchecked_conversion%s
 D system.ads		19700101000001 426dafb8 system%s
 D s-exctab.ads		19700101000001 91bef6ef system.exception_table%s
 D s-stalib.ads		19700101000001 1c9580f6 system.standard_library%s
-D util.ads		20231110223241 36301479 util%s
-D util-dates.ads	20231110223241 0dc7f82c util.dates%s
-D util-dates.adb	20231110223241 2f483c3c util.dates%b
+D util.ads		20231222112838 36301479 util%s
+D util-dates.ads	20231222112838 0dc7f82c util.dates%s
+D util-dates.adb	20231222112838 2f483c3c util.dates%b
 G a e
 G c Z s b [split util__dates 70 14 none]
 G c Z s b [time_of util__dates 75 13 none]

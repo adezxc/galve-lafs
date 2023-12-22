@@ -103,11 +103,11 @@ D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
 D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-streams.ads	20231110223241 e241dcc4 util.streams%s
-D util-streams-buffered.ads  20231110223241 a2e3ffd8 util.streams.buffered%s
-D util-streams-buffered-parts.ads  20231110223241 415dde24 util.streams.buffered.parts%s
-D util-streams-buffered-parts.adb  20231110223241 a742090a util.streams.buffered.parts%b
+D util.ads		20231222112838 36301479 util%s
+D util-streams.ads	20231222112838 e241dcc4 util.streams%s
+D util-streams-buffered.ads  20231222112838 a2e3ffd8 util.streams.buffered%s
+D util-streams-buffered-parts.ads  20231222112838 415dde24 util.streams.buffered.parts%s
+D util-streams-buffered-parts.adb  20231222112838 a742090a util.streams.buffered.parts%b
 G a e
 G c Z s b [initialize util__streams__buffered__parts 70 14 none]
 G c Z s b [initialize util__streams__buffered__parts 75 14 none]

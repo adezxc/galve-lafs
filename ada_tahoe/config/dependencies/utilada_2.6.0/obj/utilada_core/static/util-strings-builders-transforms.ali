@@ -104,17 +104,17 @@ D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
 D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
-D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
-D util-strings-builders-transforms.ads  20231110223241 1f0e7629 util.strings.builders.transforms%s
-D util-strings-builders-transforms.ads  20231110223241 1f0e7629 util.strings.builders.transforms%b
-D util-texts.ads	20231110223241 096d4581 util.texts%s
-D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
-D util-texts-transforms.ads  20231110223241 53ebc629 util.texts.transforms%s
-D util-texts-transforms.adb  20231110223241 dd2938bc util.texts.transforms%b
+D util.ads		20231222112838 36301479 util%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
+D util-strings-builders.ads  20231222112838 3dddb8be util.strings.builders%s
+D util-strings-builders-transforms.ads  20231222112838 1f0e7629 util.strings.builders.transforms%s
+D util-strings-builders-transforms.ads  20231222112838 1f0e7629 util.strings.builders.transforms%b
+D util-texts.ads	20231222112838 096d4581 util.texts%s
+D util-texts-builders.ads  20231222112838 8cbd149a util.texts.builders%s
+D util-texts-transforms.ads  20231222112838 53ebc629 util.texts.transforms%s
+D util-texts-transforms.adb  20231222112838 dd2938bc util.texts.transforms%b
 G a e
 G c s s s [s util__strings__builders__transforms 23 1 none]
 G c Z s s [capitalize util__strings__builders__transforms 30 14 23_1]

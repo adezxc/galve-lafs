@@ -196,15 +196,15 @@ D s-tataat.ads		19700101000001 fbda52c1 system.tasking.task_attributes%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
 D s-wchcon.ads		19700101000001 d9032363 system.wch_con%s
-D util.ads		20231110223241 36301479 util%s
-D util-measures.ads	20231110223241 85a9cf09 util.measures%s
-D util-measures.adb	20231110223241 b210b851 util.measures%b
-D util-streams.ads	20231110223241 e241dcc4 util.streams%s
-D util-streams-buffered.ads  20231110223241 a2e3ffd8 util.streams.buffered%s
-D util-streams-texts.ads  20231110223241 e18922e6 util.streams.texts%s
-D util-streams-texts-tr.ads  20231110223241 d921709e util.streams.texts.tr%s
-D util-texts.ads	20231110223241 096d4581 util.texts%s
-D util-texts-transforms.ads  20231110223241 53ebc629 util.texts.transforms%s
+D util.ads		20231222112838 36301479 util%s
+D util-measures.ads	20231222112838 85a9cf09 util.measures%s
+D util-measures.adb	20231222112838 b210b851 util.measures%b
+D util-streams.ads	20231222112838 e241dcc4 util.streams%s
+D util-streams-buffered.ads  20231222112838 a2e3ffd8 util.streams.buffered%s
+D util-streams-texts.ads  20231222112838 e18922e6 util.streams.texts%s
+D util-streams-texts-tr.ads  20231222112838 d921709e util.streams.texts.tr%s
+D util-texts.ads	20231222112838 096d4581 util.texts%s
+D util-texts-transforms.ads  20231222112838 53ebc629 util.texts.transforms%s
 G a e
 G c Z s b [disable util__measures 114 14 none]
 G c Z s b [enable util__measures 117 14 none]

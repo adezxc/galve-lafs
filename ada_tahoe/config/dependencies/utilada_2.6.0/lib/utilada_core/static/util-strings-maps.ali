@@ -174,12 +174,12 @@ D s-string.ads		19700101000001 582aac7d system.strings%s
 D s-ststop.ads		19700101000001 c569db7c system.strings.stream_ops%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
-D util-strings-maps.ads	20231110223241 a16bc59e util.strings.maps%s
-D util-strings-maps.ads	20231110223241 a16bc59e util.strings.maps%b
+D util.ads		20231222112838 36301479 util%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
+D util-strings-maps.ads	20231222112838 a16bc59e util.strings.maps%s
+D util-strings-maps.ads	20231222112838 a16bc59e util.strings.maps%b
 G a e
 G c Z s s [empty util__strings__maps 73 13 23_1]
 G c Z s s [has_element util__strings__maps 79 13 23_1]

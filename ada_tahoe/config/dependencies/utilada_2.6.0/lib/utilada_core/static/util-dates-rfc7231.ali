@@ -114,16 +114,16 @@ D s-valuei.ads		19700101000001 11081e09 system.value_i%s
 D s-vaispe.ads		19700101000001 44130d39 system.value_i_spec%s
 D s-valueu.ads		19700101000001 18770347 system.value_u%s
 D s-vauspe.ads		19700101000001 a67b2f28 system.value_u_spec%s
-D util.ads		20231110223241 36301479 util%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-dates.ads	20231110223241 0dc7f82c util.dates%s
-D util-dates-rfc7231.ads  20231110223241 2face81e util.dates.rfc7231%s
-D util-dates-rfc7231.adb  20231110223241 a727291f util.dates.rfc7231%b
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
-D util-strings-builders.ads  20231110223241 3dddb8be util.strings.builders%s
-D util-texts.ads	20231110223241 096d4581 util.texts%s
-D util-texts-builders.ads  20231110223241 8cbd149a util.texts.builders%s
+D util.ads		20231222112838 36301479 util%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-dates.ads	20231222112838 0dc7f82c util.dates%s
+D util-dates-rfc7231.ads  20231222112838 2face81e util.dates.rfc7231%s
+D util-dates-rfc7231.adb  20231222112838 a727291f util.dates.rfc7231%b
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
+D util-strings-builders.ads  20231222112838 3dddb8be util.strings.builders%s
+D util-texts.ads	20231222112838 096d4581 util.texts%s
+D util-texts-builders.ads  20231222112838 8cbd149a util.texts.builders%s
 G a e
 G c Z s b [value util__dates__rfc7231 36 13 none]
 G c Z s b [image util__dates__rfc7231 39 13 none]

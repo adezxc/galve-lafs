@@ -97,13 +97,13 @@ D s-stopoo.ads		19700101000001 e9fa2dd8 system.storage_pools%s
 D s-stratt.ads		19700101000001 f7dfd786 system.stream_attributes%s
 D s-traent.ads		19700101000001 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		19700101000001 fa2a7f59 system.unsigned_types%s
-D util.ads		20231110223241 36301479 util%s
-D util-concurrent.ads	20231110223241 290630d1 util.concurrent%s
-D util-concurrent-counters.ads  20231110223241 51920a80 util.concurrent.counters%s
-D util-log.ads		20231110223241 0fb1ac89 util.log%s
-D util-log-locations.ads  20231110223241 100cb3e4 util.log.locations%s
-D util-log-locations.adb  20231110223241 c2f869b7 util.log.locations%b
-D util-strings.ads	20231110223241 6d73bfbd util.strings%s
+D util.ads		20231222112838 36301479 util%s
+D util-concurrent.ads	20231222112838 290630d1 util.concurrent%s
+D util-concurrent-counters.ads  20231222112838 51920a80 util.concurrent.counters%s
+D util-log.ads		20231222112838 0fb1ac89 util.log%s
+D util-log-locations.ads  20231222112838 100cb3e4 util.log.locations%s
+D util-log-locations.adb  20231222112838 c2f869b7 util.log.locations%b
+D util-strings.ads	20231222112838 6d73bfbd util.strings%s
 G a e
 G c Z s b [create_file_info util__log__locations 29 13 none]
 G c Z s b [relative_path util__log__locations 33 13 none]
