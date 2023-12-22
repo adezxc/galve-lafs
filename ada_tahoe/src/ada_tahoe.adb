@@ -27,19 +27,15 @@ begin
          Decoder             : constant access fec_t := fec_new (3, 10);
          Blocks_For_Decoding : Share.Block_Access_Array (0 .. 2) :=
            (Next_Block (Share1), Next_Block (Share2), Next_Block (Share3));
-         Indices             : TestArray := (3,5,6);
-         Blocks_For_Result : Share.Block_Access_Array (0 .. 6) :=
-           (new Share.Block (1 .. Segment_Size_Value),
-            new Share.Block (1 .. Segment_Size_Value),
-            new Share.Block (1 .. Segment_Size_Value),
-            new Share.Block (1 .. Segment_Size_Value),
-            new Share.Block (1 .. Segment_Size_Value),
-            new Share.Block (1 .. Segment_Size_Value),
-            new Share.Block (1 .. Segment_Size_Value));
+         Indices             : TestArray := (2, 4, 5);
+         Blocks_For_Result : Share.Block_Access_Array (0 .. 2) :=
+           (new Share.Block (0 .. Integer(Share1.Data_Header.Block_Size / 4) ),
+            new Share.Block (0 .. Integer(Share1.Data_Header.Block_Size / 4) ),
+            new Share.Block (0 .. Integer(Share1.Data_Header.Block_Size / 4) ));
          Block_Addresses  : Block_Address_Array (0 .. 2) := Share.Convert(Blocks_For_Decoding);
-         Block_Addresses_Output : Block_Address_Array (0 .. 6) := Share.Convert(Blocks_For_Result);
+         Block_Addresses_Output : Block_Address_Array (0 .. 2) := Share.Convert(Blocks_For_Result);
       begin
-         for B of Blocks_For_Result loop
+         for B of Blocks_For_Decoding loop
             Put
               (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image &
                ", ");
@@ -54,7 +50,8 @@ begin
 
          for B of Blocks_For_Result loop
             Put
-              (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image &
+              (B.all (1 ..  B.all'Last)'Image &
+              --  (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image &
                ", ");
             New_Line;
          end loop;
