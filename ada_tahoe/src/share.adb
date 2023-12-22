@@ -17,6 +17,21 @@ package body Share is
       end if;
    end Next_Block;
 
+   function To_Address (BA : Block_Access) return System.Address is
+   begin
+      return BA(BA'First)'Address;  -- Use 'Address attribute
+   end To_Address;
+
+   --  Function to convert all elements of Block_Access_Array to System.Address
+   function Convert (BA_Array : Block_Access_Array) return Block_Address_Array is
+      Converted_Array : Block_Address_Array (BA_Array'Range);
+   begin
+      for I in BA_Array'Range loop
+         Converted_Array (I) := To_Address (BA_Array (I));
+      end loop;
+      return Converted_Array;
+   end Convert;
+
    --  A share file consists of the following components:
    --  1) A header that contains the share version number, share's size in byte
    --    and number of leases

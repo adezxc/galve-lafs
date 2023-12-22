@@ -1,5 +1,6 @@
 with Interfaces; use Interfaces;
 with Ada.Streams;
+with System;
 
 package Share is
 
@@ -21,6 +22,12 @@ package Share is
       Values : Block_Access_Array (1 .. Block_Array_Size_Discr) :=
         (others => new Block (1 .. Block_Size_Discr));
    end record;
+
+   type Block_Address_Array is array (Natural range <>) of System.Address;
+
+   function To_Address (BA : Block_Access) return System.Address;
+   -- Function to convert all elements of Block_Access_Array to System.Address
+   function Convert (BA_Array : Block_Access_Array) return Block_Address_Array;
 
    type Share_Header is record
       Version      : Word;
