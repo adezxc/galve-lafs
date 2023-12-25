@@ -27,7 +27,7 @@ begin
          Decoder             : constant access fec_t := fec_new (3, 10);
          Blocks_For_Decoding : Share.Block_Access_Array (0 .. 2) :=
            (Next_Block (Share1), Next_Block (Share2), Next_Block (Share3));
-         Indices             : TestArray := (2, 4, 5);
+         Indices             : TestArray := (3, 5, 8);
          Blocks_For_Result : Share.Block_Access_Array (0 .. 2) :=
            (new Share.Block (0 .. Integer(Share1.Data_Header.Block_Size / 4) ),
             new Share.Block (0 .. Integer(Share1.Data_Header.Block_Size / 4) ),
