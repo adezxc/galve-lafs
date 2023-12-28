@@ -3,6 +3,7 @@ with Ada.Text_IO;      use Ada.Text_IO;
 with Ada.Command_Line; use Ada.Command_Line;
 with fec_h;            use fec_h;
 with stddef_h;         use stddef_h;
+with aes_h;            use aes_h;
 with Tahoe;            use Tahoe;
 with Share;            use Share;
 with System;
