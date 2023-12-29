@@ -8,22 +8,22 @@ package body Share is
    function Next_Block (My_Share : in out Share) return Block_Access is
    begin
       if My_Share.Blocks.Values'Length > My_Share.Current_Block then
-         Ada.Text_IO.Put_Line (My_Share.Current_Block'Image);
          My_Share.Current_Block := My_Share.Current_Block + 1;
-         Ada.Text_IO.Put_Line (My_Share.Current_Block'Image);
          return My_Share.Blocks.Values (My_Share.Current_Block - 1);
       else
+         Ada.Text_IO.Put_Line ("Last Block was accessed!");
          return My_Share.Last_Block;
       end if;
    end Next_Block;
 
    function To_Address (BA : Block_Access) return System.Address is
    begin
-      return BA(BA'First)'Address;  -- Use 'Address attribute
+      return BA (BA'First)'Address;  -- Use 'Address attribute
    end To_Address;
 
    --  Function to convert all elements of Block_Access_Array to System.Address
-   function Convert (BA_Array : Block_Access_Array) return Block_Address_Array is
+   function Convert (BA_Array : Block_Access_Array) return Block_Address_Array
+   is
       Converted_Array : Block_Address_Array (BA_Array'Range);
    begin
       for I in BA_Array'Range loop
@@ -47,7 +47,7 @@ package body Share is
    function Read_Share
      (Segment_Size, Required_Shares : Positive; File : String) return Share
    is
-      Block_Size : constant Positive :=
+      Block_Size          : constant Positive :=
         (Segment_Size + (Required_Shares - 1)) / Required_Shares;
       Block_Size_In_Words : constant Positive := (Block_Size + 3) / 4;
 
