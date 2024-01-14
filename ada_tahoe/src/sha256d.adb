@@ -1,4 +1,4 @@
-with GNAT.SHA256; use GNAT.SHA256;
+with GNAT.SHA256;             use GNAT.SHA256;
 with Ada.Unchecked_Conversion;
 with Ada.Characters.Handling; use Ada.Characters.Handling;
 
@@ -10,8 +10,8 @@ package body Sha256d is
       for T'Address use D'Address;
       D2 : constant Binary_Message_Digest := Digest (T);
 
-   function To_Uint_256 is new Ada.Unchecked_Conversion
-      (Source => Binary_Message_Digest, Target => Uint_256);
+      function To_Uint_256 is new Ada.Unchecked_Conversion
+        (Source => Binary_Message_Digest, Target => Uint_256);
    begin
       return To_Uint_256 (D2);
    end Double_Hash;

@@ -16,7 +16,7 @@ package body Aes is
         Util.Encoders.Create (Base32.Decode (Key));
    begin
       --  Setup file -> input and cipher -> output file streams.
-      Ada.Text_IO.Put_Line (Base32.Decode (Key));
+      Ada.Text_IO.Put (Base32.Decode (Key));
       In_Stream.Open (Ada.Streams.Stream_IO.In_File, Source);
       Out_Stream.Create
         (Mode => Ada.Streams.Stream_IO.Out_File, Name => Destination);
@@ -25,6 +25,7 @@ package body Aes is
       Decipher.Set_Key (Secret => Password_Key, Mode => Util.Encoders.AES.CTR);
 
       --  Copy input to output through the cipher.
+
       Util.Streams.Copy (From => In_Stream, Into => Decipher);
    end Decrypt_File;
 

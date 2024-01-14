@@ -34,17 +34,20 @@ package body Decoder is
       Block_Addresses_Output : Block_Address_Array (0 .. 2)      :=
         Share.Convert (Blocks_For_Result);
    begin
+      -- Put_Line (Blocks_For_Decoding (0)'Length'Image);
       Put_Line (Blocks_For_Decoding (0)'Length'Image);
       fec_decode
         (Decoder, Block_Addresses'Address, Block_Addresses_Output'Address,
          Indices (Indices'First)'Access,
-         size_t (((Blocks_For_Decoding (0)'Length) * 4)));
-      Blocks_For_Result (2) := Blocks_For_Decoding (0);
+         size_t (((Blocks_For_Decoding (0)'Length) * 4) - 1));
       for B of Blocks_For_Decoding loop
          Put (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image);
          -- (B.all (1 .. B.all'Last)'Image & ", ");
          New_Line;
       end loop;
+      Blocks_For_Result (2) := Blocks_For_Result (1);
+      Blocks_For_Result (1) := Blocks_For_Result (0);
+      Blocks_For_Result (0) := Blocks_For_Decoding (0);
       Ada.Text_IO.Put_Line ("The first few words of the decoder block:");
       for B of Blocks_For_Result loop
          Put (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image);
