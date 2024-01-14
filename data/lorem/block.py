@@ -7,8 +7,8 @@ if len(sys.argv) != 2:
 input_file_path = sys.argv[1]
 output_file_path = input_file_path + "_block"
 
-start_byte = 36  # 0-based index, so 37th byte is at index 36
-end_byte = 12502  # 0-based index, so 12467th byte is at index 12466
+start_byte = 48 # 0-based index, so 37th byte is at index 36
+end_byte = 12514  # 0-based index, so 12467th byte is at index 12466
 
 with open(input_file_path, 'rb') as input_file:
     input_file.seek(start_byte)
