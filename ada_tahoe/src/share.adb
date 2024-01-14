@@ -68,11 +68,10 @@ package body Share is
            ((Data_Size_In_Words + Block_Size_In_Words - 1) / Block_Size);
          Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
          Last_Block_Size    : constant Natural :=
-           Data_Size_In_Words - (Block_Array_Size * Block_Size_In_Words);
-         Last_Block         : Block_Access := new Block (1 .. Last_Block_Size);
+           Data_Size_In_Words - (Block_Array_Size * Block_Size_In_Words) - 1;
+         Last_Block         : Block_Access := new Block (0 .. Last_Block_Size);
          New_Share          : Share (Block_Size_In_Words, Block_Array_Size);
       begin
-         Block_Array'Read (S, Share_Blocks);
          Block_Access'Read (S, Last_Block);
          Close (Share_File);
          New_Share.Header      := Header;
@@ -193,6 +192,38 @@ package body Share is
         Shift_Left (Word (B1), 24) or Shift_Left (Word (B2), 16) or
         Shift_Left (Word (B3), 8) or Word (B4);
    end Read_Big_Endian_Word;
+
+   procedure Write_Little_Endian_Word
+     (F : Word_IO.File_Type; Item : in out Word'Base)
+   is
+      B1, B2, B3, B4 : Byte;
+   begin
+      -- Extract individual bytes from the word
+      B1   := Byte (Shift_Right (Item, 0) and 16#FF#);
+      B2   := Byte (Shift_Right (Item, 8) and 16#FF#);
+      B3   := Byte (Shift_Right (Item, 16) and 16#FF#);
+      B4   := Byte (Shift_Right (Item, 24) and 16#FF#);
+      Item :=
+        Shift_Left (Word (B1), 24) or Shift_Left (Word (B2), 16) or
+        Shift_Left (Word (B3), 8) or Word (B4);
+      -- Write the bytes in little-endian order
+      Word_IO.Write (F, Item);
+   end Write_Little_Endian_Word;
+
+   procedure Write_Little_Endian_Word_Without_Padding
+     (F : Byte_IO.File_Type; Item : in out Word'Base)
+   is
+      B1, B2, B3, B4 : Byte;
+   begin
+      -- Extract individual bytes from the word
+      B1 := Byte (Shift_Right (Item, 0) and 16#FF#);
+      B2 := Byte (Shift_Right (Item, 8) and 16#FF#);
+      B3 := Byte (Shift_Right (Item, 16) and 16#FF#);
+      B4 := Byte (Shift_Right (Item, 24) and 16#FF#);
+      Byte_IO.Write (F, B4);
+      Byte_IO.Write (F, B3);
+      Byte_IO.Write (F, B2);
+   end Write_Little_Endian_Word_Without_Padding;
 
    procedure Read_Big_Endian_Word_64
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;

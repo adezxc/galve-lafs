@@ -1,15 +1,27 @@
 with Interfaces; use Interfaces;
 with Ada.Streams;
 with System;
+with Ada.Sequential_IO;
 
 package Share is
 
    --  An Unsigned_32 with big-endian encoding in input streams.
    type Word is new Interfaces.Unsigned_32;
+
+   procedure Read_Big_Endian_Word
+     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
+      Item   : out Word'Base);
    --  An Unsigned_64 with big-endian encoding in input streams.
+
+   for Word'Read use Read_Big_Endian_Word;
+
    type Word_64 is new Interfaces.Unsigned_64;
 
+   package Word_IO is new Ada.Sequential_IO (Word);
+
    type Byte is new Interfaces.Unsigned_8;
+
+   package Byte_IO is new Ada.Sequential_IO (Byte);
 
    type Block is array (Natural range <>) of Word;
 
@@ -55,6 +67,10 @@ package Share is
       Current_Block : Natural := 1;
    end record;
 
+   procedure Write_Little_Endian_Word
+     (F : Word_IO.File_Type; Item : in out Word'Base);
+   procedure Write_Little_Endian_Word_Without_Padding
+     (F : Byte_IO.File_Type; Item : in out Word'Base);
    procedure Read_Block_Array
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Block_Array);
@@ -64,9 +80,6 @@ package Share is
    procedure Read_Share_Data_Header
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Share_Data_Header);
-   procedure Read_Big_Endian_Word
-     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
-      Item   : out Word'Base);
    procedure Read_Big_Endian_Word_64
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Word_64'Base);
@@ -76,7 +89,6 @@ package Share is
    procedure Display_Share_Headers (My_Share : Share);
    function Next_Block (My_Share : in out Share) return Block_Access;
 
-   for Word'Read use Read_Big_Endian_Word;
    for Word_64'Read use Read_Big_Endian_Word_64;
    for Block_Array'Read use Read_Block_Array;
    for Block_Access'Read use Read_Block_Access;
