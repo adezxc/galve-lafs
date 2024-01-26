@@ -21,7 +21,11 @@ package Share is
 
    type Byte is new Interfaces.Unsigned_8;
 
+   type Byte_Array is array (Natural range <>) of Byte;
+
    package Byte_IO is new Ada.Sequential_IO (Byte);
+
+   type Share_Count is range 1 .. 256;
 
    type Block is array (Natural range <>) of Word;
 

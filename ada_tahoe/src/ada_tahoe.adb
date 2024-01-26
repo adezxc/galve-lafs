@@ -4,9 +4,14 @@ with Ada.Command_Line; use Ada.Command_Line;
 with Tahoe;            use Tahoe;
 with Decoder;
 with Aes;
+with Uri_Read;
 
 procedure Ada_Tahoe is
+   Test : String       :=
+     "URI:CHK:vaze54ocznbnkefjum2g7ocd6i:ua3hjasipmczwvzt4nmb5ldvztfskiqdlvjcjl4p6dfzgfmptukq:3:10:37399";
+   Junk : Uri_Read.URI := Uri_Read.Process_URI (Test);
 begin
+   Put (Junk'Image);
    if Argument_Count = 2 and then Argument (1) = "index" then
       Put_Line (Storage_Index_From_File_Key (Argument (2)));
    elsif Argument_Count = 4 then

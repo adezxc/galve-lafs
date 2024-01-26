@@ -3,7 +3,6 @@ with Share;       use Share;
 with fec_h;       use fec_h;
 with stddef_h;    use stddef_h;
 with Ada.Text_IO; use Ada.Text_IO;
-with Ada.Sequential_IO;
 
 package body Decoder is
    procedure Decode_File (Share_Name1, Share_Name2, Share_Name3 : String) is
@@ -22,19 +21,18 @@ package body Decoder is
            File         => Share_Name3);
 
       Decoder                : constant access fec_t := fec_new (3, 10);
-      Blocks_For_Decoding    : Share.Block_Access_Array (0 .. 2) :=
-        (Next_Block (Share1), Next_Block (Share2), Next_Block (Share3));
-      Indices                : TestArray                         := (0, 4, 7);
-      Blocks_For_Result      : Share.Block_Access_Array (0 .. 2) :=
-        ((new Share.Block (1 .. Blocks_For_Decoding (0)'Length)),
-         (new Share.Block (1 .. Blocks_For_Decoding (1)'Length)),
-         (new Share.Block (1 .. Blocks_For_Decoding (2)'Length)));
-      Block_Addresses        : Block_Address_Array (0 .. 2)      :=
+      Blocks_For_Decoding    : constant Share.Block_Access_Array (0 .. 2) :=
+        [Next_Block (Share1), Next_Block (Share2), Next_Block (Share3)];
+      Indices                : TestArray := [0, 4, 7];
+      Blocks_For_Result      : Share.Block_Access_Array (0 .. 2)          :=
+        [(new Share.Block (1 .. Blocks_For_Decoding (0)'Length)),
+        (new Share.Block (1 .. Blocks_For_Decoding (1)'Length)),
+        (new Share.Block (1 .. Blocks_For_Decoding (2)'Length))];
+      Block_Addresses        : Block_Address_Array (0 .. 2)               :=
         Share.Convert (Blocks_For_Decoding);
-      Block_Addresses_Output : Block_Address_Array (0 .. 2)      :=
+      Block_Addresses_Output : Block_Address_Array (0 .. 2)               :=
         Share.Convert (Blocks_For_Result);
    begin
-      -- Put_Line (Blocks_For_Decoding (0)'Length'Image);
       Put_Line (Blocks_For_Decoding (0)'Length'Image);
       fec_decode
         (Decoder, Block_Addresses'Address, Block_Addresses_Output'Address,
@@ -42,7 +40,6 @@ package body Decoder is
          size_t (((Blocks_For_Decoding (0)'Length) * 4)));
       for B of Blocks_For_Decoding loop
          Put (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image);
-         -- (B.all (1 .. B.all'Last)'Image & ", ");
          New_Line;
       end loop;
       Blocks_For_Result (2) := Blocks_For_Result (1);
@@ -96,11 +93,6 @@ package body Decoder is
          Write_Little_Endian_Word (F, Temp);
          Write_Little_Endian_Word (F, Temp);
          Close (F);
-         -- Share.Byte_IO.Open (Byte_F, Share.Byte_IO.Append_File, File_Name);
-         -- Write_Little_Endian_Word_Without_Padding
-         --   (Byte_F,
-         --    Blocks_For_Result (2).all (Blocks_For_Result (2).all'Last - 1));
-         -- Share.Byte_IO.Close (Byte_F);
       end;
    end Decode_File;
 end Decoder;
