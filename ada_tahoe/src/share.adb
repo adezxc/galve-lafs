@@ -78,10 +78,8 @@ package body Share is
          New_Share.Data_Header := Data_Header;
          New_Share.Blocks      := Share_Blocks;
          New_Share.Last_Block  := Last_Block;
-         --  Ada.Text_IO.Put_Line (Last_Block'Image);
          return New_Share;
       end;
-      --  Now My_Share contains the values read from the binary file
    end Read_Share;
 
    procedure Read_Block_Array

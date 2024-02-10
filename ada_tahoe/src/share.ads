@@ -69,6 +69,7 @@ package Share is
       Blocks        : Block_Array (Block_Size_Discr, Block_Array_Size_Discr);
       Last_Block    : Block_Access;
       Current_Block : Natural := 1;
+      Share_Number  : Natural;
    end record;
 
    procedure Write_Little_Endian_Word

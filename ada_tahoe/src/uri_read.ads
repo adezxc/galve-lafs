@@ -1,6 +1,5 @@
 pragma Ada_2022;
 
-with Ada.Strings.Text_Buffers;
 with Share; use Share;
 
 package Uri_Read is
@@ -17,15 +16,10 @@ package Uri_Read is
             Size          : Word_64;
          when SSK .. DIR2RO =>
             Fingerprint : String (1 .. 32);
-
       end case;
-   end record with
-     Put_Image => Put_URI_Image;
+   end record;
 
-   procedure Put_URI_Image
-     (Output : in out Ada.Strings.Text_Buffers.Root_Buffer_Type'Class;
-      Value  :        URI);
-
+   function URI_To_String (Value : URI) return String;
    function Get_Storage_Index (URI_Object : URI) return String;
    function Process_URI (URI_String : String) return URI;
 
