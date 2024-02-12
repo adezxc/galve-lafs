@@ -1,6 +1,7 @@
 pragma Ada_2022;
 
 with Share; use Share;
+with Types; use Types;
 
 package Uri_Read is
 
