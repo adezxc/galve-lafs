@@ -23,7 +23,8 @@ package body types is
    end To_Address;
 
    --  Function to convert all elements of Block_Access_Array to System.Address
-   function Convert (BA_Array : Block_Access_Array) return Block_Address_Array
+   function Convert_To_Address_Array
+     (BA_Array : Block_Access_Array) return Block_Address_Array
    is
       Converted_Array : Block_Address_Array (BA_Array'Range);
    begin
@@ -31,7 +32,7 @@ package body types is
          Converted_Array (I) := To_Address (BA_Array (I));
       end loop;
       return Converted_Array;
-   end Convert;
+   end Convert_To_Address_Array;
 
    procedure Read_Big_Endian_Word
      (Stream : access Ada.Streams.Root_Stream_Type'Class; Item : out Word'Base)

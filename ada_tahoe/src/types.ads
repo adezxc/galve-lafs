@@ -2,6 +2,7 @@ with Interfaces; use Interfaces;
 with System;
 with Ada.Streams;
 with Ada.Sequential_IO;
+with Ada.Containers.Indefinite_Vectors;
 
 package Types is
 
@@ -43,7 +44,8 @@ package Types is
 
    function To_Address (BA : Block_Access) return System.Address;
    -- Function to convert all elements of Block_Access_Array to System.Address
-   function Convert (BA_Array : Block_Access_Array) return Block_Address_Array;
+   function Convert_To_Address_Array
+     (BA_Array : Block_Access_Array) return Block_Address_Array;
 
    procedure Write_Little_Endian_Word
      (F : Word_IO.File_Type; Item : in out Word'Base);

@@ -23,13 +23,13 @@ package Share is
    end record;
 
    type Share (Block_Size_Discr, Block_Array_Size_Discr : Natural) is record
+      Share_Number        : Natural;
       Header              : Share_Header;
       Data_Header         : Share_Data_Header;
       Blocks : Block_Array (Block_Size_Discr, Block_Array_Size_Discr);
       Last_Block          : Block_Access;
       URI_Extension_Block : Share_URI_Extension_Block;
       Current_Block       : Natural := 1;
-      Share_Number        : Natural;
    end record;
 
    procedure Read_Share_Data_Header

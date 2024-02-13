@@ -75,13 +75,8 @@ package fec_h is
 
    procedure fec_decode
      (code    : access constant fec_t; inpkts : System.Address;
-      outpkts : System.Address; index : access unsigned;
-      sz      : stddef_h
-        .size_t)  -- /Users/jasinskia/repos/Adam_Jasinski/ada_tahoe/src/externals/fec/fec.h:45
-   with
+      outpkts : System.Address; index : access unsigned; sz : size_t) with
      Import => True, Convention => C, External_Name => "fec_decode";
-
-   type TestArray is array (0 .. 2) of aliased unsigned;
 
    --*
    -- * zfec -- fast forward error correction library with Python interface
