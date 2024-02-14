@@ -32,12 +32,18 @@ package Share is
       Current_Block       : Natural := 1;
    end record;
 
+   type Share_Access is access Share;
+
+   type Share_Access_Array is array (Integer range <>) of Share_Access;
+
+   procedure Sort (Shares : in out Share_Access_Array);
+
    procedure Read_Share_Data_Header
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Share_Data_Header);
-   function Read_Share (File : String) return Share;
+   function Read_Share (File : String) return Share_Access;
    procedure Display_Share_Headers (My_Share : Share);
-   function Next_Block (My_Share : in out Share) return Block_Access;
+   function Next_Block (My_Share : in out Share_Access) return Block_Access;
 
    for Share_Data_Header'Read use Read_Share_Data_Header;
 end Share;

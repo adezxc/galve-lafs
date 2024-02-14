@@ -6,18 +6,13 @@ with Ada.Text_IO;  use Ada.Text_IO;
 with Interfaces.C; use Interfaces.C;
 
 package body Decoder is
-   procedure Decode_File
-     (File_URI : URI; Share_Name1, Share_Name2, Share_Name3 : String)
-   is
-      Share1 : Share.Share := Read_Share (File => Share_Name1);
-      Share2 : Share.Share := Read_Share (File => Share_Name2);
-      Share3 : Share.Share := Read_Share (File => Share_Name3);
+   procedure Decode_File (File_URI : URI; Share_Names : Share_Name_Array) is
+      Shares : Share_Access_Array (1 .. Share_Names'Length);
 
       type Share_Number_Array is
-        array (1 .. Integer (File_URI.Needed_Shares)) of aliased unsigned;
-      Share_Numbers : Share_Number_Array :=
-        [unsigned (Share1.Share_Number), unsigned (Share2.Share_Number),
-        unsigned (Share3.Share_Number)];
+        array (1 .. Share_Names'Length) of aliased Integer;
+
+      Share_Numbers : Share_Number_Array;
 
       Decoder : constant access fec_t :=
         fec_new
@@ -33,12 +28,18 @@ package body Decoder is
       Result_Block_Addresses    :
         Block_Address_Array (1 .. Integer (File_URI.Needed_Shares));
    begin
-      Decoding_Blocks (1) := Next_Block (Share1);
-      Decoding_Blocks (2) := Next_Block (Share2);
-      Decoding_Blocks (3) := Next_Block (Share3);
-      for I in Decoding_Blocks'Range loop
-         Result_Blocks (I) := new Block (1 .. Decoding_Blocks (I)'Length);
+      for Index in Share_Names'Range loop
+         Shares (Index) := Read_Share (To_String (Share_Names (Index)));
       end loop;
+      Share.Sort (Shares);
+
+      for Index in Shares'Range loop
+         Share_Numbers (Index)   := Shares (Index).Share_Number;
+         Decoding_Blocks (Index) := Next_Block (Shares (Index));
+         Result_Blocks (Index)   :=
+           new Block (1 .. Decoding_Blocks (Index)'Length);
+      end loop;
+
       Decoding_Blocks_Addresses := Convert_To_Address_Array (Decoding_Blocks);
       Result_Block_Addresses    := Convert_To_Address_Array (Result_Blocks);
       fec_decode
@@ -50,8 +51,8 @@ package body Decoder is
          Put (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image);
          New_Line;
       end loop;
-      Result_Blocks (3) := Result_Blocks (2);
-      Result_Blocks (2) := Result_Blocks (1);
+      Result_Blocks (3) := Result_Blocks (1);
+      Result_Blocks (2) := Decoding_Blocks (2);
       Result_Blocks (1) := Decoding_Blocks (1);
       Ada.Text_IO.Put_Line ("The first few words of the decoder block:");
       for B of Result_Blocks loop

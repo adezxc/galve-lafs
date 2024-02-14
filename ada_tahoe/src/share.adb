@@ -1,4 +1,5 @@
 pragma Ada_2022;
+
 with Ada.Text_IO;
 with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
 with Ada.Streams;           use Ada.Streams;
@@ -7,14 +8,14 @@ with System;
 
 package body Share is
 
-   function Next_Block (My_Share : in out Share) return Block_Access is
+   function Next_Block (My_Share : in out Share_Access) return Block_Access is
    begin
-      if My_Share.Blocks.Values'Length > My_Share.Current_Block then
-         My_Share.Current_Block := My_Share.Current_Block + 1;
-         return My_Share.Blocks.Values (My_Share.Current_Block - 1);
+      if My_Share.all.Blocks.Values'Length > My_Share.all.Current_Block then
+         My_Share.all.Current_Block := My_Share.all.Current_Block + 1;
+         return My_Share.all.Blocks.Values (My_Share.all.Current_Block - 1);
       else
          Ada.Text_IO.Put_Line ("Last Block was accessed!");
-         return My_Share.Last_Block;
+         return My_Share.all.Last_Block;
       end if;
    end Next_Block;
 
@@ -30,7 +31,7 @@ package body Share is
    --  6) Hashes of blocks
    --  7) Hash of the share
    --  8) URI Extension block that contains more metadata about the file.
-   function Read_Share (File : String) return Share is
+   function Read_Share (File : String) return Share_Access is
       S                   : Stream_Access;
       Share_File          : File_Type;
       Header              : Share_Header;
@@ -80,7 +81,8 @@ package body Share is
          Last_Block_Size     : constant Natural  :=
            Data_Size_In_Words - (Block_Array_Size * Block_Size_In_Words) - 1;
          Last_Block : Block_Access      := new Block (0 .. Last_Block_Size);
-         New_Share           : Share (Block_Size_In_Words, Block_Array_Size);
+         New_Share           : Share_Access      :=
+           new Share (Block_Size_In_Words, Block_Array_Size);
       begin
          Block_Access'Read (S, Last_Block);
          Close (Share_File);
@@ -172,5 +174,26 @@ package body Share is
          Word_64'Image (My_Share.Data_Header.URI_Extension_Offset));
       Ada.Text_IO.Put_Line ("");
    end Display_Share_Headers;
+
+   procedure Sort (Shares : in out Share_Access_Array) is
+      Temp    : Share_Access;
+      Swapped : Boolean := False;
+
+   begin
+      loop
+         Swapped := False;
+         for I in Shares'First + 1 .. Shares'Last loop
+            if Shares (I).all.Share_Number < Shares (I - 1).all.Share_Number
+            then
+               Temp           := Shares (I);
+               Shares (I)     := Shares (I - 1);
+               Shares (I - 1) := Temp;
+               Swapped        := True;
+            end if;
+         end loop;
+         exit when Swapped = False;
+      end loop;
+
+   end Sort;
 
 end Share;
