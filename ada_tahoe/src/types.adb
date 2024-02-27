@@ -1,3 +1,5 @@
+with Ada.Text_IO; use Ada.Text_IO;
+
 package body types is
    procedure Read_Block_Array
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
@@ -49,25 +51,21 @@ package body types is
         Shift_Left (Word (B3), 8) or Word (B4);
    end Read_Big_Endian_Word;
 
-   procedure Write_Little_Endian_Word
-     (F : Word_IO.File_Type; Item : in out Word'Base)
+   procedure Write_Block
+     (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Boolean)
    is
-      B1, B2, B3, B4 : Byte;
    begin
-      -- Extract individual bytes from the word
-      B1   := Byte (Shift_Right (Item, 0) and 16#FF#);
-      B2   := Byte (Shift_Right (Item, 8) and 16#FF#);
-      B3   := Byte (Shift_Right (Item, 16) and 16#FF#);
-      B4   := Byte (Shift_Right (Item, 24) and 16#FF#);
-      Item :=
-        Shift_Left (Word (B1), 24) or Shift_Left (Word (B2), 16) or
-        Shift_Left (Word (B3), 8) or Word (B4);
-      -- Write the bytes in little-endian order
-      Word_IO.Write (F, Item);
-   end Write_Little_Endian_Word;
+      for Word of Item.all loop
+         if Word = Item.all (Item.all'Last) and Padding then
+            Write_Little_Endian_Word (F, Word, Padding => True);
+         else
+            Write_Little_Endian_Word (F, Word, Padding => False);
+         end if;
+      end loop;
+   end Write_Block;
 
-   procedure Write_Little_Endian_Word_Without_Padding
-     (F : Byte_IO.File_Type; Item : in out Word'Base)
+   procedure Write_Little_Endian_Word
+     (F : Byte_IO.File_Type; Item : in out Word'Base; Padding : Boolean)
    is
       B1, B2, B3, B4 : Byte;
    begin
@@ -76,10 +74,14 @@ package body types is
       B2 := Byte (Shift_Right (Item, 8) and 16#FF#);
       B3 := Byte (Shift_Right (Item, 16) and 16#FF#);
       B4 := Byte (Shift_Right (Item, 24) and 16#FF#);
+
       Byte_IO.Write (F, B4);
       Byte_IO.Write (F, B3);
       Byte_IO.Write (F, B2);
-   end Write_Little_Endian_Word_Without_Padding;
+      if not Padding then
+         Byte_IO.Write (F, B1);
+      end if;
+   end Write_Little_Endian_Word;
 
    procedure Read_Big_Endian_Word_64
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;

@@ -47,10 +47,10 @@ package Types is
    function Convert_To_Address_Array
      (BA_Array : Block_Access_Array) return Block_Address_Array;
 
+   procedure Write_Block
+     (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Boolean);
    procedure Write_Little_Endian_Word
-     (F : Word_IO.File_Type; Item : in out Word'Base);
-   procedure Write_Little_Endian_Word_Without_Padding
-     (F : Byte_IO.File_Type; Item : in out Word'Base);
+     (F : Byte_IO.File_Type; Item : in out Word'Base; Padding : Boolean);
    procedure Read_Block_Array
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Block_Array);
