@@ -10,7 +10,8 @@ package body Share is
 
    function Next_Block (My_Share : in out Share_Access) return Block_Access is
    begin
-      if My_Share.all.Blocks.Values'Length > My_Share.all.Current_Block then
+      if My_Share.all.Blocks.Values'Length + 1 > My_Share.all.Current_Block
+      then
          My_Share.all.Current_Block := My_Share.all.Current_Block + 1;
          return My_Share.all.Blocks.Values (My_Share.all.Current_Block - 1);
       else
@@ -76,7 +77,7 @@ package body Share is
          Data_Size_In_Words  : constant Natural  :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
          Block_Array_Size    : constant Natural  :=
-           ((Data_Size_In_Words + Block_Size_In_Words - 1) / Block_Size);
+           ((Data_Size_In_Words) / Block_Size_In_Words);
          Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
          Last_Block_Size     : constant Natural  :=
            Data_Size_In_Words - (Block_Array_Size * Block_Size_In_Words) - 1;
@@ -84,15 +85,19 @@ package body Share is
          New_Share           : Share_Access      :=
            new Share (Block_Size_In_Words, Block_Array_Size);
       begin
+         for Block of Share_Blocks.Values loop
+            Block_Access'Read (S, Block);
+         end loop;
          Block_Access'Read (S, Last_Block);
          Close (Share_File);
-         New_Share.Share_Number :=
+         New_Share.Share_Number        :=
            Natural'Value
              (Ada.Strings.Unbounded.To_String (Get_Basename (File)));
-         New_Share.Header       := Header;
-         New_Share.Data_Header  := Data_Header;
-         New_Share.Blocks       := Share_Blocks;
-         New_Share.Last_Block   := Last_Block;
+         New_Share.Header              := Header;
+         New_Share.URI_Extension_Block := URI_Extension_Block;
+         New_Share.Data_Header         := Data_Header;
+         New_Share.Blocks              := Share_Blocks;
+         New_Share.Last_Block          := Last_Block;
          return New_Share;
       end;
    end Read_Share;

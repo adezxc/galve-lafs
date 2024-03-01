@@ -30,6 +30,7 @@ package body types is
    is
       Converted_Array : Block_Address_Array (BA_Array'Range);
    begin
+      Ada.Text_IO.Put_Line (BA_Array'First'Image & BA_Array'Last'Image);
       for I in BA_Array'Range loop
          Converted_Array (I) := To_Address (BA_Array (I));
       end loop;
@@ -54,13 +55,19 @@ package body types is
    procedure Write_Block
      (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Boolean)
    is
+      Padding_Count : Natural                         := Item.all'Length mod 4;
+      Padding_Array : Byte_Array (1 .. Padding_Count) := (others => 0);
    begin
+      Ada.Text_IO.Put_Line (Padding_Count'Image);
       for Word of Item.all loop
          if Word = Item.all (Item.all'Last) and Padding then
             Write_Little_Endian_Word (F, Word, Padding => True);
          else
             Write_Little_Endian_Word (F, Word, Padding => False);
          end if;
+      end loop;
+      for Byte of Padding_Array loop
+         Byte_IO.Write (F, Byte);
       end loop;
    end Write_Block;
 
