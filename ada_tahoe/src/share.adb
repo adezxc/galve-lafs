@@ -68,24 +68,31 @@ package body Share is
          Read_URI_Extension_Block (S, URI_Extension_Block);
          --  we set the old index to continue with reading the share file
          Set_Index (Share_File, Current_Index);
+         Ada.Text_IO.Put_Line ("Data size" & Data_Header.Data_Size'Image);
+         Ada.Text_IO.Put_Line
+           ("Block size" & URI_Extension_Block.Segment_Size'Image);
       end;
 
       declare
          Block_Size          : constant Positive :=
-           (Positive (URI_Extension_Block.Segment_Size) + (3 - 1)) / 3;
+           (Positive (URI_Extension_Block.Segment_Size) +
+            (Positive (URI_Extension_Block.Needed_Shares) - 1)) /
+           Positive (URI_Extension_Block.Needed_Shares);
          Block_Size_In_Words : constant Positive := (Block_Size + 3) / 4;
          Data_Size_In_Words  : constant Natural  :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
          Block_Array_Size    : constant Natural  :=
-           ((Data_Size_In_Words) / Block_Size_In_Words);
+           (Data_Size_In_Words / Block_Size_In_Words) - 1;
          Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
          Last_Block_Size     : constant Natural  :=
-           Data_Size_In_Words - (Block_Array_Size * Block_Size_In_Words) - 1;
+           Data_Size_In_Words - ((Block_Array_Size - 1) * Block_Size_In_Words);
          Last_Block : Block_Access      := new Block (0 .. Last_Block_Size);
          New_Share           : Share_Access      :=
            new Share (Block_Size_In_Words, Block_Array_Size);
       begin
+         Ada.Text_IO.Put_Line ("Last block size" & Block_Array_Size'Image);
          for Block of Share_Blocks.Values loop
+            Ada.Text_IO.Put_Line ("TEST");
             Block_Access'Read (S, Block);
          end loop;
          Block_Access'Read (S, Last_Block);

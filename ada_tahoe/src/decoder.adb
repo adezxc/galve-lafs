@@ -66,11 +66,14 @@ package body Decoder is
             Result_Block_Addresses'Address,
             Share_Numbers (Share_Numbers'First)'Access,
             size_t (Shares (1).Data_Header.Block_Size));
-         Put_Line ((Decoding_Blocks (1)'Length'Image));
-         Put_Line (Shares (1).Data_Header.Block_Size'Image);
          Result_Blocks (1) := Decoding_Blocks (1);
          Result_Blocks (2) := Decoding_Blocks (2);
          Result_Blocks (3) := Decoding_Blocks (3);
+         for B of Result_Blocks loop
+            Put
+              (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image);
+            New_Line;
+         end loop;
          --  for Index in 1 .. Primary_Blocks loop
          --     Result_Blocks (Index + 1) := Result_Blocks (Index);
          --     Result_Blocks (Index)     := Decoding_Blocks (Index);
@@ -86,18 +89,18 @@ package body Decoder is
                 (Word_64 (File_URI.Needed_Shares) -
                  File_URI.Size mod Word_64 (File_URI.Needed_Shares));
          begin
-            Byte_IO.Create (F, Byte_IO.Append_File, File_Name);
-            Write_Block (F, Result_Blocks (1), Padding => True);
+            Byte_IO.Create (F, Byte_IO.Out_File, File_Name);
+            --  Write_Block (F, Result_Blocks (1), Padding => False);
             --  Write_Block (F, Result_Blocks (2), Padding => False);
             --  Write_Block (F, Result_Blocks (3), Padding => False);
-            --  for Block of Result_Blocks loop
-            --     if Padding_N /= 0 then
-            --        Padding_N := Padding_N - 1;
-            --        Write_Block (F, Block, Padding => True);
-            --     else
-            --        Write_Block (F, Block, Padding => True);
-            --     end if;
-            --  end loop;
+            for Block of Result_Blocks loop
+               if Padding_N /= 0 then
+                  Padding_N := Padding_N - 1;
+                  Write_Block (F, Block, Padding => True);
+               else
+                  Write_Block (F, Block, Padding => True);
+               end if;
+            end loop;
             Byte_IO.Close (F);
          end;
       end loop;

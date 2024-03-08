@@ -42,6 +42,7 @@ package body types is
    is
       B1, B2, B3, B4 : Byte;
    begin
+      Ada.Text_IO.Put_Line ("TEST");
       Byte'Read (Stream, B1);
       Byte'Read (Stream, B2);
       Byte'Read (Stream, B3);
@@ -55,10 +56,9 @@ package body types is
    procedure Write_Block
      (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Boolean)
    is
-      Padding_Count : Natural                         := Item.all'Length mod 4;
-      Padding_Array : Byte_Array (1 .. Padding_Count) := (others => 0);
+   -- Padding_Count : Natural                         := Item.all'Length mod 4;
+   -- Padding_Array : Byte_Array (1 .. Padding_Count) := (others => 0);
    begin
-      Ada.Text_IO.Put_Line (Padding_Count'Image);
       for Word of Item.all loop
          if Word = Item.all (Item.all'Last) and Padding then
             Write_Little_Endian_Word (F, Word, Padding => True);
@@ -66,9 +66,9 @@ package body types is
             Write_Little_Endian_Word (F, Word, Padding => False);
          end if;
       end loop;
-      for Byte of Padding_Array loop
-         Byte_IO.Write (F, Byte);
-      end loop;
+      --  for Byte of Padding_Array loop
+      --     Byte_IO.Write (F, Byte);
+      --  end loop;
    end Write_Block;
 
    procedure Write_Little_Endian_Word
