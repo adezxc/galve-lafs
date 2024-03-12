@@ -82,11 +82,15 @@ package body Share is
            ((Data_Size_In_Words - 1) / Block_Size_In_Words);
          Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
          Last_Block_Size     : constant Natural  :=
-           Data_Size_In_Words - (Block_Array_Size * Block_Size_In_Words);
-         Last_Block : Block_Access := new Block (1 .. Last_Block_Size + 1);
+           ((Integer (Data_Header.Data_Size) -
+             (Block_Array_Size * Block_Size)) +
+            3) /
+           4;
+         Last_Block : Block_Access      := new Block (1 .. Last_Block_Size);
          New_Share           : Share_Access      :=
            new Share (Block_Size_In_Words, Block_Array_Size);
       begin
+         Ada.Text_IO.Put_Line ("data size" & Data_Header.Data_Size'Image);
          Ada.Text_IO.Put_Line ("Block size" & Block_Size'Image);
          Ada.Text_IO.Put_Line ("Block array size" & Block_Array_Size'Image);
          Ada.Text_IO.Put_Line ("Last block size" & Last_Block_Size'Image);

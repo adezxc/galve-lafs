@@ -1,5 +1,4 @@
 package Aes is
-      procedure Decrypt_File (Source      : in String;
-         Destination : in String;
-         Key : String);
+   procedure Decrypt_File
+     (Source : String; Destination : String; Key : String);
 end Aes;

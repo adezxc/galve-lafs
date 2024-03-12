@@ -47,5 +47,4 @@ begin
          "Example usage for getting the storage index from URI" &
          "./ada_tahoe index URI");
    end if;
-   return;
 end Ada_Tahoe;

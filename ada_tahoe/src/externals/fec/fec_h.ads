@@ -75,7 +75,8 @@ package fec_h is
 
    procedure fec_decode
      (code    : access constant fec_t; inpkts : System.Address;
-      outpkts : System.Address; index : access Integer; sz : size_t) with
+      outpkts : System.Address; index : access Integer;
+      sz      : Interfaces.Unsigned_64) with
      Import => True, Convention => C, External_Name => "fec_decode";
 
    --*
