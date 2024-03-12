@@ -34,7 +34,6 @@ package body Decoder is
          Shares (Index) := Read_Share (To_String (Share_Names (Index)));
       end loop;
       Share.Sort (Shares);
-      Put_Line (File_URI'Image);
       Put_Line (Shares (1).Header'Image);
       Put_Line (Shares (1).URI_Extension_Block'Image);
       Put_Line (Shares (1).Data_Header'Image);
@@ -51,7 +50,6 @@ package body Decoder is
          for J in 1 .. Integer (File_URI.Needed_Shares) loop
             Decoding_Blocks (J) := Next_Block (Shares (J));
             Result_Blocks (J)   := new Block (1 .. Decoding_Blocks (J)'Length);
-            Put_Line (Result_Blocks (J).all'Length'Image);
          end loop;
          Decoding_Blocks_Addresses :=
            Convert_To_Address_Array (Decoding_Blocks);
@@ -88,7 +86,6 @@ package body Decoder is
       for J in 1 .. Integer (File_URI.Needed_Shares) loop
          Decoding_Blocks (J) := Next_Block (Shares (J));
          Result_Blocks (J)   := new Block (1 .. Decoding_Blocks (J)'Length);
-         Put_Line (Result_Blocks (J).all'Length'Image);
       end loop;
       Decoding_Blocks_Addresses := Convert_To_Address_Array (Decoding_Blocks);
       Result_Block_Addresses    := Convert_To_Address_Array (Result_Blocks);
@@ -97,26 +94,18 @@ package body Decoder is
          Result_Block_Addresses'Address,
          Share_Numbers (Share_Numbers'First)'Access,
          size_t
-           (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size /
-            Interfaces.Unsigned_64
-              (Shares (1).URI_Extension_Block.Codec_Params.Needed_Shares)));
-      for B of Result_Blocks loop
-         Put (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image);
-         Put (B.all'Last'Image);
-         New_Line;
-      end loop;
-      for B of Decoding_Blocks loop
-         Put (B.all (1 .. (if B.all'Last < 3 then B.all'Last else 3))'Image);
-         Put (B.all'Last'Image);
-         New_Line;
-      end loop;
-      -- Result_Blocks (1) := Decoding_Blocks (1);
-      -- Result_Blocks (2) := Decoding_Blocks (2);
-      -- Result_Blocks (3) := Decoding_Blocks (3);
-      for Index in 1 .. Primary_Blocks loop
-         Result_Blocks (Index + 1) := Result_Blocks (Index);
-         Result_Blocks (Index)     := Decoding_Blocks (Index);
-      end loop;
+           (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size +
+            2 /
+              Interfaces.Unsigned_64
+                (Shares (1).URI_Extension_Block.Tail_Codec_Params
+                   .Needed_Shares)));
+      Result_Blocks (1) := Decoding_Blocks (1);
+      Result_Blocks (2) := Decoding_Blocks (2);
+      Result_Blocks (3) := Decoding_Blocks (3);
+      --  for Index in 1 .. Primary_Blocks loop
+      --     Result_Blocks (Index + 1) := Result_Blocks (Index);
+      --     Result_Blocks (Index)     := Decoding_Blocks (Index);
+      --  end loop;
 
       declare
          use Byte_IO;
@@ -128,12 +117,10 @@ package body Decoder is
              ((Result_Blocks (1).all'Length * 4) mod
               Shares (1).Last_Block.all'Length);
       begin
-         Ada.Text_IO.Put_Line (Result_Blocks (1).all'Length'Image);
-         Ada.Text_IO.Put_Line (Shares (1).Last_Block.all'Length'Image);
          Byte_IO.Open (F, Byte_IO.Append_File, File_Name);
-         Write_Block (F, Result_Blocks (1), Padding => 2);
-         Write_Block (F, Result_Blocks (2), Padding => 2);
-         Write_Block (F, Result_Blocks (3), Padding => 2);
+         Write_Block (F, Result_Blocks (1), Padding => Padding_N);
+         Write_Block (F, Result_Blocks (2), Padding => Padding_N);
+         Write_Block (F, Result_Blocks (3), Padding => Padding_N);
          --  for Block of Result_Blocks loop
          --     if Padding_N /= 0 then
          --        Padding_N := Padding_N - 1;

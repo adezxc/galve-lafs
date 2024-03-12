@@ -10,10 +10,6 @@ package body Share is
 
    function Next_Block (My_Share : in out Share_Access) return Block_Access is
    begin
-      Ada.Text_IO.Put_Line
-        ("Block Length:" & My_Share.all.Blocks.Values'Length'Image);
-      Ada.Text_IO.Put_Line
-        ("Current Block:" & My_Share.all.Current_Block'Image);
       if My_Share.all.Blocks.Values'Length + 1 > My_Share.all.Current_Block
       then
          My_Share.all.Current_Block := My_Share.all.Current_Block + 1;
@@ -72,9 +68,6 @@ package body Share is
          Read_URI_Extension_Block (S, URI_Extension_Block);
          --  we set the old index to continue with reading the share file
          Set_Index (Share_File, Current_Index);
-         Ada.Text_IO.Put_Line ("Data size" & Data_Header.Data_Size'Image);
-         Ada.Text_IO.Put_Line
-           ("Segment size" & URI_Extension_Block.Segment_Size'Image);
       end;
 
       declare
@@ -90,7 +83,7 @@ package body Share is
          Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
          Last_Block_Size     : constant Natural  :=
            Data_Size_In_Words - (Block_Array_Size * Block_Size_In_Words);
-         Last_Block : Block_Access      := new Block (1 .. Last_Block_Size);
+         Last_Block : Block_Access := new Block (1 .. Last_Block_Size + 1);
          New_Share           : Share_Access      :=
            new Share (Block_Size_In_Words, Block_Array_Size);
       begin

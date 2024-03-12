@@ -18,7 +18,6 @@ package body types is
       Item   : out Block_Access)
    is
    begin
-      Ada.Text_IO.Put_Line (Item.all'Length'Image);
       Block'Read (Stream, Item.all);
    end Read_Block_Access;
 
@@ -33,7 +32,6 @@ package body types is
    is
       Converted_Array : Block_Address_Array (BA_Array'Range);
    begin
-      Ada.Text_IO.Put_Line (BA_Array'First'Image & BA_Array'Last'Image);
       for I in BA_Array'Range loop
          Converted_Array (I) := To_Address (BA_Array (I));
       end loop;
@@ -60,7 +58,6 @@ package body types is
      (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Natural)
    is
    begin
-      Ada.Text_IO.Put_Line ("PADDING!!!" & Padding'Image);
       for Word of Item.all loop
          if Word = Item.all (Item.all'Last) then
             Write_Little_Endian_Word (F, Word, Padding => Padding);
