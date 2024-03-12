@@ -1,6 +1,8 @@
 with Ada.Text_IO; use Ada.Text_IO;
 
 package body types is
+   Test_Var : Natural := 0;
+
    procedure Read_Block_Array
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Block_Array)
@@ -16,6 +18,7 @@ package body types is
       Item   : out Block_Access)
    is
    begin
+      Ada.Text_IO.Put_Line (Item.all'Length'Image);
       Block'Read (Stream, Item.all);
    end Read_Block_Access;
 
@@ -42,7 +45,7 @@ package body types is
    is
       B1, B2, B3, B4 : Byte;
    begin
-      Ada.Text_IO.Put_Line ("TEST");
+      Test_Var := Test_Var + 1;
       Byte'Read (Stream, B1);
       Byte'Read (Stream, B2);
       Byte'Read (Stream, B3);
@@ -54,40 +57,36 @@ package body types is
    end Read_Big_Endian_Word;
 
    procedure Write_Block
-     (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Boolean)
+     (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Natural)
    is
-   -- Padding_Count : Natural                         := Item.all'Length mod 4;
-   -- Padding_Array : Byte_Array (1 .. Padding_Count) := (others => 0);
    begin
+      Ada.Text_IO.Put_Line ("PADDING!!!" & Padding'Image);
       for Word of Item.all loop
-         if Word = Item.all (Item.all'Last) and Padding then
-            Write_Little_Endian_Word (F, Word, Padding => True);
+         if Word = Item.all (Item.all'Last) then
+            Write_Little_Endian_Word (F, Word, Padding => Padding);
          else
-            Write_Little_Endian_Word (F, Word, Padding => False);
+            Write_Little_Endian_Word (F, Word, Padding => 0);
          end if;
       end loop;
-      --  for Byte of Padding_Array loop
-      --     Byte_IO.Write (F, Byte);
-      --  end loop;
    end Write_Block;
 
    procedure Write_Little_Endian_Word
-     (F : Byte_IO.File_Type; Item : in out Word'Base; Padding : Boolean)
+     (F : Byte_IO.File_Type; Item : in out Word'Base; Padding : Natural)
    is
-      B1, B2, B3, B4 : Byte;
+      type Byte_Array is array (1 .. 4) of Byte;
+
+      Bytes : Byte_Array;
    begin
       -- Extract individual bytes from the word
-      B1 := Byte (Shift_Right (Item, 0) and 16#FF#);
-      B2 := Byte (Shift_Right (Item, 8) and 16#FF#);
-      B3 := Byte (Shift_Right (Item, 16) and 16#FF#);
-      B4 := Byte (Shift_Right (Item, 24) and 16#FF#);
+      Bytes (4) := Byte (Shift_Right (Item, 0) and 16#FF#);
+      Bytes (3) := Byte (Shift_Right (Item, 8) and 16#FF#);
+      Bytes (2) := Byte (Shift_Right (Item, 16) and 16#FF#);
+      Bytes (1) := Byte (Shift_Right (Item, 24) and 16#FF#);
 
-      Byte_IO.Write (F, B4);
-      Byte_IO.Write (F, B3);
-      Byte_IO.Write (F, B2);
-      if not Padding then
-         Byte_IO.Write (F, B1);
-      end if;
+      for I in 1 .. 4 - Padding loop
+         Byte_IO.Write (F, Bytes (I));
+      end loop;
+
    end Write_Little_Endian_Word;
 
    procedure Read_Big_Endian_Word_64

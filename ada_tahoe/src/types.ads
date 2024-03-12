@@ -48,9 +48,9 @@ package Types is
      (BA_Array : Block_Access_Array) return Block_Address_Array;
 
    procedure Write_Block
-     (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Boolean);
+     (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Natural);
    procedure Write_Little_Endian_Word
-     (F : Byte_IO.File_Type; Item : in out Word'Base; Padding : Boolean);
+     (F : Byte_IO.File_Type; Item : in out Word'Base; Padding : Natural);
    procedure Read_Block_Array
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Block_Array);
