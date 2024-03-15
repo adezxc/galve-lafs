@@ -1,4 +1,4 @@
-with Util.Encoders; use Util.Encoders;
+with Util.Encoders;           use Util.Encoders;
 with Ada.Characters.Handling; use Ada.Characters.Handling;
 
 package body Base32 is

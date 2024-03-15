@@ -33,8 +33,7 @@ package body Decoder is
          end if;
       end loop;
 
-      for I in 1 .. Integer (Shares (1).URI_Extension_Block.Segment_Count - 1)
-      loop
+      for I in 1 .. Shares (1).URI_Extension_Block.Segment_Count - 1 loop
          Decode_Block
            (Decoder          => Decoder, Shares => Shares,
             Share_Numbers    => Share_Numbers,
@@ -91,29 +90,31 @@ package body Decoder is
 
       declare
          use Byte_IO;
-         F         : Byte_IO.File_Type;
-         File_Name : constant String := "output.dat";
-         Padding_N : Natural;
+         F          : Byte_IO.File_Type;
+         File_Name  : constant String := "output.dat";
+         Padding_N  : Natural;
+         Empty_Byte : Byte            := 0;
       begin
          if not Last then
             Padding_N :=
               Natural
-                ((Unsigned_64 (Result_Blocks (1).all'Length) * 4) -
-                 (Shares (1).URI_Extension_Block.Segment_Size /
-                  Unsigned_64 (Needed_Shares)));
+                (Word_64 (Block_Size) -
+                 Shares (1).Data_Header.Block_Size / 4 * 4);
          else
             Padding_N :=
               Natural
-                ((Unsigned_64 (Result_Blocks (1).all'Length) * 4) -
+                (Block_Size -
                  Shares (1).URI_Extension_Block.Tail_Codec_Params
                      .Segment_Size /
                    Unsigned_64 (Needed_Shares));
          end if;
+
          Byte_IO.Open (F, Byte_IO.Append_File, File_Name);
-         for I in 1 .. Result_Blocks'Last - 1 loop
+         for I in 1 .. Integer (Needed_Shares - 1) loop
             Write_Block (F, Result_Blocks (I), Padding => Padding_N);
          end loop;
          Write_Block (F, Result_Blocks (Result_Blocks'Last), Padding => 0);
+         Byte_IO.Flush (F);
          Byte_IO.Close (F);
       end;
    end Decode_Block;
