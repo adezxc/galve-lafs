@@ -41,7 +41,7 @@ procedure Ada_Aes is
         (Mode => Ada.Streams.Stream_IO.Out_File, Name => Destination);
       Decipher.Produces
         (Output => Out_Stream'Unchecked_Access, Size => 65_536);
-      Decipher.Set_Key (Secret => Password_Key, Mode => Util.Encoders.AES.ECB);
+      Decipher.Set_Key (Secret => Password_Key, Mode => Util.Encoders.AES.CTR);
       Util.Streams.Copy (From => In_Stream, Into => Decipher);
    end Decrypt_File;
 
@@ -59,7 +59,7 @@ procedure Ada_Aes is
       Out_Stream.Create
         (Mode => Ada.Streams.Stream_IO.Out_File, Name => Destination);
       Cipher.Produces (Output => Out_Stream'Unchecked_Access, Size => 65_536);
-      Cipher.Set_Key (Secret => Password_Key, Mode => Util.Encoders.AES.ECB);
+      Cipher.Set_Key (Secret => Password_Key, Mode => Util.Encoders.AES.CTR);
       Util.Streams.Copy (From => In_Stream, Into => Cipher);
    end Encrypt_File;
 begin

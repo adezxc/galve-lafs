@@ -1,7 +1,0 @@
-ada_aes.adb:7:06: warning: renamed predefined unit is an obsolescent feature (RM J.1) [-gnatwj]
-ada_aes.adb:10:18: warning: unit "Util.Streams.Texts" is not referenced [-gnatwu]
-ada_aes.adb:14:13: warning: function "Base32_Encode" is not referenced [-gnatwu]
-ada_aes.adb:78:07: warning: "Cipher_Mode" is not modified, could be declared constant [-gnatwk]
-ada_aes.adb:79:07: warning: "Input_File" is not modified, could be declared constant [-gnatwk]
-ada_aes.adb:80:07: warning: "Output_File" is not modified, could be declared constant [-gnatwk]
-ada_aes.adb:81:07: warning: "Key" is not modified, could be declared constant [-gnatwk]

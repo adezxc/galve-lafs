@@ -1,0 +1,5 @@
+.gdb_history
+output.enc
+output.dec
+obj/
+bin/
