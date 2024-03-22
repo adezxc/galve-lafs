@@ -1,6 +1,0 @@
-head
------BEGIN PGP SIGNED MESSAGE-----
-message
------BEGIN PGP SIGNATURE-----
-signature
------END PGP SIGNATURE-----
