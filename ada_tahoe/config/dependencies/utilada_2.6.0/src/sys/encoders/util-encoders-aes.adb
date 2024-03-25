@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------
 --  util-encoders-aes -- AES encryption and decryption
---  Copyright (C) 2017, 2019, 2020, 2021, 2022 Stephane Carrez
+--  Copyright (C) 2017 - 2024 Stephane Carrez
 --  Written by Stephane Carrez (Stephane.Carrez@gmail.com)
 --
 --  Licensed under the Apache License, Version 2.0 (the "License");
@@ -977,10 +977,10 @@ package body Util.Encoders.AES is
          when CFB =>
             Encrypt (E.IV,
                      E.Key);
-            E.IV (1) := E.IV (1) xor To_Unsigned_32 (E.Data, Pos);
-            E.IV (2) := E.IV (2) xor To_Unsigned_32 (E.Data, Pos + 4);
-            E.IV (3) := E.IV (3) xor To_Unsigned_32 (E.Data, Pos + 8);
-            E.IV (4) := E.IV (4) xor To_Unsigned_32 (E.Data, Pos + 12);
+            E.IV (1) := E.IV (1) xor To_Unsigned_32 (E.Data, E.Data'First);
+            E.IV (2) := E.IV (2) xor To_Unsigned_32 (E.Data, E.Data'First + 4);
+            E.IV (3) := E.IV (3) xor To_Unsigned_32 (E.Data, E.Data'First + 8);
+            E.IV (4) := E.IV (4) xor To_Unsigned_32 (E.Data, E.Data'First + 12);
             Put_Unsigned_32 (Into, E.IV (1), Last);
             Put_Unsigned_32 (Into, E.IV (2), Last + 4);
             Put_Unsigned_32 (Into, E.IV (3), Last + 8);
@@ -989,19 +989,19 @@ package body Util.Encoders.AES is
          when OFB =>
             Encrypt (E.IV,
                      E.Key);
-            Put_Unsigned_32 (Into, E.IV (1) xor To_Unsigned_32 (E.Data, Pos), Last);
-            Put_Unsigned_32 (Into, E.IV (2) xor To_Unsigned_32 (E.Data, Pos + 4), Last + 4);
-            Put_Unsigned_32 (Into, E.IV (3) xor To_Unsigned_32 (E.Data, Pos + 8), Last + 8);
-            Put_Unsigned_32 (Into, E.IV (4) xor To_Unsigned_32 (E.Data, Pos + 12), Last + 12);
+            Put_Unsigned_32 (Into, E.IV (1) xor To_Unsigned_32 (E.Data, E.Data'First), Last);
+            Put_Unsigned_32 (Into, E.IV (2) xor To_Unsigned_32 (E.Data, E.Data'First + 4), Last + 4);
+            Put_Unsigned_32 (Into, E.IV (3) xor To_Unsigned_32 (E.Data, E.Data'First + 8), Last + 8);
+            Put_Unsigned_32 (Into, E.IV (4) xor To_Unsigned_32 (E.Data, E.Data'First + 12), Last + 12);
 
          when CTR =>
             Encrypt (E.IV,
                      R,
                      E.Key);
-            Put_Unsigned_32 (Into, R (1) xor To_Unsigned_32 (E.Data, Pos), Last);
-            Put_Unsigned_32 (Into, R (2) xor To_Unsigned_32 (E.Data, Pos + 4), Last + 4);
-            Put_Unsigned_32 (Into, R (3) xor To_Unsigned_32 (E.Data, Pos + 8), Last + 8);
-            Put_Unsigned_32 (Into, R (4) xor To_Unsigned_32 (E.Data, Pos + 12), Last + 12);
+            Put_Unsigned_32 (Into, R (1) xor To_Unsigned_32 (E.Data, E.Data'First), Last);
+            Put_Unsigned_32 (Into, R (2) xor To_Unsigned_32 (E.Data, E.Data'First + 4), Last + 4);
+            Put_Unsigned_32 (Into, R (3) xor To_Unsigned_32 (E.Data, E.Data'First + 8), Last + 8);
+            Put_Unsigned_32 (Into, R (4) xor To_Unsigned_32 (E.Data, E.Data'First + 12), Last + 12);
             E.IV (4) := E.IV (4) + 1;
             if E.IV (4) = 0 then
                E.IV (3) := E.IV (3) + 1;

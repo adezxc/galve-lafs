@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------
 --  util-files -- Various File Utility Packages
---  Copyright (C) 2001 - 2022 Stephane Carrez
+--  Copyright (C) 2001 - 2024 Stephane Carrez
 --  Written by Stephane Carrez (Stephane.Carrez@gmail.com)
 --
 --  Licensed under the Apache License, Version 2.0 (the "License");
@@ -67,6 +67,7 @@ with Util.Strings.Vectors;
 --  This will return `/usr/bin/ls` on most Unix systems.
 --
 --  @include util-files-rolling.ads
+--  @include util-files-walk.ads
 package Util.Files is
 
    use Ada.Strings.Unbounded;
@@ -76,7 +77,7 @@ package Util.Files is
    --  Read a complete file into a string.
    --  The <b>Max_Size</b> parameter indicates the maximum size that is read.
    procedure Read_File (Path     : in String;
-                        Into     : out Unbounded_String;
+                        Into     : in out Unbounded_String;
                         Max_Size : in Natural := 0);
 
    --  Read the file with the given path, one line at a time and execute the <b>Process</b>

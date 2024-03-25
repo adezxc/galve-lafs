@@ -10,10 +10,10 @@
 [![Test Status](https://img.shields.io/endpoint?url=https://porion.vacs.fr/porion/api/v1/projects/ada-util/badges/tests.json)](https://porion.vacs.fr/porion/projects/view/ada-util/xunits)
 [![Coverage](https://img.shields.io/endpoint?url=https://porion.vacs.fr/porion/api/v1/projects/ada-util/badges/coverage.json)](https://porion.vacs.fr/porion/projects/view/ada-util/summary)
 [![Documentation Status](https://readthedocs.org/projects/ada-util/badge/?version=latest)](https://ada-util.readthedocs.io/en/latest/?badge=latest)
-[![Download](https://img.shields.io/badge/download-2.5.0-brightgreen.svg)](http://download.vacs.fr/ada-util/ada-util-2.5.0.tar.gz)
+[![Download](https://img.shields.io/badge/download-2.6.0-brightgreen.svg)](http://download.vacs.fr/ada-util/ada-util-2.6.0.tar.gz)
 [![License](https://img.shields.io/badge/license-APACHE2-blue.svg)](LICENSE)
 [![GitLab](https://img.shields.io/badge/repo-GitLab-6C488A.svg)](https://gitlab.com/stcarrez/ada-util)
-[![Commits](https://img.shields.io/github/commits-since/stcarrez/ada-util/2.5.0.svg)](Commits)
+[![Commits](https://img.shields.io/github/commits-since/stcarrez/ada-util/2.6.0.svg)](Commits)
 
 
 This Ada library contains various utility packages for building
@@ -33,6 +33,12 @@ Ada applications.  This includes:
 Ada Util also provides a small test utility library on top of
 Ahven or AUnit to help in writing unit tests.  Ahven is the default testing
 framework as it provides better reports.
+
+## Version 2.7.0  - Under development
+  - New package Util.Files.Walk to iterate over directory trees and honor .gitignore
+  - Feature #48: Change the log time from UTC to Local Time (configurable)
+  - Fix #49: Perf report generates incorrect XML title attributes
+  - Fix #50: 128Bit AES-CTR Encoding doesn't work (thanks Adam Jasinski)
 
 ## Version 2.6.0  - Jul 2023
   - New encoder/decoder for Base32
@@ -156,6 +162,7 @@ The samples can be built using:
 | `Util.Encoders.SHA256` | [sha256.adb](https://github.com/stcarrez/ada-util/tree/master/samples/sha256.adb) |
 | `Util.Files` | [realpath.adb](https://github.com/stcarrez/ada-util/tree/master/samples/realpath.adb), [gperfhash.adb](https://github.com/stcarrez/ada-util/tree/master/samples/gperfhash.adb) |
 | `Util.Files.Rolling` | [rolling_file.adb](https://github.com/stcarrez/ada-util/tree/master/samples/rolling_file.adb) |
+| `Util.Files.Walk` | [tree.adb](https://github.com/stcarrez/ada-util/tree/master/samples/tree.adb) |
 | `Util.Http.Clients` | [wget.adb](https://github.com/stcarrez/ada-util/tree/master/samples/wget.adb), [facebook.adb](https://github.com/stcarrez/ada-util/tree/master/samples/facebook.adb) |
 | `Util.Log.Loggers` | [log.adb](https://github.com/stcarrez/ada-util/tree/master/samples/log.adb), [syslog_appenders.adb](https://github.com/stcarrez/ada-util/tree/master/samples/syslog_appenders.adb), [multipro_refs.adb](https://github.com/stcarrez/ada-util/tree/master/samples/multipro_refs.adb), [date.adb](https://github.com/stcarrez/ada-util/tree/master/samples/date.adb), [xmlrd.adb](https://github.com/stcarrez/ada-util/tree/master/samples/xmlrd.adb), [gperfhash.adb](https://github.com/stcarrez/ada-util/tree/master/samples/gperfhash.adb), [multipro.adb](https://github.com/stcarrez/ada-util/tree/master/samples/multipro.adb), [mapping.adb](https://github.com/stcarrez/ada-util/tree/master/samples/mapping.adb), [csv_city.adb](https://github.com/stcarrez/ada-util/tree/master/samples/csv_city.adb), [bundles.adb](https://github.com/stcarrez/ada-util/tree/master/samples/bundles.adb) |
 | `Util.Measures` | [measures.adb](https://github.com/stcarrez/ada-util/tree/master/samples/measures.adb) |

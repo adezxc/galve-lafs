@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------
---  files.tests -- Unit tests for files
---  Copyright (C) 2009, 2010, 2011, 2012, 2013, 2019, 2022 Stephane Carrez
+--  util-files-tests -- Unit tests for files
+--  Copyright (C) 2009, 2010, 2011, 2012, 2013, 2019, 2022, 2024 Stephane Carrez
 --  Written by Stephane Carrez (Stephane.Carrez@gmail.com)
 --
 --  Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,13 +18,27 @@
 
 with System;
 with Ada.Directories;
+with Ada.Text_IO;
+with Util.Assertions;
 with Util.Systems.Constants;
+with Util.Strings.Sets;
 with Util.Test_Caller;
+with Util.Files.Walk;
+with Util.Files.Filters;
 package body Util.Files.Tests is
 
    use Util.Tests;
 
+   procedure Assert_Equals is
+     new Util.Assertions.Assert_Equals_T (Value_Type => Walk.Filter_Mode);
+
    package Caller is new Util.Test_Caller (Test, "Files");
+
+   package String_Filters is
+      new Util.Files.Filters (Element_Type => String);
+
+   procedure Assert_Equals is
+     new Util.Assertions.Assert_Equals_T (Value_Type => String_Filters.Match_Result);
 
    procedure Add_Tests (Suite : in Util.Tests.Access_Test_Suite) is
    begin
@@ -48,6 +62,16 @@ package body Util.Files.Tests is
                        Test_Delete_Tree'Access);
       Caller.Add_Test (Suite, "Test Util.Files.Realpath",
                        Test_Realpath'Access);
+      Caller.Add_Test (Suite, "Test Util.Files.Walk",
+                       Test_Walk'Access);
+      Caller.Add_Test (Suite, "Test Util.Files.Walk.Filter",
+                       Test_Filter'Access);
+      Caller.Add_Test (Suite, "Test Util.Files.Walk.Filter (Recursive)",
+                       Test_Filter_Recursive'Access);
+      Caller.Add_Test (Suite, "Test Util.Files.Walk.Filter (Wildcard)",
+                       Test_Filter_Wildcard'Access);
+      Caller.Add_Test (Suite, "Test Util.Files.Filters.Insert",
+                       Test_Path_Filter'Access);
    end Add_Tests;
 
    --  ------------------------------
@@ -254,5 +278,239 @@ package body Util.Files.Tests is
    begin
       Util.Tests.Assert_Matches (T, ".*/bin/util_harness", P);
    end Test_Realpath;
+
+   --  ------------------------------
+   --  Test the Util.Files.Walk package
+   --  ------------------------------
+   procedure Test_Walk (T : in out Test) is
+      subtype Filter_Context_Type is Util.Files.Walk.Filter_Context_Type;
+      type Walker_Type is new Util.Files.Walk.Walker_Type with record
+         Files : Util.Strings.Sets.Set;
+         Dirs  : Util.Strings.Sets.Set;
+      end record;
+
+      overriding
+      function Get_Ignore_Path (Walker : Walker_Type;
+                                Path   : String) return String;
+
+      overriding
+      procedure Scan_File (Walker : in out Walker_Type;
+                           Path   : String);
+
+      overriding
+      procedure Scan_Directory (Walker : in out Walker_Type;
+                                Path   : String;
+                                Filter : Filter_Context_Type);
+
+      overriding
+      function Get_Ignore_Path (Walker : Walker_Type;
+                                Path   : String) return String is
+         pragma Unreferenced (Walker);
+      begin
+         return Util.Files.Compose (Path, ".gitignore");
+      end Get_Ignore_Path;
+
+      overriding
+      procedure Scan_File (Walker : in out Walker_Type;
+                           Path   : String) is
+      begin
+         Walker.Files.Insert (Path);
+      end Scan_File;
+
+      overriding
+      procedure Scan_Directory (Walker : in out Walker_Type;
+                                Path   : String;
+                                Filter : Filter_Context_Type) is
+      begin
+         Walker.Dirs.Insert (Path);
+         Util.Files.Walk.Walker_Type (Walker).Scan_Directory (Path, Filter);
+      end Scan_Directory;
+
+      W : Walker_Type;
+      Filter : Util.Files.Walk.Filter_Type;
+   begin
+      W.Scan ("./regtests", Filter);
+      Ada.Text_IO.Put_Line ("Number of files:" & W.Files.Length'Image);
+      for S of W.Files loop
+         Ada.Text_IO.Put_Line (S);
+      end loop;
+      Ada.Text_IO.Put_Line ("Number of dirs:" & W.Dirs.Length'Image);
+      for S of W.Dirs loop
+         Ada.Text_IO.Put_Line (S);
+      end loop;
+      T.Assert (W.Files.Contains ("./regtests/util-files-tests.ads"),
+                "Missing './regtests/util-files-tests.ads'");
+      T.Assert (W.Files.Contains ("./regtests/util-files-tests.adb"),
+                "Missing './regtests/util-files-tests.adb'");
+      T.Assert (W.Dirs.Contains ("./regtests/files"),
+                "Missing dir './regtests/files");
+      T.Assert (not W.Dirs.Contains ("./bin"),
+                "'bin' was scanned (see .gitignore)");
+      T.Assert (not W.Dirs.Contains ("./alire"),
+                "'alire' was scanned (see .gitignore)");
+   end Test_Walk;
+
+   --  ------------------------------
+   --  Test the Util.Files.Filter operations.
+   --  ------------------------------
+   procedure Test_Path_Filter (T : in out Test) is
+      F : String_Filters.Filter_Type;
+   begin
+      F.Insert ("/a/b/c/d", False, "a-b-c-d");
+      F.Insert ("/a/b/d/e", False, "a-b-d-e");
+      F.Insert ("/b/e/d", False, "b-e-d");
+      F.Insert ("/a/b/d/f", False, "a-b-d-f");
+      F.Insert ("/b/e/c", False, "b-e-c");
+      F.Insert ("/a/c", False, "a-c");
+
+      Assert_Equals (T, String_Filters.Found, F.Match ("a/b/c/d").Match);
+      Assert_Equals (T, "a-b-c-d", String_Filters.Get_Value (F.Match ("a/b/c/d")));
+
+      Assert_Equals (T, String_Filters.Found, F.Match ("a/b/d/e").Match);
+      Assert_Equals (T, "a-b-d-e", String_Filters.Get_Value (F.Match ("a/b/d/e")));
+
+      Assert_Equals (T, String_Filters.Found, F.Match ("b/e/d").Match);
+      Assert_Equals (T, "b-e-d", String_Filters.Get_Value (F.Match ("b/e/d")));
+
+      Assert_Equals (T, String_Filters.Found, F.Match ("a/b/d/f").Match);
+      Assert_Equals (T, "a-b-d-f", String_Filters.Get_Value (F.Match ("a/b/d/f")));
+
+      Assert_Equals (T, String_Filters.Found, F.Match ("b/e/c").Match);
+      Assert_Equals (T, "b-e-c", String_Filters.Get_Value (F.Match ("b/e/c")));
+
+      Assert_Equals (T, String_Filters.Found, F.Match ("a/c").Match);
+      Assert_Equals (T, "a-c", String_Filters.Get_Value (F.Match ("a/c")));
+
+      Assert_Equals (T, String_Filters.No_Value, F.Match ("a/b/c").Match);
+      Assert_Equals (T, String_Filters.No_Value, F.Match ("a/b").Match);
+      Assert_Equals (T, String_Filters.No_Value, F.Match ("b/e").Match);
+
+      Assert_Equals (T, String_Filters.Not_Found, F.Match ("d/e").Match);
+
+      F.Insert ("*.c", True, "C");
+      Assert_Equals (T, String_Filters.Found, F.Match ("test.c").Match);
+      Assert_Equals (T, "C", String_Filters.Get_Value (F.Match ("test.c")));
+
+      Assert_Equals (T, String_Filters.Found, F.Match ("a/b/c/d/test.c").Match);
+      Assert_Equals (T, "C", String_Filters.Get_Value (F.Match ("a/b/c/d/test.c")));
+
+      F.Insert ("test/*.o", True, "O");
+      Assert_Equals (T, String_Filters.Found, F.Match ("test/p.o").Match);
+      Assert_Equals (T, "O", String_Filters.Get_Value (F.Match ("test/p.o")));
+
+      Assert_Equals (T, String_Filters.Found, F.Match ("a/b/test/x.o").Match);
+      Assert_Equals (T, "O", String_Filters.Get_Value (F.Match ("a/b/test/x.o")));
+
+   end Test_Path_Filter;
+
+   --  ------------------------------
+   --  Test the Util.Files.Filter operations.
+   --  ------------------------------
+   procedure Test_Filter (T : in out Test) is
+      F : Walk.Filter_Type;
+   begin
+      F.Include ("/a/b/c/d");
+      F.Include ("/a/b/d/e");
+      F.Include ("/b/e/d");
+      F.Exclude ("/a/b/d/f");
+      F.Exclude ("/b/e/c");
+      F.Include ("/a/c");
+
+      Assert_Equals (T, Walk.Included, F.Match ("a/b/c/d"));
+      Assert_Equals (T, Walk.Included, F.Match ("a/b/d/e"));
+      Assert_Equals (T, Walk.Included, F.Match ("a/c"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("a/b/d/f"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("b/e/c"));
+      Assert_Equals (T, Walk.Included, F.Match ("a/c"));
+
+      Assert_Equals (T, Walk.Not_Found, F.Match ("a"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("c"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("d/e"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("a/b/c/d/e"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("a/b/e"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("a/b/c"));
+
+      F.Include ("/a/b/c");
+      Assert_Equals (T, Walk.Included, F.Match ("a/b/c"));
+      Assert_Equals (T, Walk.Included, F.Match ("a/b/c/d"));
+      F.Exclude ("/a/b/c");
+      Assert_Equals (T, Walk.Excluded, F.Match ("a/b/c"));
+   end Test_Filter;
+
+   --  ------------------------------
+   --  Test the Util.Files.Filter operations.
+   --  ------------------------------
+   procedure Test_Filter_Recursive (T : in out Test) is
+      F : Walk.Filter_Type;
+   begin
+      F.Include ("a/b/c/d");
+      F.Include ("a/b/d/e");
+      F.Include ("b/e/d");
+      F.Exclude ("a/b/d/f");
+      F.Exclude ("b/e/c");
+      F.Include ("a/c");
+
+      Assert_Equals (T, Walk.Included, F.Match ("a/b/c/d"));
+      Assert_Equals (T, Walk.Included, F.Match ("a/b/d/e"));
+      Assert_Equals (T, Walk.Included, F.Match ("a/c"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("a/b/d/f"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("b/e/c"));
+      Assert_Equals (T, Walk.Included, F.Match ("a/c"));
+
+      Assert_Equals (T, Walk.Included, F.Match ("x/y/a/b/c/d"));
+      Assert_Equals (T, Walk.Included, F.Match ("q/w/e/a/b/d/e"));
+      Assert_Equals (T, Walk.Included, F.Match ("t/y/u/a/c"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("i/a/b/d/f"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("o/b/e/c"));
+      Assert_Equals (T, Walk.Included, F.Match ("z/a/c"));
+
+      Assert_Equals (T, Walk.Not_Found, F.Match ("z/a"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("b/c"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("x/d/e"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("q/a/b/c/d/e"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("w/a/b/e"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("e/a/b/c"));
+
+      F.Include ("a/b/c");
+      Assert_Equals (T, Walk.Included, F.Match ("a/b/c"));
+      Assert_Equals (T, Walk.Included, F.Match ("a/b/c/d"));
+      F.Exclude ("a/b/c");
+      Assert_Equals (T, Walk.Excluded, F.Match ("a/b/c"));
+   end Test_Filter_Recursive;
+
+   --  ------------------------------
+   --  Test the Util.Files.Filter operations.
+   --  ------------------------------
+   procedure Test_Filter_Wildcard (T : in out Test) is
+      F : Walk.Filter_Type;
+   begin
+      F.Include ("*.o");
+      F.Include ("*.a");
+      F.Include ("*.lib");
+      F.Exclude ("a/b/*.o");
+      F.Exclude ("b/e/*.a");
+      F.Include ("a/**/*.c");
+
+      Assert_Equals (T, Walk.Included, F.Match ("test.o"));
+      Assert_Equals (T, Walk.Included, F.Match ("test.a"));
+      Assert_Equals (T, Walk.Included, F.Match ("test.lib"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("a/b/test.o"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("b/e/test.a"));
+      --  Assert_Equals (T, Walk.Included, F.Match ("a/c/d/e/test.c"));
+
+      Assert_Equals (T, Walk.Included, F.Match ("x/y/a/b/c/d.o"));
+      Assert_Equals (T, Walk.Included, F.Match ("q/w/e/a/b/d/e.a"));
+      --  Assert_Equals (T, Walk.Included, F.Match ("t/y/u/a/b/x.c"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("i/a/b/x.o"));
+      Assert_Equals (T, Walk.Excluded, F.Match ("o/b/e/c.a"));
+      --  Assert_Equals (T, Walk.Included, F.Match ("z/a/t.c"));
+
+      Assert_Equals (T, Walk.Not_Found, F.Match ("z/a"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("b/c"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("x/d/e"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("q/a/b/c/d/e"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("w/a/b/e"));
+      Assert_Equals (T, Walk.Not_Found, F.Match ("e/a/b/c"));
+   end Test_Filter_Wildcard;
 
 end Util.Files.Tests;
