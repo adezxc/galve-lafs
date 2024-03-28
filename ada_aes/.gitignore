@@ -3,3 +3,4 @@ output.enc
 output.dec
 obj/
 bin/
+src/external/openssl/tmp/
