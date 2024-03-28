@@ -1,5 +1,4 @@
 with "config/ada_aes_config.gpr";
-with "utilada_sys";
 project Ada_Aes is
    for Languages use ("Ada", "C");
    for Source_Dirs use ("src/", "src/external/openssl");

@@ -1,5 +1,6 @@
 with Types; use Types;
 with System;
+with Interfaces.C;
 
 package EVP is
    -- type EVP_CIPHER_CTX is limited private;
@@ -7,6 +8,10 @@ package EVP is
    type EVP_CIPHER_CTX_PTR is access all EVP_CIPHER_CTX;
    type EVP_CIPHER is null record;
    type EVP_CIPHER_PTR is access all EVP_CIPHER;
+   type OSSL_LIB_CTX is null record;
+   type OSSL_LIB_CTX_PTR is access all OSSL_LIB_CTX;
+   type ENGINE_ST is null record;
+   type ENGINE_ST_PTR is access all ENGINE_ST;
    -- type EVP_CIPHER_CTX_PTR is access EVP_CIPHER_CTX;
    -- type EVP_CIPHER_PTR is access EVP_CIPHER;
    -- type ENGINE_ST_PTR is access ENGINE_ST;
@@ -17,20 +22,19 @@ package EVP is
    function EVP_aes_128_ctr return EVP_CIPHER_PTR with
      Import => True, Convention => C, External_Name => "EVP_aes_128_ctr";
 
-   procedure EVP_CIPHER_CTX_free (Ctx : in out EVP_CIPHER_CTX_PTR) with
+   procedure EVP_CIPHER_CTX_free (Ctx : access EVP_CIPHER_CTX) with
      Import => True, Convention => C, External_Name => "EVP_CIPHER_CTX_free";
 
    function EVP_CipherInit
-     (Ctx       : in out EVP_CIPHER_CTX_PTR; Cipher : in EVP_CIPHER_PTR;
-      CipherKey :    Key; CipherIV : IV; Op : Operation) return Integer with
+     (Ctx       : access EVP_CIPHER_CTX; Cipher : access constant EVP_CIPHER;
+      CipherKey : access Interfaces.C.char_array;
+      CipherIV  : access Interfaces.C.char_array; Op : Operation)
+      return Integer with
      Import => True, Convention => C, External_Name => "EVP_CipherInit";
 
-   -- private
-   --  type EVP_CIPHER_CTX is limited null record;
-   --  type EVP_CIPHER is limited null record;
-   --  type ENGINE_ST is limited null record;
-
-   -- The 'private' section is where you would put the actual
-   --   representation of EVP_CIPHER_CTX if you knew the full C struct
-   --   definition, but in this case, we leave it empty.
+   procedure EVP_CipherFetch
+     (Ctx        : in out OSSL_LIB_CTX_PTR;
+      Algorithm  : in out Interfaces.C.char_array;
+      Properties : in out Interfaces.C.char_array) with
+     Import => True, Convention => C, External_Name => "EVP_CIPHER_fetch";
 end EVP;
