@@ -8,7 +8,6 @@ with Aes;
 with Uri_Read;
 
 procedure Ada_Tahoe is
-
    type Argument_Index_Array is array (Natural range <>) of Integer;
 
    function To_Share_Name_Array
@@ -37,6 +36,7 @@ begin
       begin
          Decoder.Decode_File (URI, Share_Names);
       end;
+
       Aes.Decrypt_File ("output.dat", "decrypt.dat", URI.Key);
    else
       Put_Line

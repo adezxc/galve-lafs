@@ -4,8 +4,6 @@ with "utilada_conf.gpr";
 with "utilada_core.gpr";
 with "utilada_sys.gpr";
 abstract project Ada_Aes_Config is
-   Alire_Host_Distro := "distro_unknown";
-   Alire_Host_Distro := "distro_unknown";
    Ada_Compiler_Switches := External_As_List ("ADAFLAGS", " ");
    Ada_Compiler_Switches := Ada_Compiler_Switches &
           (
@@ -22,8 +20,10 @@ abstract project Ada_Aes_Config is
            ,"-gnatyB" -- Check Boolean operators
            ,"-gnatyb" -- Blanks not allowed at statement end
            ,"-gnatyc" -- Check comments
+           ,"-I/usr/include/openssl"
            ,"-gnaty-d" -- Disable check no DOS line terminators present
            ,"-gnatye" -- Check end/exit labels
+           ,"-gnatX0"
            ,"-gnatyf" -- No form feeds or vertical tabs
            ,"-gnatyh" -- No horizontal tabs
            ,"-gnatyi" -- Check if-then layout

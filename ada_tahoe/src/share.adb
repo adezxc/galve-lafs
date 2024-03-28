@@ -4,6 +4,7 @@ with Ada.Text_IO;
 with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
 with Ada.Streams;           use Ada.Streams;
 with Ada.Strings.Unbounded;
+with Interfaces;
 with System;
 
 package body Share is
@@ -33,6 +34,7 @@ package body Share is
    --  7) Hash of the share
    --  8) URI Extension block that contains more metadata about the file.
    function Read_Share (File : String) return Share_Access is
+      use Interfaces;
       S                   : Stream_Access;
       Share_File          : File_Type;
       Header              : Share_Header;
@@ -76,6 +78,8 @@ package body Share is
             (Positive (URI_Extension_Block.Needed_Shares) - 1)) /
            Positive (URI_Extension_Block.Needed_Shares);
          Block_Size_In_Words : constant Positive := (Block_Size + 3) / 4;
+         Block_Padding       : constant Positive :=
+           Natural (Block_Size - (Block_Size / 4 * 4));
          Data_Size_In_Words  : constant Natural  :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
          Block_Array_Size    : constant Natural  :=
@@ -87,6 +91,7 @@ package body Share is
             3) /
            4;
          Last_Block : Block_Access      := new Block (1 .. Last_Block_Size);
+         Last_Block_Padding  : constant Natural  := 0;
          New_Share           : Share_Access      :=
            new Share (Block_Size_In_Words, Block_Array_Size);
       begin
@@ -95,9 +100,9 @@ package body Share is
          Ada.Text_IO.Put_Line ("Block array size" & Block_Array_Size'Image);
          Ada.Text_IO.Put_Line ("Last block size" & Last_Block_Size'Image);
          for Block of Share_Blocks.Values loop
-            Block_Access'Read (S, Block);
+            Read_Block_Access (S, Block, Padding => Block_Padding);
          end loop;
-         Block_Access'Read (S, Last_Block);
+         Read_Block_Access (S, Last_Block, Padding => Last_Block_Padding);
          Close (Share_File);
          New_Share.Share_Number        :=
            Natural'Value

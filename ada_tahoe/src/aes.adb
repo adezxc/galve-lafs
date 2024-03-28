@@ -40,11 +40,14 @@ package body Aes is
       In_Stream.Open (Ada.Streams.Stream_IO.In_File, Source);
       Out_Stream.Create
         (Mode => Ada.Streams.Stream_IO.Out_File, Name => Destination);
-      Decipher.Produces (Output => Out_Stream'Unchecked_Access, Size => 32);
+      Decipher.Produces
+        (Output => Out_Stream'Unchecked_Access, Size => 131_072);
       Decipher.Set_Key (Secret => Password_Key, Mode => Util.Encoders.AES.CTR);
 
       --  Copy input to output through the cipher.
       Util.Streams.Copy (From => In_Stream, Into => Decipher);
+      Decipher.Flush;
+      Out_Stream.Flush;
    end Decrypt_File;
 
 end Aes;

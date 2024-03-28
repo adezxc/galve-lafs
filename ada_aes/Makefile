@@ -1,11 +1,10 @@
 # Makefile to build Ada project using GPRBuild
 
-GPR_PROJECT_PATH := $(PWD):$(PWD)/config/dependencies/utilada_2.6.0:$(PWD)/config/dependencies/utilada_2.6.0/.alire
+GPR_PROJECT_PATH := $(PWD)
 PROJECT_FILE := ada_aes.gpr
 # Default target
 all:
-	@echo "Building Ada project..."
-	@GPR_PROJECT_PATH=$(GPR_PROJECT_PATH) gprbuild
+	GPR_PROJECT_PATH=$(GPR_PROJECT_PATH) gprbuild -P $(PROJECT_FILE)
 
 # Clean target
 clean:

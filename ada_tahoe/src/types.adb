@@ -1,8 +1,6 @@
 with Ada.Text_IO; use Ada.Text_IO;
 
-package body types is
-   Test_Var : Natural := 0;
-
+package body Types is
    procedure Read_Block_Array
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Block_Array)
@@ -15,11 +13,25 @@ package body types is
 
    procedure Read_Block_Access
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
-      Item   : out Block_Access)
+      Item   : out Block_Access; Padding : Natural)
    is
    begin
-      Block'Read (Stream, Item.all);
+      Read_Block (Stream, Item.all, Padding => Padding);
    end Read_Block_Access;
+
+   procedure Read_Block
+     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : out Block;
+      Padding : Natural)
+   is
+   begin
+      for Index in Item'Range loop
+         if Index = Item'Last then
+            Read_Big_Endian_Word (Stream, Item (Index), Padding);
+         else
+            Read_Big_Endian_Word (Stream, Item (Index));
+         end if;
+      end loop;
+   end Read_Block;
 
    function To_Address (BA : Block_Access) return System.Address is
    begin
@@ -41,9 +53,8 @@ package body types is
    procedure Read_Big_Endian_Word
      (Stream : access Ada.Streams.Root_Stream_Type'Class; Item : out Word'Base)
    is
-      B1, B2, B3, B4 : Byte;
+      B1, B2, B3, B4 : Byte := 0;
    begin
-      Test_Var := Test_Var + 1;
       Byte'Read (Stream, B1);
       Byte'Read (Stream, B2);
       Byte'Read (Stream, B3);
@@ -54,9 +65,26 @@ package body types is
         Shift_Left (Word (B3), 8) or Word (B4);
    end Read_Big_Endian_Word;
 
+   procedure Read_Big_Endian_Word
+     (Stream : access Ada.Streams.Root_Stream_Type'Class; Item : out Word'Base;
+      Padding : Natural)
+   is
+      B : Byte_Array (1 .. 4);
+   begin
+
+      for Index in 1 .. 4 - Padding loop
+         Byte'Read (Stream, B (Index));
+      end loop;
+
+      Item :=
+        Shift_Left (Word (B (1)), 24) or Shift_Left (Word (B (2)), 16) or
+        Shift_Left (Word (B (3)), 8) or Word (B (4));
+   end Read_Big_Endian_Word;
+
    procedure Write_Block
      (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Natural)
    is
+      Empty : Byte := 0;
    begin
       for Word of Item.all loop
          if Word = Item.all (Item.all'Last) then
@@ -108,4 +136,4 @@ package body types is
         Shift_Left (Word_64 (B7), 8) or Word_64 (B8);
 
    end Read_Big_Endian_Word_64;
-end types;
+end Types;

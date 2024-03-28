@@ -93,7 +93,7 @@ package body Decoder is
          F          : Byte_IO.File_Type;
          File_Name  : constant String := "output.dat";
          Padding_N  : Natural;
-         Empty_Byte : Byte            := 0;
+         Empty_Byte : Byte            := 255;
       begin
          if not Last then
             Padding_N :=
@@ -106,15 +106,21 @@ package body Decoder is
                 (Block_Size -
                  Shares (1).URI_Extension_Block.Tail_Codec_Params
                      .Segment_Size /
-                   Unsigned_64 (Needed_Shares));
+                   Unsigned_64 (Needed_Shares) / 4 * 4);
+            Ada.Text_IO.Put_Line ("LAST BLOCK APDDING" & Padding_N'Image);
          end if;
 
          Byte_IO.Open (F, Byte_IO.Append_File, File_Name);
          for I in 1 .. Integer (Needed_Shares - 1) loop
             Write_Block (F, Result_Blocks (I), Padding => Padding_N);
          end loop;
-         Write_Block (F, Result_Blocks (Result_Blocks'Last), Padding => 0);
-         Byte_IO.Flush (F);
+         if not Last then
+            Write_Block
+              (F, Result_Blocks (Result_Blocks'Last), Padding => Padding_N);
+         else
+            Write_Block (F, Result_Blocks (Result_Blocks'Last), Padding => 0);
+         end if;
+
          Byte_IO.Close (F);
       end;
    end Decode_Block;
