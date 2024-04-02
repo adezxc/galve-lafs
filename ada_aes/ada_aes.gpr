@@ -9,7 +9,6 @@ project Ada_Aes is
 
    package Compiler is
       for Default_Switches ("Ada") use Ada_Aes_Config.Ada_Compiler_Switches;
-      for Default_Switches ("C") use ("-I/usr/include/openssl","-g");
    end Compiler;
 
    package Binder is
@@ -17,7 +16,7 @@ project Ada_Aes is
    end Binder;
    
    package Linker is
-      for Linker_Options use ("-lcrypto", "-lssl");
+      for Switches ("Ada") use ("-lcrypto", "-lssl");
    end Linker;
 
    package Install is

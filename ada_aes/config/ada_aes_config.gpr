@@ -16,7 +16,6 @@ abstract project Ada_Aes_Config is
            ,"-gnatyB" -- Check Boolean operators
            ,"-gnatyb" -- Blanks not allowed at statement end
            ,"-gnatyc" -- Check comments
-           ,"-I/usr/include/openssl"
            ,"-gnaty-d" -- Disable check no DOS line terminators present
            ,"-gnatye" -- Check end/exit labels
            ,"-gnatX0"
