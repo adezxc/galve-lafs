@@ -4,3 +4,4 @@ output.dec
 obj/
 bin/
 src/external/openssl/tmp/
+tmp/

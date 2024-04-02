@@ -37,4 +37,15 @@ package EVP is
       Algorithm  : in out Interfaces.C.char_array;
       Properties : in out Interfaces.C.char_array) with
      Import => True, Convention => C, External_Name => "EVP_CIPHER_fetch";
+
+   function EVP_CipherUpdate
+     (Ctx           : access EVP_CIPHER_CTX; Output : access Byte;
+      Output_Length : access Integer; Input : access Byte;
+      Input_Length  : Integer) return Integer with
+     Import => True, Convention => C, External_Name => "EVP_CipherUpdate";
+
+   function EVP_CipherFinal_ex
+     (Ctx           : access EVP_CIPHER_CTX; Output : access Byte;
+      Output_Length : access Integer) return Integer with
+     Import => True, Convention => C, External_Name => "EVP_CipherFinal_ex";
 end EVP;
