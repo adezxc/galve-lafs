@@ -6,6 +6,7 @@ with Interfaces.C;          use Interfaces.C;
 with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
 with Ada.Streams;           use Ada.Streams;
 with Ada.Command_Line;      use Ada.Command_Line;
+with GNAT.OS_Lib;
 
 procedure Ada_Aes is
    ctx       : EVP_CIPHER_CTX_PTR;
@@ -29,10 +30,10 @@ procedure Ada_Aes is
    Output_File_Name : String := Argument (3);
 
    Test       : Byte;
-   Inbuf      : Byte_Array (1 .. BUFSIZE)      := (others => 0);
-   Outbuf     : Byte_Array (1 .. BUFSIZE + 32) := (others => 0);
+   Inbuf      : Byte_Array (1 .. BUFSIZE) := (others => 0);
+   Outbuf : Byte_Array (1 .. BUFSIZE + EVP_MAX_BLOCK_LENGTH) := (others => 0);
    Outbuf_Len : aliased Integer;
-   Inbuf_Len  : aliased Integer                := BUFSIZE;
+   Inbuf_Len  : aliased Integer                                  := BUFSIZE;
 
    Op : Operation;
 begin
@@ -59,10 +60,8 @@ begin
    then
       raise Constraint_Error;
    end if;
-   Text_IO.Put_Line (Size (InputF)'Image);
-   Text_IO.Put_Line (Index (InputF)'Image);
 
-   while (Index (InputF) < Size (InputF)) loop
+   while (Index (InputF) + Positive_Count (BUFSIZE) < Size (InputF)) loop
       Byte_Array'Read (InputS, Inbuf);
       if EVP_CipherUpdate
           (ctx, Outbuf (1)'Access, Outbuf_Len'Access, Inbuf (1)'Access,
@@ -73,9 +72,21 @@ begin
       end if;
       Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
    end loop;
+   Inbuf_Len := Integer (Size (InputF) - Index (InputF) + 1);
+   Byte_Array'Read (InputS, Inbuf (1 .. Inbuf_Len));
+   if EVP_CipherUpdate
+       (ctx, Outbuf (1)'Access, Outbuf_Len'Access, Inbuf (1)'Access,
+        Inbuf_Len) /=
+     1
+   then
+      raise Constraint_Error;
+   end if;
+   Text_IO.Put_Line (Outbuf_Len'Image);
+   Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
    if EVP_CipherFinal_ex (ctx, Outbuf (1)'Access, Outbuf_Len'Access) /= 1 then
       raise Constraint_Error;
    end if;
+   Text_IO.Put_Line (Outbuf_Len'Image);
    Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
 
    EVP_CIPHER_CTX_free (ctx);
@@ -84,13 +95,20 @@ begin
    Close (OutputF);
 exception
    when End_Error =>
+      Text_IO.Put ("AAAA");
+      if EVP_CipherUpdate
+          (ctx, Outbuf (1)'Access, Outbuf_Len'Access, Inbuf (1)'Access,
+           Inbuf_Len) /=
+        1
+      then
+         raise Constraint_Error;
+      end if;
+      Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
       if EVP_CipherFinal_ex (ctx, Outbuf (1)'Access, Outbuf_Len'Access) /= 1
       then
          raise Constraint_Error;
       end if;
       Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
-      Text_IO.Put_Line (Outbuf_Len'Image);
-      Text_IO.Put_Line (Outbuf_Len'Image);
 
       EVP_CIPHER_CTX_free (ctx);
 end Ada_Aes;
