@@ -17,15 +17,11 @@ package Types is
      (Stream : access Ada.Streams.Root_Stream_Type'Class; Item : out Word'Base;
       Padding : Natural);
 
-   type Word_64 is new Interfaces.Unsigned_64;
+   type Word_64 is new Unsigned_64;
 
-   package Word_IO is new Ada.Sequential_IO (Word);
-
-   type Byte is new Interfaces.Unsigned_8;
+   type Byte is new Unsigned_8;
 
    type Byte_Array is array (Natural range <>) of aliased Byte;
-
-   package Byte_IO is new Ada.Sequential_IO (Byte);
 
    type Share_Count is range 1 .. 256;
 
