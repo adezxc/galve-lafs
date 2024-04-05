@@ -4,6 +4,7 @@ with Types;        use Types;
 with fec_h;        use fec_h;
 with Interfaces.C; use Interfaces.C;
 with Ada.Streams.Stream_IO;
+with Ada.Text_IO;
 
 package body Decoder is
    procedure Decode_File (File_URI : URI; Share_Names : Share_Name_Array) is
@@ -17,11 +18,22 @@ package body Decoder is
         fec_new
           (Interfaces.C.unsigned_short (File_URI.Needed_Shares),
            Interfaces.C.unsigned_short (File_URI.Total_Shares));
+
+      Temporary_Share : Share_Access;
    begin
       for Index in Share_Names'Range loop
          Shares (Index) := Read_Share (To_String (Share_Names (Index)));
       end loop;
       Share.Sort (Shares);
+
+      -- We need a second identical loop here to not mess up the primary block calculation
+      for Index in Shares'Range loop
+         if Shares (Index).Share_Number < Integer (File_URI.Needed_Shares) then
+            Temporary_Share := Shares (Shares (Index).Share_Number + 1);
+            Shares (Shares (Index).Share_Number + 1) := Shares (Index);
+            Shares (Index)                           := Temporary_Share;
+         end if;
+      end loop;
 
       for Index in Shares'Range loop
          Share_Numbers (Index) := Shares (Index).Share_Number;
@@ -56,6 +68,8 @@ package body Decoder is
         Block_Address_Array (1 .. Integer (Needed_Shares));
       Result_Block_Addresses    :
         Block_Address_Array (1 .. Integer (Needed_Shares));
+      Output_Blocks : Block_Access_Array (1 .. Integer (Needed_Shares));
+      Temporary_Block           : Block_Access;
    begin
       for J in 1 .. Integer (Needed_Shares) loop
          Decoding_Blocks (J) := Next_Block (Shares (J));
@@ -69,20 +83,32 @@ package body Decoder is
             Interfaces.Unsigned_64 (Needed_Shares));
       else
          Block_Size :=
-           Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size /
+           (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size +
+            Interfaces.Unsigned_64 (Needed_Shares)) /
            Interfaces.Unsigned_64 (Needed_Shares);
       end if;
+      Ada.Text_IO.Put_Line (Block_Size'Image);
+      Ada.Text_IO.Put_Line (Share_Numbers'Image);
       fec_decode
         (Decoder, Decoding_Blocks_Addresses'Address,
          Result_Block_Addresses'Address,
          Share_Numbers (Share_Numbers'First)'Access, Block_Size);
       if Primary_Blocks_N = Natural (Needed_Shares) then
-         Result_Blocks := Decoding_Blocks;
+         Output_Blocks := Decoding_Blocks;
       else
-         for Index in 1 .. Primary_Blocks_N loop
-            Result_Blocks (Index + 1) := Result_Blocks (Index);
-            Result_Blocks (Index)     := Decoding_Blocks (Index);
-         end loop;
+         declare
+            Current_Result_Block : Positive := 1;
+         begin
+            for Index in Share_Numbers'Range loop
+               if Share_Numbers (Index) = Index - 1 then
+                  Output_Blocks (Index) := Decoding_Blocks (Index);
+               else
+                  Output_Blocks (Index) :=
+                    Result_Blocks (Current_Result_Block);
+                  Current_Result_Block  := Current_Result_Block + 1;
+               end if;
+            end loop;
+         end;
       end if;
 
       declare
@@ -98,19 +124,17 @@ package body Decoder is
                 (Word_64 (Block_Size) -
                  Shares (1).Data_Header.Block_Size / 4 * 4);
          else
-            Padding_N :=
-              Natural
-                (Block_Size -
-                 Shares (1).URI_Extension_Block.Tail_Codec_Params
-                     .Segment_Size /
-                   Unsigned_64 (Needed_Shares) / 4 * 4);
+            --  We calculate the padding by getting the leftover
+            Padding_N := Natural (Block_Size / 4 - (Block_Size / 16 * 4));
          end if;
 
          Open (F, Append_File, File_Name);
          S := Stream (F);
-         for I in 1 .. Integer (Needed_Shares) loop
-            Write_Block (S, Result_Blocks (I), Padding => Padding_N);
+         for I in 1 .. Integer (Needed_Shares) - 1 loop
+            Write_Block (S, Output_Blocks (I), Padding => Padding_N);
          end loop;
+         Write_Block
+           (S, Output_Blocks (Output_Blocks'Last), Padding => Padding_N);
 
          Close (F);
       end;

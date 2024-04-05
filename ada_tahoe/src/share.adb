@@ -88,13 +88,16 @@ package body Share is
            4;
          Last_Block          : constant Block_Access :=
            new Block (1 .. Last_Block_Size);
-         Last_Block_Padding  : constant Natural      := 0;
+         Last_Block_Padding  : constant Natural      :=
+           Last_Block_Size - (Last_Block_Size / 4 * 4);
          New_Share           : constant Share_Access :=
            new Share (Block_Size_In_Words, Block_Array_Size);
       begin
          for Block of Share_Blocks.Values loop
             Read_Block_Access (S, Block, Padding => Block_Padding);
          end loop;
+         Ada.Text_IO.Put_Line (Last_Block_Size'Image);
+         Ada.Text_IO.Put_Line (Last_Block_Padding'Image);
          Read_Block_Access (S, Last_Block, Padding => Last_Block_Padding);
          Close (Share_File);
          New_Share.Share_Number        :=

@@ -1,8 +1,35 @@
 pragma Ada_2022;
 
-with Ada.Text_IO;
 with Ada.Streams.Stream_IO;
+with Ada.Streams;
+with Text_IO;
 package body Types is
+
+   -- Stream_IO optimization found on https://groups.google.com/g/comp.lang.ada/c/1CJv_eIpCww
+   procedure Read
+     (S :     access Ada.Streams.Root_Stream_Type'Class; B : out Byte_Array;
+      Last_Read : out Natural)
+   is
+      use Ada.Streams;
+      Last      : Stream_Element_Offset := Stream_Element_Offset (B'Last);
+      SE_Buffer : Stream_Element_Array (1 .. B'Length);
+      for SE_Buffer'Address use B'Address;
+   begin
+      Read (S.all, SE_Buffer, Last);
+      Last_Read := Natural (Last);
+      Text_IO.Put_Line (Last_Read'Image);
+
+   end Read;
+
+   procedure Write
+     (S : access Ada.Streams.Root_Stream_Type'Class; B : Byte_Array)
+   is
+      use Ada.Streams;
+      SE_Buffer : Stream_Element_Array (1 .. B'Length);
+      for SE_Buffer'Address use B'Address;
+   begin
+      Write (S.all, SE_Buffer);
+   end Write;
 
    procedure Read_Block_Access
      (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : Block_Access;
@@ -65,7 +92,6 @@ package body Types is
       Last : Stream_Element_Offset :=
         B'Length - Stream_Element_Offset (Padding);
    begin
-
       Read (Stream.all, B (1 .. Last), Last);
       Item :=
         Shift_Left (Word (B (1)), 24) or Shift_Left (Word (B (2)), 16) or
@@ -95,7 +121,7 @@ package body Types is
       Last : constant Stream_Element_Offset :=
         4 - Stream_Element_Offset (Padding);
    begin
-      -- Extract individual bytes from the word
+      --  Extract individual bytes from the word
       B (4) := Stream_Element (Byte (Shift_Right (Item, 0) and 16#FF#));
       B (3) := Stream_Element (Byte (Shift_Right (Item, 8) and 16#FF#));
       B (2) := Stream_Element (Byte (Shift_Right (Item, 16) and 16#FF#));

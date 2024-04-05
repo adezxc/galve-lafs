@@ -17,6 +17,10 @@ project Ada_Tahoe is
       for Switches ("Ada") use ("-Es"); --  Symbolic traceback
    end Binder;
 
+   package Linker is 
+      for Switches ("Ada") use ("-lcrypto");
+   end Linker;
+
    package Install is
       for Artifacts (".") use ("share");
    end Install;

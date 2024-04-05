@@ -1,7 +1,6 @@
 with Interfaces; use Interfaces;
 with System;
 with Ada.Streams;
-with Ada.Sequential_IO;
 
 package Types is
 
@@ -40,7 +39,7 @@ package Types is
    type Block_Address_Array is array (Natural range <>) of System.Address;
 
    function To_Address (BA : Block_Access) return System.Address;
-   -- Function to convert all elements of Block_Access_Array to System.Address
+   --  Function to convert all elements of Block_Access_Array to System.Address
    function Convert_To_Address_Array
      (BA_Array : Block_Access_Array) return Block_Address_Array;
 
@@ -59,6 +58,11 @@ package Types is
    procedure Read_Big_Endian_Word_64
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Word_64'Base);
+   procedure Read
+     (S :     access Ada.Streams.Root_Stream_Type'Class; B : out Byte_Array;
+      Last_Read : out Natural);
+   procedure Write
+     (S : access Ada.Streams.Root_Stream_Type'Class; B : Byte_Array);
 
    for Word_64'Read use Read_Big_Endian_Word_64;
 end Types;

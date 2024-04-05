@@ -1,6 +1,5 @@
 pragma Ada_2022;
 with Types; use Types;
-with System;
 with Interfaces.C;
 
 package EVP is
@@ -14,6 +13,8 @@ package EVP is
    type OSSL_LIB_CTX is null record;
    type OSSL_LIB_CTX_PTR is access all OSSL_LIB_CTX;
 
+   EVP_MAX_BLOCK_LENGTH : constant Integer := 32;
+
    function EVP_CIPHER_CTX_new return EVP_CIPHER_CTX_PTR;
    pragma Import (C, EVP_CIPHER_CTX_new, "EVP_CIPHER_CTX_new");
 
@@ -25,8 +26,9 @@ package EVP is
 
    function EVP_CipherInit
      (Ctx       : access EVP_CIPHER_CTX; Cipher : access constant EVP_CIPHER;
-      CipherKey : access char_array; CipherIV : access char_array;
-      Op        : Operation) return Integer with
+      CipherKey : access Interfaces.C.char_array;
+      CipherIV  : access Interfaces.C.char_array; Op : Operation)
+      return Integer with
      Import => True, Convention => C, External_Name => "EVP_CipherInit";
 
    procedure EVP_CipherFetch

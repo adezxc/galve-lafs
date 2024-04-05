@@ -1,11 +1,12 @@
 pragma Ada_2022;
-with Ada.Text_IO;           use Ada.Text_IO;
+with Ada.Text_IO;
 with Ada.Command_Line;      use Ada.Command_Line;
 with Tahoe;                 use Tahoe;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Decoder;
 with Aes;
 with Uri_Read;
+with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
 
 procedure Ada_Tahoe is
    type Argument_Index_Array is array (Natural range <>) of Integer;
@@ -21,11 +22,21 @@ procedure Ada_Tahoe is
       return Share_Names;
    end To_Share_Name_Array;
 
-   URI : Uri_Read.URI;
+   URI           : Uri_Read.URI;
+   IV            : Aes.IV := (others => Character'Val (0));
+   Decryptor     : Aes.Decryptor;
+   Input_File    : Ada.Streams.Stream_IO.File_Type;
+   Output_File   : Ada.Streams.Stream_IO.File_Type;
+   Input_Stream  : Stream_Access;
+   Output_Stream : Stream_Access;
 begin
+   Create (Input_File, Append_File, "output.dat");
+   Create (Output_File, Out_File, "decrypt.dat");
+   Close (Input_File);
+   Close (Output_File);
    if Argument_Count = 2 and then Argument (1) = "index" then
       URI := Uri_Read.Process_URI (Argument (2));
-      Put_Line (Storage_Index_From_File_Key (URI.Key));
+      Ada.Text_IO.Put_Line (Storage_Index_From_File_Key (URI.Key));
    elsif Argument_Count = 4 then
       URI := Uri_Read.Process_URI (Argument (1));
       declare
@@ -36,13 +47,21 @@ begin
       begin
          Decoder.Decode_File (URI, Share_Names);
       end;
+      Open (Input_File, In_File, "output.dat");
+      Open (Output_File, Out_File, "decrypt.dat");
+      Input_Stream  := Stream (Input_File);
+      Output_Stream := Stream (Output_File);
 
-      Aes.Decrypt_File ("output.dat", "decrypt.dat", URI.Key);
+      Decryptor :=
+        Aes.New_Decryptor
+          (CipherKey => URI.Key, CipherIV => IV, Buffer_Size => 4_096);
+      Aes.Decrypt (Decryptor, Input_Stream, Output_Stream);
+
    else
-      Put_Line
+      Ada.Text_IO.Put_Line
         (Command_Name & ": " & "Example usage for decoding the file" &
          "./ada_tahoe aes-key share1 share2 share3");
-      Put_Line
+      Ada.Text_IO.Put_Line
         (Command_Name & ": " &
          "Example usage for getting the storage index from URI" &
          "./ada_tahoe index URI");

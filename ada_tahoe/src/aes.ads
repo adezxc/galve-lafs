@@ -7,7 +7,7 @@ package Aes is
       Buffer_Size : Positive;
    end record;
 
-   subtype Key is String (1 .. 16);
+   subtype Key is String (1 .. 26);
    subtype IV is String (1 .. 16);
 
    function New_Decryptor
