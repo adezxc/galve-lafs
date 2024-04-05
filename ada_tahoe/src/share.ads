@@ -43,7 +43,7 @@ package Share is
       Item   : out Share_Data_Header);
    function Read_Share (File : String) return Share_Access;
    procedure Display_Share_Headers (My_Share : Share);
-   function Next_Block (My_Share : in out Share_Access) return Block_Access;
+   function Next_Block (My_Share : Share_Access) return Block_Access;
 
    for Share_Data_Header'Read use Read_Share_Data_Header;
 end Share;

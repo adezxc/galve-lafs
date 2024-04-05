@@ -1,19 +1,12 @@
-with Ada.Text_IO; use Ada.Text_IO;
+pragma Ada_2022;
 
+with Ada.Text_IO;
+with Ada.Streams.Stream_IO;
 package body Types is
-   procedure Read_Block_Array
-     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
-      Item   : out Block_Array)
-   is
-   begin
-      for I in 1 .. Item.Values'Length loop
-         Block'Read (Stream, Item.Values (I).all);
-      end loop;
-   end Read_Block_Array;
 
    procedure Read_Block_Access
-     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
-      Item   : out Block_Access; Padding : Natural)
+     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : Block_Access;
+      Padding : Natural)
    is
    begin
       Read_Block (Stream, Item.all, Padding => Padding);
@@ -53,87 +46,79 @@ package body Types is
    procedure Read_Big_Endian_Word
      (Stream : access Ada.Streams.Root_Stream_Type'Class; Item : out Word'Base)
    is
-      B1, B2, B3, B4 : Byte := 0;
+      use Ada.Streams;
+      B    : Stream_Element_Array (1 .. 4);
+      Last : Stream_Element_Offset := B'Length;
    begin
-      Byte'Read (Stream, B1);
-      Byte'Read (Stream, B2);
-      Byte'Read (Stream, B3);
-      Byte'Read (Stream, B4);
-
+      Read (Stream.all, B, Last);
       Item :=
-        Shift_Left (Word (B1), 24) or Shift_Left (Word (B2), 16) or
-        Shift_Left (Word (B3), 8) or Word (B4);
+        Shift_Left (Word (B (1)), 24) or Shift_Left (Word (B (2)), 16) or
+        Shift_Left (Word (B (3)), 8) or Word (B (4));
    end Read_Big_Endian_Word;
 
    procedure Read_Big_Endian_Word
      (Stream : access Ada.Streams.Root_Stream_Type'Class; Item : out Word'Base;
       Padding : Natural)
    is
-      B : Byte_Array (1 .. 4);
+      use Ada.Streams;
+      B    : Stream_Element_Array (1 .. 4);
+      Last : Stream_Element_Offset :=
+        B'Length - Stream_Element_Offset (Padding);
    begin
 
-      for Index in 1 .. 4 - Padding loop
-         Byte'Read (Stream, B (Index));
-      end loop;
-
+      Read (Stream.all, B (1 .. Last), Last);
       Item :=
         Shift_Left (Word (B (1)), 24) or Shift_Left (Word (B (2)), 16) or
         Shift_Left (Word (B (3)), 8) or Word (B (4));
    end Read_Big_Endian_Word;
 
    procedure Write_Block
-     (F : Byte_IO.File_Type; Item : in out Block_Access; Padding : Natural)
+     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : Block_Access;
+      Padding : Natural)
    is
-      Empty : Byte := 0;
    begin
       for Word of Item.all loop
          if Word = Item.all (Item.all'Last) then
-            Write_Little_Endian_Word (F, Word, Padding => Padding);
+            Write_Little_Endian_Word (Stream, Word, Padding => Padding);
          else
-            Write_Little_Endian_Word (F, Word, Padding => 0);
+            Write_Little_Endian_Word (Stream, Word);
          end if;
       end loop;
    end Write_Block;
 
    procedure Write_Little_Endian_Word
-     (F : Byte_IO.File_Type; Item : in out Word'Base; Padding : Natural)
+     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : Word;
+      Padding : Natural := 0)
    is
-      type Byte_Array is array (1 .. 4) of Byte;
-
-      Bytes : Byte_Array;
+      use Ada.Streams;
+      B    : Stream_Element_Array (1 .. 4);
+      Last : constant Stream_Element_Offset :=
+        4 - Stream_Element_Offset (Padding);
    begin
       -- Extract individual bytes from the word
-      Bytes (4) := Byte (Shift_Right (Item, 0) and 16#FF#);
-      Bytes (3) := Byte (Shift_Right (Item, 8) and 16#FF#);
-      Bytes (2) := Byte (Shift_Right (Item, 16) and 16#FF#);
-      Bytes (1) := Byte (Shift_Right (Item, 24) and 16#FF#);
+      B (4) := Stream_Element (Byte (Shift_Right (Item, 0) and 16#FF#));
+      B (3) := Stream_Element (Byte (Shift_Right (Item, 8) and 16#FF#));
+      B (2) := Stream_Element (Byte (Shift_Right (Item, 16) and 16#FF#));
+      B (1) := Stream_Element (Byte (Shift_Right (Item, 24) and 16#FF#));
 
-      for I in 1 .. 4 - Padding loop
-         Byte_IO.Write (F, Bytes (I));
-      end loop;
-
+      Write (Stream.all, B (1 .. Last));
    end Write_Little_Endian_Word;
 
    procedure Read_Big_Endian_Word_64
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;
       Item   : out Word_64'Base)
    is
-      B1, B2, B3, B4, B5, B6, B7, B8 : Byte;
+      use Ada.Streams;
+      B    : Stream_Element_Array (1 .. 8);
+      Last : Stream_Element_Offset := B'Length;
    begin
-      Byte'Read (Stream, B1);
-      Byte'Read (Stream, B2);
-      Byte'Read (Stream, B3);
-      Byte'Read (Stream, B4);
-      Byte'Read (Stream, B5);
-      Byte'Read (Stream, B6);
-      Byte'Read (Stream, B7);
-      Byte'Read (Stream, B8);
+      Read (Stream.all, B, Last);
 
       Item :=
-        Shift_Left (Word_64 (B1), 56) or Shift_Left (Word_64 (B2), 48) or
-        Shift_Left (Word_64 (B3), 40) or Shift_Left (Word_64 (B4), 32) or
-        Shift_Left (Word_64 (B5), 24) or Shift_Left (Word_64 (B6), 16) or
-        Shift_Left (Word_64 (B7), 8) or Word_64 (B8);
+        Shift_Left (Word_64 (B (1)), 56) or Shift_Left (Word_64 (B (2)), 48) or
+        Shift_Left (Word_64 (B (3)), 40) or Shift_Left (Word_64 (B (4)), 32) or
+        Shift_Left (Word_64 (B (5)), 24) or Shift_Left (Word_64 (B (6)), 16) or
+        Shift_Left (Word_64 (B (7)), 8) or Word_64 (B (8));
 
    end Read_Big_Endian_Word_64;
 end Types;

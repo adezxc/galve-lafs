@@ -4,19 +4,16 @@ with Ada.Text_IO;
 with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
 with Ada.Streams;           use Ada.Streams;
 with Ada.Strings.Unbounded;
-with Interfaces;
-with System;
 
 package body Share is
 
-   function Next_Block (My_Share : in out Share_Access) return Block_Access is
+   function Next_Block (My_Share : Share_Access) return Block_Access is
    begin
       if My_Share.all.Blocks.Values'Length + 1 > My_Share.all.Current_Block
       then
          My_Share.all.Current_Block := My_Share.all.Current_Block + 1;
          return My_Share.all.Blocks.Values (My_Share.all.Current_Block - 1);
       else
-         Ada.Text_IO.Put_Line ("Last Block was accessed!");
          return My_Share.all.Last_Block;
       end if;
    end Next_Block;
@@ -34,7 +31,6 @@ package body Share is
    --  7) Hash of the share
    --  8) URI Extension block that contains more metadata about the file.
    function Read_Share (File : String) return Share_Access is
-      use Interfaces;
       S                   : Stream_Access;
       Share_File          : File_Type;
       Header              : Share_Header;
@@ -64,7 +60,7 @@ package body Share is
       Share_Header'Read (S, Header);
       Share_Data_Header'Read (S, Data_Header);
       declare
-         Current_Index : Positive_Count := Index (Share_File);
+         Current_Index : constant Positive_Count := Index (Share_File);
       begin
          Set_Index (Share_File, Count (Data_Header.URI_Extension_Offset + 4));
          Read_URI_Extension_Block (S, URI_Extension_Block);
@@ -73,32 +69,29 @@ package body Share is
       end;
 
       declare
-         Block_Size          : constant Positive :=
+         Block_Size          : constant Positive     :=
            (Positive (URI_Extension_Block.Segment_Size) +
             (Positive (URI_Extension_Block.Needed_Shares) - 1)) /
            Positive (URI_Extension_Block.Needed_Shares);
-         Block_Size_In_Words : constant Positive := (Block_Size + 3) / 4;
-         Block_Padding       : constant Positive :=
+         Block_Size_In_Words : constant Positive     := (Block_Size + 3) / 4;
+         Block_Padding       : constant Positive     :=
            Natural (Block_Size - (Block_Size / 4 * 4));
-         Data_Size_In_Words  : constant Natural  :=
+         Data_Size_In_Words  : constant Natural      :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
-         Block_Array_Size    : constant Natural  :=
+         Block_Array_Size    : constant Natural      :=
            ((Data_Size_In_Words - 1) / Block_Size_In_Words);
          Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
-         Last_Block_Size     : constant Natural  :=
+         Last_Block_Size     : constant Natural      :=
            ((Integer (Data_Header.Data_Size) -
              (Block_Array_Size * Block_Size)) +
             3) /
            4;
-         Last_Block : Block_Access      := new Block (1 .. Last_Block_Size);
-         Last_Block_Padding  : constant Natural  := 0;
-         New_Share           : Share_Access      :=
+         Last_Block          : constant Block_Access :=
+           new Block (1 .. Last_Block_Size);
+         Last_Block_Padding  : constant Natural      := 0;
+         New_Share           : constant Share_Access :=
            new Share (Block_Size_In_Words, Block_Array_Size);
       begin
-         Ada.Text_IO.Put_Line ("data size" & Data_Header.Data_Size'Image);
-         Ada.Text_IO.Put_Line ("Block size" & Block_Size'Image);
-         Ada.Text_IO.Put_Line ("Block array size" & Block_Array_Size'Image);
-         Ada.Text_IO.Put_Line ("Last block size" & Last_Block_Size'Image);
          for Block of Share_Blocks.Values loop
             Read_Block_Access (S, Block, Padding => Block_Padding);
          end loop;

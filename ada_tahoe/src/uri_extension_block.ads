@@ -36,7 +36,7 @@ package URI_Extension_Block is
    end record;
 
    procedure URI_Extension_Block_To_String
-     (URI_Block : in Share_URI_Extension_Block);
+     (URI_Block : Share_URI_Extension_Block);
    procedure Read_URI_Extension_Block
      (Stream    :     access Ada.Streams.Root_Stream_Type'Class;
       URI_Block : out Share_URI_Extension_Block);

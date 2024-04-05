@@ -2,8 +2,8 @@ pragma Ada_2022;
 with Share;        use Share;
 with Types;        use Types;
 with fec_h;        use fec_h;
-with Ada.Text_IO;  use Ada.Text_IO;
 with Interfaces.C; use Interfaces.C;
+with Ada.Streams.Stream_IO;
 
 package body Decoder is
    procedure Decode_File (File_URI : URI; Share_Names : Share_Name_Array) is
@@ -22,9 +22,6 @@ package body Decoder is
          Shares (Index) := Read_Share (To_String (Share_Names (Index)));
       end loop;
       Share.Sort (Shares);
-      Put_Line (Shares (1).Header'Image);
-      Put_Line (Shares (1).URI_Extension_Block'Image);
-      Put_Line (Shares (1).Data_Header'Image);
 
       for Index in Shares'Range loop
          Share_Numbers (Index) := Shares (Index).Share_Number;
@@ -89,11 +86,11 @@ package body Decoder is
       end if;
 
       declare
-         use Byte_IO;
-         F          : Byte_IO.File_Type;
-         File_Name  : constant String := "output.dat";
-         Padding_N  : Natural;
-         Empty_Byte : Byte            := 255;
+         use Ada.Streams.Stream_IO;
+         F         : File_Type;
+         S         : Stream_Access;
+         File_Name : constant String := "output.dat";
+         Padding_N : Natural;
       begin
          if not Last then
             Padding_N :=
@@ -107,21 +104,15 @@ package body Decoder is
                  Shares (1).URI_Extension_Block.Tail_Codec_Params
                      .Segment_Size /
                    Unsigned_64 (Needed_Shares) / 4 * 4);
-            Ada.Text_IO.Put_Line ("LAST BLOCK APDDING" & Padding_N'Image);
          end if;
 
-         Byte_IO.Open (F, Byte_IO.Append_File, File_Name);
-         for I in 1 .. Integer (Needed_Shares - 1) loop
-            Write_Block (F, Result_Blocks (I), Padding => Padding_N);
+         Open (F, Append_File, File_Name);
+         S := Stream (F);
+         for I in 1 .. Integer (Needed_Shares) loop
+            Write_Block (S, Result_Blocks (I), Padding => Padding_N);
          end loop;
-         if not Last then
-            Write_Block
-              (F, Result_Blocks (Result_Blocks'Last), Padding => Padding_N);
-         else
-            Write_Block (F, Result_Blocks (Result_Blocks'Last), Padding => 0);
-         end if;
 
-         Byte_IO.Close (F);
+         Close (F);
       end;
    end Decode_Block;
 end Decoder;

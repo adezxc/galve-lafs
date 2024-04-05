@@ -54,7 +54,7 @@ package body URI_Extension_Block is
    end Read_URI_Extension_Block;
 
    procedure URI_Extension_Block_To_String
-     (URI_Block : in Share_URI_Extension_Block)
+     (URI_Block : Share_URI_Extension_Block)
    is
    begin
       Put_Line ("Codec Name" & URI_Block.Codec_Name);
@@ -67,7 +67,7 @@ package body URI_Extension_Block is
    is
    begin
       Read_Junk (Stream);
-      -- Read the needed value
+      --  Read the needed value
       String'Read (Stream, Codec_Name);
    end Read_Codec_Name;
 
