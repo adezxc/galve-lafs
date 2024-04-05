@@ -8,7 +8,8 @@ project Ada_Aes is
    for Main use ("ada_aes.adb");
 
    package Compiler is
-      for Default_Switches ("Ada") use Ada_Aes_Config.Ada_Compiler_Switches;
+      for Default_Switches ("Ada") use Ada_Aes_Config.Ada_Compiler_Switches & ("-static-pie");
+      for Switches ("C") use ("-pg", "-O3", "-nostdlib");
    end Compiler;
 
    package Binder is
@@ -16,7 +17,7 @@ project Ada_Aes is
    end Binder;
    
    package Linker is
-      for Switches ("Ada") use ("-lcrypto", "-lssl");
+      for Switches ("Ada") use ("-lcrypto", "-lssl", "-pg");
    end Linker;
 
    package Install is

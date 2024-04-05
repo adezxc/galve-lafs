@@ -3,10 +3,11 @@ abstract project Ada_Aes_Config is
    Ada_Compiler_Switches := External_As_List ("ADAFLAGS", " ");
    Ada_Compiler_Switches := Ada_Compiler_Switches &
           (
-            "-Og" -- Optimize for debug
+            "-O0" -- Optimize for debug
            ,"-ffunction-sections" -- Separate ELF section for each function
            ,"-fdata-sections" -- Separate ELF section for each variable
            ,"-g" -- Generate debug info
+           ,"-pg" -- Generate debug info
            ,"-gnatwa" -- Enable all warnings
            ,"-gnatw.X" -- Disable warnings for No_Exception_Propagation
            ,"-gnatVa" -- All validity checks

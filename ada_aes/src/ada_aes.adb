@@ -1,3 +1,4 @@
+pragma Ada_2022;
 with EVP;                   use EVP;
 with Types;                 use Types;
 with Text_IO;
@@ -36,6 +37,26 @@ procedure Ada_Aes is
    Inbuf_Len  : aliased Integer                                  := BUFSIZE;
 
    Op : Operation;
+
+   -- Stream_IO optimization found on https://groups.google.com/g/comp.lang.ada/c/1CJv_eIpCww
+   procedure Read (B : out Byte_Array) is
+      use Ada.Streams;
+      Last      : Stream_Element_Offset := Stream_Element_Offset (B'Last);
+      SE_Buffer : Stream_Element_Array (1 .. B'Length);
+      for SE_Buffer'Address use B'Address;
+   begin
+      Read (Stream (InputF).all, SE_Buffer, Last);
+   end Read;
+
+   procedure Write (B : in Byte_Array) is
+      First     : constant Stream_Element_Offset :=
+        Stream_Element_Offset (B'First);
+      Last      : Stream_Element_Offset := Stream_Element_Offset (B'Last);
+      SE_Buffer : Stream_Element_Array (1 .. B'Length);
+      for SE_Buffer'Address use B'Address;
+   begin
+      Write (Stream (OutputF).all, SE_Buffer);
+   end Write;
 begin
    if Mode = "encrypt" then
       Op := Encrypt;
@@ -62,7 +83,8 @@ begin
    end if;
 
    while (Index (InputF) + Positive_Count (BUFSIZE) < Size (InputF)) loop
-      Byte_Array'Read (InputS, Inbuf);
+      Read (Inbuf);
+      -- Byte_Array'Read (InputS, Inbuf);
       if EVP_CipherUpdate
           (ctx, Outbuf (1)'Access, Outbuf_Len'Access, Inbuf (1)'Access,
            Inbuf_Len) /=
@@ -70,10 +92,12 @@ begin
       then
          raise Constraint_Error;
       end if;
-      Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
+      Write (Outbuf (1 .. Outbuf_Len));
+      -- Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
    end loop;
    Inbuf_Len := Integer (Size (InputF) - Index (InputF) + 1);
-   Byte_Array'Read (InputS, Inbuf (1 .. Inbuf_Len));
+   Read (Inbuf);
+   -- Byte_Array'Read (InputS, Inbuf);
    if EVP_CipherUpdate
        (ctx, Outbuf (1)'Access, Outbuf_Len'Access, Inbuf (1)'Access,
         Inbuf_Len) /=
@@ -82,12 +106,14 @@ begin
       raise Constraint_Error;
    end if;
    Text_IO.Put_Line (Outbuf_Len'Image);
-   Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
+   Write (Outbuf (1 .. Outbuf_Len));
+   -- Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
    if EVP_CipherFinal_ex (ctx, Outbuf (1)'Access, Outbuf_Len'Access) /= 1 then
       raise Constraint_Error;
    end if;
    Text_IO.Put_Line (Outbuf_Len'Image);
-   Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
+   Write (Outbuf (1 .. Outbuf_Len));
+   -- Byte_Array'Write (OutputS, Outbuf (1 .. Outbuf_Len));
 
    EVP_CIPHER_CTX_free (ctx);
 
@@ -95,7 +121,6 @@ begin
    Close (OutputF);
 exception
    when End_Error =>
-      Text_IO.Put ("AAAA");
       if EVP_CipherUpdate
           (ctx, Outbuf (1)'Access, Outbuf_Len'Access, Inbuf (1)'Access,
            Inbuf_Len) /=
