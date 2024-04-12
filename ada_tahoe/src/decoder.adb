@@ -3,21 +3,33 @@ with Share;        use Share;
 with Types;        use Types;
 with fec_h;        use fec_h;
 with Interfaces.C; use Interfaces.C;
-with Ada.Streams.Stream_IO;
 with Ada.Text_IO;
+with Memory_Streams;
 
 package body Decoder is
-   procedure Decode_File (File_URI : URI; Share_Names : Share_Name_Array) is
+   function New_File_Decoder (URI : Uri_Read.URI) return File_Decoder is
+      IV : constant Aes.IV := (others => Character'Val (0));
+      D  : File_Decoder;
+   begin
+      D.FEC_Decoder :=
+        fec_new
+          (Interfaces.C.unsigned_short (URI.Needed_Shares),
+           Interfaces.C.unsigned_short (URI.Total_Shares));
+      D.Decryptor   :=
+        Aes.New_Decryptor
+          (CipherKey => URI.Key, CipherIV => IV, Buffer_Size => 32_768);
+      return D;
+   end New_File_Decoder;
+
+   procedure Decode_File
+     (Decoder : File_Decoder; File_URI : URI; Share_Names : Share_Name_Array;
+      Output_Stream : access Ada.Streams.Root_Stream_Type'Class)
+   is
       use Interfaces;
       Shares           : Share_Access_Array (1 .. Share_Names'Length);
       Primary_Blocks_N : Natural := 0;
 
       Share_Numbers : Share_Number_Array (1 .. Share_Names'Last);
-
-      Decoder : constant access fec_t :=
-        fec_new
-          (Interfaces.C.unsigned_short (File_URI.Needed_Shares),
-           Interfaces.C.unsigned_short (File_URI.Total_Shares));
 
       Temporary_Share : Share_Access;
    begin
@@ -26,7 +38,17 @@ package body Decoder is
       end loop;
       Share.Sort (Shares);
 
-      -- We need a second identical loop here to not mess up the primary block calculation
+      --  The fec algorithm produces primary blocks which have the pieces of
+      --  original data and secondary blocks which are encoded
+      --  E.g with 10 shares total,
+      --  the primary shares are numbered from 0 to 2, and the rest are
+      --  secondary. The decoder expects for the primary blocks to be in the
+      --  right place in the array. E.g with 3-out-of-10 needed shares,
+      --  we provide [0,2,8], algorithm only needs to produce one share
+      --  because 2 out of 3 primary blocks have been provided and we
+      --  need to pass the shares in the order of [0,8,2] as 0th share
+      --  is in the 0th position, 2nd in the 2nd, while the
+      --  secondary shares can be passed in any order.
       for Index in Shares'Range loop
          if Shares (Index).Share_Number < Integer (File_URI.Needed_Shares) then
             Temporary_Share := Shares (Shares (Index).Share_Number + 1);
@@ -43,22 +65,25 @@ package body Decoder is
       end loop;
 
       for I in 1 .. Shares (1).URI_Extension_Block.Segment_Count - 1 loop
-         Decode_Block
+         Decode_Segment
            (Decoder          => Decoder, Shares => Shares,
             Share_Numbers    => Share_Numbers,
             Primary_Blocks_N => Primary_Blocks_N, Last => False,
-            Needed_Shares    => Shares (1).URI_Extension_Block.Needed_Shares);
+            Needed_Shares    => Shares (1).URI_Extension_Block.Needed_Shares,
+            Output_Stream    => Output_Stream);
       end loop;
-      Decode_Block
+      Decode_Segment
         (Decoder => Decoder, Shares => Shares, Share_Numbers => Share_Numbers,
          Primary_Blocks_N => Primary_Blocks_N, Last => True,
-         Needed_Shares    => Shares (1).URI_Extension_Block.Needed_Shares);
+         Needed_Shares    => Shares (1).URI_Extension_Block.Needed_Shares,
+         Output_Stream    => Output_Stream);
    end Decode_File;
 
-   procedure Decode_Block
-     (Decoder       :        access fec_t; Shares : in out Share_Access_Array;
+   procedure Decode_Segment
+     (Decoder       :        File_Decoder; Shares : in out Share_Access_Array;
       Share_Numbers : in out Share_Number_Array; Primary_Blocks_N : Natural;
-      Last          :        Boolean; Needed_Shares : Share_Count)
+      Last          :        Boolean; Needed_Shares : Share_Count;
+      Output_Stream :        access Ada.Streams.Root_Stream_Type'Class)
    is
       use Interfaces;
       Block_Size                : Unsigned_64;
@@ -69,7 +94,11 @@ package body Decoder is
       Result_Block_Addresses    :
         Block_Address_Array (1 .. Integer (Needed_Shares));
       Output_Blocks : Block_Access_Array (1 .. Integer (Needed_Shares));
-      Temporary_Block           : Block_Access;
+      Padding_N                 : Natural;
+      Memory_Buffer             : access Memory_Streams.Stream_Type :=
+        new Memory_Streams.Stream_Type
+          (Ada.Streams.Stream_Element_Count
+             (Shares (1).URI_Extension_Block.Codec_Params.Segment_Size));
    begin
       for J in 1 .. Integer (Needed_Shares) loop
          Decoding_Blocks (J) := Next_Block (Shares (J));
@@ -77,24 +106,33 @@ package body Decoder is
       end loop;
       Decoding_Blocks_Addresses := Convert_To_Address_Array (Decoding_Blocks);
       Result_Block_Addresses    := Convert_To_Address_Array (Result_Blocks);
+
       if not Last then
          Block_Size :=
            (Shares (1).URI_Extension_Block.Codec_Params.Segment_Size /
             Interfaces.Unsigned_64 (Needed_Shares));
       else
          Block_Size :=
-           (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size +
-            Interfaces.Unsigned_64 (Needed_Shares)) /
-           Interfaces.Unsigned_64 (Needed_Shares);
+           (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size /
+            Interfaces.Unsigned_64 (Needed_Shares));
       end if;
-      Ada.Text_IO.Put_Line (Block_Size'Image);
-      Ada.Text_IO.Put_Line (Share_Numbers'Image);
+
+      if Block_Size mod 4 = 0 then
+         Padding_N := 0;
+      else
+         Padding_N := Natural (4 - Block_Size mod 4);
+      end if;
+
       fec_decode
-        (Decoder, Decoding_Blocks_Addresses'Address,
+        (Decoder.FEC_Decoder, Decoding_Blocks_Addresses'Address,
          Result_Block_Addresses'Address,
-         Share_Numbers (Share_Numbers'First)'Access, Block_Size);
+         Share_Numbers (Share_Numbers'First)'Access,
+         Block_Size + Unsigned_64 (Padding_N));
+
       if Primary_Blocks_N = Natural (Needed_Shares) then
          Output_Blocks := Decoding_Blocks;
+      elsif Primary_Blocks_N = 0 then
+         Output_Blocks := Result_Blocks;
       else
          declare
             Current_Result_Block : Positive := 1;
@@ -111,32 +149,20 @@ package body Decoder is
          end;
       end if;
 
-      declare
-         use Ada.Streams.Stream_IO;
-         F         : File_Type;
-         S         : Stream_Access;
-         File_Name : constant String := "output.dat";
-         Padding_N : Natural;
-      begin
-         if not Last then
-            Padding_N :=
-              Natural
-                (Word_64 (Block_Size) -
-                 Shares (1).Data_Header.Block_Size / 4 * 4);
-         else
-            --  We calculate the padding by getting the leftover
-            Padding_N := Natural (Block_Size / 4 - (Block_Size / 16 * 4));
-         end if;
-
-         Open (F, Append_File, File_Name);
-         S := Stream (F);
-         for I in 1 .. Integer (Needed_Shares) - 1 loop
-            Write_Block (S, Output_Blocks (I), Padding => Padding_N);
-         end loop;
+      for I in 1 .. Integer (Needed_Shares) - 1 loop
+         Write_Block (Memory_Buffer, Output_Blocks (I), Padding => Padding_N);
+      end loop;
+      if not Last then
          Write_Block
-           (S, Output_Blocks (Output_Blocks'Last), Padding => Padding_N);
-
-         Close (F);
-      end;
-   end Decode_Block;
+           (Memory_Buffer, Output_Blocks (Output_Blocks'Last),
+            Padding => Padding_N);
+      else
+         --  It seems that there are 2 extra bytes in each of my experiments
+         --  that we can pad (not 100% sure)
+         Write_Block
+           (Memory_Buffer, Output_Blocks (Output_Blocks'Last),
+            Padding => Padding_N + 2);
+      end if;
+      Aes.Decrypt (Decoder.Decryptor, Memory_Buffer, Output_Stream);
+   end Decode_Segment;
 end Decoder;

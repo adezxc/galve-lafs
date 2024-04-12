@@ -7,13 +7,14 @@ package Types is
    --  An Unsigned_32 with big-endian encoding in input streams.
    type Word is new Interfaces.Unsigned_32;
 
+   use Ada.Streams;
+
    procedure Read_Big_Endian_Word
-     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
-      Item   : out Word'Base);
+     (Stream : access Root_Stream_Type'Class; Item : out Word'Base);
    for Word'Read use Read_Big_Endian_Word;
 
    procedure Read_Big_Endian_Word
-     (Stream : access Ada.Streams.Root_Stream_Type'Class; Item : out Word'Base;
+     (Stream  : access Root_Stream_Type'Class; Item : out Word'Base;
       Padding : Natural);
 
    type Word_64 is new Unsigned_64;
@@ -44,25 +45,23 @@ package Types is
      (BA_Array : Block_Access_Array) return Block_Address_Array;
 
    procedure Write_Block
-     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : Block_Access;
+     (Stream  : access Root_Stream_Type'Class; Item : Block_Access;
       Padding : Natural);
    procedure Write_Little_Endian_Word
-     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : Word;
+     (Stream  : access Root_Stream_Type'Class; Item : Word;
       Padding : Natural := 0);
    procedure Read_Block
-     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : out Block;
+     (Stream  : access Root_Stream_Type'Class; Item : out Block;
       Padding : Natural);
    procedure Read_Block_Access
-     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : Block_Access;
+     (Stream  : access Root_Stream_Type'Class; Item : Block_Access;
       Padding : Natural);
    procedure Read_Big_Endian_Word_64
-     (Stream :     access Ada.Streams.Root_Stream_Type'Class;
-      Item   : out Word_64'Base);
+     (Stream : access Root_Stream_Type'Class; Item : out Word_64'Base);
    procedure Read
-     (S :     access Ada.Streams.Root_Stream_Type'Class; B : out Byte_Array;
+     (S         :     access Root_Stream_Type'Class; B : out Byte_Array;
       Last_Read : out Natural);
-   procedure Write
-     (S : access Ada.Streams.Root_Stream_Type'Class; B : Byte_Array);
+   procedure Write (S : access Root_Stream_Type'Class; B : Byte_Array);
 
    for Word_64'Read use Read_Big_Endian_Word_64;
 end Types;

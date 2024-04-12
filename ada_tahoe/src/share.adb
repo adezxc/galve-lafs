@@ -74,8 +74,7 @@ package body Share is
             (Positive (URI_Extension_Block.Needed_Shares) - 1)) /
            Positive (URI_Extension_Block.Needed_Shares);
          Block_Size_In_Words : constant Positive     := (Block_Size + 3) / 4;
-         Block_Padding       : constant Positive     :=
-           Natural (Block_Size - (Block_Size / 4 * 4));
+         Block_Padding       : Natural := Natural (4 - Block_Size mod 4);
          Data_Size_In_Words  : constant Natural      :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
          Block_Array_Size    : constant Natural      :=
@@ -88,21 +87,18 @@ package body Share is
            4;
          Last_Block          : constant Block_Access :=
            new Block (1 .. Last_Block_Size);
-         Last_Block_Padding  : constant Natural      :=
-           Last_Block_Size - (Last_Block_Size / 4 * 4);
+         Share_Number        : constant Natural      :=
+           Natural'Value
+             (Ada.Strings.Unbounded.To_String (Get_Basename (File)));
          New_Share           : constant Share_Access :=
            new Share (Block_Size_In_Words, Block_Array_Size);
       begin
          for Block of Share_Blocks.Values loop
             Read_Block_Access (S, Block, Padding => Block_Padding);
          end loop;
-         Ada.Text_IO.Put_Line (Last_Block_Size'Image);
-         Ada.Text_IO.Put_Line (Last_Block_Padding'Image);
-         Read_Block_Access (S, Last_Block, Padding => Last_Block_Padding);
+         Read_Block_Access (S, Last_Block, Padding => Block_Padding);
          Close (Share_File);
-         New_Share.Share_Number        :=
-           Natural'Value
-             (Ada.Strings.Unbounded.To_String (Get_Basename (File)));
+         New_Share.Share_Number        := Share_Number;
          New_Share.Header              := Header;
          New_Share.URI_Extension_Block := URI_Extension_Block;
          New_Share.Data_Header         := Data_Header;

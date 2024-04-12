@@ -1,10 +1,10 @@
+pragma Ada_2022;
 with Util.Streams;
 with Util.Streams.Files;
 with Util.Streams.AES;
 with Util.Encoders.AES;
 with Base32;
 with Ada.Streams.Stream_IO;
-with Ada.Streams;
 with Text_IO;
 with Interfaces.C;
 with Types; use Types;
@@ -38,12 +38,10 @@ package body Aes is
       use Interfaces.C;
       New_Decr : Decryptor;
       cipher   : EVP_CIPHER_PTR;
-      ctx      : EVP_CIPHER_CTX_PTR := EVP_CIPHER_CTX_new;
+      ctx      : constant EVP_CIPHER_CTX_PTR := EVP_CIPHER_CTX_new;
       Key      : aliased char_array := To_C (Base32.Decode (CipherKey));
-      IV       : aliased char_array := To_C (CipherIV);
+      IV       : aliased char_array          := To_C (CipherIV);
    begin
-      Text_IO.Put_Line (CipherKey);
-      Text_IO.Put_Line (Base32.Decode (CipherKey));
       cipher := EVP_aes_128_ctr;
       if 1 /= EVP_CipherInit (ctx, cipher, Key'Access, IV'Access, 0) then
          raise Cipher_Exception with "Failed to initialize cipher";
@@ -56,8 +54,8 @@ package body Aes is
    end New_Decryptor;
 
    procedure Decrypt
-     (D      : Decryptor; Input : access Ada.Streams.Root_Stream_Type'Class;
-      Output : access Ada.Streams.Root_Stream_Type'Class)
+     (D      : in Decryptor; Input : access Ada.Streams.Root_Stream_Type'Class;
+      Output :    access Ada.Streams.Root_Stream_Type'Class)
    is
       use Ada.Streams;
       Output_Buffer : Byte_Array (1 .. D.Buffer_Size + EVP_MAX_BLOCK_LENGTH);
@@ -81,4 +79,28 @@ package body Aes is
       end loop;
    end Decrypt;
 
+   procedure Decrypt_Block
+     (D : in out Decryptor; Input : access Ada.Streams.Root_Stream_Type'Class;
+      Output :        access Ada.Streams.Root_Stream_Type'Class)
+   is
+      use Ada.Streams;
+      Output_Buffer : Byte_Array (1 .. D.Buffer_Size + EVP_MAX_BLOCK_LENGTH);
+      Output_Length : aliased Integer;
+      Input_Buffer  : Byte_Array (1 .. D.Buffer_Size);
+      Input_Length  : aliased Integer := D.Buffer_Size;
+      Last          : Integer         := D.Buffer_Size;
+   begin
+      while Last = D.Buffer_Size loop
+         Input_Length := Last;
+         if 1 /=
+           EVP_CipherUpdate
+             (Ctx           => D.Context, Output => Output_Buffer (1)'Access,
+              Output_Length => Output_Length'Access,
+              Input => Input_Buffer (1)'Access, Input_Length => Input_Length)
+         then
+            raise Cipher_Exception with "Failed to update cipher";
+         end if;
+         Write (Output, Output_Buffer (1 .. Output_Length));
+      end loop;
+   end Decrypt_Block;
 end Aes;

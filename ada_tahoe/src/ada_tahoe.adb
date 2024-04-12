@@ -4,7 +4,6 @@ with Ada.Command_Line;      use Ada.Command_Line;
 with Tahoe;                 use Tahoe;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Decoder;
-with Aes;
 with Uri_Read;
 with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
 
@@ -22,18 +21,13 @@ procedure Ada_Tahoe is
       return Share_Names;
    end To_Share_Name_Array;
 
-   URI           : Uri_Read.URI;
-   IV            : Aes.IV := (others => Character'Val (0));
-   Decryptor     : Aes.Decryptor;
-   Input_File    : Ada.Streams.Stream_IO.File_Type;
-   Output_File   : Ada.Streams.Stream_IO.File_Type;
-   Input_Stream  : Stream_Access;
-   Output_Stream : Stream_Access;
+   URI              : Uri_Read.URI;
+   Output_File      : Ada.Streams.Stream_IO.File_Type;
+   Decrypted_Stream : Stream_Access;
+   File_Decoder     : Decoder.File_Decoder;
 begin
-   Create (Input_File, Append_File, "output.dat");
-   Create (Output_File, Out_File, "decrypt.dat");
-   Close (Input_File);
-   Close (Output_File);
+   Create (Output_File, Append_File, "decrypted.dat");
+   Decrypted_Stream := Stream (Output_File);
    if Argument_Count = 2 and then Argument (1) = "index" then
       URI := Uri_Read.Process_URI (Argument (2));
       Ada.Text_IO.Put_Line (Storage_Index_From_File_Key (URI.Key));
@@ -45,18 +39,10 @@ begin
          Share_Names   : constant Decoder.Share_Name_Array                   :=
            To_Share_Name_Array (Share_Indices);
       begin
-         Decoder.Decode_File (URI, Share_Names);
+         File_Decoder := Decoder.New_File_Decoder (URI);
+         Decoder.Decode_File
+           (File_Decoder, URI, Share_Names, Decrypted_Stream);
       end;
-      Open (Input_File, In_File, "output.dat");
-      Open (Output_File, Out_File, "decrypt.dat");
-      Input_Stream  := Stream (Input_File);
-      Output_Stream := Stream (Output_File);
-
-      Decryptor :=
-        Aes.New_Decryptor
-          (CipherKey => URI.Key, CipherIV => IV, Buffer_Size => 4_096);
-      Aes.Decrypt (Decryptor, Input_Stream, Output_Stream);
-
    else
       Ada.Text_IO.Put_Line
         (Command_Name & ": " & "Example usage for decoding the file" &
