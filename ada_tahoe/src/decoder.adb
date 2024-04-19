@@ -95,6 +95,7 @@ package body Decoder is
         Block_Address_Array (1 .. Integer (Needed_Shares));
       Output_Blocks : Block_Access_Array (1 .. Integer (Needed_Shares));
       Padding_N                 : Natural;
+      Memory_Buffer             : access Memory_Streams.Stream_Type;
    begin
       for J in 1 .. Integer (Needed_Shares) loop
          Decoding_Blocks (J) := Next_Block (Shares (J));
