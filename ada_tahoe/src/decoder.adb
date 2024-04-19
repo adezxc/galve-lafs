@@ -95,10 +95,6 @@ package body Decoder is
         Block_Address_Array (1 .. Integer (Needed_Shares));
       Output_Blocks : Block_Access_Array (1 .. Integer (Needed_Shares));
       Padding_N                 : Natural;
-      Memory_Buffer             : access Memory_Streams.Stream_Type :=
-        new Memory_Streams.Stream_Type
-          (Ada.Streams.Stream_Element_Count
-             (Shares (1).URI_Extension_Block.Codec_Params.Segment_Size));
    begin
       for J in 1 .. Integer (Needed_Shares) loop
          Decoding_Blocks (J) := Next_Block (Shares (J));
@@ -108,11 +104,20 @@ package body Decoder is
       Result_Block_Addresses    := Convert_To_Address_Array (Result_Blocks);
 
       if not Last then
-         Block_Size :=
+         Memory_Buffer :=
+           new Memory_Streams.Stream_Type
+             (Ada.Streams.Stream_Element_Count
+                (Shares (1).URI_Extension_Block.Codec_Params.Segment_Size));
+         Block_Size    :=
            (Shares (1).URI_Extension_Block.Codec_Params.Segment_Size /
             Interfaces.Unsigned_64 (Needed_Shares));
       else
-         Block_Size :=
+         Memory_Buffer :=
+           new Memory_Streams.Stream_Type
+             (Ada.Streams.Stream_Element_Count
+                (Shares (1).URI_Extension_Block.Tail_Codec_Params
+                   .Segment_Size));
+         Block_Size    :=
            (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size /
             Interfaces.Unsigned_64 (Needed_Shares));
       end if;
@@ -161,7 +166,7 @@ package body Decoder is
          --  that we can pad (not 100% sure)
          Write_Block
            (Memory_Buffer, Output_Blocks (Output_Blocks'Last),
-            Padding => Padding_N + 2);
+            Padding => Padding_N);
       end if;
       Aes.Decrypt (Decoder.Decryptor, Memory_Buffer, Output_Stream);
    end Decode_Segment;
