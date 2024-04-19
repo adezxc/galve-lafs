@@ -97,6 +97,8 @@ package body Decoder is
       Padding_N                 : Natural;
       Memory_Buffer             : access Memory_Streams.Stream_Type;
    begin
+      Ada.Text_IO.Put_Line (Memory_Buffer.Length'Image);
+      Ada.Text_IO.Put_Line (Memory_Buffer.Capacity'Image);
       for J in 1 .. Integer (Needed_Shares) loop
          Decoding_Blocks (J) := Next_Block (Shares (J));
          Result_Blocks (J)   := new Block (1 .. Decoding_Blocks (J)'Length);
