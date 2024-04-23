@@ -5,7 +5,6 @@ with Util.Streams.AES;
 with Util.Encoders.AES;
 with Base32;
 with Ada.Streams.Stream_IO;
-with Text_IO;
 with Interfaces.C;
 with Types; use Types;
 
@@ -27,9 +26,7 @@ package body Aes is
 
       --  Copy input to output through the cipher.
       Util.Streams.Copy (From => In_Stream, Into => Decipher);
-      Text_IO.Put_Line ("TEST");
       Decipher.Flush;
-      Text_IO.Put_Line ("TEST2");
    end Decrypt_File;
 
    function New_Decryptor
@@ -54,10 +51,9 @@ package body Aes is
    end New_Decryptor;
 
    procedure Decrypt
-     (D      : in Decryptor; Input : access Ada.Streams.Root_Stream_Type'Class;
-      Output :    access Ada.Streams.Root_Stream_Type'Class)
+     (D      : Decryptor; Input : access Ada.Streams.Root_Stream_Type'Class;
+      Output : access Ada.Streams.Root_Stream_Type'Class)
    is
-      use Ada.Streams;
       Output_Buffer : Byte_Array (1 .. D.Buffer_Size + EVP_MAX_BLOCK_LENGTH);
       Output_Length : aliased Integer;
       Input_Buffer  : Byte_Array (1 .. D.Buffer_Size);
@@ -83,14 +79,13 @@ package body Aes is
      (D : in out Decryptor; Input : access Ada.Streams.Root_Stream_Type'Class;
       Output :        access Ada.Streams.Root_Stream_Type'Class)
    is
-      use Ada.Streams;
       Output_Buffer : Byte_Array (1 .. D.Buffer_Size + EVP_MAX_BLOCK_LENGTH);
       Output_Length : aliased Integer;
       Input_Buffer  : Byte_Array (1 .. D.Buffer_Size);
-      Input_Length  : aliased Integer := D.Buffer_Size;
-      Last          : Integer         := D.Buffer_Size;
+      Input_Length  : aliased Integer  := D.Buffer_Size;
+      Last          : constant Integer := D.Buffer_Size;
    begin
-      while Last = D.Buffer_Size loop
+      while Input_Length = D.Buffer_Size loop
          Input_Length := Last;
          if 1 /=
            EVP_CipherUpdate
@@ -103,4 +98,9 @@ package body Aes is
          Write (Output, Output_Buffer (1 .. Output_Length));
       end loop;
    end Decrypt_Block;
+
+   procedure Finalize (D : in out Decryptor) is
+   begin
+      EVP_CIPHER_CTX_free (D.Context);
+   end Finalize;
 end Aes;

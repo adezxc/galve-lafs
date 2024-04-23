@@ -14,7 +14,7 @@ package body Share is
          My_Share.all.Current_Block := My_Share.all.Current_Block + 1;
          return My_Share.all.Blocks.Values (My_Share.all.Current_Block - 1);
       else
-	Ada.Text_IO.Put_Line("AAAAA LAST BLOCK");
+         Ada.Text_IO.Put_Line ("AAAAA LAST BLOCK");
          return My_Share.all.Last_Block;
       end if;
    end Next_Block;
@@ -70,43 +70,42 @@ package body Share is
       end;
 
       declare
-         Block_Size          : constant Positive     :=
+         Block_Size               : constant Positive     :=
            (Positive (URI_Extension_Block.Segment_Size) +
             (Positive (URI_Extension_Block.Needed_Shares) - 1)) /
            Positive (URI_Extension_Block.Needed_Shares);
-         Block_Size_In_Words : constant Positive     := (Block_Size + 3) / 4;
-         Block_Padding       : Natural := Natural (4 - Block_Size mod 4);
-         Data_Size_In_Words  : constant Natural      :=
+         Block_Size_In_Words      : constant Positive := (Block_Size + 3) / 4;
+         Block_Padding : constant Natural := Natural (4 - Block_Size mod 4);
+         Data_Size_In_Words       : constant Natural      :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
-         Block_Array_Size    : constant Natural      :=
+         Block_Array_Size         : constant Natural      :=
            ((Data_Size_In_Words - 1) / Block_Size_In_Words) + 1;
          Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
-	 Last_Block_Size : constant Natural :=
-		 (Natural (URI_Extension_Block.Tail_Codec_Params.Segment_Size) +
-		 (Natural (URI_Extension_Block.Needed_Shares) - 1)) /
-		 Natural(URI_Extension_Block.Needed_Shares);
-	 Last_Block_Size_In_Words : constant Natural :=
-		 (Last_Block_Size + 3) / 4;
+         Last_Block_Size          : constant Natural      :=
+           (Natural (URI_Extension_Block.Tail_Codec_Params.Segment_Size) +
+            (Natural (URI_Extension_Block.Needed_Shares) - 1)) /
+           Natural (URI_Extension_Block.Needed_Shares);
+         Last_Block_Size_In_Words : constant Natural      :=
+           (Last_Block_Size + 3) / 4;
          -- Last_Block_Size     : constant Natural      :=
          --   ((Integer (Data_Header.Data_Size) -
          --     (Block_Array_Size * Block_Size)) +
          --    3) /
          --   4;
-	 Last_Block          : Block_Access :=
+         Last_Block               : constant Block_Access :=
            new Block (1 .. Last_Block_Size_In_Words);
-	   Last_Block_Padding : Natural;
-         Share_Number        : constant Natural      :=
+         Last_Block_Padding       : Natural;
+         Share_Number             : constant Natural      :=
            Natural'Value
              (Ada.Strings.Unbounded.To_String (Get_Basename (File)));
-         New_Share           : constant Share_Access :=
+         New_Share                : constant Share_Access :=
            new Share (Block_Size_In_Words, Block_Array_Size);
       begin
-	if Last_Block_Size mod 4 = 0 then
-		Last_Block_Padding := 0;
-	else
-		Last_Block_Padding := (4 - Last_Block_Size mod 4);
-	end if;
-	Ada.Text_IO.Put_Line(Last_Block_Padding'Image);
+         if Last_Block_Size mod 4 = 0 then
+            Last_Block_Padding := 0;
+         else
+            Last_Block_Padding := (4 - Last_Block_Size mod 4);
+         end if;
          for Block of Share_Blocks.Values loop
             Read_Block_Access (S, Block, Padding => Block_Padding);
          end loop;

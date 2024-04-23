@@ -3,17 +3,19 @@ with Ada.Text_IO;
 with Ada.Command_Line;      use Ada.Command_Line;
 with Tahoe;                 use Tahoe;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
-with Decoder;
 with Uri_Read;
+with File_Decoder;
 with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
 
 procedure Ada_Tahoe is
    type Argument_Index_Array is array (Natural range <>) of Integer;
 
    function To_Share_Name_Array
-     (Argument_Indices : Argument_Index_Array) return Decoder.Share_Name_Array
+     (Argument_Indices : Argument_Index_Array)
+      return File_Decoder.Share_Name_Array
    is
-      Share_Names : Decoder.Share_Name_Array (1 .. Argument_Indices'Length);
+      Share_Names :
+        File_Decoder.Share_Name_Array (1 .. Argument_Indices'Length);
    begin
       for I in Argument_Indices'Range loop
          Share_Names (I - 1) := To_Unbounded_String (Argument (I));
@@ -24,7 +26,6 @@ procedure Ada_Tahoe is
    URI              : Uri_Read.URI;
    Output_File      : Ada.Streams.Stream_IO.File_Type;
    Decrypted_Stream : Stream_Access;
-   File_Decoder     : Decoder.File_Decoder;
 begin
    Create (Output_File, Append_File, "decrypted.dat");
    Decrypted_Stream := Stream (Output_File);
@@ -36,12 +37,13 @@ begin
       declare
          Share_Indices : constant Argument_Index_Array (2 .. Argument_Count) :=
            [others => 0];
-         Share_Names   : constant Decoder.Share_Name_Array                   :=
+         Share_Names   : constant File_Decoder.Share_Name_Array              :=
            To_Share_Name_Array (Share_Indices);
+         FD            : File_Decoder.File_Decoder                           :=
+           File_Decoder.New_File_Decoder
+             (URI, Share_Names, 32_784, Decrypted_Stream);
       begin
-         File_Decoder := Decoder.New_File_Decoder (URI);
-         Decoder.Decode_File
-           (File_Decoder, URI, Share_Names, Decrypted_Stream);
+         null;
       end;
    else
       Ada.Text_IO.Put_Line

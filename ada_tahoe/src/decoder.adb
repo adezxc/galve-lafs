@@ -8,8 +8,7 @@ with Memory_Streams;
 
 package body Decoder is
    function New_File_Decoder (URI : Uri_Read.URI) return File_Decoder is
-      IV : constant Aes.IV := (others => Character'Val (0));
-      D  : File_Decoder;
+      D : File_Decoder;
    begin
       D.FEC_Decoder :=
         fec_new
