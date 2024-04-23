@@ -5,6 +5,8 @@ with Types;
 with fec_h;
 with Ada.Streams;
 with Aes;
+with Memory_Streams;
+with Ada.Unchecked_Deallocation;
 
 package Decoder is
    type Share_Name_Array is array (Natural range <>) of Unbounded_String;
@@ -14,6 +16,12 @@ package Decoder is
       FEC_Decoder : aliased access fec_h.fec_t;
       Decryptor   : aliased Aes.Decryptor;
    end record;
+
+  type Stream_Type_Access is access Memory_Streams.Stream_Type;
+  --  Provides an in-memory Stream.
+	procedure Free is
+		new Ada.Unchecked_Deallocation(
+			Memory_Streams.Stream_Type, Stream_Type_Access);
 
    function New_File_Decoder (URI : Uri_Read.URI) return File_Decoder;
 

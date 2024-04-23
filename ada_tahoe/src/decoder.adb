@@ -17,7 +17,7 @@ package body Decoder is
            Interfaces.C.unsigned_short (URI.Total_Shares));
       D.Decryptor   :=
         Aes.New_Decryptor
-          (CipherKey => URI.Key, CipherIV => IV, Buffer_Size => 32_768);
+          (CipherKey => URI.Key, CipherIV => IV, Buffer_Size => 8192);
       return D;
    end New_File_Decoder;
 
@@ -112,19 +112,25 @@ package body Decoder is
          Block_Size    :=
            (Shares (1).URI_Extension_Block.Codec_Params.Segment_Size /
             Interfaces.Unsigned_64 (Needed_Shares));
+	 Ada.Text_IO.Put_Line("BLOK SIZE");
+	 Ada.Text_IO.Put_Line(Block_Size'Image);
       else
          Memory_Buffer :=
-           new Memory_Streams.Stream_Type
+           new Memory_Streams.Stream_Type 
              (Ada.Streams.Stream_Element_Count
                 (Shares (1).URI_Extension_Block.Tail_Codec_Params
                    .Segment_Size));
+	   Ada.Text_IO.Put_Line(
+                Shares (1).Last_Block'Length'Image);
+	   Ada.Text_IO.Put_Line(
+                Shares (2).Last_Block'Length'Image);
+	   Ada.Text_IO.Put_Line(
+                Shares (3).Last_Block'Length'Image);
+
          Block_Size    :=
            (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size /
             Interfaces.Unsigned_64 (Needed_Shares));
       end if;
-
-      Ada.Text_IO.Put_Line (Memory_Buffer.Length'Image);
-      Ada.Text_IO.Put_Line (Memory_Buffer.Capacity'Image);
 
       if Block_Size mod 4 = 0 then
          Padding_N := 0;
@@ -136,7 +142,7 @@ package body Decoder is
         (Decoder.FEC_Decoder, Decoding_Blocks_Addresses'Address,
          Result_Block_Addresses'Address,
          Share_Numbers (Share_Numbers'First)'Access,
-         Block_Size + Unsigned_64 (Padding_N));
+         Block_Size + Unsigned_64(Padding_N));
 
       if Primary_Blocks_N = Natural (Needed_Shares) then
          Output_Blocks := Decoding_Blocks;
@@ -147,8 +153,7 @@ package body Decoder is
             Current_Result_Block : Positive := 1;
          begin
             for Index in Share_Numbers'Range loop
-               if Share_Numbers (Index) = Index - 1 then
-                  Output_Blocks (Index) := Decoding_Blocks (Index);
+               if Share_Numbers (Index) = Index - 1 then Output_Blocks (Index) := Decoding_Blocks (Index);
                else
                   Output_Blocks (Index) :=
                     Result_Blocks (Current_Result_Block);
@@ -158,8 +163,13 @@ package body Decoder is
          end;
       end if;
 
+
       for I in 1 .. Integer (Needed_Shares) - 1 loop
          Write_Block (Memory_Buffer, Output_Blocks (I), Padding => Padding_N);
+	 Ada.Text_IO.Put_Line("CAPACITY");
+	 Ada.Text_IO.Put_Line(Memory_Buffer.Capacity'Image);
+	 Ada.Text_IO.Put_Line("LENGTH");
+	 Ada.Text_IO.Put_Line(Memory_Buffer.Length'Image);
       end loop;
       if not Last then
          Write_Block

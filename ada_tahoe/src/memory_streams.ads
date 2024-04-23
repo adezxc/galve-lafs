@@ -26,10 +26,9 @@ with Ada.Streams;
 
 package Memory_Streams is
 
-  pragma Preelaborate;
+  -- pragma Preelaborate;
   type Stream_Type (Capacity : Ada.Streams.Stream_Element_Count) is
    new Ada.Streams.Root_Stream_Type with private;
-  --  Provides an in-memory Stream.
 
   function Length (Stream : Stream_Type) return Natural;
   --  Returns the number of stream elements in Stream.
