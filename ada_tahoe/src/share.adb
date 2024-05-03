@@ -79,7 +79,7 @@ package body Share is
          Data_Size_In_Words       : constant Natural      :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
          Block_Array_Size         : constant Natural      :=
-           ((Data_Size_In_Words - 1) / Block_Size_In_Words) + 1;
+           ((Data_Size_In_Words - 1) / Block_Size_In_Words);
          Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
          Last_Block_Size          : constant Natural      :=
            (Natural (URI_Extension_Block.Tail_Codec_Params.Segment_Size) +
@@ -87,11 +87,6 @@ package body Share is
            Natural (URI_Extension_Block.Needed_Shares);
          Last_Block_Size_In_Words : constant Natural      :=
            (Last_Block_Size + 3) / 4;
-         -- Last_Block_Size     : constant Natural      :=
-         --   ((Integer (Data_Header.Data_Size) -
-         --     (Block_Array_Size * Block_Size)) +
-         --    3) /
-         --   4;
          Last_Block               : constant Block_Access :=
            new Block (1 .. Last_Block_Size_In_Words);
          Last_Block_Padding       : Natural;

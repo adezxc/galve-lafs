@@ -22,7 +22,6 @@
 --  This unit has been copied from the Booch Components, where it was
 --  BC.Support.Memory_Streams.
 
-with Ada.Text_IO;
 with Ada.IO_Exceptions;
 
 package body Memory_Streams is
@@ -100,10 +99,6 @@ package body Memory_Streams is
       use type Ada.Streams.Stream_Element_Offset;
    begin
       if Stream.Next_Write + Item'Length > Stream.Buffer'Last + 1 then
-	 Ada.Text_IO.Put_Line("Item Length");
-	 Ada.Text_IO.Put_Line(Item'Length'Image);
-	 Ada.Text_IO.Put_Line("Stream next write");
-	 Ada.Text_IO.Put_Line(Stream.Next_Write'Image);
          raise Ada.IO_Exceptions.End_Error;
       end if;
       Stream.Buffer

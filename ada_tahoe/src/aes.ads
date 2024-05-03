@@ -5,7 +5,10 @@ with Memory_Streams;
 with Ada.Finalization;
 
 package Aes is
-  type Decryptor is new Ada.Finalization.Controlled with private;
+  type Decryptor is record
+    Context     : aliased EVP_CIPHER_CTX_PTR;
+    Buffer_Size : aliased Positive;
+  end record;
 
   subtype Key is String (1 .. 26);
   subtype IV is String (1 .. 16);
@@ -22,12 +25,4 @@ package Aes is
   procedure Decrypt_Block
    (D : in out Decryptor; Input : access Ada.Streams.Root_Stream_Type'Class;
     Output :        access Ada.Streams.Root_Stream_Type'Class);
-
-  procedure Finalize (D : in out Decryptor);
-private
-  type Decryptor is new Ada.Finalization.Controlled with record
-    Context     : aliased EVP_CIPHER_CTX_PTR;
-    Buffer_Size : aliased Positive;
-  end record;
-
 end Aes;
