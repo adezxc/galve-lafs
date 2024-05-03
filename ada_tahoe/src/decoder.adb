@@ -72,9 +72,6 @@ package body Decoder is
         Total_Padding -
         (Shares (1).Block_Array_Size_Discr + 1) *
           Natural (File_URI.Needed_Shares) * Block_Padding;
-      Ada.Text_IO.Put_Line ("LSP");
-      Ada.Text_IO.Put_Line (Total_Padding'Image);
-      Ada.Text_IO.Put_Line (Last_Segment_Padding'Image);
 
       declare
          K : unsigned_short :=
@@ -151,8 +148,6 @@ package body Decoder is
       for J in 1 .. Integer (Needed_Shares) loop
          Decoding_Blocks (J) := Next_Block (Shares (J));
          Result_Blocks (J)   := new Block (1 .. Decoding_Blocks (J)'Length);
-         Ada.Text_IO.Put_Line ("BLCOK LENGTH");
-         Ada.Text_IO.Put_Line (Decoding_Blocks (J)'Length'Image);
       end loop;
       Decoding_Blocks_Addresses := Convert_To_Address_Array (Decoding_Blocks);
       Result_Block_Addresses    := Convert_To_Address_Array (Result_Blocks);
@@ -163,7 +158,6 @@ package body Decoder is
          Segment_Size :=
            (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size);
          Block_Size := (Segment_Size / Interfaces.Unsigned_64 (Needed_Shares));
-         Ada.Text_IO.Put_Line ("BLOCK SIZE");
       end if;
 
       fec_decode
