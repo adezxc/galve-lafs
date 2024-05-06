@@ -3,6 +3,7 @@ with Share;        use Share;
 with Types;        use Types;
 with fec_h;        use fec_h;
 with Interfaces.C; use Interfaces.C;
+with GNATCOLL;     use GNATCOLL;
 with Ada.Text_IO;
 with Memory_Streams;
 with Aes;
@@ -35,20 +36,29 @@ package body Decoder is
       Last_Segment_Padding : Natural;
       Last_Block_Padding   : Natural;
    begin
+      GNATCOLL.Mmap();
       for Index in Share_Names'Range loop
          Shares (Index) := Read_Share (To_String (Share_Names (Index)));
       end loop;
+      Share.Sort (Shares);
       declare
-         Block_Size      : constant Natural :=
+         Block_Size       : constant Natural :=
            (Positive (Shares (1).URI_Extension_Block.Segment_Size) +
             (Positive (Shares (1).URI_Extension_Block.Needed_Shares) - 1)) /
            Positive (Shares (1).URI_Extension_Block.Needed_Shares);
-         Last_Block_Size : constant Natural :=
+         Last_Block_Size  : constant Natural :=
            (Natural
               (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size) +
             (Natural (Shares (1).URI_Extension_Block.Needed_Shares) - 1)) /
            Natural (Shares (1).URI_Extension_Block.Needed_Shares);
+         Block_Array_Size : Natural;
       begin
+         if Shares (1).Block_Array_Size_Discr = 0 then
+            Block_Array_Size := 1;
+         else
+            Block_Array_Size := Shares (1).Block_Array_Size_Discr + 1;
+         end if;
+
          if Last_Block_Size mod 4 = 0 then
             Last_Block_Padding := 0;
          else
@@ -59,19 +69,19 @@ package body Decoder is
          else
             Block_Padding := (4 - Block_Size mod 4);
          end if;
+
+         Total_Padding :=
+           Natural
+             (Word_64
+                (Shares (1).Block_Size_Discr * 3 * 4 *
+                 Shares (1).Block_Array_Size_Discr +
+                 Shares (1).Last_Block.all'Length * 3 * 4) -
+              File_URI.Size);
+
+         Last_Segment_Padding :=
+           Total_Padding -
+           Block_Array_Size * Natural (File_URI.Needed_Shares) * Block_Padding;
       end;
-      Share.Sort (Shares);
-      Total_Padding        :=
-        Natural
-          (Word_64
-             (Shares (1).Block_Size_Discr * 3 * 4 *
-              Shares (1).Block_Array_Size_Discr +
-              Shares (1).Last_Block.all'Length * 3 * 4) -
-           File_URI.Size);
-      Last_Segment_Padding :=
-        Total_Padding -
-        (Shares (1).Block_Array_Size_Discr + 1) *
-          Natural (File_URI.Needed_Shares) * Block_Padding;
 
       declare
          K : unsigned_short :=

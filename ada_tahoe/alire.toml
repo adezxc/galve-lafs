@@ -1,0 +1,13 @@
+name = "ada_tahoe"
+description = "Implementation of Tahoe-LAFS written in Ada"
+version = "0.1.0-dev"
+
+authors = ["Adam Jasinski"]
+maintainers = ["Adam Jasinski <adam@jasinski.lt>"]
+maintainers-logins = ["adezxc"]
+licenses = "GPL-3.0-or-later"
+website = ""
+tags = []
+
+[[depends-on]]
+gnatcoll = "^24.0.0"
