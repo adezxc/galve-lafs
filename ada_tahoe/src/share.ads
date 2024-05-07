@@ -1,6 +1,8 @@
 with Ada.Streams;
+with Ada.Streams.Stream_IO;
 with Types;               use Types;
 with URI_Extension_Block; use URI_Extension_Block;
+with Ada.Finalization;
 
 package Share is
 
@@ -22,15 +24,30 @@ package Share is
       URI_Extension_Offset       : Word_64;
    end record;
 
-   type Share (Block_Size_Discr, Block_Array_Size_Discr : Natural) is record
+   -- Helper record to store size of blocks and what not in Words, not bytes
+   type Share_Metadata is record
+      Data_Size          : Natural;
+      Block_Size         : Natural;
+      Last_Block_Size    : Natural;
+      Block_Array_Size   : Natural;
+      Block_Padding      : Natural;
+      Last_Block_Padding : Natural;
+   end record;
+
+   type Share is new Ada.Finalization.Limited_Controlled with record
       Share_Number        : Natural;
       Header              : Share_Header;
       Data_Header         : Share_Data_Header;
-      Blocks : Block_Array (Block_Size_Discr, Block_Array_Size_Discr);
-      Last_Block          : Block_Access;
+      Metadata            : Share_Metadata;
       URI_Extension_Block : Share_URI_Extension_Block;
-      Current_Block       : Natural := 1;
+      Current_Block       : Natural := 0;
+
+      -- Opened share file, as we want to get the blocks sequentially and not read the full file into memory
+      Share_File   : Ada.Streams.Stream_IO.File_Type;
+      Share_Stream : Ada.Streams.Stream_IO.Stream_Access;
    end record;
+
+   overriding procedure Finalize (S : in out Share);
 
    type Share_Access is access Share;
 
@@ -43,7 +60,8 @@ package Share is
       Item   : out Share_Data_Header);
    function Read_Share (File : String) return Share_Access;
    procedure Display_Share_Headers (My_Share : Share);
-   function Next_Block (My_Share : Share_Access) return Block_Access;
+   function Next_Block (My_Share : Share_Access) return Block;
 
    for Share_Data_Header'Read use Read_Share_Data_Header;
+
 end Share;

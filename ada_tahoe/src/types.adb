@@ -52,6 +52,11 @@ package body Types is
       return BA (BA'First)'Address;  -- Use 'Address attribute
    end To_Address;
 
+   function To_Address (B : Block) return System.Address is
+   begin
+      return B (B'First)'Address;  -- Use 'Address attribute
+   end To_Address;
+
    --  Function to convert all elements of Block_Access_Array to System.Address
    function Convert_To_Address_Array
      (BA_Array : Block_Access_Array) return Block_Address_Array
@@ -90,12 +95,12 @@ package body Types is
    end Read_Big_Endian_Word;
 
    procedure Write_Block
-     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : Block_Access;
+     (Stream  : access Ada.Streams.Root_Stream_Type'Class; Item : Block;
       Padding : Natural)
    is
    begin
-      for Word of Item.all loop
-         if Word = Item.all (Item.all'Last) then
+      for Word of Item loop
+         if Word = Item (Item'Last) then
             Write_Little_Endian_Word (Stream, Word, Padding => Padding);
          else
             Write_Little_Endian_Word (Stream, Word);

@@ -3,7 +3,6 @@ with Share;        use Share;
 with Types;        use Types;
 with fec_h;        use fec_h;
 with Interfaces.C; use Interfaces.C;
-with GNATCOLL;     use GNATCOLL;
 with Ada.Text_IO;
 with Memory_Streams;
 with Aes;
@@ -31,57 +30,42 @@ package body Decoder is
         Aes.New_Decryptor
           (CipherKey => Key, CipherIV => IV, Buffer_Size => 4_096);
 
+      Block_Size      : Natural;
+      Last_Block_Size : Natural;
+
+      Segment_Size      : Natural;
+      Last_Segment_Size : Natural;
+
+      Block_Array_Size : Natural;
+
       Total_Padding        : Natural;
       Block_Padding        : Natural;
       Last_Segment_Padding : Natural;
       Last_Block_Padding   : Natural;
    begin
-      GNATCOLL.Mmap();
       for Index in Share_Names'Range loop
          Shares (Index) := Read_Share (To_String (Share_Names (Index)));
       end loop;
       Share.Sort (Shares);
-      declare
-         Block_Size       : constant Natural :=
-           (Positive (Shares (1).URI_Extension_Block.Segment_Size) +
-            (Positive (Shares (1).URI_Extension_Block.Needed_Shares) - 1)) /
-           Positive (Shares (1).URI_Extension_Block.Needed_Shares);
-         Last_Block_Size  : constant Natural :=
-           (Natural
-              (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size) +
-            (Natural (Shares (1).URI_Extension_Block.Needed_Shares) - 1)) /
-           Natural (Shares (1).URI_Extension_Block.Needed_Shares);
-         Block_Array_Size : Natural;
-      begin
-         if Shares (1).Block_Array_Size_Discr = 0 then
-            Block_Array_Size := 1;
-         else
-            Block_Array_Size := Shares (1).Block_Array_Size_Discr + 1;
-         end if;
+      if Shares (1).Metadata.Block_Array_Size = 0 then
+         Block_Array_Size := 0;
+      else
+         Block_Array_Size := Shares (1).Metadata.Block_Array_Size;
+      end if;
 
-         if Last_Block_Size mod 4 = 0 then
-            Last_Block_Padding := 0;
-         else
-            Last_Block_Padding := (4 - Last_Block_Size mod 4);
-         end if;
-         if Block_Size mod 4 = 0 then
-            Block_Padding := 0;
-         else
-            Block_Padding := (4 - Block_Size mod 4);
-         end if;
+      Segment_Size      :=
+        Integer (Shares (1).URI_Extension_Block.Codec_Params.Segment_Size);
+      Last_Segment_Size :=
+        Integer
+          (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size);
 
-         Total_Padding :=
-           Natural
-             (Word_64
-                (Shares (1).Block_Size_Discr * 3 * 4 *
-                 Shares (1).Block_Array_Size_Discr +
-                 Shares (1).Last_Block.all'Length * 3 * 4) -
-              File_URI.Size);
-
-         Last_Segment_Padding :=
-           Total_Padding -
-           Block_Array_Size * Natural (File_URI.Needed_Shares) * Block_Padding;
-      end;
+      Total_Padding :=
+        Natural
+          (Word_64
+             (Shares (1).Metadata.Block_Size * 3 * 4 *
+              Shares (1).Metadata.Block_Array_Size +
+              Shares (1).Metadata.Last_Block_Size * 3 * 4) -
+           File_URI.Size);
 
       declare
          K : unsigned_short :=
@@ -89,8 +73,37 @@ package body Decoder is
          M : unsigned_short :=
            unsigned_short (Shares (1).URI_Extension_Block.Total_Shares);
       begin
+
+         Block_Size := Segment_Size / Integer (K);
+
+         Last_Block_Size := Last_Segment_Size / Integer (K);
+
          FEC_Decoder := fec_new (K, M);
       end;
+
+      if Last_Block_Size mod 4 = 0 then
+         Last_Block_Padding := 0;
+      else
+         Last_Block_Padding := (4 - Last_Block_Size mod 4);
+      end if;
+      if Block_Size mod 4 = 0 then
+         Block_Padding := 0;
+      else
+         Block_Padding := (4 - Block_Size mod 4);
+      end if;
+
+      Last_Segment_Padding :=
+        Total_Padding - Last_Block_Padding * Natural (File_URI.Needed_Shares) -
+        Block_Array_Size * Natural (File_URI.Needed_Shares) * Block_Padding;
+      Ada.Text_IO.Put_Line (Last_Segment_Padding'Image);
+      Ada.Text_IO.Put_Line (Last_Segment_Padding'Image);
+      Ada.Text_IO.Put_Line (Last_Segment_Padding'Image);
+      Ada.Text_IO.Put_Line (Last_Block_Padding'Image);
+      Ada.Text_IO.Put_Line (Last_Block_Padding'Image);
+      Ada.Text_IO.Put_Line (Last_Block_Padding'Image);
+      Ada.Text_IO.Put_Line (Total_Padding'Image);
+      Ada.Text_IO.Put_Line (Total_Padding'Image);
+      Ada.Text_IO.Put_Line (Total_Padding'Image);
 
       --  The fec algorithm produces primary blocks which have the pieces of
       --  original data and secondary blocks which are encoded
@@ -124,7 +137,8 @@ package body Decoder is
             Shares           => Shares, Share_Numbers => Share_Numbers,
             Primary_Blocks_N => Primary_Blocks_N, Last => False,
             Needed_Shares    => Shares (1).URI_Extension_Block.Needed_Shares,
-            Output_Stream    => Output_Stream, Padding => Block_Padding);
+            Output_Stream    => Output_Stream, Padding => Block_Padding,
+            Block_Size       => Block_Size, Segment_Size => Segment_Size);
       end loop;
       Decode_Segment
         (AES_Decryptor        => AES_Decryptor, FEC_Decoder => FEC_Decoder,
@@ -132,7 +146,8 @@ package body Decoder is
          Primary_Blocks_N     => Primary_Blocks_N, Last => True,
          Needed_Shares        => Shares (1).URI_Extension_Block.Needed_Shares,
          Output_Stream        => Output_Stream, Padding => Last_Block_Padding,
-         Last_Segment_Padding => Last_Segment_Padding);
+         Last_Segment_Padding => Last_Segment_Padding,
+         Block_Size => Last_Block_Size, Segment_Size => Last_Segment_Size);
 
       fec_free (FEC_Decoder);
    end Decode_File;
@@ -143,38 +158,41 @@ package body Decoder is
       Share_Numbers : in out Share_Number_Array; Primary_Blocks_N : Natural;
       Last          :        Boolean; Needed_Shares : Share_Count;
       Output_Stream :        access Ada.Streams.Root_Stream_Type'Class;
-      Padding       :        Natural; Last_Segment_Padding : Natural := 0)
+      Padding       :        Natural; Last_Segment_Padding : Natural := 0;
+      Block_Size    :        Natural; Segment_Size : Natural)
    is
+      type Block_Array is
+        array (Natural range <>) of Block (1 .. (Block_Size + 3) / 4);
+
       use Interfaces;
-      Block_Size             : Unsigned_64;
+
       Decoding_Blocks, Result_Blocks,
-      Output_Blocks : Block_Access_Array (1 .. Integer (Needed_Shares));
+      Output_Blocks          : Block_Array (1 .. Integer (Needed_Shares));
       Decoding_Blocks_Addresses,
       Result_Block_Addresses :
         Block_Address_Array (1 .. Integer (Needed_Shares));
-      Segment_Size           : Unsigned_64 :=
-        Shares (1).URI_Extension_Block.Codec_Params.Segment_Size;
+      function Convert_To_Address_Array
+        (B_Array : Block_Array) return Block_Address_Array
+      is
+         Converted_Array : Block_Address_Array (B_Array'Range);
+      begin
+         for I in B_Array'Range loop
+            Converted_Array (I) := To_Address (B_Array (I));
+         end loop;
+         return Converted_Array;
+      end Convert_To_Address_Array;
    begin
-      for J in 1 .. Integer (Needed_Shares) loop
-         Decoding_Blocks (J) := Next_Block (Shares (J));
-         Result_Blocks (J)   := new Block (1 .. Decoding_Blocks (J)'Length);
+      for I in 1 .. Integer (Needed_Shares) loop
+         Decoding_Blocks (I) := Next_Block (Shares (I));
       end loop;
       Decoding_Blocks_Addresses := Convert_To_Address_Array (Decoding_Blocks);
       Result_Block_Addresses    := Convert_To_Address_Array (Result_Blocks);
-
-      if not Last then
-         Block_Size := (Segment_Size / Interfaces.Unsigned_64 (Needed_Shares));
-      else
-         Segment_Size :=
-           (Shares (1).URI_Extension_Block.Tail_Codec_Params.Segment_Size);
-         Block_Size := (Segment_Size / Interfaces.Unsigned_64 (Needed_Shares));
-      end if;
 
       fec_decode
         (FEC_Decoder, Decoding_Blocks_Addresses'Address,
          Result_Block_Addresses'Address,
          Share_Numbers (Share_Numbers'First)'Access,
-         Block_Size + Unsigned_64 (Padding));
+         Unsigned_64 (Block_Size + Padding));
 
       if Primary_Blocks_N = Natural (Needed_Shares) then
          Output_Blocks := Decoding_Blocks;

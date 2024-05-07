@@ -1,21 +1,32 @@
 pragma Ada_2022;
-
 with Ada.Text_IO;
 with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
 with Ada.Streams;           use Ada.Streams;
 with Ada.Strings.Unbounded;
+with Types;
 
 package body Share is
 
-   function Next_Block (My_Share : Share_Access) return Block_Access is
+   function Next_Block (My_Share : Share_Access) return Block is
+      Block : Types.Block (1 .. My_Share.all.Metadata.Block_Size);
    begin
-      if My_Share.all.Blocks.Values'Length + 1 > My_Share.all.Current_Block
+      if My_Share.all.Current_Block < My_Share.all.Metadata.Block_Array_Size
       then
          My_Share.all.Current_Block := My_Share.all.Current_Block + 1;
-         return My_Share.all.Blocks.Values (My_Share.all.Current_Block - 1);
+         Read_Block
+           (My_Share.all.Share_Stream, Block,
+            My_Share.all.Metadata.Block_Padding);
+         return Block;
       else
-         Ada.Text_IO.Put_Line ("AAAAA LAST BLOCK");
-         return My_Share.all.Last_Block;
+         declare
+            Last_Block :
+              Types.Block (1 .. My_Share.all.Metadata.Last_Block_Size);
+         begin
+            Read_Block
+              (My_Share.all.Share_Stream, Last_Block,
+               My_Share.all.Metadata.Last_Block_Padding);
+            return Last_Block;
+         end;
       end if;
    end Next_Block;
 
@@ -32,9 +43,10 @@ package body Share is
    --  7) Hash of the share
    --  8) URI Extension block that contains more metadata about the file.
    function Read_Share (File : String) return Share_Access is
+
       S                   : Stream_Access;
-      Share_File          : File_Type;
       Header              : Share_Header;
+      New_Share           : constant Share_Access := new Share;
       Data_Header         : Share_Data_Header;
       URI_Extension_Block : Share_URI_Extension_Block;
       function Get_Basename
@@ -56,17 +68,20 @@ package body Share is
          end if;
       end Get_Basename;
    begin
-      Open (Share_File, In_File, File);
-      S := Stream (Share_File);
+      Open (New_Share.Share_File, In_File, File);
+      S := Stream (New_Share.Share_File);
       Share_Header'Read (S, Header);
       Share_Data_Header'Read (S, Data_Header);
       declare
-         Current_Index : constant Positive_Count := Index (Share_File);
+         Current_Index : constant Positive_Count :=
+           Index (New_Share.Share_File);
       begin
-         Set_Index (Share_File, Count (Data_Header.URI_Extension_Offset + 4));
+         Set_Index
+           (New_Share.Share_File,
+            Count (Data_Header.URI_Extension_Offset + 4));
          Read_URI_Extension_Block (S, URI_Extension_Block);
          --  we set the old index to continue with reading the share file
-         Set_Index (Share_File, Current_Index);
+         Set_Index (New_Share.Share_File, Current_Index);
       end;
 
       declare
@@ -75,12 +90,11 @@ package body Share is
             (Positive (URI_Extension_Block.Needed_Shares) - 1)) /
            Positive (URI_Extension_Block.Needed_Shares);
          Block_Size_In_Words      : constant Positive := (Block_Size + 3) / 4;
-         Block_Padding : constant Natural := Natural (4 - Block_Size mod 4);
+         Block_Padding            : Natural;
          Data_Size_In_Words       : constant Natural      :=
            (Integer (Data_Header.Data_Size) + 3) / 4;
          Block_Array_Size         : constant Natural      :=
            ((Data_Size_In_Words - 1) / Block_Size_In_Words);
-         Share_Blocks : Block_Array (Block_Size_In_Words, Block_Array_Size);
          Last_Block_Size          : constant Natural      :=
            (Natural (URI_Extension_Block.Tail_Codec_Params.Segment_Size) +
             (Natural (URI_Extension_Block.Needed_Shares) - 1)) /
@@ -93,28 +107,43 @@ package body Share is
          Share_Number             : constant Natural      :=
            Natural'Value
              (Ada.Strings.Unbounded.To_String (Get_Basename (File)));
-         New_Share                : constant Share_Access :=
-           new Share (Block_Size_In_Words, Block_Array_Size);
+         Metadata                 : Share_Metadata;
       begin
-         if Last_Block_Size mod 4 = 0 then
-            Last_Block_Padding := 0;
+         if Block_Size mod 4 = 0 then
+            Block_Padding := 0;
          else
-            Last_Block_Padding := (4 - Last_Block_Size mod 4);
+            Block_Padding := (4 - Block_Size mod 4);
          end if;
-         for Block of Share_Blocks.Values loop
-            Read_Block_Access (S, Block, Padding => Block_Padding);
-         end loop;
-         Read_Block_Access (S, Last_Block, Padding => Last_Block_Padding);
-         Close (Share_File);
+         if Block_Size mod 4 = 0 then
+            Block_Padding := 0;
+         else
+            Block_Padding := (4 - Block_Size mod 4);
+         end if;
+         -- Fill in the metadata record
+         Metadata.Block_Size         := Block_Size_In_Words;
+         Metadata.Data_Size          := Data_Size_In_Words;
+         Metadata.Last_Block_Size    := Last_Block_Size_In_Words;
+         Metadata.Block_Array_Size   := Block_Array_Size;
+         Metadata.Block_Padding      := Block_Padding;
+         Metadata.Last_Block_Padding := Last_Block_Padding;
+
+         New_Share.Share_Stream        := S;
          New_Share.Share_Number        := Share_Number;
          New_Share.Header              := Header;
          New_Share.URI_Extension_Block := URI_Extension_Block;
          New_Share.Data_Header         := Data_Header;
-         New_Share.Blocks              := Share_Blocks;
-         New_Share.Last_Block          := Last_Block;
+         New_Share.Metadata            := Metadata;
          return New_Share;
       end;
    end Read_Share;
+
+   procedure Finalize (S : in out Share) is
+   begin
+      null;
+      if Is_Open (S.Share_File) then
+         Close (S.Share_File);
+      end if;
+   end Finalize;
 
    procedure Read_Share_Data_Header
      (Stream :     access Ada.Streams.Root_Stream_Type'Class;

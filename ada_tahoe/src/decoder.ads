@@ -22,5 +22,6 @@ package Decoder is
     Share_Numbers : in out Share_Number_Array; Primary_Blocks_N : Natural;
     Last          :        Boolean; Needed_Shares : Types.Share_Count;
     Output_Stream :        access Ada.Streams.Root_Stream_Type'Class;
-    Padding       :        Natural; Last_Segment_Padding : Natural := 0);
+    Padding       :        Natural; Last_Segment_Padding : Natural := 0;
+    Block_Size    :        Natural; Segment_Size : Natural);
 end Decoder;
